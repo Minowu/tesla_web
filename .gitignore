@@ -86,3 +86,9 @@ public
 # Temporary files
 *.tmp
 *.temp
+
+# Large files
+*.glb
+*.stp
+*.rar
+FD200F-4.5m 3D模型.rar
