@@ -133,6 +133,13 @@ const HeroSection: React.FC = () => {
             </div>
           </div>
           
+          <div className="hero-logo">
+            <div className="hero-logo-main">
+              <img src="/1.png" alt="Logo ThaDo Robot" />
+            </div>
+          </div>
+          
+          
           <div className="hero-visual">
             <div className="hero-image-main">
               <img src="/robot1.png" alt="Robot tự động chính" />
