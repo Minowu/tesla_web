@@ -2974,6 +2974,9 @@
 
 /* ===== RESPONSIVE DESIGN ===== */
 @media (max-width: 1200px) {
+  .hero-logo{
+    display: none;
+  }
   .solutions-grid {
     grid-template-columns: 280px 1fr;
     gap: var(--space-lg);
