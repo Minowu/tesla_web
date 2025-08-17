@@ -480,20 +480,38 @@
 /* Robot Showcase Grid */
 .hero-robots-showcase {
   margin-bottom: var(--space-3xl);
+  padding-bottom: var(--space-2xl);
+  border-bottom: 1px solid black;
+  border-radius: var(--radius-xl);
+  padding: var(--space-2xl);
+  background: var(--bg-glass);
+  backdrop-filter: blur(20px);
+}
+
+.hero-robots-showcase-title {
+  font-size: 2.5rem;
+  font-weight: 700;
+  color: var(--text-primary);
+  background: var(--gradient-primary);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  text-align: center;
+  margin-bottom: var(--space-3xl);
 }
 
 .robots-grid {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
   gap: var(--space-xl);
-  margin-top: var(--space-2xl);
+  margin-top: var(--space-xl);
 }
 
 .robot-card {
   background: var(--bg-glass);
   border: 1px solid var(--border);
   border-radius: var(--radius-xl);
-  padding: var(--space-xl);
+  padding: var(--space-lg);
   backdrop-filter: blur(20px);
   text-align: center;
   transition: all var(--transition-normal);
@@ -527,8 +545,8 @@
 }
 
 .robot-image img {
-  width: 120px;
-  height: 120px;
+  width: 350px;
+  height: 350px;
   object-fit: contain;
   filter: drop-shadow(0 0 15px rgba(255, 255, 255, 0.3));
   transition: all var(--transition-normal);
@@ -552,6 +570,29 @@
   line-height: 1.4;
 }
 
+/* Solution Section */
+/* Robot Showcase Grid */
+.hero-solution{
+  margin-bottom: var(--space-3xl);
+  padding-bottom: var(--space-2xl);
+  border-bottom: 1px solid black;
+  border-radius: var(--radius-xl);
+  padding: var(--space-2xl);
+  background: var(--bg-glass);
+  backdrop-filter: blur(20px);
+}
+
+.hero-solution-title {
+  font-size: 2.5rem;
+  font-weight: 700;
+  color: var(--text-primary);
+  background: var(--gradient-primary);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  text-align: center;
+  margin-bottom: var(--space-3xl);
+}
 /* Features Section */
 .hero-features {
   margin-bottom: var(--space-3xl);
@@ -811,17 +852,54 @@
 .hexagon-grid {
   display: grid;
   grid-template-columns: repeat(4, 1fr);
+  grid-template-rows: repeat(4, 1fr);
   gap: var(--space-lg);
   max-width: 800px;
   margin: 0 auto;
   position: relative;
 }
+#hex-0{
+  grid-column-start: 2;
+  grid-row-start: 1;
+}
+#hex-1{
+  grid-column-start: 1;
+  grid-row-start: 2;
+}
+#hex-2{
+  grid-column-start: 1;
+    grid-row-start: 3;
+}
+#hex-3{
+  grid-column-start: 2;
+  grid-row-start: 4;
+} 
+#hex-4{
+  grid-column-start: 3;
+  grid-row-start: 4;
+}
+#hex-5{
+  grid-column-start: 4;
+  grid-row-start: 3;
+}
+#hex-6{
+  grid-column-start: 4;
+  grid-row-start: 2;
+}
+#hex-7{
+  grid-column-start: 3;
+  grid-row-start: 1;
+}
+
+
 
 .hexagon-item {
   position: relative;
   cursor: pointer;
   transition: all var(--transition-normal);
   animation: fadeInUp 0.6s ease-out calc(var(--hex-index) * 0.1s) both;
+  width: 180px;
+  height: 140px;
 }
 
 .hexagon-item::before {
@@ -851,6 +929,16 @@
   transition: all var(--transition-normal);
   z-index: 2;
 }
+.hexagon-container {
+  position: relative;
+}
+.connection-lines {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none; /* không chặn click */
+}
 
 .hexagon-content {
   position: relative;
@@ -862,9 +950,9 @@
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  background: rgba(0, 0, 0, 0.3);
   backdrop-filter: blur(15px);
   border-radius: 8px;
+  background: none;
 }
 
 .hexagon-icon {
@@ -3176,6 +3264,7 @@
   .hexagon-text p {
     font-size: 0.6rem;
   }
+
   
   .modal-features ul {
     grid-template-columns: 1fr;

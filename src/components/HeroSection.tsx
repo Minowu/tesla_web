@@ -149,6 +149,7 @@ const HeroSection: React.FC = () => {
 
         {/* Robot Showcase Grid */}
         <div className="hero-robots-showcase">
+          <h2 className="hero-robots-showcase-title"> Sản phẩm của chúng tôi</h2>
           <div className="robots-grid">
             <div className="robot-card">
               <div className="robot-image">
@@ -192,63 +193,66 @@ const HeroSection: React.FC = () => {
           </div>
         </div>
 
-        {/* Features Section */}
-        <div className="hero-features">
-          <div className="features-container">
-            {features.map((feature, index) => (
-              <div 
-                key={index}
-                className={`feature-card ${index === activeFeature ? 'active' : ''}`}
-                onClick={() => setActiveFeature(index)}
-              >
-                <div className="feature-icon">{feature.icon}</div>
-                <div className="feature-content">
-                  <h3>{feature.title}</h3>
-                  <p>{feature.description}</p>
+        {/* Solution Section */}
+        <div className="hero-solution">
+          <h2 className="hero-solution-title"> Giải pháp của chúng tôi</h2>
+          {/* Features Section */}
+          <div className="hero-features">
+            <div className="features-container">
+              {features.map((feature, index) => (
+                <div 
+                  key={index}
+                  className={`feature-card ${index === activeFeature ? 'active' : ''}`}
+                  onClick={() => setActiveFeature(index)}
+                >
+                  <div className="feature-icon">{feature.icon}</div>
+                  <div className="feature-content">
+                    <h3>{feature.title}</h3>
+                    <p>{feature.description}</p>
+                  </div>
+                  <div className="feature-arrow">→</div>
                 </div>
-                <div className="feature-arrow">→</div>
-              </div>
-            ))}
-          </div>
-        </div>
-
-        {/* Technology Highlights */}
-        <div className="hero-tech-highlights">
-          <div className="tech-highlights-grid">
-            <div className="tech-highlight">
-              <div className="tech-icon">🔋</div>
-              <div className="tech-content">
-                <h4>Pin Li-ion</h4>
-                <p>Thời gian hoạt động lên đến 8 giờ</p>
-              </div>
-            </div>
-            
-            <div className="tech-highlight">
-              <div className="tech-icon">📡</div>
-              <div className="tech-content">
-                <h4>5G Connectivity</h4>
-                <p>Kết nối siêu nhanh và ổn định</p>
-              </div>
-            </div>
-            
-            <div className="tech-highlight">
-              <div className="tech-icon">🎯</div>
-              <div className="tech-content">
-                <h4>AI Navigation</h4>
-                <p>Định vị chính xác với AI</p>
-              </div>
-            </div>
-            
-            <div className="tech-highlight">
-              <div className="tech-icon">🛡️</div>
-              <div className="tech-content">
-                <h4>Safety System</h4>
-                <p>Hệ thống an toàn đa lớp</p>
-              </div>
+              ))}
             </div>
           </div>
-        </div>
 
+          {/* Technology Highlights */}
+          <div className="hero-tech-highlights">
+            <div className="tech-highlights-grid">
+              <div className="tech-highlight">
+                <div className="tech-icon">🔋</div>
+                <div className="tech-content">
+                  <h4>Pin Li-ion</h4>
+                  <p>Thời gian hoạt động lên đến 8 giờ</p>
+                </div>
+              </div>
+              
+              <div className="tech-highlight">
+                <div className="tech-icon">📡</div>
+                <div className="tech-content">
+                  <h4>5G Connectivity</h4>
+                  <p>Kết nối siêu nhanh và ổn định</p>
+                </div>
+              </div>
+              
+              <div className="tech-highlight">
+                <div className="tech-icon">🎯</div>
+                <div className="tech-content">
+                  <h4>AI Navigation</h4>
+                  <p>Định vị chính xác với AI</p>
+                </div>
+              </div>
+              
+              <div className="tech-highlight">
+                <div className="tech-icon">🛡️</div>
+                <div className="tech-content">
+                  <h4>Safety System</h4>
+                  <p>Hệ thống an toàn đa lớp</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
         {/* Call to Action */}
         <div className="hero-cta">
           <div className="cta-content">

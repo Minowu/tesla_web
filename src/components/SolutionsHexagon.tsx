@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useRef, useEffect } from 'react';
 
 // Solutions Data based on the image
 const solutions = [
@@ -78,25 +78,77 @@ const solutions = [
 
 const SolutionsHexagon: React.FC = () => {
   const [selectedSolution, setSelectedSolution] = useState<string | null>(null);
+  const containerRef = useRef<HTMLDivElement>(null);
+const centralRef = useRef<HTMLDivElement>(null);
+const svgRef = useRef<SVGSVGElement>(null);
+const hexRefs = useRef<(HTMLDivElement | null)[]>([]);
+
+useEffect(() => {
+  function drawLines() {
+    if (!containerRef.current || !centralRef.current || !svgRef.current) return;
+
+    const containerRect = containerRef.current.getBoundingClientRect();
+    const centralRect = centralRef.current.getBoundingClientRect();
+    const cx = centralRect.left - containerRect.left + centralRect.width / 2;
+    const cy = centralRect.top - containerRect.top + centralRect.height / 2;
+    const logoRadius = 60; // Bán kính của logo (120px / 2)
+
+    // Clear old lines
+    svgRef.current.innerHTML = '';
+
+    // Add new lines
+    hexRefs.current.forEach((hex, idx) => {
+      if (!hex) return;
+      const rect = hex.getBoundingClientRect();
+      const x = rect.left - containerRect.left + rect.width / 2;
+      const y = rect.top - containerRect.top + rect.height / 2;
+
+      // Tính toán điểm bắt đầu từ rìa logo
+      const dx = x - cx;
+      const dy = y - cy;
+      const distance = Math.sqrt(dx * dx + dy * dy);
+      
+      if (distance > 0) {
+        const startX = cx + (dx / distance) * logoRadius;
+        const startY = cy + (dy / distance) * logoRadius;
+
+        const line = document.createElementNS('http://www.w3.org/2000/svg', 'line');
+        line.setAttribute('x1', startX.toString());
+        line.setAttribute('y1', startY.toString());
+        line.setAttribute('x2', x.toString());
+        line.setAttribute('y2', y.toString());
+        line.setAttribute('stroke', hex.style.getPropertyValue('--hex-color') || '#000');
+        line.setAttribute('stroke-width', '2');
+        svgRef.current?.appendChild(line);
+      }
+    });
+  }
+
+  drawLines();
+  window.addEventListener('resize', drawLines);
+  return () => window.removeEventListener('resize', drawLines);
+}, [solutions]);
 
   return (
     <section className="solutions-hexagon">
       <div className="container">
         <div className="section-header">
           <h2 className="section-title">
-            Giải Pháp <span className="text-gradient">THADOSOFT</span>
+            Giải Pháp <span className="text-gradient">THADOROBOT</span>
           </h2>
           <p className="section-subtitle">
             Khám phá các hệ thống và dịch vụ thông minh giúp doanh nghiệp của bạn phát triển bền vững
           </p>
         </div>
 
-        <div className="hexagon-container">
+        <div className="hexagon-container" ref={containerRef}>
+          <svg className="connection-lines" ref={svgRef}></svg>
+
           {/* Central Logo */}
-          <div className="central-logo">
+          <div className="central-logo" ref={centralRef}>
             <div className="logo-circle">
               <div className="logo-icon">⚡</div>
-              <h3>THADOSOFT</h3>
+              <h3>THADOROBOT</h3>
             </div>
           </div>
 
@@ -104,7 +156,9 @@ const SolutionsHexagon: React.FC = () => {
           <div className="hexagon-grid">
             {solutions.map((solution, index) => (
               <div
+                id={'hex-' + index}
                 key={solution.id}
+                ref={el => (hexRefs.current[index] = el)}
                 className={`hexagon-item ${selectedSolution === solution.id ? 'active' : ''}`}
                 style={{ 
                   '--hex-color': solution.color,
@@ -123,6 +177,7 @@ const SolutionsHexagon: React.FC = () => {
             ))}
           </div>
         </div>
+
 
         {/* Solution Details Modal */}
         {selectedSolution && (
