@@ -7,6 +7,7 @@ const Navigation: React.FC = () => {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
   const [searchQuery, setSearchQuery] = useState('');
   const [isSearchExpanded, setIsSearchExpanded] = useState(false);
+  const [isDarkTheme, setIsDarkTheme] = useState(true); // Thêm state cho theme
 
   const menuItems = [
     { id: 'home', label: 'Trang chủ', icon: '🏠' },
@@ -25,6 +26,25 @@ const Navigation: React.FC = () => {
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
 
+  // Thêm useEffect để load theme từ localStorage
+  useEffect(() => {
+    const savedTheme = localStorage.getItem('thadorobot-theme');
+    if (savedTheme) {
+      setIsDarkTheme(savedTheme === 'dark');
+    }
+  }, []);
+
+  // Thêm useEffect để áp dụng theme vào body
+  useEffect(() => {
+    if (isDarkTheme) {
+      document.body.classList.add('dark-theme');
+      document.body.classList.remove('light-theme');
+    } else {
+      document.body.classList.add('light-theme');
+      document.body.classList.remove('dark-theme');
+    }
+  }, [isDarkTheme]);
+
   const handleNavClick = (sectionId: string) => {
     setCurrentSection(sectionId as any);
     setIsMobileMenuOpen(false);
@@ -32,6 +52,13 @@ const Navigation: React.FC = () => {
 
   const toggleMobileMenu = () => {
     setIsMobileMenuOpen(!isMobileMenuOpen);
+  };
+
+  // Thêm function để toggle theme
+  const toggleTheme = () => {
+    const newTheme = !isDarkTheme;
+    setIsDarkTheme(newTheme);
+    localStorage.setItem('thadorobot-theme', newTheme ? 'dark' : 'light');
   };
 
   // Search functionality
@@ -104,8 +131,12 @@ const Navigation: React.FC = () => {
               <span>🇻🇳</span>
             </button>
             {/* Theme Toggle */}
-            <button className="control-button theme-toggle" title="Chuyển đổi chế độ">
-              <span>🌙</span>
+            <button 
+              className="control-button theme-toggle" 
+              title={isDarkTheme ? "Chuyển sang chế độ sáng" : "Chuyển sang chế độ tối"}
+              onClick={toggleTheme}
+            >
+              <span>{isDarkTheme ? '🌙' : '☀️'}</span>
             </button>
             {/* Search Icon with Expandable Input */}
             <div className="search-container">
@@ -170,8 +201,12 @@ const Navigation: React.FC = () => {
               <button className="control-button language-toggle" title="Chuyển đổi ngôn ngữ">
                 <span>🇻🇳</span>
               </button>
-              <button className="control-button theme-toggle" title="Chuyển đổi chế độ">
-                <span>🌙</span>
+              <button 
+                className="control-button theme-toggle" 
+                title={isDarkTheme ? "Chuyển sang chế độ sáng" : "Chuyển sang chế độ tối"}
+                onClick={toggleTheme}
+              >
+                <span>{isDarkTheme ? '🌙' : '☀️'}</span>
               </button>
             </div>
             

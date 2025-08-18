@@ -120,13 +120,109 @@ body::after {
   width: 100%;
   height: 100%;
   background-image: 
-    linear-gradient(rgba(0, 212, 255, 0.03) 1px, transparent 1px),
+    linear-gradient(rgba(239, 243, 243, 0.03) 1px, transparent 1px),
     linear-gradient(90deg, rgba(0, 212, 255, 0.03) 1px, transparent 1px);
   background-size: 60px 60px;
   animation: gridMove 30s linear infinite;
   z-index: -2;
 }
 
+
+/* ===== LIGHT THEME STYLES ===== */
+body.light-theme {
+  /* Override CSS Variables for Light Theme */
+  --bg-primary: #ffffff !important;
+  --bg-secondary: #f8fafc !important;
+  --bg-tertiary: #f1f5f9 !important;
+  --bg-glass: rgba(255, 255, 255, 0.908) !important;
+  --bg-glass-dark: rgba(235, 235, 235, 0.841) !important;
+  
+  --text-primary: #0f172a !important;
+  --text-secondary: rgba(15, 23, 42, 0.8) !important;
+  --text-muted: rgba(15, 23, 42, 0.6) !important;
+  
+  --border: rgba(0, 0, 0, 0.1) !important;
+  --border-glow: rgba(0, 212, 255, 0.3) !important;
+  
+  --shadow-sm: 0 2px 8px rgba(0, 0, 0, 0.1) !important;
+  --shadow-md: 0 4px 16px rgba(0, 0, 0, 0.15) !important;
+  --shadow-lg: 0 8px 32px rgba(0, 0, 0, 0.2) !important;
+  --shadow-xl: 0 16px 64px rgba(0, 0, 0, 0.25) !important;
+  
+  --gradient-bg: linear-gradient(135deg, #ffffff 0%, #f8fafc 50%, #f1f5f9 100%) !important;
+}
+
+body.light-theme::before {
+  background: 
+    radial-gradient(circle at 20% 80%, rgba(0, 212, 255, 0.08) 0%, transparent 50%),
+    radial-gradient(circle at 80% 20%, rgba(255, 107, 53, 0.06) 0%, transparent 50%),
+    radial-gradient(circle at 40% 40%, rgba(139, 92, 246, 0.05) 0%, transparent 50%),
+    linear-gradient(135deg, #ffffff 0%, #f8fafc 50%, #f1f5f9 100%);
+    animation: none !important; /* để có thể chuyển màu background cần tắt animation */
+}
+
+body.light-theme::after {
+  background-image: 
+    linear-gradient(rgba(223, 223, 223, 0.03) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(228, 229, 229, 0.03) 1px, transparent 1px);
+}
+
+body.light-theme .particle {
+  background: var(--primary);
+  opacity: 0.3;
+}
+
+/* ===== THEME TRANSITION ANIMATIONS ===== */
+body {
+  transition: all var(--transition-normal);
+}
+
+body * {
+  transition: background-color var(--transition-normal), 
+              color var(--transition-normal), 
+              border-color var(--transition-normal),
+              box-shadow var(--transition-normal);
+}
+
+/* ===== THEME TOGGLE BUTTON ANIMATION ===== */
+.theme-toggle {
+  transition: all var(--transition-normal);
+  position: relative;
+  overflow: hidden;
+}
+
+.theme-toggle:hover {
+  transform: scale(1.1);
+  box-shadow: 0 0 20px rgba(0, 212, 255, 0.3);
+}
+
+.theme-toggle span {
+  transition: all var(--transition-normal);
+  display: inline-block;
+}
+
+.theme-toggle:hover span {
+  transform: rotate(15deg) scale(1.2);
+}
+
+/* ===== THEME TOGGLE RIPPLE EFFECT ===== */
+.theme-toggle::before {
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 0;
+  height: 0;
+  background: rgba(0, 212, 255, 0.3);
+  border-radius: 50%;
+  transform: translate(-50%, -50%);
+  transition: width 0.6s, height 0.6s;
+}
+
+.theme-toggle:active::before {
+  width: 100px;
+  height: 100px;
+} 
 /* ===== FLOATING PARTICLES ===== */
 .particles-container {
   position: fixed;
