@@ -259,7 +259,10 @@ const HeroSection: React.FC = () => {
             <h3>Sẵn sàng chuyển đổi số?</h3>
             <p>Liên hệ ngay để được tư vấn miễn phí và demo trực tiếp</p>
             <div className="cta-buttons">
-              <button className="btn btn-primary">
+              <button 
+                className="btn btn-primary"
+                onClick={() => setCurrentSection('contact')}
+              >
                 <span>📞</span>
                 <span>Liên hệ ngay</span>
               </button>

@@ -247,7 +247,10 @@ function App() {
                       và bắt đầu hành trình chuyển đổi số cùng THADOROBOT
                     </p>
                     <div className="cta-buttons">
-                      <button className="btn btn-primary">
+                      <button 
+                        className="btn btn-primary"
+                        onClick={() => setCurrentSection('contact')}
+                      >
                         <span>📞</span>
                         Liên Hệ Ngay
                       </button>
@@ -290,6 +293,68 @@ function App() {
                   <p className="section-subtitle">
                     Hãy liên hệ với chúng tôi để được tư vấn và hỗ trợ tốt nhất
                   </p>
+                </div>
+                
+                <div className="contact-content">
+                  <div className="contact-info">
+                    <div className="contact-item">
+                      <div className="contact-icon">📞</div>
+                      <div className="contact-details">
+                        <h3>Điện thoại</h3>
+                        <p>+84 28 7300 1234</p>
+                        <p>+84 90 123 4567</p>
+                      </div>
+                    </div>
+                    
+                    <div className="contact-item">
+                      <div className="contact-icon">✉️</div>
+                      <div className="contact-details">
+                        <h3>Email</h3>
+                        <p>info@thadorobot.com</p>
+                        <p>support@thadorobot.com</p>
+                      </div>
+                    </div>
+                    
+                    <div className="contact-item">
+                      <div className="contact-icon">📍</div>
+                      <div className="contact-details">
+                        <h3>Địa chỉ</h3>
+                        <p>123 Đường ABC, Quận 1</p>
+                        <p>TP. Hồ Chí Minh, Việt Nam</p>
+                      </div>
+                    </div>
+                    
+                    <div className="contact-item">
+                      <div className="contact-icon">🕒</div>
+                      <div className="contact-details">
+                        <h3>Giờ làm việc</h3>
+                        <p>Thứ 2 - Thứ 6: 8:00 - 18:00</p>
+                        <p>Thứ 7: 8:00 - 12:00</p>
+                      </div>
+                    </div>
+                  </div>
+                  
+                  <div className="contact-form">
+                    <h3>Gửi tin nhắn cho chúng tôi</h3>
+                    <form>
+                      <div className="form-group">
+                        <input type="text" placeholder="Họ và tên" required />
+                      </div>
+                      <div className="form-group">
+                        <input type="email" placeholder="Email" required />
+                      </div>
+                      <div className="form-group">
+                        <input type="tel" placeholder="Số điện thoại" />
+                      </div>
+                      <div className="form-group">
+                        <textarea placeholder="Nội dung tin nhắn" rows={4} required></textarea>
+                      </div>
+                      <button type="submit" className="btn btn-primary">
+                        <span>📤</span>
+                        <span>Gửi tin nhắn</span>
+                      </button>
+                    </form>
+                  </div>
                 </div>
                 
                 <div className="stats">

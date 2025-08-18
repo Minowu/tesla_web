@@ -5,14 +5,15 @@ const Navigation: React.FC = () => {
   const { currentSection, setCurrentSection } = useAppStore();
   const [isScrolled, setIsScrolled] = useState(false);
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
+  const [searchQuery, setSearchQuery] = useState('');
+  const [isSearchExpanded, setIsSearchExpanded] = useState(false);
 
   const menuItems = [
     { id: 'home', label: 'Trang chủ', icon: '🏠' },
     { id: 'products', label: 'Sản phẩm', icon: '🤖' },
     { id: 'solutions', label: 'Giải pháp', icon: '💡' },
     { id: 'technology', label: 'Công nghệ', icon: '⚡' },
-    { id: 'about', label: 'Về chúng tôi', icon: 'ℹ️' },
-    { id: 'contact', label: 'Liên hệ', icon: '📞' }
+    { id: 'about', label: 'Về chúng tôi', icon: 'ℹ️' }
   ];
 
   useEffect(() => {
@@ -31,6 +32,33 @@ const Navigation: React.FC = () => {
 
   const toggleMobileMenu = () => {
     setIsMobileMenuOpen(!isMobileMenuOpen);
+  };
+
+  // Search functionality
+  const handleSearch = () => {
+    if (searchQuery.trim()) {
+      // Chuyển đến solutions section để hiển thị kết quả tìm kiếm
+      setCurrentSection('solutions');
+      setSearchQuery('');
+      setIsSearchExpanded(false);
+    }
+  };
+
+  const handleSearchKeyPress = (e: React.KeyboardEvent) => {
+    if (e.key === 'Enter') {
+      handleSearch();
+    }
+  };
+
+  const handleSearchFocus = () => {
+    setIsSearchExpanded(true);
+  };
+
+  const handleSearchBlur = () => {
+    // Delay để người dùng có thể click vào nút search
+    setTimeout(() => {
+      setIsSearchExpanded(false);
+    }, 200);
   };
 
   return (
@@ -62,12 +90,45 @@ const Navigation: React.FC = () => {
           <div className="nav-cta">
             <button
               className="cta-button"
-              onClick={() => handleNavClick('contact')}
+              onClick={() => setCurrentSection('contact')}
             >
-              <span>🚀</span>
-              <span>Bắt đầu ngay</span>
+              <span>📞</span>
+              <span>Liên hệ</span>
             </button>
           </div>
+          
+          {/* Navigation Controls */}
+          <div className="nav-controls">
+            {/* Language Toggle */}     
+            <button className="control-button language-toggle" title="Chuyển đổi ngôn ngữ">
+              <span>🇻🇳</span>
+            </button>
+            {/* Theme Toggle */}
+            <button className="control-button theme-toggle" title="Chuyển đổi chế độ">
+              <span>🌙</span>
+            </button>
+            {/* Search Icon with Expandable Input */}
+            <div className="search-container">
+              <input
+                type="text"
+                placeholder="Tìm kiếm giải pháp..."
+                value={searchQuery}
+                onChange={(e) => setSearchQuery(e.target.value)}
+                onKeyPress={handleSearchKeyPress}
+                onFocus={handleSearchFocus}
+                onBlur={handleSearchBlur}
+                className={`search-input ${isSearchExpanded ? 'expanded' : ''}`}
+              />
+              <button 
+                className="control-button search-toggle" 
+                title="Tìm kiếm"
+                onClick={handleSearch}
+              >
+                <span>🔍</span>
+              </button>
+            </div>
+          </div>
+          
 
           {/* Mobile Menu Button */}
           <button
@@ -87,6 +148,33 @@ const Navigation: React.FC = () => {
       {isMobileMenuOpen && (
         <div className="mobile-menu-overlay" onClick={() => setIsMobileMenuOpen(false)}>
           <div className="mobile-menu-content" onClick={(e) => e.stopPropagation()}>
+            {/* Mobile Controls */}
+            <div className="mobile-controls">
+              <div className="search-container mobile">
+                <input
+                  type="text"
+                  placeholder="Tìm kiếm..."
+                  value={searchQuery}
+                  onChange={(e) => setSearchQuery(e.target.value)}
+                  onKeyPress={handleSearchKeyPress}
+                  className="search-input mobile"
+                />
+                <button 
+                  className="control-button search-toggle" 
+                  title="Tìm kiếm"
+                  onClick={handleSearch}
+                >
+                  <span>🔍</span>
+                </button>
+              </div>
+              <button className="control-button language-toggle" title="Chuyển đổi ngôn ngữ">
+                <span>🇻🇳</span>
+              </button>
+              <button className="control-button theme-toggle" title="Chuyển đổi chế độ">
+                <span>🌙</span>
+              </button>
+            </div>
+            
             <ul className="mobile-nav-menu">
               {menuItems.map((item) => (
                 <li key={item.id}>
@@ -104,11 +192,11 @@ const Navigation: React.FC = () => {
             <div style={{ textAlign: 'center', marginTop: '2rem' }}>
               <button
                 className="cta-button"
-                onClick={() => handleNavClick('contact')}
+                onClick={() => setCurrentSection('contact')}
                 style={{ width: '100%' }}
               >
-                <span>🚀</span>
-                <span>Bắt đầu ngay</span>
+                <span>📞</span>
+                <span>Liên hệ</span>
               </button>
             </div>
           </div>
