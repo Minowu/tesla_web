@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { useAppStore } from '../store/appStore';
+import LogoCarousel from './LogoCarousel';  
 
 const AboutSection: React.FC = () => {
   const { setCurrentSection } = useAppStore();
@@ -47,7 +48,7 @@ const AboutSection: React.FC = () => {
 
   const team = [
     {
-      name: 'Nguyễn Văn A',
+      name: 'Nguyễn Văn S',
       position: 'CEO & Founder',
       avatar: '👨‍💼',
       description: 'Chuyên gia robot với 20+ năm kinh nghiệm trong lĩnh vực tự động hóa'
@@ -64,29 +65,23 @@ const AboutSection: React.FC = () => {
       avatar: '👨‍🔬',
       description: 'Chuyên gia nghiên cứu và phát triển sản phẩm robot công nghiệp'
     },
-    {
-      name: 'Phạm Thị D',
-      position: 'Head of Sales',
-      avatar: '👩‍💼',
-      description: 'Chuyên gia tư vấn giải pháp tự động hóa cho doanh nghiệp'
-    }
   ];
 
   const values = [
     {
       icon: '🎯',
       title: 'Sứ mệnh',
-      description: 'Đưa công nghệ robot tiên tiến vào Việt Nam, giúp doanh nghiệp tăng hiệu quả sản xuất và cạnh tranh toàn cầu.'
+      description: 'Sáng tạo và phát triển công nghệ để mang lại tương lai tốt đẹp, ấm no và hạnh phúc hơn cho xã hội.'
     },
     {
       icon: '👁️',
       title: 'Tầm nhìn',
-      description: 'Trở thành công ty hàng đầu Đông Nam Á về giải pháp tự động hóa và robot thông minh.'
+      description: 'Trở thành công ty hàng đầu Đông Nam Á về lĩnh vực Robot và Nhà máy thông minh.'
     },
     {
       icon: '💎',
       title: 'Giá trị cốt lõi',
-      description: 'Đổi mới sáng tạo, chất lượng cao, dịch vụ tận tâm, và phát triển bền vững.'
+      description: 'Đổi mới sáng tạo, phát triển bền vững để phục vụ con người và xã hội.'
     }
   ];
 
@@ -121,7 +116,7 @@ const AboutSection: React.FC = () => {
             </div>
           ))}
         </div>
-
+          
         {/* Timeline */}
         <div className="about-timeline">
           <h3 className="timeline-title">Hành trình phát triển</h3>
@@ -152,7 +147,7 @@ const AboutSection: React.FC = () => {
             ))}
           </div>
         </div>
-
+        <LogoCarousel />
         {/* CTA */}
         <div className="about-cta">
           <div className="cta-content">
