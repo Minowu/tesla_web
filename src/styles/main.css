@@ -6,9 +6,9 @@
 /* ===== CSS VARIABLES - ULTRA MODERN TECH THEME ===== */
 :root {
   /* Color Palette - Ultra Modern Tech */
-  --primary: #00d4ff;
-  --primary-dark: #0099cc;
-  --primary-light: #33ddff;
+  --primary: #1c9b9b;
+  --primary-dark: #1c9b9b30;
+  --primary-light: #1c9b9b;
   --secondary: #ff6b35;
   --accent: #ff6b35;
   --accent-purple: #8b5cf6;
@@ -35,7 +35,7 @@
   --shadow-xl: 0 16px 64px rgba(0, 0, 0, 0.6);
   
   /* Gradients */
-  --gradient-primary: linear-gradient(135deg, #00d4ff 0%, #0099cc 100%);
+  --gradient-primary: linear-gradient(135deg, #5c9191cb 0%, #23b8b8 100%);
   --gradient-secondary: linear-gradient(135deg, #ff6b35 0%, #ff8c42 100%);
   --gradient-accent: linear-gradient(135deg, #8b5cf6 0%, #a855f7 100%);
   --gradient-bg: linear-gradient(135deg, #0a0a0f 0%, #1a1a2e 50%, #16213e 100%);
