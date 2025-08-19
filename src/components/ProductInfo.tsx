@@ -1,294 +1,450 @@
-import React, { useState, useEffect } from 'react';
-import { Canvas } from '@react-three/fiber';
-import { OrbitControls, Environment, Float } from '@react-three/drei';
-import { useGLTF } from '@react-three/drei';
-import { useAppStore } from '../store/appStore';
+import type React from "react"
+import { useState } from "react"
+import { motion, AnimatePresence } from "framer-motion"
+import { ProductCard } from "./ProductCard"
 
-// 3D Model Components
-const RobotModel = () => {
-  const [error, setError] = useState(false);
+export interface Product {
+    id: string
+    name: string
+    image: string
+    price: number
+    description?: string
+}
   
-  if (error) {
-    return <ModelFallback color="#00d4ff" />;
+export interface Category {
+    id: string
+    name: string
+    products: Product[]
   }
   
-  try {
-    const { scene } = useGLTF('/models/logistic_robot_test__2.glb');
-    return <primitive object={scene} scale={0.8} />;
-  } catch (error) {
-    console.warn('Error loading Robot Model:', error);
-    setError(true);
-    return <ModelFallback color="#00d4ff" />;
+  export interface Brand {
+    id: string
+    name: string
+    categories: Category[]
   }
-};
 
-const AGVModel = () => {
-  const [error, setError] = useState(false);
+  // Mock data
   
-  if (error) {
-    return <ModelFallback color="#ff6b35" />;
-  }
-  
-  try {
-    const { scene } = useGLTF('/models/industrial_-_3d_agv__trolley_-_omrom.glb');
-    return <primitive object={scene} scale={0.8} />;
-  } catch (error) {
-    console.warn('Error loading AGV Model:', error);
-    setError(true);
-    return <ModelFallback color="#ff6b35" />;
-  }
-};
-
-const LaserModel = () => {
-  const [error, setError] = useState(false);
-  
-  if (error) {
-    return <ModelFallback color="#8b5cf6" />;
-  }
-  
-  try {
-    const { scene } = useGLTF('/models/simulation_laser_cutting_robot_systems.glb');
-    return <primitive object={scene} scale={0.8} />;
-  } catch (error) {
-    console.warn('Error loading Laser Model:', error);
-    setError(true);
-    return <ModelFallback color="#8b5cf6" />;
-  }
-};
-
-const ModelFallback = ({ color }: { color: string }) => (
-  <mesh>
-    <boxGeometry args={[2, 2, 2]} />
-    <meshStandardMaterial color={color} />
-  </mesh>
-);
-
-const ProductInfo: React.FC = () => {
-  const { setCurrentSection } = useAppStore();
-  const [activeProduct, setActiveProduct] = useState(0);
-
-  const products = [
+export const mockBrands: Brand[] = [
     {
-      id: 'industrial-robot',
-      name: 'Robot Công nghiệp',
-      category: 'Industrial Robotics',
-      description: 'Robot công nghiệp 6 trục với độ chính xác cao, phù hợp cho các ứng dụng lắp ráp, hàn, và xử lý vật liệu.',
-      features: [
-        'Độ chính xác ±0.02mm',
-        'Tải trọng 6-20kg',
-        'Tầm với 1.4-2.1m',
-        'Tích hợp AI Vision',
-        'Giao diện người dùng thân thiện',
-        'Bảo trì dễ dàng'
+      id: "irayple",
+      name: "Irayple",
+      categories: [
+        {
+          id: "robot",
+          name: "robot",
+          products: [
+            {
+              id: "irayple-robot-1",
+              name: "Irayple Robot 1",
+              image: "/placeholder.svg?height=200&width=200",
+              price: 999,
+              description: "Latest iPhone with A17 Pro chip",
+            },
+            {
+              id: "irayple-robot-2",
+              name: "Irayple Robot 2",
+              image: "/placeholder.svg?height=200&width=200",
+              price: 799,
+              description: "Standard iPhone 15 model",
+            },
+            {
+              id: "irayple-robot-3",
+              name: "Irayple Robot 3",
+              image: "/placeholder.svg?height=200&width=200",
+              price: 699,
+              description: "Previous generation iPhone",
+            },
+          ],
+        },
+        {
+          id: "irayple-arm",
+          name: "Irayple Arm",
+          products: [
+            {
+              id: "irayple-arm-1",
+              name: 'Irayple Arm 1',
+              image: "/placeholder.svg?height=200&width=200",
+              price: 2499,
+              description: "Professional laptop with M3 Max chip",
+            },
+            {
+              id: "irayple-arm-2",
+              name: 'Irayple Arm 2',
+              image: "/placeholder.svg?height=200&width=200",
+              price: 1299,
+              description: "Lightweight laptop with M2 chip",
+            },
+          ],
+        },
       ],
-      specs: {
-        'Tốc độ': '2.5 m/s',
-        'Độ chính xác': '±0.02mm',
-        'Tải trọng': '6-20kg',
-        'Tầm với': '1.4-2.1m',
-        'Nguồn điện': '220V/380V',
-        'Bảo hành': '24 tháng'
-      },
-      model: RobotModel,
-      color: '#00d4ff',
-      icon: '🤖'
     },
     {
-      id: 'agv-system',
-      name: 'Hệ thống AGV',
-      category: 'Automated Guided Vehicle',
-      description: 'Xe tự hành AGV thông minh cho vận chuyển và logistics trong nhà máy, kho bãi.',
-      features: [
-        'Điều hướng SLAM',
-        'Tải trọng 500-2000kg',
-        'Tốc độ 1.5 m/s',
-        'Pin Li-ion 8-12h',
-        'Hệ thống an toàn đa lớp',
-        'Tích hợp WMS/ERP'
+      id: "kuka",
+      name: "Kuka",
+      categories: [
+        {
+          id: "robot",
+          name: "robot",   
+          products: [
+            {
+              id: "kuka-robot-1",
+              name: "Kuka Robot 1",
+              image: "/placeholder.svg?height=200&width=200",
+              price: 1199,
+              description: "Premium Android phone with S Pen",
+            },
+            {
+              id: "kuka-robot-2",
+              name: "Kuka Robot 2",
+              image: "/placeholder.svg?height=200&width=200",
+              price: 799,
+              description: "Standard Galaxy S24 model",
+            },
+            {
+              id: "kuka-robot-3",
+              name: "Kuka Robot 3",
+              image: "/placeholder.svg?height=200&width=200",
+              price: 449,
+              description: "Mid-range Galaxy phone",
+            },
+          ],
+        },
+        {
+          id: "kuka-arm",
+          name: "Kuka Arm",
+          products: [
+            {
+              id: "kuka-arm-1",
+              name: "Kuka Arm 1",
+              image: "/placeholder.svg?height=200&width=200",
+              price: 799,
+              description: "Premium Android tablet",
+            },
+            {
+              id: "kuka-arm-2",
+              name: "Kuka Arm 2",
+              image: "/placeholder.svg?height=200&width=200",
+              price: 229,
+              description: "Affordable Android tablet",
+            },
+          ],
+        },
       ],
-      specs: {
-        'Tốc độ': '1.5 m/s',
-        'Tải trọng': '500-2000kg',
-        'Pin': 'Li-ion 8-12h',
-        'Độ chính xác': '±10mm',
-        'Nhiệt độ': '-10°C ~ 50°C',
-        'Bảo hành': '18 tháng'
-      },
-      model: AGVModel,
-      color: '#ff6b35',
-      icon: '🚗'
     },
     {
-      id: 'laser-cutting',
-      name: 'Máy Cắt Laser',
-      category: 'Laser Cutting System',
-      description: 'Hệ thống cắt laser CNC tự động với công nghệ fiber laser, phù hợp cho sản xuất công nghiệp.',
-      features: [
-        'Công suất 1-6kW',
-        'Độ chính xác ±0.1mm',
-        'Tốc độ cắt cao',
-        'Tự động thay đổi lens',
-        'Hệ thống làm mát',
-        'Giao diện CNC'
+      id: "abb",
+      name: "ABB",
+      categories: [
+        {
+          id: "robot",
+          name: "robot",
+          products: [
+            {
+              id: "abb-robot-1",
+              name: "ABB Robot 1",
+              image: "/placeholder.svg?height=200&width=200",
+              price: 999,
+              description: "Premium ultrabook",
+            },
+            {
+              id: "abb-robot-2",
+              name: "ABB Robot 2",
+              image: "/placeholder.svg?height=200&width=200",
+              price: 649,
+              description: "Everyday laptop",
+            },
+          ],
+        },
+        {
+          id: "abb-arm",
+          name: "ABB Arm",
+          products: [
+            {
+              id: "abb-arm-1",
+              name: "ABB Arm 1",
+              image: "/placeholder.svg?height=200&width=200",
+              price: 799,
+              description: "Business desktop computer",
+            },
+            {
+              id: "abb-arm-2",
+              name: "ABB Arm 2",
+              image: "/placeholder.svg?height=200&width=200",
+              price: 549,
+              description: "Home desktop computer",
+            },
+          ],
+        },
       ],
-      specs: {
-        'Công suất': '1-6kW',
-        'Độ chính xác': '±0.1mm',
-        'Tốc độ cắt': '50m/min',
-        'Kích thước bàn': '1500x3000mm',
-        'Độ dày tối đa': '25mm',
-        'Bảo hành': '12 tháng'
-      },
-      model: LaserModel,
-      color: '#8b5cf6',
-      icon: '⚡'
+    },
+    {
+      id: "tma",
+      name: "TMA",
+      categories: [
+        {
+          id: "robot",
+          name: "robot",
+          products: [
+            {
+              id: "tma-robot-1",
+              name: "TMA Robot 1",
+              image: "/placeholder.svg?height=200&width=200",
+              price: 399,
+              description: "Premium noise-canceling headphones",
+            },
+            {
+              id: "tma-robot-2",
+              name: "TMA Robot 2",
+              image: "/placeholder.svg?height=200&width=200",
+              price: 279,
+              description: "True wireless earbuds",
+            },
+          ],
+        },
+        {
+          id: "tma-arm",
+          name: "TMA Arm",
+          products: [
+            {
+              id: "tma-arm-1",
+              name: "TMA Arm 1",
+              image: "/placeholder.svg?height=200&width=200",
+              price: 3899,
+              description: "Professional mirrorless camera",
+            },
+            {
+              id: "tma-arm-2",
+              name: "TMA Arm 2",
+              image: "/placeholder.svg?height=200&width=200",
+              price: 1799,
+              description: "Cinema line camera",
+            },
+            {
+              id: "tma-arm-3",
+              name: "TMA Arm 3",
+              image: "/placeholder.svg?height=200&width=200",
+              price: 899,
+              description: "APS-C mirrorless camera",
+            },
+          ],
+        },
+      ],
+    },
+  ]
+
+
+export default function ProductInfo() {
+  const [selectedBrand, setSelectedBrand] = useState<Brand | null>(null)
+  const [selectedCategory, setSelectedCategory] = useState<Category | null>(null)
+
+  // Tạo all brands và all categories
+  const allBrands = { id: "all", name: "Tất cả hãng", categories: [] }
+  const allCategories = { id: "all", name: "Tất cả danh mục", products: [] }
+
+  // Lấy tất cả sản phẩm từ tất cả hãng
+  const getAllProducts = () => {
+    const allProducts: Product[] = []
+    mockBrands.forEach(brand => {
+      brand.categories.forEach(category => {
+        allProducts.push(...category.products)
+      })
+    })
+    return allProducts
+  }
+
+  // Lấy tất cả danh mục từ tất cả hãng (gộp các danh mục trùng tên)
+  const getAllCategories = () => {
+    const categoryMap = new Map<string, Category>()
+    
+    mockBrands.forEach(brand => {
+      brand.categories.forEach(category => {
+        if (categoryMap.has(category.name)) {
+          // Nếu danh mục đã tồn tại, gộp sản phẩm
+          const existingCategory = categoryMap.get(category.name)!
+          existingCategory.products.push(...category.products)
+        } else {
+          // Nếu danh mục chưa tồn tại, tạo mới
+          categoryMap.set(category.name, {
+            id: category.name, // Sử dụng name làm id để gộp
+            name: category.name,
+            products: [...category.products]
+          })
+        }
+      })
+    })
+    
+    return Array.from(categoryMap.values())
+  }
+
+  // Lấy sản phẩm dựa trên brand và category được chọn
+  const getCurrentProducts = () => {
+    if (!selectedBrand || selectedBrand.id === "all") {
+      if (!selectedCategory || selectedCategory.id === "all") {
+        return getAllProducts()
+      } else {
+        // Lấy sản phẩm từ category cụ thể trong tất cả hãng
+        const products: Product[] = []
+        mockBrands.forEach(brand => {
+          brand.categories.forEach(category => {
+            if (category.name === selectedCategory.name) {
+              products.push(...category.products)
+            }
+          })
+        })
+        return products
+      }
+    } else {
+      if (!selectedCategory || selectedCategory.id === "all") {
+        // Lấy tất cả sản phẩm từ brand cụ thể
+        const products: Product[] = []
+        selectedBrand.categories.forEach(category => {
+          products.push(...category.products)
+        })
+        return products
+      } else {
+        // Lấy sản phẩm từ brand và category cụ thể
+        return selectedCategory.products
+      }
     }
-  ];
+  }
 
-  useEffect(() => {
-    const interval = setInterval(() => {
-      setActiveProduct((prev) => (prev + 1) % products.length);
-    }, 8000);
+  const handleBrandChange = (brand: Brand | null) => {
+    setSelectedBrand(brand)
+    setSelectedCategory(null)
+  }
 
-    return () => clearInterval(interval);
-  }, [products.length]);
+  const handleCategoryChange = (category: Category | null) => {
+    setSelectedCategory(category)
+  }
 
-  const currentProduct = products[activeProduct];
-  const ModelComponent = currentProduct?.model;
-
-  if (!currentProduct || !ModelComponent) {
-    return (
-      <section className="products-section">
-        <div className="container">
-          <div className="section-header">
-            <h2 className="section-title">Sản phẩm Công nghệ</h2>
-            <p className="section-subtitle">
-              Khám phá các sản phẩm robot và tự động hóa tiên tiến của chúng tôi
-            </p>
-          </div>
-          <div className="loading-3d">
-            <div className="spinner"></div>
-            <p>Đang tải sản phẩm...</p>
-          </div>
-        </div>
-      </section>
-    );
+  const handleViewDetails = (product: Product) => {
+    alert(`Xem chi tiết sản phẩm: ${product.name}`)
   }
 
   return (
-    <section className="products-section">
-      <div className="container">
-        <div className="section-header">
-          <h2 className="section-title">Sản phẩm Công nghệ</h2>
-          <p className="section-subtitle">
-            Khám phá các sản phẩm robot và tự động hóa tiên tiến của chúng tôi
-          </p>
-        </div>
-
-        <div className="product-showcase">
-          <div className="product-visual">
-            <div className="product-3d-container">
-              <Canvas
-                camera={{ position: [0, 0, 8], fov: 50 }}
-                onError={(error) => console.warn('Canvas error:', error)}
-              >
-                <ambientLight intensity={0.6} />
-                <pointLight position={[10, 10, 10]} intensity={1} />
-                <pointLight position={[-10, -10, -10]} intensity={0.5} />
-                <Float
-                  speed={2}
-                  rotationIntensity={0.5}
-                  floatIntensity={0.5}
-                >
-                  <ModelComponent />
-                </Float>
-                <OrbitControls 
-                  enableZoom={true}
-                  enablePan={false}
-                  enableRotate={true}
-                  zoomSpeed={0.5}
-                  rotateSpeed={0.5}
-                  minDistance={4}
-                  maxDistance={12}
-                />
-                <Environment preset="city" />
-              </Canvas>
-            </div>
-            
-            <div className="product-indicators">
-              {products.map((product, index) => (
-                <button
-                  key={product.id}
-                  className={`product-indicator ${activeProduct === index ? 'active' : ''}`}
-                  onClick={() => setActiveProduct(index)}
-                  style={{ '--indicator-color': product.color } as any}
-                >
-                  <span className="indicator-icon">{product.icon}</span>
-                  <span className="indicator-label">{product.name}</span>
-                </button>
-              ))}
-            </div>
-          </div>
-
-          <div className="product-details">
-            <div className="product-header">
-              <div className="product-badge" style={{ '--badge-color': currentProduct.color } as any}>
-                <span>{currentProduct.icon}</span>
-                <span>{currentProduct.category}</span>
-              </div>
-              
-              <h3 className="product-name">{currentProduct.name}</h3>
-              <p className="product-description">{currentProduct.description}</p>
-            </div>
-
-            <div className="product-content">
-              <div className="product-features">
-                <h4>Tính năng nổi bật</h4>
-                <ul>
-                  {currentProduct.features.map((feature, index) => (
-                    <li key={index}>
-                      <span className="feature-icon">✓</span>
-                      <span>{feature}</span>
-                    </li>
-                  ))}
-                </ul>
-              </div>
-
-              <div className="product-specs">
-                <h4>Thông số kỹ thuật</h4>
-                <div className="specs-grid">
-                  {Object.entries(currentProduct.specs).map(([key, value]) => (
-                    <div key={key} className="spec-item">
-                      <span className="spec-label">{key}</span>
-                      <span className="spec-value">{value}</span>
-                    </div>
-                  ))}
-                </div>
-              </div>
-            </div>
-
-            <div className="product-actions">
-              <button 
-                className="btn btn-primary"
-                onClick={() => setCurrentSection('contact')}
-              >
-                <span>📞</span>
-                <span>Tư vấn ngay</span>
-              </button>
-              
-              <button 
-                className="btn btn-secondary"
-                onClick={() => setCurrentSection('solutions')}
-              >
-                <span>💡</span>
-                <span>Xem giải pháp</span>
-              </button>
-            </div>
-          </div>
+    <div className="product-info-container">
+      {/* Brand Tabs */}
+      <div className="brand-tabs">
+        <div className="brand-tabs-wrapper">
+          {/* All Brands Tab */}
+          <button
+            onClick={() => handleBrandChange(null)}
+            className={`brand-tab ${!selectedBrand ? "active" : "inactive"}`}
+          >
+            {allBrands.name}
+          </button>
+          
+          {/* Individual Brand Tabs */}
+          {mockBrands.map((brand) => (
+            <button
+              key={brand.id}
+              onClick={() => handleBrandChange(brand)}
+              className={`brand-tab ${selectedBrand?.id === brand.id ? "active" : "inactive"}`}
+            >
+              {brand.name}
+            </button>
+          ))}
         </div>
       </div>
-    </section>
-  );
-};
 
-export default ProductInfo; 
+      <div className="main-layout">
+        {/* Category Sidebar */}
+        <AnimatePresence mode="wait">
+            <motion.div
+             key={selectedBrand?.id || 'all'}
+             initial={{ opacity: 0, x: -20 }}
+             animate={{ opacity: 1, x: 0 }}
+             exit={{ opacity: 0, x: 20 }}
+             transition={{ duration: 0.3 }}
+             className="category-sidebar"
+           >
+            <div className="category-sidebar-content">
+              <h3 className="category-title">Danh mục</h3>
+              <div className="category-buttons">
+                {/* All Categories Tab */}
+                <button
+                  onClick={() => handleCategoryChange(null)}
+                  className={`category-button ${!selectedCategory ? "active" : "inactive"}`}
+                >
+                  {allCategories.name}
+                  <span className="category-product-count">
+                    {getCurrentProducts().length} sản phẩm
+                  </span>
+                </button>
+                
+                {/* Individual Category Tabs */}
+                {(selectedBrand ? selectedBrand.categories : getAllCategories()).map((category) => (
+                  <button
+                    key={category.id}
+                    onClick={() => handleCategoryChange(category)}
+                    className={`category-button ${selectedCategory?.id === category.id ? "active" : "inactive"}`}
+                  >
+                    {category.name}
+                                         <span className="category-product-count">
+                       {selectedBrand 
+                         ? category.products.length 
+                         : mockBrands.reduce((total, brand) => {
+                             const cat = brand.categories.find(c => c.name === category.name)
+                             return total + (cat ? cat.products.length : 0)
+                           }, 0)
+                       } sản phẩm
+                     </span>
+                  </button>
+                ))}
+              </div>
+            </div>
+          </motion.div>
+        </AnimatePresence>
+
+        {/* Main Content */}
+        <div className="main-content">
+          {/* Products Grid */}
+          <AnimatePresence mode="wait">
+                         <motion.div
+               key={`${selectedBrand?.id || 'all'}-${selectedCategory?.id || 'all'}`}
+               initial={{ opacity: 0, y: 20 }}
+               animate={{ opacity: 1, y: 0 }}
+               exit={{ opacity: 0, y: -20 }}
+               transition={{ duration: 0.4 }}
+             >
+              <div className="content-header">
+                <h2 className="content-title">
+                  {selectedBrand ? selectedBrand.name : allBrands.name} - {selectedCategory ? selectedCategory.name : allCategories.name}
+                </h2>
+                <p className="content-subtitle">{getCurrentProducts().length} sản phẩm</p>
+              </div>
+
+              <div className="products-grid">
+                {getCurrentProducts().map((product, index) => (
+                  <motion.div
+                    key={product.id}
+                    initial={{ opacity: 0, y: 20 }}
+                    animate={{ opacity: 1, y: 0 }}
+                    transition={{ duration: 0.3, delay: index * 0.1 }}
+                  >
+                    <ProductCard product={product} onViewDetails={handleViewDetails} />
+                  </motion.div>
+                ))}
+              </div>
+            </motion.div>
+          </AnimatePresence>
+
+          {/* Empty State */}
+          {getCurrentProducts().length === 0 && (
+            <motion.div initial={{ opacity: 0 }} animate={{ opacity: 1 }} className="empty-state">
+              <div className="empty-state-icon">📦</div>
+              <h3 className="empty-state-title">Không có sản phẩm</h3>
+              <p className="empty-state-description">
+                {selectedBrand && selectedCategory 
+                  ? `Không có sản phẩm nào trong ${selectedBrand.name} - ${selectedCategory.name}`
+                  : "Không có sản phẩm nào được tìm thấy với bộ lọc hiện tại."
+                }
+              </p>
+            </motion.div>
+          )}
+        </div>
+      </div>
+    </div>
+  )
+}
