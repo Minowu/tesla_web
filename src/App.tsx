@@ -13,6 +13,7 @@ import { ErrorBoundary } from './components/ErrorBoundary';
 import Solutions3DViewer from './components/Solutions3DViewer';
 import { useAppStore } from './store/appStore';
 import './styles/main.css';
+import logo from '../1.png';
 
 function App() {
   const { currentSection, setCurrentSection } = useAppStore();
@@ -39,6 +40,9 @@ function App() {
   return (
     <ErrorBoundary>
       <div className="app">
+        <div className="logo-bg">
+          <img src={logo} alt="Logo" />
+        </div>
         {/* Ultra Modern Tech Background Effects */}
         <div className="particles-container">
           <div className="particle"></div>

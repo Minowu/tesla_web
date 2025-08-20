@@ -61,7 +61,6 @@ const HeroSection: React.FC = () => {
   return (
     <section className="hero">
       <div className="hero-background">
-        <div className="hero-grid"></div>
         <div className="hero-particles">
           {[...Array(30)].map((_, i) => (
             <div
