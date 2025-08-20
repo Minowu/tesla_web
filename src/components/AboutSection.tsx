@@ -89,7 +89,7 @@ const AboutSection: React.FC = () => {
     <section className="about-section">
       <div className="container">
         <div className="section-header">
-          <h2 className="section-title">Về Thadorobot</h2>
+          <h2 className="section-title">Về <span style={{color: 'var(--primary)'}} className="text-company">Thadorobot</span></h2>
           <p className="section-subtitle">
             Hơn 15 năm kinh nghiệm trong lĩnh vực tự động hóa và robot công nghiệp
           </p>

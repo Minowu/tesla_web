@@ -95,7 +95,7 @@ const Navigation: React.FC = () => {
           {/* Logo */}
           <div className="nav-logo" onClick={() => handleNavClick('home')}>
             <img src="/1.png" alt="THADOROBOT" />
-            <h2>THADOROBOT</h2>
+            <h2 className="text-company">THADOROBOT</h2>
           </div>
 
           {/* Desktop Menu */}

@@ -134,7 +134,7 @@ useEffect(() => {
       <div className="container">
         <div className="section-header">
           <h2 className="section-title">
-            Giải Pháp <span className="text-gradient">THADOROBOT</span>
+            Giải Pháp <span className="text-company">THADOROBOT</span>
           </h2>
           <p className="section-subtitle">
             Khám phá các hệ thống và dịch vụ thông minh giúp doanh nghiệp của bạn phát triển bền vững

@@ -1,5 +1,7 @@
 /* ===== THADOROBOT COMPONENTS - MODERN TECH DESIGN ===== */
-
+.text-company{
+  color: var(--primary);
+}
 /* ===== NAVIGATION - ULTRA MODERN ===== */
 .navigation {
   position: fixed;
