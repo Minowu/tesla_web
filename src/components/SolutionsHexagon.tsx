@@ -1,5 +1,5 @@
 import React, { useState, useRef, useEffect } from 'react';
-
+import logo from '../../logo_white.png';
 // Solutions Data based on the image
 const solutions = [
   {
@@ -91,7 +91,7 @@ useEffect(() => {
     const centralRect = centralRef.current.getBoundingClientRect();
     const cx = centralRect.left - containerRect.left + centralRect.width / 2;
     const cy = centralRect.top - containerRect.top + centralRect.height / 2;
-    const logoRadius = 60; // Bán kính của logo (120px / 2)
+    const logoRadius = 90; // Bán kính của logo (120px / 2)
 
     // Clear old lines
     svgRef.current.innerHTML = '';
@@ -147,8 +147,7 @@ useEffect(() => {
           {/* Central Logo */}
           <div className="central-logo" ref={centralRef}>
             <div className="logo-circle">
-              <div className="logo-icon">⚡</div>
-              <h3>THADOROBOT</h3>
+              <img src={logo} alt="THADOROBOT" />
             </div>
           </div>
 

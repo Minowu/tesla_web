@@ -70,7 +70,7 @@
   --z-tooltip: 1060;
   
   /* Hexagon Colors */
-  --hex-color: var(--primary);
+  --hex-color: var(--bg-primary);
 }
 
 /* ===== GLOBAL STYLES - ULTRA MODERN TECH ===== */
@@ -111,21 +111,6 @@ body::before {
   animation: backgroundShift 20s ease-in-out infinite;
 }
 
-/* ===== ANIMATED GRID BACKGROUND ===== */
-body::after {
-  content: '';
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background-image: 
-    linear-gradient(rgba(239, 243, 243, 0.03) 1px, transparent 1px),
-    linear-gradient(90deg, rgba(0, 212, 255, 0.03) 1px, transparent 1px);
-  background-size: 60px 60px;
-  animation: gridMove 30s linear infinite;
-  z-index: -2;
-}
 
 
 /* ===== LIGHT THEME STYLES ===== */
@@ -150,6 +135,7 @@ body.light-theme {
   --shadow-xl: 0 16px 64px rgba(0, 0, 0, 0.25) !important;
   
   --gradient-bg: linear-gradient(135deg, #ffffff 0%, #f8fafc 50%, #f1f5f9 100%) !important;
+
 }
 
 body.light-theme::before {
@@ -161,11 +147,6 @@ body.light-theme::before {
     animation: none !important; /* để có thể chuyển màu background cần tắt animation */
 }
 
-body.light-theme::after {
-  background-image: 
-    linear-gradient(rgba(223, 223, 223, 0.03) 1px, transparent 1px),
-    linear-gradient(90deg, rgba(228, 229, 229, 0.03) 1px, transparent 1px);
-}
 
 body.light-theme .particle {
   background: var(--primary);
