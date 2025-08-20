@@ -145,7 +145,12 @@ const HeroSection: React.FC = () => {
             </div>
           </div>
         </div>
-
+        <div className="section-header" style={{margin: 'var(--space-3xl) 0',borderRadius: 'var(--radius-xl)',padding: 'var(--space-2xl)',background: 'var(--bg-glass)',backdropFilter: 'blur(20px)'}}>
+          <h2 className="section-title">Về <span style={{color: 'var(--primary)'}} className="text-company">Thadorobot</span></h2>
+          <p className="section-subtitle" style={{maxWidth: '1800px'}}>
+          là một doanh nghiệp hàng đầu tại Việt Nam, chuyên cung cấp các giải pháp công nghệ tiên tiến trong lĩnh vực Robot và Nhà máy thông minh. Chúng tôi hoạt động mạnh mẽ trong các lĩnh vực chủ chốt như Hệ thống đóng gói tự động (APS), Giải pháp tự động hóa nhà máy (FAS), và Giải pháp quản lý kho thông minh (SWS)
+          </p>
+        </div>
         {/* Robot Showcase Grid */}
         <div className="hero-robots-showcase">
           <h2 className="hero-robots-showcase-title"> Sản phẩm của chúng tôi</h2>

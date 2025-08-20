@@ -91,7 +91,7 @@ const AboutSection: React.FC = () => {
         <div className="section-header">
           <h2 className="section-title">Về <span style={{color: 'var(--primary)'}} className="text-company">Thadorobot</span></h2>
           <p className="section-subtitle">
-            Hơn 15 năm kinh nghiệm trong lĩnh vực tự động hóa và robot công nghiệp
+          là một doanh nghiệp hàng đầu tại Việt Nam, chuyên cung cấp các giải pháp công nghệ tiên tiến trong lĩnh vực Robot và Nhà máy thông minh. Chúng tôi hoạt động mạnh mẽ trong các lĩnh vực chủ chốt như Hệ thống đóng gói tự động (APS), Giải pháp tự động hóa nhà máy (FAS), và Giải pháp quản lý kho thông minh (SWS)
           </p>
         </div>
 
