@@ -6,6 +6,7 @@ import SolutionsHexagon from './components/SolutionsHexagon';
 import ServicesHub from './components/ServicesHub';
 import ProductInfo from './components/ProductInfo';
 import AboutSection from './components/AboutSection';
+import BlogSection   from './components/BlogSection';
 import TechnologySection from './components/TechnologySection';
 import { LoadingScreen } from './components/LoadingScreen';
 import { PerformanceMonitor } from './components/PerformanceMonitor';
@@ -96,101 +97,9 @@ function App() {
                       Những dự án thành công đã được chúng tôi triển khai
                     </p>
                   </div>
-                  
-                  <div className="case-studies-grid">
-                    <div className="case-study-card">
-                      <div className="case-study-image">🏭</div>
-                      <h3>VinFast Manufacturing</h3>
-                      <p>Triển khai hệ thống robot tự động hóa cho nhà máy sản xuất ô tô điện</p>
-                      <div className="case-study-stats">
-                        <span>+45% hiệu suất</span>
-                        <span>-30% chi phí</span>
-                      </div>
-                    </div>
-                    
-                    <div className="case-study-card">
-                      <div className="case-study-image">📡</div>
-                      <h3>Viettel 5G Network</h3>
-                      <p>Hệ thống quản lý và bảo trì tự động cho mạng lưới 5G toàn quốc</p>
-                      <div className="case-study-stats">
-                        <span>99.9% uptime</span>
-                        <span>24/7 monitoring</span>
-                      </div>
-                    </div>
-                    
-                    <div className="case-study-card">
-                      <div className="case-study-image">💻</div>
-                      <h3>FPT Digital Factory</h3>
-                      <p>Nhà máy thông minh với AI và IoT cho sản xuất phần mềm</p>
-                      <div className="case-study-stats">
-                        <span>+60% productivity</span>
-                        <span>Real-time AI</span>
-                      </div>
-                    </div>
-                    
-                    <div className="case-study-card">
-                      <div className="case-study-image">🏢</div>
-                      <h3>Vingroup Smart City</h3>
-                      <p>Hệ thống quản lý thành phố thông minh tích hợp robot và AI</p>
-                      <div className="case-study-stats">
-                        <span>Smart traffic</span>
-                        <span>Green energy</span>
-                      </div>
-                    </div>
-                  </div>
+                  <BlogSection limit={3} />
                 </div>
               </section>
-
-              {/* Technology Stack Section */}
-              <section className="tech-stack-section">
-                <div className="container">
-                  <div className="section-header">
-                    <h2 className="section-title">Công Nghệ Nền Tảng</h2>
-                    <p className="section-subtitle">
-                      Những công nghệ tiên tiến nhất được tích hợp trong hệ thống
-                    </p>
-                  </div>
-                  
-                  <div className="tech-stack-grid">
-                    <div className="tech-stack-item">
-                      <div className="tech-icon">🤖</div>
-                      <h3>AI & Machine Learning</h3>
-                      <p>Trí tuệ nhân tạo và học máy cho ra quyết định thông minh</p>
-                    </div>
-                    
-                    <div className="tech-stack-item">
-                      <div className="tech-icon">🌐</div>
-                      <h3>Internet of Things</h3>
-                      <p>Kết nối vạn vật để thu thập và xử lý dữ liệu thời gian thực</p>
-                    </div>
-                    
-                    <div className="tech-stack-item">
-                      <div className="tech-icon">📶</div>
-                      <h3>5G & Edge Computing</h3>
-                      <p>Công nghệ 5G và điện toán biên cho tốc độ xử lý siêu nhanh</p>
-                    </div>
-                    
-                    <div className="tech-stack-item">
-                      <div className="tech-icon">☁️</div>
-                      <h3>Cloud & Hybrid Cloud</h3>
-                      <p>Điện toán đám mây và hybrid cloud cho khả năng mở rộng linh hoạt</p>
-                    </div>
-                    
-                    <div className="tech-stack-item">
-                      <div className="tech-icon">🔗</div>
-                      <h3>Blockchain & Security</h3>
-                      <p>Blockchain và bảo mật nâng cao cho dữ liệu an toàn</p>
-                    </div>
-                    
-                    <div className="tech-stack-item">
-                      <div className="tech-icon">📊</div>
-                      <h3>Big Data Analytics</h3>
-                      <p>Phân tích dữ liệu lớn để tối ưu hóa quy trình sản xuất</p>
-                    </div>
-                  </div>
-                </div>
-              </section>
-
               {/* Services Section */}
               <section className="services-section">
                 <div className="container">
@@ -287,6 +196,18 @@ function App() {
 
           {currentSection === 'about' && (
             <AboutSection />
+          )}
+
+          {currentSection === 'blog' && (
+            <div className="container">
+              <div className="section-header">
+                <h1 className="section-title">Tất cả bài viết</h1>
+                <p className="section-subtitle">
+                  Khám phá các bài viết về lập trình và công nghệ
+                </p>
+              </div>
+              <BlogSection />
+            </div>
           )}
 
           {currentSection === 'contact' && (

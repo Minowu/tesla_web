@@ -14,7 +14,8 @@ const Navigation: React.FC = () => {
     { id: 'products', label: 'SẢN PHẨM', icon: '🤖' },
     { id: 'solutions', label: 'GIẢI PHÁP', icon: '💡' },
     { id: 'technology', label: 'CÔNG NGHỆ', icon: '⚡' },
-    { id: 'about', label: 'VỀ CHÚNG TÔI', icon: 'ℹ️' }
+    { id: 'about', label: 'VỀ CHÚNG TÔI', icon: 'ℹ️' },
+    { id: 'blog', label: 'BÀI VIẾT', icon: '💬' }
   ];
 
   useEffect(() => {
