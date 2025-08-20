@@ -10,11 +10,11 @@ const Navigation: React.FC = () => {
   const [isDarkTheme, setIsDarkTheme] = useState(true); // Thêm state cho theme
 
   const menuItems = [
-    { id: 'home', label: 'Trang chủ', icon: '🏠' },
-    { id: 'products', label: 'Sản phẩm', icon: '🤖' },
-    { id: 'solutions', label: 'Giải pháp', icon: '💡' },
-    { id: 'technology', label: 'Công nghệ', icon: '⚡' },
-    { id: 'about', label: 'Về chúng tôi', icon: 'ℹ️' }
+    { id: 'home', label: 'TRANG CHỦ', icon: '🏠' },
+    { id: 'products', label: 'SẢN PHẨM', icon: '🤖' },
+    { id: 'solutions', label: 'GIẢI PHÁP', icon: '💡' },
+    { id: 'technology', label: 'CÔNG NGHỆ', icon: '⚡' },
+    { id: 'about', label: 'VỀ CHÚNG TÔI', icon: 'ℹ️' }
   ];
 
   useEffect(() => {
@@ -106,7 +106,6 @@ const Navigation: React.FC = () => {
                   className={`nav-link ${currentSection === item.id ? 'active' : ''}`}
                   onClick={() => handleNavClick(item.id)}
                 >
-                  <span>{item.icon}</span>
                   <span>{item.label}</span>
                 </button>
               </li>
@@ -119,8 +118,8 @@ const Navigation: React.FC = () => {
               className="cta-button"
               onClick={() => setCurrentSection('contact')}
             >
-              <span>📞</span>
-              <span>Liên hệ</span>
+              <span>LIÊN HỆ</span>
+              
             </button>
           </div>
           

@@ -48,13 +48,13 @@ const HeroSection: React.FC = () => {
     },
     {
       icon: "⚡",
-      title: "Tự Động Hóa Toàn Diện",
-      description: "Giải pháp tích hợp cho mọi quy trình sản xuất và logistics"
+      title: "Camera AI nhận diện",
+      description: "Phát hiện và nhận diện vật thể với độ chính xác cao "
     },
     {
       icon: "🌐",
-      title: "Kết Nối IoT",
-      description: "Hệ thống giám sát và điều khiển thời gian thực qua IoT"
+      title: "Kho thông minh",
+      description: "Tự động hóa quy trình vận hành kho, đảm bảo độ an toàn và hiệu quả"
     }
   ];
 
