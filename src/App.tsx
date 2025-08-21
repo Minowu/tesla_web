@@ -7,6 +7,7 @@ import ServicesHub from './components/ServicesHub';
 import ProductInfo from './components/ProductInfo';
 import AboutSection from './components/AboutSection';
 import BlogSection   from './components/BlogSection';
+import BlogCarousel from './components/BlogCarousel';
 import TechnologySection from './components/TechnologySection';
 import { LoadingScreen } from './components/LoadingScreen';
 import { PerformanceMonitor } from './components/PerformanceMonitor';
@@ -88,7 +89,7 @@ function App() {
               
               {/* ===== ADDITIONAL SECTIONS TO FILL EMPTY SPACE ===== */}
               
-              {/* Case Studies Section */}
+              {/* Blog Carousel Section */}
               <section className="case-studies-section">
                 <div className="container">
                   <div className="section-header">
@@ -97,7 +98,7 @@ function App() {
                       Những dự án thành công đã được chúng tôi triển khai
                     </p>
                   </div>
-                  <BlogSection limit={3} />
+                  <BlogCarousel />
                 </div>
               </section>
               {/* Services Section */}

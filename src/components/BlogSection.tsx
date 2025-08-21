@@ -2,7 +2,7 @@ import type React from "react"
 import { Link } from "react-router-dom"
 import "../styles/components.css"
 
-const samplePosts = [
+export const samplePosts = [
     {
       id: 1,
       title: "Hợp tác tự động hóa dây chuyền lắp ráp tại Honda Việt Nam",
