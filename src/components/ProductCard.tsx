@@ -1,12 +1,17 @@
 import type React from "react"
 import { motion } from "framer-motion"
 
+interface ProductDescription {
+    line1: string
+    line2?: string
+}
+
 interface Product {
     id: string
     name: string
     image: string
-    price: number
-    description?: string
+    description?: ProductDescription
+    detail?: string
 }
 interface ProductCardProps {
   product: Product
@@ -27,8 +32,12 @@ export const ProductCard: React.FC<ProductCardProps> = ({ product, onViewDetails
       </div>
       <div className="product-content">
         <h3 className="product-name">{product.name}</h3>
-        <p className="product-price">${product.price.toLocaleString()}</p>
-        {product.description && <p className="product-description">{product.description}</p>}
+        {product.description?.line1 && (
+          <p className="product-description">{product.description.line1}</p>
+        )}
+        {product.description?.line2 && (
+          <p className="product-description">{product.description.line2}</p>
+        )}
         <button onClick={() => onViewDetails(product)} className="product-button">
           Xem chi tiết
         </button>

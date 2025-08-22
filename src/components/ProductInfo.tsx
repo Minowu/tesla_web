@@ -1,14 +1,18 @@
-import type React from "react"
 import { useState } from "react"
 import { motion, AnimatePresence } from "framer-motion"
 import { ProductCard } from "./ProductCard"
+
+export interface ProductDescription {
+    line1: string
+    line2?: string
+}
 
 export interface Product {
     id: string
     name: string
     image: string
-    price: number
-    description?: string
+    description?: ProductDescription
+    detail?: string
 }
   
 export interface Category {
@@ -31,201 +35,99 @@ export const mockBrands: Brand[] = [
       name: "Irayple",
       categories: [
         {
-          id: "robot",
-          name: "robot",
+          id: "lifting-amr",
+          name: "lifting amr",
           products: [
             {
-              id: "irayple-robot-1",
-              name: "Irayple Robot 1",
-              image: "/placeholder.svg?height=200&width=200",
-              price: 999,
-              description: "Latest iPhone with A17 Pro chip",
+              id: "irayple-rta-c060-lq",
+              name: "RTA-C060-LQ",
+              image: "/irayple_robot/latent lifting amr/RTA-C060-LQ/cover.png",
+              description: { line1: "Load capacity: 600kg", line2: "Navigation: QR code/texture/laser SLAM" },
+              detail: "Chi tiết sản phẩm RTA-C060-LQ"
             },
             {
-              id: "irayple-robot-2",
-              name: "Irayple Robot 2",
-              image: "/placeholder.svg?height=200&width=200",
-              price: 799,
-              description: "Standard iPhone 15 model",
+              id: "irayple-rta-c060-lq-2l-e-410",
+              name: "RTA-C060-LQ-2L-E-410",
+              image: "/irayple_robot/latent lifting amr/RTA-C060-LQ-2L-E-410/cover.png",
+              description: { line1: "Load capacity: 600kg", line2: "Navigation: QR code/texture/laser SLAM" },
+              detail: "Chi tiết sản phẩm RTA-C060-LQ-2L-E-410"
             },
             {
-              id: "irayple-robot-3",
-              name: "Irayple Robot 3",
-              image: "/placeholder.svg?height=200&width=200",
-              price: 699,
-              description: "Previous generation iPhone",
-            },
-          ],
-        },
-        {
-          id: "irayple-arm",
-          name: "Irayple Arm",
-          products: [
-            {
-              id: "irayple-arm-1",
-              name: 'Irayple Arm 1',
-              image: "/placeholder.svg?height=200&width=200",
-              price: 2499,
-              description: "Professional laptop with M3 Max chip",
+              id: "irayple-rta-c060-lq-2l-e-421",
+              name: "RTA-C060-LQ-2L-E-421",
+              image: "/irayple_robot/latent lifting amr/RTA-C060-LQ-2L-E-421/cover.png",
+              description: { line1: "Load capacity: 600kg", line2: "Navigation: QR code/texture/laser SLAM" },
+              detail: "Chi tiết sản phẩm RTA-C060-LQ-2L-E-421"
             },
             {
-              id: "irayple-arm-2",
-              name: 'Irayple Arm 2',
-              image: "/placeholder.svg?height=200&width=200",
-              price: 1299,
-              description: "Lightweight laptop with M2 chip",
-            },
-          ],
-        },
-      ],
-    },
-    {
-      id: "kuka",
-      name: "Kuka",
-      categories: [
-        {
-          id: "robot",
-          name: "robot",   
-          products: [
-            {
-              id: "kuka-robot-1",
-              name: "Kuka Robot 1",
-              image: "/placeholder.svg?height=200&width=200",
-              price: 1199,
-              description: "Premium Android phone with S Pen",
+              id: "irayple-rta-c060-lq-2l1t-e-410",
+              name: "RTA-C060-LQ-2L1T-E-410",
+              image: "/irayple_robot/latent lifting amr/RTA-C060-LQ-2L1T-E-410/cover.png",
+              description: { line1: "Load capacity: 600kg", line2: "Navigation: QR code/texture/laser SLAM" },
+              detail: "Chi tiết sản phẩm RTA-C060-LQ-2L1T-E-410"
             },
             {
-              id: "kuka-robot-2",
-              name: "Kuka Robot 2",
-              image: "/placeholder.svg?height=200&width=200",
-              price: 799,
-              description: "Standard Galaxy S24 model",
+              id: "irayple-rta-c060-lq-2l1t-e-421",
+              name: "RTA-C060-LQ-2L1T-E-421",
+              image: "/irayple_robot/latent lifting amr/RTA-C060-LQ-2L1T-E-421/cover.png",
+              description: { line1: "Load capacity: 600kg", line2: "Navigation: QR code/texture/laser SLAM" },
+              detail: "Chi tiết sản phẩm RTA-C060-LQ-2L1T-E-421"
             },
             {
-              id: "kuka-robot-3",
-              name: "Kuka Robot 3",
-              image: "/placeholder.svg?height=200&width=200",
-              price: 449,
-              description: "Mid-range Galaxy phone",
-            },
-          ],
-        },
-        {
-          id: "kuka-arm",
-          name: "Kuka Arm",
-          products: [
-            {
-              id: "kuka-arm-1",
-              name: "Kuka Arm 1",
-              image: "/placeholder.svg?height=200&width=200",
-              price: 799,
-              description: "Premium Android tablet",
+              id: "irayple-rta-c060-lq-2l2t-e-410",
+              name: "RTA-C060-LQ-2L2T-E-410",
+              image: "/irayple_robot/latent lifting amr/RTA-C060-LQ-2L2T-E-410/cover.png",
+              description: { line1: "Load capacity: 600kg", line2: "Navigation: QR code/texture/laser SLAM" },
+              detail: "Chi tiết sản phẩm RTA-C060-LQ-2L2T-E-410"
             },
             {
-              id: "kuka-arm-2",
-              name: "Kuka Arm 2",
-              image: "/placeholder.svg?height=200&width=200",
-              price: 229,
-              description: "Affordable Android tablet",
-            },
-          ],
-        },
-      ],
-    },
-    {
-      id: "abb",
-      name: "ABB",
-      categories: [
-        {
-          id: "robot",
-          name: "robot",
-          products: [
-            {
-              id: "abb-robot-1",
-              name: "ABB Robot 1",
-              image: "/placeholder.svg?height=200&width=200",
-              price: 999,
-              description: "Premium ultrabook",
+              id: "irayple-rta-c060-lq-2l2t-e-421",
+              name: "RTA-C060-LQ-2L2T-E-421",
+              image: "/irayple_robot/latent lifting amr/RTA-C060-LQ-2L2T-E-421/cover.png",
+              description: { line1: "Load capacity: 600kg", line2: "Navigation: QR code/texture/laser SLAM" },
+              detail: "Chi tiết sản phẩm RTA-C060-LQ-2L2T-E-421"
             },
             {
-              id: "abb-robot-2",
-              name: "ABB Robot 2",
-              image: "/placeholder.svg?height=200&width=200",
-              price: 649,
-              description: "Everyday laptop",
-            },
-          ],
-        },
-        {
-          id: "abb-arm",
-          name: "ABB Arm",
-          products: [
-            {
-              id: "abb-arm-1",
-              name: "ABB Arm 1",
-              image: "/placeholder.svg?height=200&width=200",
-              price: 799,
-              description: "Business desktop computer",
+              id: "irayple-rta-c100-lq",
+              name: "RTA-C100-LQ",
+              image: "/irayple_robot/latent lifting amr/RTA-C100-LQ/cover.png",
+              description: { line1: "Load capacity: 1000kg", line2: "Navigation: QR code/texture/laser SLAM" },
+              detail: "Chi tiết sản phẩm RTA-C100-LQ"
             },
             {
-              id: "abb-arm-2",
-              name: "ABB Arm 2",
-              image: "/placeholder.svg?height=200&width=200",
-              price: 549,
-              description: "Home desktop computer",
-            },
-          ],
-        },
-      ],
-    },
-    {
-      id: "tma",
-      name: "TMA",
-      categories: [
-        {
-          id: "robot",
-          name: "robot",
-          products: [
-            {
-              id: "tma-robot-1",
-              name: "TMA Robot 1",
-              image: "/placeholder.svg?height=200&width=200",
-              price: 399,
-              description: "Premium noise-canceling headphones",
+              id: "irayple-rta-c100-lq-2l-e-410",
+              name: "RTA-C100-LQ-2L-E-410",
+              image: "/irayple_robot/latent lifting amr/RTA-C100-LQ-2L-E-410/cover.png",
+              description: { line1: "Load capacity: 1000kg", line2: "Navigation: QR code/texture/laser SLAM" },
+              detail: "Chi tiết sản phẩm RTA-C100-LQ-2L-E-410"
             },
             {
-              id: "tma-robot-2",
-              name: "TMA Robot 2",
-              image: "/placeholder.svg?height=200&width=200",
-              price: 279,
-              description: "True wireless earbuds",
-            },
-          ],
-        },
-        {
-          id: "tma-arm",
-          name: "TMA Arm",
-          products: [
-            {
-              id: "tma-arm-1",
-              name: "TMA Arm 1",
-              image: "/placeholder.svg?height=200&width=200",
-              price: 3899,
-              description: "Professional mirrorless camera",
+              id: "irayple-rta-c100-lq-2l1t-e-410",
+              name: "RTA-C100-LQ-2L1T-E-410",
+              image: "/irayple_robot/latent lifting amr/RTA-C100-LQ-2L1T-E-410/cover.png",
+              description: { line1: "Load capacity: 1000kg", line2: "Navigation: QR code/texture/laser SLAM" },
+              detail: "Chi tiết sản phẩm RTA-C100-LQ-2L1T-E-410"
             },
             {
-              id: "tma-arm-2",
-              name: "TMA Arm 2",
-              image: "/placeholder.svg?height=200&width=200",
-              price: 1799,
-              description: "Cinema line camera",
+              id: "irayple-rta-c100-lq-2l1t-e-421",
+              name: "RTA-C100-LQ-2L1T-E-421",
+              image: "/irayple_robot/latent lifting amr/RTA-C100-LQ-2L1T-E-421/cover.png",
+              description: { line1: "Navigation: QR code/texture/laser SLAM"  },
+              detail: "Chi tiết sản phẩm RTA-C100-LQ-2L1T-E-421"
             },
             {
-              id: "tma-arm-3",
-              name: "TMA Arm 3",
-              image: "/placeholder.svg?height=200&width=200",
-              price: 899,
-              description: "APS-C mirrorless camera",
+              id: "irayple-rta-c100-lq-2l2t-e-410",
+              name: "RTA-C100-LQ-2L2T-E-410",
+              image: "/irayple_robot/latent lifting amr/RTA-C100-LQ-2L2T-E-410/cover.png",
+              description: { line1: "Load capacity: 1000kg", line2: "Navigation: QR code/texture/laser SLAM" },
+              detail: "Chi tiết sản phẩm RTA-C100-LQ-2L2T-E-410"
+            },
+            {
+              id: "irayple-rta-c100-lq-2l2t-e-421",
+              name: "RTA-C100-LQ-2L2T-E-421",
+              image: "/irayple_robot/latent lifting amr/RTA-C100-LQ-2L2T-E-421/cover.png",
+              description: { line1: "Navigation: QR code/texture/laser SLAM" },
+              detail: "Chi tiết sản phẩm RTA-C100-LQ-2L2T-E-421"
             },
           ],
         },
@@ -277,14 +179,15 @@ export default function ProductInfo() {
     return Array.from(categoryMap.values())
   }
 
-  // Lấy sản phẩm dựa trên brand và category được chọn
+  // Lấy sản phẩm dựa trên brand và category được chọn (đã sắp xếp theo tên)
   const getCurrentProducts = () => {
+    let products: Product[] = []
+
     if (!selectedBrand || selectedBrand.id === "all") {
       if (!selectedCategory || selectedCategory.id === "all") {
-        return getAllProducts()
+        products = getAllProducts()
       } else {
         // Lấy sản phẩm từ category cụ thể trong tất cả hãng
-        const products: Product[] = []
         mockBrands.forEach(brand => {
           brand.categories.forEach(category => {
             if (category.name === selectedCategory.name) {
@@ -292,21 +195,20 @@ export default function ProductInfo() {
             }
           })
         })
-        return products
       }
     } else {
       if (!selectedCategory || selectedCategory.id === "all") {
         // Lấy tất cả sản phẩm từ brand cụ thể
-        const products: Product[] = []
         selectedBrand.categories.forEach(category => {
           products.push(...category.products)
         })
-        return products
       } else {
         // Lấy sản phẩm từ brand và category cụ thể
-        return selectedCategory.products
+        products = selectedCategory.products
       }
     }
+
+    return products.slice().sort((a, b) => a.name.localeCompare(b.name, 'vi', { numeric: true, sensitivity: 'base' }))
   }
 
   const handleBrandChange = (brand: Brand | null) => {
