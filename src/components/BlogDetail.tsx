@@ -1,4 +1,4 @@
-import { Link } from "react-router-dom"
+import { Link, useParams } from "react-router-dom"
 import "../styles/components.css"
 
 interface Blog {
@@ -121,14 +121,9 @@ const sampleBlogs: Blog[] = [
   },
 ]
 
-interface PageProps {
-  params: {
-    slug: string
-  }
-}
-
-export default function BlogDetail({ params }: PageProps) {
-  const blog = sampleBlogs.find((p) => p.slug === params.slug)
+export default function BlogDetail() {
+  const { slug } = useParams<{ slug: string }>()
+  const blog = sampleBlogs.find((p) => p.slug === slug)
 
   if (!blog) {
     return <div>Bài viết không tồn tại</div>
@@ -178,19 +173,4 @@ export default function BlogDetail({ params }: PageProps) {
       </nav>
     </main>
   )
-}
-
-export async function generateMetadata({ params }: PageProps) {
-  const blog = sampleBlogs.find((p) => p.slug === params.slug)
-
-  if (!blog) {
-    return {
-      title: "Bài viết không tồn tại",
-    }
-  }
-
-  return {
-    title: blog.title,
-    description: `Bài viết về ${blog.title} - Tác giả: ${blog.author}`,
-  }
 }
