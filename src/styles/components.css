@@ -367,7 +367,7 @@
 .hero {
   min-height: 100vh;
   position: relative;
-  overflow: hidden;
+  overflow: visible;
   background: transparent;
   padding: var(--space-3xl) 0;
 }
@@ -409,6 +409,12 @@
 }
 
 /* Main Hero Content */
+.section-stack-cards{
+  position: sticky;
+  height :100vh;
+  top: 40px;
+}
+
 .hero-main {
   display: grid;
   grid-template-columns: 1fr 1fr;
@@ -659,7 +665,7 @@
 
 /* Solution Section */
 /* Robot Showcase Grid */
-.hero-solution{
+.hero-solution{ 
   margin-bottom: var(--space-3xl);
   padding-bottom: var(--space-2xl);
   border-bottom: 1px solid black;
