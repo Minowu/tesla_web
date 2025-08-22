@@ -372,6 +372,55 @@
   padding: var(--space-3xl) 0;
 }
 
+/* Hero About Section Layout */
+.hero-about-layout {
+  display: flex;
+  gap: var(--space-2xl);
+  align-items: flex-start;
+}
+
+.hero-about-image {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+  min-width: 0;
+}
+
+.hero-about-image img {
+  width: 100%;
+  max-width: 500px;
+  height: auto;
+  border-radius: var(--radius-lg);
+  object-fit: contain;
+}
+
+.hero-about-content {
+  flex: 1;
+  min-width: 0;
+}
+
+.hero-about-content .section-subtitle {
+  text-align: left;
+  margin-bottom: var(--space-xl);
+}
+
+/* Responsive Hero About */
+@media (max-width: 768px) {
+  .hero-about-layout {
+    flex-direction: column;
+    gap: var(--space-xl);
+  }
+  
+  .hero-about-image img {
+    max-width: 100%;
+    min-width: 300px;
+  }
+  
+  .hero-about-content .section-subtitle {
+    text-align: center;
+  }
+}
+
 .hero-background {
   position: absolute;
   top: 0;
@@ -490,7 +539,7 @@
 .hero-stat-number {
   font-size: 2.5rem;
   font-weight: 800;
-  color: var(--text-primary);
+  color: var(--primary);
   margin-bottom: var(--space-xs);
   animation: glow 2s ease-in-out infinite;
 }
@@ -864,7 +913,7 @@
   font-size: clamp(2rem, 4vw, 3rem);
   font-weight: 700;
   color: var(--text-primary);
-  margin-bottom: var(--space-md);
+  margin-bottom: var(--space-xs);
 }
 
 .section-subtitle {
@@ -894,7 +943,7 @@
 
 /* ===== SOLUTIONS HEXAGON SECTION ===== */
 .solutions-hexagon {
-  padding: var(--space-3xl) 0;
+  padding: var(--space-xl) 0;
   background: transparent;
   position: relative;
   overflow: hidden;
@@ -1097,6 +1146,9 @@
   animation: fadeIn 0.3s ease-out;
 }
 
+.solutions .section-header{
+  margin-bottom: var(--space-xl);
+}
 .modal-content {
   background: var(--bg-glass);
   border: 1px solid var(--border);
@@ -2507,7 +2559,7 @@
 
 /* ===== SOLUTIONS SECTION ===== */
 .solutions {
-  padding: var(--space-3xl) 0;
+  padding: var(--space-xl) 0;
   background: transparent;
   position: relative;
 }

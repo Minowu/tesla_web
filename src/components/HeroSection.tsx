@@ -1,11 +1,67 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useRef } from 'react';
 import { useAppStore } from '../store/appStore';
-import AnimatedCounter from './AnimatedCounter';
+import AnimatedCounter from './AnimatedCounter';  
+import {motion, useInView, useAnimation} from 'framer-motion';
+
 const HeroSection: React.FC = () => {
   const { setCurrentSection } = useAppStore();
   const [currentStat, setCurrentStat] = useState(0);
   const [activeFeature, setActiveFeature] = useState(0);
 
+  // Tạo separate refs và controls cho từng animation
+  const heroVisualRef = useRef(null);
+  const aboutImageRef = useRef(null);
+  const robotCardsRef = useRef(null);
+  const featuresRef = useRef(null);
+  const techHighlightsRef = useRef(null);
+  
+  const heroVisualInView = useInView(heroVisualRef, { once: true });
+  const aboutImageInView = useInView(aboutImageRef, { once: true });
+  const robotCardsInView = useInView(robotCardsRef, { once: true });
+  const featuresInView = useInView(featuresRef, { once: true });
+  const techHighlightsInView = useInView(techHighlightsRef, { once: true });
+  
+  const heroVisualControls = useAnimation();
+  const aboutImageControls = useAnimation();
+  const robotCardsControls = useAnimation();
+  const featuresControls = useAnimation();
+  const techHighlightsControls = useAnimation();
+  
+  // Animation cho hero visual
+  useEffect(() => {
+    if (heroVisualInView) {
+      heroVisualControls.start("visible");
+    } 
+  }, [heroVisualInView]);
+
+  // Animation cho about image
+  useEffect(() => {
+    if (aboutImageInView) {
+      aboutImageControls.start("visible");
+    } 
+  }, [aboutImageInView]);
+
+  // Animation cho robot cards
+  useEffect(() => {
+    if (robotCardsInView) {
+      robotCardsControls.start("visible");
+    } 
+  }, [robotCardsInView]);
+
+  // Animation cho features
+  useEffect(() => {
+    if (featuresInView) {
+      featuresControls.start("visible");
+    } 
+  }, [featuresInView]);
+
+  // Animation cho tech highlights
+  useEffect(() => {
+    if (techHighlightsInView) {
+      techHighlightsControls.start("visible");
+    } 
+  }, [techHighlightsInView]);
+  
   useEffect(() => {
     // Animate stats
     const targetStat = 500;
@@ -21,7 +77,6 @@ const HeroSection: React.FC = () => {
         return Math.min(prev + increment, targetStat);
       });
     }, 16);
-
 
     // Auto rotate features
     const featureTimer = setInterval(() => {
@@ -51,6 +106,32 @@ const HeroSection: React.FC = () => {
       description: "Tự động hóa quy trình vận hành kho, đảm bảo độ an toàn và hiệu quả"
     }
   ];
+
+  // Variants cho các animations
+  const heroVisualVariants = {
+    hidden: { opacity: 0.1, x: 300 },
+    visible: { opacity: 1, x: 0 }
+  };
+
+  const aboutImageVariants = {
+    hidden: { opacity: 0.2, y: 200 },
+    visible: { opacity: 1, y: 0 }
+  };
+
+  const robotCardVariants = {
+    hidden: { opacity: 0.2, x: 600 },
+    visible: { opacity: 1, x: 0 }
+  };
+
+  const featuresVariants = {
+    hidden: { opacity: 0.2, y: 100 },
+    visible: { opacity: 1, y: 0 }
+  };
+
+  const techHighlightsVariants = {
+    hidden: { opacity: 0.2, y: 80 },
+    visible: { opacity: 1, y: 0 }
+  };
 
   return (
     <section className="hero">
@@ -110,100 +191,116 @@ const HeroSection: React.FC = () => {
                   <span>Giải pháp</span>
                 </button>
               </div>
-              
-              <div className="hero-stats">
-                <div className="hero-stat">
-                    <div className="hero-stat-number"><AnimatedCounter from={0} to={Math.round(currentStat)}/>+</div>
-                  <div className="hero-stat-label">Dự án thành công</div>
-                </div>
-                <div className="hero-stat">
-                  <div className="hero-stat-number"><AnimatedCounter from={0} to={5}/>+</div>
-                  <div className="hero-stat-label">Năm kinh nghiệm</div>
-                </div>
-                <div className="hero-stat">
-                  <div className="hero-stat-number"><AnimatedCounter from={0} to={99}/>%</div>
-                  <div className="hero-stat-label">Khách hàng hài lòng</div>
-                </div>
-              </div>
             </div>
             
-            <div className="hero-logo">
+            <motion.div 
+              ref={heroVisualRef}
+              className="hero-visual"
+              variants={heroVisualVariants}
+              initial="hidden"
+              animate={heroVisualControls}
+              transition={{ duration: 1, delay: 0.2, ease: 'easeInOut'}}
+            >
+              <div className="hero-image-main">
+                <img src="/robot1.png" alt="Robot tự động chính" />
+              </div>
+            </motion.div>
+          </div>
+          <div className="hero-logo">
               <div className="hero-logo-main">
                 <img src="/1.png" alt="Logo ThaDo Robot" />
               </div>
             </div>
-            
-            
-            <div className="hero-visual">
-              <div className="hero-image-main">
-                <img src="/robot1.png" alt="Robot tự động chính" />
-              </div>
-            </div>
-          </div>
         </section>
         
         <section className='section-stack-cards'>
           <div className="section-header" style={{position: 'sticky',top: '80px',margin: 'var(--space-3xl) 0',borderRadius: 'var(--radius-xl)',padding: 'var(--space-2xl)',background: 'var(--bg-glass)',backdropFilter: 'blur(20px)'}}>
             <h2 className="section-title">Về <span style={{color: 'var(--primary)'}} className="text-company">Thadorobot</span></h2>
-            <p className="section-subtitle" style={{maxWidth: '1800px'}}>
-            là một doanh nghiệp hàng đầu tại Việt Nam, chuyên cung cấp các giải pháp công nghệ tiên tiến trong lĩnh vực Robot và Nhà máy thông minh. Chúng tôi hoạt động mạnh mẽ trong các lĩnh vực chủ chốt như Hệ thống đóng gói tự động (APS), Giải pháp tự động hóa nhà máy (FAS), và Giải pháp quản lý kho thông minh (SWS)
-            </p>
+            
+            <div className="hero-about-layout">
+              <motion.div 
+                ref={aboutImageRef}
+                className="hero-about-image"
+                variants={aboutImageVariants}
+                initial="hidden"
+                animate={aboutImageControls}
+                transition={{ duration: 1, delay: 0.3}}
+              >
+                <img src="../Office_aboutus.png" alt="Logo ThaDo Robot" />
+              </motion.div>
+              
+              <div className="hero-about-content">
+                <p className="section-subtitle">
+                là một doanh nghiệp hàng đầu tại Việt Nam, chuyên cung cấp các giải pháp công nghệ tiên tiến trong lĩnh vực Robot và Nhà máy thông minh. Chúng tôi hoạt động mạnh mẽ trong các lĩnh vực chủ chốt như Hệ thống đóng gói tự động (APS), Giải pháp tự động hóa nhà máy (FAS), và Giải pháp quản lý kho thông minh (SWS)
+                </p>
+                <div className="hero-stats">
+                    <div className="hero-stat">
+                        <div className="hero-stat-number"><AnimatedCounter from={0} to={Math.round(currentStat)}/>+</div>
+                      <div className="hero-stat-label">Dự án thành công</div>
+                    </div>
+                    <div className="hero-stat">
+                      <div className="hero-stat-number"><AnimatedCounter from={0} to={5}/>+</div>
+                      <div className="hero-stat-label">Năm kinh nghiệm</div>
+                    </div>
+                    <div className="hero-stat">
+                      <div className="hero-stat-number"><AnimatedCounter from={0} to={99}/>%</div>
+                      <div className="hero-stat-label">Khách hàng hài lòng</div>
+                    </div>
+                  </div>
+              </div>
+            </div>
           </div>
         </section>
-        {/* Robot Showcase - Horizontal scroll carousel */}
+
+        {/* Robot Showcase */}
         <section className='section-stack-cards'>
           <div className="hero-robots-showcase">
             <h2 className="hero-robots-showcase-title"> Sản phẩm của chúng tôi</h2>
-          <div className="robots-grid">
-            <div className="robot-card">
-              <div className="robot-image">
-                <img src="/robot2.png" alt="Robot AGV" />
-              </div>
-              <div className="robot-info">
-                <h4>AGV Robot</h4>
-                <p>Tự động di chuyển hàng hóa</p>
-              </div>
+            <div ref={robotCardsRef} className="robots-grid">
+              {[
+                { img: "/robot2.png", title: "AGV Robot", desc: "Tự động di chuyển hàng hóa" },
+                { img: "/robot3.png", title: "Assembly Robot", desc: "Lắp ráp tự động chính xác" },
+                { img: "/robot4.png", title: "Logistics Robot", desc: "Quản lý kho thông minh" },
+                { img: "/robot5.png", title: "Manufacturing Robot", desc: "Sản xuất tự động hóa" }
+              ].map((robot, index) => (
+                <motion.div 
+                  key={index}
+                  className="robot-card"
+                  variants={{
+                    hidden: { opacity: 0.2, x: 600 - (index * 100) },
+                    visible: { opacity: 1, x: 0 }
+                  }}
+                  initial="hidden"
+                  animate={robotCardsControls}
+                  transition={{ duration: 1.2, delay: index * 0.1 }}
+                >
+                  <div className="robot-image">
+                    <img src={robot.img} alt={robot.title} />
+                  </div>
+                  <div className="robot-info">
+                    <h4>{robot.title}</h4>
+                    <p>{robot.desc}</p>
+                  </div>
+                </motion.div>
+              ))}
             </div>
-            
-            <div className="robot-card">
-              <div className="robot-image">
-                <img src="/robot3.png" alt="Robot Assembly" />
-              </div>
-              <div className="robot-info">
-                <h4>Assembly Robot</h4>
-                <p>Lắp ráp tự động chính xác</p>
-              </div>
-            </div>
-            
-            <div className="robot-card">
-              <div className="robot-image">
-                <img src="/robot4.png" alt="Robot Logistics" />
-              </div>
-              <div className="robot-info">
-                <h4>Logistics Robot</h4>
-                <p>Quản lý kho thông minh</p>
-              </div>
-            </div>
-            
-            <div className="robot-card">
-              <div className="robot-image">
-                <img src="/robot5.png" alt="Robot Manufacturing" />
-              </div>
-              <div className="robot-info">
-                <h4>Manufacturing Robot</h4>
-                <p>Sản xuất tự động hóa</p>
-              </div>
-            </div>
-          </div>
           </div>
         </section>
+
         {/* Solution Section */}
         <section className='section-stack-cards'>
           <div className="hero-solution">
             <h2 className="hero-solution-title"> Giải pháp của chúng tôi</h2>
             {/* Features Section */}
             <div className="hero-features">
-              <div className="features-container">
+              <motion.div 
+                ref={featuresRef}
+                className="features-container"
+                variants={featuresVariants}
+                initial="hidden"
+                animate={featuresControls}
+                transition={{ duration: 0.8, delay: 0.2 }}
+              >
                 {features.map((feature, index) => (
                   <div 
                     key={index}
@@ -218,12 +315,19 @@ const HeroSection: React.FC = () => {
                     <div className="feature-arrow">→</div>
                   </div>
                 ))}
-              </div>
+              </motion.div>
             </div>
 
             {/* Technology Highlights */}
             <div className="hero-tech-highlights">
-              <div className="tech-highlights-grid">
+              <motion.div 
+                ref={techHighlightsRef}
+                className="tech-highlights-grid"
+                variants={techHighlightsVariants}
+                initial="hidden"
+                animate={techHighlightsControls}
+                transition={{ duration: 0.8, delay: 0.4 }}
+              >
                 <div className="tech-highlight">
                   <div className="tech-icon">🔋</div>
                   <div className="tech-content">
@@ -255,7 +359,7 @@ const HeroSection: React.FC = () => {
                     <p>Hệ thống an toàn đa lớp</p>
                   </div>
                 </div>
-              </div>
+              </motion.div>
             </div>
           </div>
         </section>
@@ -284,4 +388,4 @@ const HeroSection: React.FC = () => {
   );
 };
 
-export default HeroSection; 
+export default HeroSection;
