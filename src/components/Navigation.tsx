@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from 'react';
+import { Link, useLocation, useNavigate } from 'react-router-dom';
 import { useAppStore } from '../store/appStore';
 
 const Navigation: React.FC = () => {
@@ -8,14 +9,16 @@ const Navigation: React.FC = () => {
   const [searchQuery, setSearchQuery] = useState('');
   const [isSearchExpanded, setIsSearchExpanded] = useState(false);
   const [isDarkTheme, setIsDarkTheme] = useState(true); // Thêm state cho theme
+  const location = useLocation();
+  const navigate = useNavigate();
 
   const menuItems = [
-    { id: 'home', label: 'TRANG CHỦ', icon: '🏠' },
-    { id: 'products', label: 'SẢN PHẨM', icon: '🤖' },
-    { id: 'solutions', label: 'GIẢI PHÁP', icon: '💡' },
-    { id: 'technology', label: 'CÔNG NGHỆ', icon: '⚡' },
-    { id: 'about', label: 'VỀ CHÚNG TÔI', icon: 'ℹ️' },
-    { id: 'blog', label: 'BÀI VIẾT', icon: '💬' }
+    { id: 'home', label: 'TRANG CHỦ', icon: '🏠', path: '/', isLink: true },
+    { id: 'products', label: 'SẢN PHẨM', icon: '🤖', path: '/products', isLink: true },
+    { id: 'solutions', label: 'GIẢI PHÁP', icon: '💡', path: '/solutions', isLink: true },
+    { id: 'technology', label: 'CÔNG NGHỆ', icon: '⚡', path: '/technology', isLink: true },
+    { id: 'about', label: 'VỀ CHÚNG TÔI', icon: 'ℹ️', path: '/about-us', isLink: true },
+    { id: 'blog', label: 'BÀI VIẾT', icon: '💬', path: '/blog', isLink: true }
   ];
 
   useEffect(() => {
@@ -48,6 +51,12 @@ const Navigation: React.FC = () => {
 
   const handleNavClick = (sectionId: string) => {
     setCurrentSection(sectionId as any);
+    setIsMobileMenuOpen(false);
+  };
+
+  const handleHomeClick = () => {
+    setCurrentSection('home');
+    navigate('/');
     setIsMobileMenuOpen(false);
   };
 
@@ -89,12 +98,20 @@ const Navigation: React.FC = () => {
     }, 200);
   };
 
+  // Kiểm tra xem item có active không
+  const isItemActive = (item: any) => {
+    if (item.isLink) {
+      return location.pathname === item.path;
+    }
+    return currentSection === item.id;
+  };
+
   return (
     <>
       <nav className={`navigation ${isScrolled ? 'scrolled' : ''}`}>
         <div className="nav-container">
           {/* Logo */}
-          <div className="nav-logo" onClick={() => handleNavClick('home')}>
+          <div className="nav-logo" onClick={handleHomeClick}>
             <img src="/1.png" alt="THADOROBOT" />
             <h2 className="text-company">THADOROBOT</h2>
           </div>
@@ -103,12 +120,22 @@ const Navigation: React.FC = () => {
           <ul className="nav-menu">
             {menuItems.map((item) => (
               <li key={item.id} className="nav-item">
-                <button
-                  className={`nav-link ${currentSection === item.id ? 'active' : ''}`}
-                  onClick={() => handleNavClick(item.id)}
-                >
-                  <span>{item.label}</span>
-                </button>
+                {item.isLink ? (
+                  <Link
+                    to={item.path}
+                    className={`nav-link ${isItemActive(item) ? 'active' : ''}`}
+                    onClick={() => setIsMobileMenuOpen(false)}
+                  >
+                    <span>{item.label}</span>
+                  </Link>
+                ) : (
+                  <button
+                    className={`nav-link ${isItemActive(item) ? 'active' : ''}`}
+                    onClick={() => handleNavClick(item.id)}
+                  >
+                    <span>{item.label}</span>
+                  </button>
+                )}
               </li>
             ))}
           </ul>
@@ -213,13 +240,24 @@ const Navigation: React.FC = () => {
             <ul className="mobile-nav-menu">
               {menuItems.map((item) => (
                 <li key={item.id}>
-                  <button
-                    className={`mobile-nav-item ${currentSection === item.id ? 'active' : ''}`}
-                    onClick={() => handleNavClick(item.id)}
-                  >
-                    <span>{item.icon}</span>
-                    <span>{item.label}</span>
-                  </button>
+                  {item.isLink ? (
+                    <Link
+                      to={item.path}
+                      className={`mobile-nav-item ${isItemActive(item) ? 'active' : ''}`}
+                      onClick={() => setIsMobileMenuOpen(false)}
+                    >
+                      <span>{item.icon}</span>
+                      <span>{item.label}</span>
+                    </Link>
+                  ) : (
+                    <button
+                      className={`mobile-nav-item ${isItemActive(item) ? 'active' : ''}`}
+                      onClick={() => handleNavClick(item.id)}
+                    >
+                      <span>{item.icon}</span>
+                      <span>{item.label}</span>
+                    </button>
+                  )}
                 </li>
               ))}
             </ul>

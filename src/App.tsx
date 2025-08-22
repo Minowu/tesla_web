@@ -80,8 +80,35 @@ function App() {
 
         <main>
           <Routes>
+            {/* Route cho Sản phẩm */}
+            <Route path="/products" element={<ProductInfo />} />
             
-            <Route path="/bai-viet/:slug" element={<BlogDetail />} />
+            {/* Route cho Giải pháp */}
+            <Route path="/solutions" element={<Solutions3DViewer />} />
+            
+            {/* Route cho Công nghệ */}
+            <Route path="/technology" element={<TechnologySection />} />
+            
+            {/* Route cho Về chúng tôi */}
+            <Route path="/about-us" element={<AboutSection />} />
+            
+            {/* Route cho Bài viết */}
+            <Route path="/blog" element={(
+              <div className="container">
+                <div className="section-header">
+                  <h1 className="section-title">Tất cả bài viết</h1>
+                  <p className="section-subtitle">
+                    Khám phá các bài viết về lập trình và công nghệ
+                  </p>
+                </div>
+                <BlogSection />
+              </div>
+            )} />
+            
+            {/* Route cho chi tiết bài viết */}
+            <Route path="/blog/:slug" element={<BlogDetail />} />
+            
+            {/* Route mặc định - chỉ hiển thị trang chủ */}
             <Route
               path="*"
               element={(
@@ -177,29 +204,6 @@ function App() {
                           </div>
                         </div>
                       </section>
-                    </div>
-                  )}
-                  {currentSection === 'products' && (
-                    <ProductInfo />
-                  )}
-                  {currentSection === 'solutions' && (
-                    <Solutions3DViewer />
-                  )}
-                  {currentSection === 'technology' && (
-                    <TechnologySection />
-                  )}
-                  {currentSection === 'about' && (
-                    <AboutSection />
-                  )}
-                  {currentSection === 'blog' && (
-                    <div className="container">
-                      <div className="section-header">
-                        <h1 className="section-title">Tất cả bài viết</h1>
-                        <p className="section-subtitle">
-                          Khám phá các bài viết về lập trình và công nghệ
-                        </p>
-                      </div>
-                      <BlogSection />
                     </div>
                   )}
                   {currentSection === 'contact' && (

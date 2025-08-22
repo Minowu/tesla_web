@@ -21,7 +21,7 @@ export default function BlogCarousel() {
     <section className="blog-carousel">
       <div className="carousel-track">
         <article className="carousel-item prev">
-          <Link to={`/bai-viet/${prev.slug}`} className="blog-link" aria-label={prev.title}>
+          <Link to={`/blog/${prev.slug}`} className="blog-link" aria-label={prev.title}>
             <div className="blog-thumbnail">
               <img src={prev.thumbnail || "/placeholder.svg"} alt={prev.title} loading="lazy" />
             </div>
@@ -32,7 +32,7 @@ export default function BlogCarousel() {
         </article>
 
         <article className="carousel-item current">
-          <Link to={`/bai-viet/${current.slug}`} className="blog-link" aria-label={current.title}>
+          <Link to={`/blog/${current.slug}`} className="blog-link" aria-label={current.title}>
             <div className="blog-thumbnail">
               <img src={current.thumbnail || "/placeholder.svg"} alt={current.title} loading="lazy" />
             </div>
@@ -43,7 +43,7 @@ export default function BlogCarousel() {
         </article>
 
         <article className="carousel-item next">
-          <Link to={`/bai-viet/${next.slug}`} className="blog-link" aria-label={next.title}>
+          <Link to={`/blog/${next.slug}`} className="blog-link" aria-label={next.title}>
             <div className="blog-thumbnail">
               <img src={next.thumbnail || "/placeholder.svg"} alt={next.title} loading="lazy" />
             </div>

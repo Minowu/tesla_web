@@ -90,7 +90,7 @@ const BlogSection: React.FC<BlogListProps> = ({ blogs = [], limit }) => {
         <div className="blog-list">
           {displayBlogs.map((blog) => (
             <article key={blog.id} className="blog-item">
-              <Link to={`/bai-viet/${blog.slug}`} className="blog-link">
+              <Link to={`/blog/${blog.slug}`} className="blog-link">
                 <div className="blog-thumbnail">
                   <img src={blog.thumbnail || "/placeholder.svg"} alt={blog.title} loading="lazy" />
                 </div>

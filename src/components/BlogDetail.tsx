@@ -143,7 +143,7 @@ export default function BlogDetail() {
       <nav className="breadcrumb">
         <Link to="/">Trang chủ</Link>
         <span>/</span>
-        <Link to="/bai-viet">Bài viết</Link>
+        <Link to="/blog">Bài viết</Link>
         <span>/</span>
         <span>{blog.title}</span>
       </nav>
@@ -167,7 +167,7 @@ export default function BlogDetail() {
       </article>
 
       <nav className="blog-navigation">
-        <Link to="/bai-viet" className="back-to-list">
+        <Link to="/blog" className="back-to-list">
           ← Quay lại danh sách bài viết
         </Link>
       </nav>
