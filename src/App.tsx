@@ -6,6 +6,7 @@ import SolutionsShowcase from './components/SolutionsShowcase';
 import SolutionsHexagon from './components/SolutionsHexagon';
 import ServicesHub from './components/ServicesHub';
 import ProductInfo from './components/ProductInfo';
+import ProductDetail from './components/ProductDetail';
 import AboutSection from './components/AboutSection';
 import BlogSection   from './components/BlogSection';
 import BlogDetail from './components/BlogDetail';
@@ -17,12 +18,15 @@ import { ErrorBoundary } from './components/ErrorBoundary';
 import Solutions3DViewer from './components/Solutions3DViewer';
 import { useAppStore } from './store/appStore';
 import './styles/main.css';
+import { ReactLenis,useLenis } from 'lenis/react';
 // dùng đường dẫn tĩnh cho logo để tránh lỗi TS khi import png
 
 function App() {
   const { currentSection, setCurrentSection } = useAppStore();
   const [isLoading, setIsLoading] = useState(true);
-
+  const lenis = useLenis((lenis) => {
+    console.log(lenis);
+  });
   useEffect(() => {
     // Simulate loading time
     const timer = setTimeout(() => {
@@ -40,6 +44,7 @@ function App() {
 
   return (
     <ErrorBoundary>
+      <ReactLenis root>
       <div className="app">
         <div className="logo-bg">
           <img src="/1.png" alt="Logo" />
@@ -82,6 +87,9 @@ function App() {
           <Routes>
             {/* Route cho Sản phẩm */}
             <Route path="/products" element={<ProductInfo />} />
+            
+            {/* Route cho chi tiết sản phẩm */}
+            <Route path="/product/:productId" element={<ProductDetail />} />
             
             {/* Route cho Giải pháp */}
             <Route path="/solutions" element={<Solutions3DViewer />} />
@@ -292,9 +300,11 @@ function App() {
                 </>
               )}
             />
+            
           </Routes>
         </main>
       </div>
+      </ReactLenis>
     </ErrorBoundary>
   );
 }

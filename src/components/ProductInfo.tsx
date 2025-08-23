@@ -1,144 +1,20 @@
 import { useState } from "react"
 import { motion, AnimatePresence } from "framer-motion"
+import { useNavigate } from "react-router-dom"
 import { ProductCard } from "./ProductCard"
+import productsData from "../data/products.json"
+import type { Brand, Category, Product } from "../types/products"
 
-export interface ProductDescription {
-    line1: string
-    line2?: string
-}
+// Sử dụng dữ liệu từ file JSON
+const mockBrands: Brand[] = productsData.brands
 
-export interface Product {
-    id: string
-    name: string
-    image: string
-    description?: ProductDescription
-    detail?: string
-}
-  
-export interface Category {
-    id: string
-    name: string
-    products: Product[]
-  }
-  
-  export interface Brand {
-    id: string
-    name: string
-    categories: Category[]
-  }
-
-  // Mock data
-  
-export const mockBrands: Brand[] = [
-    {
-      id: "irayple",
-      name: "Irayple",
-      categories: [
-        {
-          id: "lifting-amr",
-          name: "lifting amr",
-          products: [
-            {
-              id: "irayple-rta-c060-lq",
-              name: "RTA-C060-LQ",
-              image: "/irayple_robot/latent lifting amr/RTA-C060-LQ/cover.png",
-              description: { line1: "Load capacity: 600kg", line2: "Navigation: QR code/texture/laser SLAM" },
-              detail: "Chi tiết sản phẩm RTA-C060-LQ"
-            },
-            {
-              id: "irayple-rta-c060-lq-2l-e-410",
-              name: "RTA-C060-LQ-2L-E-410",
-              image: "/irayple_robot/latent lifting amr/RTA-C060-LQ-2L-E-410/cover.png",
-              description: { line1: "Load capacity: 600kg", line2: "Navigation: QR code/texture/laser SLAM" },
-              detail: "Chi tiết sản phẩm RTA-C060-LQ-2L-E-410"
-            },
-            {
-              id: "irayple-rta-c060-lq-2l-e-421",
-              name: "RTA-C060-LQ-2L-E-421",
-              image: "/irayple_robot/latent lifting amr/RTA-C060-LQ-2L-E-421/cover.png",
-              description: { line1: "Load capacity: 600kg", line2: "Navigation: QR code/texture/laser SLAM" },
-              detail: "Chi tiết sản phẩm RTA-C060-LQ-2L-E-421"
-            },
-            {
-              id: "irayple-rta-c060-lq-2l1t-e-410",
-              name: "RTA-C060-LQ-2L1T-E-410",
-              image: "/irayple_robot/latent lifting amr/RTA-C060-LQ-2L1T-E-410/cover.png",
-              description: { line1: "Load capacity: 600kg", line2: "Navigation: QR code/texture/laser SLAM" },
-              detail: "Chi tiết sản phẩm RTA-C060-LQ-2L1T-E-410"
-            },
-            {
-              id: "irayple-rta-c060-lq-2l1t-e-421",
-              name: "RTA-C060-LQ-2L1T-E-421",
-              image: "/irayple_robot/latent lifting amr/RTA-C060-LQ-2L1T-E-421/cover.png",
-              description: { line1: "Load capacity: 600kg", line2: "Navigation: QR code/texture/laser SLAM" },
-              detail: "Chi tiết sản phẩm RTA-C060-LQ-2L1T-E-421"
-            },
-            {
-              id: "irayple-rta-c060-lq-2l2t-e-410",
-              name: "RTA-C060-LQ-2L2T-E-410",
-              image: "/irayple_robot/latent lifting amr/RTA-C060-LQ-2L2T-E-410/cover.png",
-              description: { line1: "Load capacity: 600kg", line2: "Navigation: QR code/texture/laser SLAM" },
-              detail: "Chi tiết sản phẩm RTA-C060-LQ-2L2T-E-410"
-            },
-            {
-              id: "irayple-rta-c060-lq-2l2t-e-421",
-              name: "RTA-C060-LQ-2L2T-E-421",
-              image: "/irayple_robot/latent lifting amr/RTA-C060-LQ-2L2T-E-421/cover.png",
-              description: { line1: "Load capacity: 600kg", line2: "Navigation: QR code/texture/laser SLAM" },
-              detail: "Chi tiết sản phẩm RTA-C060-LQ-2L2T-E-421"
-            },
-            {
-              id: "irayple-rta-c100-lq",
-              name: "RTA-C100-LQ",
-              image: "/irayple_robot/latent lifting amr/RTA-C100-LQ/cover.png",
-              description: { line1: "Load capacity: 1000kg", line2: "Navigation: QR code/texture/laser SLAM" },
-              detail: "Chi tiết sản phẩm RTA-C100-LQ"
-            },
-            {
-              id: "irayple-rta-c100-lq-2l-e-410",
-              name: "RTA-C100-LQ-2L-E-410",
-              image: "/irayple_robot/latent lifting amr/RTA-C100-LQ-2L-E-410/cover.png",
-              description: { line1: "Load capacity: 1000kg", line2: "Navigation: QR code/texture/laser SLAM" },
-              detail: "Chi tiết sản phẩm RTA-C100-LQ-2L-E-410"
-            },
-            {
-              id: "irayple-rta-c100-lq-2l1t-e-410",
-              name: "RTA-C100-LQ-2L1T-E-410",
-              image: "/irayple_robot/latent lifting amr/RTA-C100-LQ-2L1T-E-410/cover.png",
-              description: { line1: "Load capacity: 1000kg", line2: "Navigation: QR code/texture/laser SLAM" },
-              detail: "Chi tiết sản phẩm RTA-C100-LQ-2L1T-E-410"
-            },
-            {
-              id: "irayple-rta-c100-lq-2l1t-e-421",
-              name: "RTA-C100-LQ-2L1T-E-421",
-              image: "/irayple_robot/latent lifting amr/RTA-C100-LQ-2L1T-E-421/cover.png",
-              description: { line1: "Navigation: QR code/texture/laser SLAM"  },
-              detail: "Chi tiết sản phẩm RTA-C100-LQ-2L1T-E-421"
-            },
-            {
-              id: "irayple-rta-c100-lq-2l2t-e-410",
-              name: "RTA-C100-LQ-2L2T-E-410",
-              image: "/irayple_robot/latent lifting amr/RTA-C100-LQ-2L2T-E-410/cover.png",
-              description: { line1: "Load capacity: 1000kg", line2: "Navigation: QR code/texture/laser SLAM" },
-              detail: "Chi tiết sản phẩm RTA-C100-LQ-2L2T-E-410"
-            },
-            {
-              id: "irayple-rta-c100-lq-2l2t-e-421",
-              name: "RTA-C100-LQ-2L2T-E-421",
-              image: "/irayple_robot/latent lifting amr/RTA-C100-LQ-2L2T-E-421/cover.png",
-              description: { line1: "Navigation: QR code/texture/laser SLAM" },
-              detail: "Chi tiết sản phẩm RTA-C100-LQ-2L2T-E-421"
-            },
-          ],
-        },
-      ],
-    },
-  ]
-
+// Export để các component khác có thể sử dụng
+export { mockBrands }
 
 export default function ProductInfo() {
   const [selectedBrand, setSelectedBrand] = useState<Brand | null>(null)
   const [selectedCategory, setSelectedCategory] = useState<Category | null>(null)
+  const navigate = useNavigate()
 
   // Tạo all brands và all categories
   const allBrands = { id: "all", name: "Tất cả hãng", categories: [] }
@@ -221,7 +97,8 @@ export default function ProductInfo() {
   }
 
   const handleViewDetails = (product: Product) => {
-    alert(`Xem chi tiết sản phẩm: ${product.name}`)
+    // Navigate to product detail page
+    navigate(`/product/${product.id}`)
   }
 
   return (

@@ -48,6 +48,7 @@
   --space-xl: 3rem;
   --space-2xl: 4rem;
   --space-3xl: 6rem;
+  --space-4xl: 8rem;
   
   /* Border Radius */
   --radius-sm: 8px;
@@ -82,7 +83,7 @@
 
 html {
   scroll-behavior: smooth;
-  font-size: 16px;
+  font-size: 14px;
 }
 
 body {
@@ -294,11 +295,12 @@ body * {
 
 /* ===== CONTAINER & LAYOUT ===== */
 .container {
-  max-width: 1200px;
+  max-width: 1350px;
   margin: 0 auto;
   padding: 0 var(--space-sm);
   position: relative;
   z-index: 1;
+  text-align: center;  /* Căn giữa text và inline elements */
 }
 
 /* ===== BUTTONS - ULTRA MODERN ===== */

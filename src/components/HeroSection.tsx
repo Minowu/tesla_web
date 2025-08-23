@@ -1,10 +1,12 @@
 import React, { useState, useEffect, useRef } from 'react';
+import { useNavigate } from 'react-router-dom';
 import { useAppStore } from '../store/appStore';
 import AnimatedCounter from './AnimatedCounter';  
 import {motion, useInView, useAnimation} from 'framer-motion';
 
 const HeroSection: React.FC = () => {
   const { setCurrentSection } = useAppStore();
+  const navigate = useNavigate();
   const [currentStat, setCurrentStat] = useState(0);
   const [activeFeature, setActiveFeature] = useState(0);
 
@@ -177,7 +179,7 @@ const HeroSection: React.FC = () => {
               <div className="hero-buttons">
                 <button 
                   className="btn btn-primary"
-                  onClick={() => setCurrentSection('products')}
+                  onClick={() => navigate('/products')}
                 >
                   <span>🤖</span>
                   <span>Khám phá sản phẩm</span>
@@ -266,6 +268,8 @@ const HeroSection: React.FC = () => {
                 <motion.div 
                   key={index}
                   className="robot-card"
+                  onClick={() => navigate('/products')}
+                  style={{ cursor: 'pointer' }}
                   variants={{
                     hidden: { opacity: 0.2, x: 600 - (index * 100) },
                     visible: { opacity: 1, x: 0 }

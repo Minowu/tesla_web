@@ -1,0 +1,541 @@
+{
+  "brands": [
+    {
+      "id": "irayple",
+      "name": "Irayple",
+      "categories": [
+        {
+          "id": "lifting-amr",
+          "name": "Lifting AMR",
+          "products": [
+            {
+              "id": "irayple-rta-c060-lq",
+              "name": "RTA-C060-LQ",
+              "image": "/irayple_robot/latent lifting amr/RTA-C060-LQ/cover.png",
+              "description": {
+                "line1": "Load capacity: 600kg",
+                "line2": "Navigation: QR code/texture/laser SLAM"
+              },
+              "detail": "Robot tự động di chuyển với khả năng nâng hạ tải trọng 600kg, sử dụng công nghệ định vị tiên tiến",
+              "mainCategories": [
+                {
+                  "id": "technical-specs",
+                  "name": "Thông số kỹ thuật",
+                  "icon": "⚙️",
+                  "specs": [
+                    { "name": "Tải trọng tối đa", "value": "600", "unit": "kg" },
+                    { "name": "Tốc độ di chuyển", "value": "1.5", "unit": "m/s" },
+                    { "name": "Độ cao nâng", "value": "0-200", "unit": "mm" },
+                    { "name": "Kích thước", "value": "1200x800x300", "unit": "mm" },
+                    { "name": "Trọng lượng", "value": "180", "unit": "kg" }
+                  ]
+                },
+                {
+                  "id": "navigation",
+                  "name": "Hệ thống định vị",
+                  "icon": "🧭",
+                  "specs": [
+                    { "name": "QR Code", "value": "Hỗ trợ" },
+                    { "name": "Texture SLAM", "value": "Hỗ trợ" },
+                    { "name": "Laser SLAM", "value": "Hỗ trợ" },
+                    { "name": "Độ chính xác", "value": "±10", "unit": "mm" }
+                  ]
+                },
+                {
+                  "id": "battery",
+                  "name": "Pin và thời gian hoạt động",
+                  "icon": "🔋",
+                  "specs": [
+                    { "name": "Dung lượng pin", "value": "100", "unit": "Ah" },
+                    { "name": "Thời gian hoạt động", "value": "8-10", "unit": "giờ" },
+                    { "name": "Thời gian sạc", "value": "2-3", "unit": "giờ" },
+                    { "name": "Tuổi thọ pin", "value": "2000", "unit": "chu kỳ" }
+                  ]
+                },
+                {
+                  "id": "safety",
+                  "name": "Tính năng an toàn",
+                  "icon": "🛡️",
+                  "specs": [
+                    { "name": "Cảm biến va chạm", "value": "360°" },
+                    { "name": "Cảm biến laser", "value": "2 lớp" },
+                    { "name": "Tín hiệu âm thanh", "value": "Có" },
+                    { "name": "Đèn cảnh báo", "value": "LED RGB" }
+                  ]
+                }
+              ]
+            },
+            {
+              "id": "irayple-rta-c060-lq-2l-e-410",
+              "name": "RTA-C060-LQ-2L-E-410",
+              "image": "/irayple_robot/latent lifting amr/RTA-C060-LQ-2L-E-410/cover.png",
+              "description": {
+                "line1": "Load capacity: 600kg",
+                "line2": "Navigation: QR code/texture/laser SLAM"
+              },
+              "detail": "Robot tự động di chuyển với khả năng nâng hạ tải trọng 600kg, phiên bản 2L-E-410",
+              "mainCategories": [
+                {
+                  "id": "technical-specs",
+                  "name": "Thông số kỹ thuật",
+                  "icon": "⚙️",
+                  "specs": [
+                    { "name": "Tải trọng tối đa", "value": "600", "unit": "kg" },
+                    { "name": "Tốc độ di chuyển", "value": "1.5", "unit": "m/s" },
+                    { "name": "Độ cao nâng", "value": "0-200", "unit": "mm" },
+                    { "name": "Kích thước", "value": "1200x800x300", "unit": "mm" },
+                    { "name": "Trọng lượng", "value": "180", "unit": "kg" }
+                  ]
+                },
+                {
+                  "id": "navigation",
+                  "name": "Hệ thống định vị",
+                  "icon": "🧭",
+                  "specs": [
+                    { "name": "QR Code", "value": "Hỗ trợ" },
+                    { "name": "Texture SLAM", "value": "Hỗ trợ" },
+                    { "name": "Laser SLAM", "value": "Hỗ trợ" },
+                    { "name": "Độ chính xác", "value": "±10", "unit": "mm" }
+                  ]
+                }
+              ]
+            },
+            {
+              "id": "irayple-rta-c060-lq-2l-e-421",
+              "name": "RTA-C060-LQ-2L-E-421",
+              "image": "/irayple_robot/latent lifting amr/RTA-C060-LQ-2L-E-421/cover.png",
+              "description": {
+                "line1": "Load capacity: 600kg",
+                "line2": "Navigation: QR code/texture/laser SLAM"
+              },
+              "detail": "Robot tự động di chuyển với khả năng nâng hạ tải trọng 600kg, phiên bản 2L-E-421",
+              "mainCategories": [
+                {
+                  "id": "technical-specs",
+                  "name": "Thông số kỹ thuật",
+                  "icon": "⚙️",
+                  "specs": [
+                    { "name": "Tải trọng tối đa", "value": "600", "unit": "kg" },
+                    { "name": "Tốc độ di chuyển", "value": "1.5", "unit": "m/s" },
+                    { "name": "Độ cao nâng", "value": "0-200", "unit": "mm" },
+                    { "name": "Kích thước", "value": "1200x800x300", "unit": "mm" },
+                    { "name": "Trọng lượng", "value": "180", "unit": "kg" }
+                  ]
+                },
+                {
+                  "id": "navigation",
+                  "name": "Hệ thống định vị",
+                  "icon": "🧭",
+                  "specs": [
+                    { "name": "QR Code", "value": "Hỗ trợ" },
+                    { "name": "Texture SLAM", "value": "Hỗ trợ" },
+                    { "name": "Laser SLAM", "value": "Hỗ trợ" },
+                    { "name": "Độ chính xác", "value": "±10", "unit": "mm" }
+                  ]
+                }
+              ]
+            },
+            {
+              "id": "irayple-rta-c060-lq-2l1t-e-410",
+              "name": "RTA-C060-LQ-2L1T-E-410",
+              "image": "/irayple_robot/latent lifting amr/RTA-C060-LQ-2L1T-E-410/cover.png",
+              "description": {
+                "line1": "Load capacity: 600kg",
+                "line2": "Navigation: QR code/texture/laser SLAM"
+              },
+              "detail": "Robot tự động di chuyển với khả năng nâng hạ tải trọng 600kg, phiên bản 2L1T-E-410",
+              "mainCategories": [
+                {
+                  "id": "technical-specs",
+                  "name": "Thông số kỹ thuật",
+                  "icon": "⚙️",
+                  "specs": [
+                    { "name": "Tải trọng tối đa", "value": "600", "unit": "kg" },
+                    { "name": "Tốc độ di chuyển", "value": "1.5", "unit": "m/s" },
+                    { "name": "Độ cao nâng", "value": "0-200", "unit": "mm" },
+                    { "name": "Kích thước", "value": "1200x800x300", "unit": "mm" },
+                    { "name": "Trọng lượng", "value": "180", "unit": "kg" }
+                  ]
+                },
+                {
+                  "id": "navigation",
+                  "name": "Hệ thống định vị",
+                  "icon": "🧭",
+                  "specs": [
+                    { "name": "QR Code", "value": "Hỗ trợ" },
+                    { "name": "Texture SLAM", "value": "Hỗ trợ" },
+                    { "name": "Laser SLAM", "value": "Hỗ trợ" },
+                    { "name": "Độ chính xác", "value": "±10", "unit": "mm" }
+                  ]
+                }
+              ]
+            },
+            {
+              "id": "irayple-rta-c060-lq-2l1t-e-421",
+              "name": "RTA-C060-LQ-2L1T-E-421",
+              "image": "/irayple_robot/latent lifting amr/RTA-C060-LQ-2L1T-E-421/cover.png",
+              "description": {
+                "line1": "Load capacity: 600kg",
+                "line2": "Navigation: QR code/texture/laser SLAM"
+              },
+              "detail": "Robot tự động di chuyển với khả năng nâng hạ tải trọng 600kg, phiên bản 2L1T-E-421",
+              "mainCategories": [
+                {
+                  "id": "technical-specs",
+                  "name": "Thông số kỹ thuật",
+                  "icon": "⚙️",
+                  "specs": [
+                    { "name": "Tải trọng tối đa", "value": "600", "unit": "kg" },
+                    { "name": "Tốc độ di chuyển", "value": "1.5", "unit": "m/s" },
+                    { "name": "Độ cao nâng", "value": "0-200", "unit": "mm" },
+                    { "name": "Kích thước", "value": "1200x800x300", "unit": "mm" },
+                    { "name": "Trọng lượng", "value": "180", "unit": "kg" }
+                  ]
+                },
+                {
+                  "id": "navigation",
+                  "name": "Hệ thống định vị",
+                  "icon": "🧭",
+                  "specs": [
+                    { "name": "QR Code", "value": "Hỗ trợ" },
+                    { "name": "Texture SLAM", "value": "Hỗ trợ" },
+                    { "name": "Laser SLAM", "value": "Hỗ trợ" },
+                    { "name": "Độ chính xác", "value": "±10", "unit": "mm" }
+                  ]
+                }
+              ]
+            },
+            {
+              "id": "irayple-rta-c060-lq-2l2t-e-410",
+              "name": "RTA-C060-LQ-2L2T-E-410",
+              "image": "/irayple_robot/latent lifting amr/RTA-C060-LQ-2L2T-E-410/cover.png",
+              "description": {
+                "line1": "Load capacity: 600kg",
+                "line2": "Navigation: QR code/texture/laser SLAM"
+              },
+              "detail": "Robot tự động di chuyển với khả năng nâng hạ tải trọng 600kg, phiên bản 2L2T-E-410",
+              "mainCategories": [
+                {
+                  "id": "technical-specs",
+                  "name": "Thông số kỹ thuật",
+                  "icon": "⚙️",
+                  "specs": [
+                    { "name": "Tải trọng tối đa", "value": "600", "unit": "kg" },
+                    { "name": "Tốc độ di chuyển", "value": "1.5", "unit": "m/s" },
+                    { "name": "Độ cao nâng", "value": "0-200", "unit": "mm" },
+                    { "name": "Kích thước", "value": "1200x800x300", "unit": "mm" },
+                    { "name": "Trọng lượng", "value": "180", "unit": "kg" }
+                  ]
+                },
+                {
+                  "id": "navigation",
+                  "name": "Hệ thống định vị",
+                  "icon": "🧭",
+                  "specs": [
+                    { "name": "QR Code", "value": "Hỗ trợ" },
+                    { "name": "Texture SLAM", "value": "Hỗ trợ" },
+                    { "name": "Laser SLAM", "value": "Hỗ trợ" },
+                    { "name": "Độ chính xác", "value": "±10", "unit": "mm" }
+                  ]
+                }
+              ]
+            },
+            {
+              "id": "irayple-rta-c060-lq-2l2t-e-421",
+              "name": "RTA-C060-LQ-2L2T-E-421",
+              "image": "/irayple_robot/latent lifting amr/RTA-C060-LQ-2L2T-E-421/cover.png",
+              "description": {
+                "line1": "Load capacity: 600kg",
+                "line2": "Navigation: QR code/texture/laser SLAM"
+              },
+              "detail": "Robot tự động di chuyển với khả năng nâng hạ tải trọng 600kg, phiên bản 2L2T-E-421",
+              "mainCategories": [
+                {
+                  "id": "technical-specs",
+                  "name": "Thông số kỹ thuật",
+                  "icon": "⚙️",
+                  "specs": [
+                    { "name": "Tải trọng tối đa", "value": "600", "unit": "kg" },
+                    { "name": "Tốc độ di chuyển", "value": "1.5", "unit": "m/s" },
+                    { "name": "Độ cao nâng", "value": "0-200", "unit": "mm" },
+                    { "name": "Kích thước", "value": "1200x800x300", "unit": "mm" },
+                    { "name": "Trọng lượng", "value": "180", "unit": "kg" }
+                  ]
+                },
+                {
+                  "id": "navigation",
+                  "name": "Hệ thống định vị",
+                  "icon": "🧭",
+                  "specs": [
+                    { "name": "QR Code", "value": "Hỗ trợ" },
+                    { "name": "Texture SLAM", "value": "Hỗ trợ" },
+                    { "name": "Laser SLAM", "value": "Hỗ trợ" },
+                    { "name": "Độ chính xác", "value": "±10", "unit": "mm" }
+                  ]
+                }
+              ]
+            },
+            {
+              "id": "irayple-rta-c100-lq",
+              "name": "RTA-C100-LQ",
+              "image": "/irayple_robot/latent lifting amr/RTA-C100-LQ/cover.png",
+              "description": {
+                "line1": "Load capacity: 1000kg",
+                "line2": "Navigation: QR code/texture/laser SLAM"
+              },
+              "detail": "Robot tự động di chuyển với khả năng nâng hạ tải trọng 1000kg, thiết kế mạnh mẽ cho môi trường công nghiệp",
+              "mainCategories": [
+                {
+                  "id": "technical-specs",
+                  "name": "Thông số kỹ thuật",
+                  "icon": "⚙️",
+                  "specs": [
+                    { "name": "Tải trọng tối đa", "value": "1000", "unit": "kg" },
+                    { "name": "Tốc độ di chuyển", "value": "1.2", "unit": "m/s" },
+                    { "name": "Độ cao nâng", "value": "0-300", "unit": "mm" },
+                    { "name": "Kích thước", "value": "1400x900x350", "unit": "mm" },
+                    { "name": "Trọng lượng", "value": "250", "unit": "kg" }
+                  ]
+                },
+                {
+                  "id": "navigation",
+                  "name": "Hệ thống định vị",
+                  "icon": "🧭",
+                  "specs": [
+                    { "name": "QR Code", "value": "Hỗ trợ" },
+                    { "name": "Texture SLAM", "value": "Hỗ trợ" },
+                    { "name": "Laser SLAM", "value": "Hỗ trợ" },
+                    { "name": "Độ chính xác", "value": "±15", "unit": "mm" }
+                  ]
+                },
+                {
+                  "id": "safety",
+                  "name": "Tính năng an toàn",
+                  "icon": "🛡️",
+                  "specs": [
+                    { "name": "Cảm biến va chạm", "value": "360°" },
+                    { "name": "Cảm biến laser", "value": "2 lớp" },
+                    { "name": "Tín hiệu âm thanh", "value": "Có" },
+                    { "name": "Đèn cảnh báo", "value": "LED RGB" }
+                  ]
+                }
+              ]
+            },
+            {
+              "id": "irayple-rta-c100-lq-2l-e-410",
+              "name": "RTA-C100-LQ-2L-E-410",
+              "image": "/irayple_robot/latent lifting amr/RTA-C100-LQ-2L-E-410/cover.png",
+              "description": {
+                "line1": "Load capacity: 1000kg",
+                "line2": "Navigation: QR code/texture/laser SLAM"
+              },
+              "detail": "Robot tự động di chuyển với khả năng nâng hạ tải trọng 1000kg, phiên bản 2L-E-410",
+              "mainCategories": [
+                {
+                  "id": "technical-specs",
+                  "name": "Thông số kỹ thuật",
+                  "icon": "⚙️",
+                  "specs": [
+                    { "name": "Tải trọng tối đa", "value": "1000", "unit": "kg" },
+                    { "name": "Tốc độ di chuyển", "value": "1.2", "unit": "m/s" },
+                    { "name": "Độ cao nâng", "value": "0-300", "unit": "mm" },
+                    { "name": "Kích thước", "value": "1400x900x350", "unit": "mm" },
+                    { "name": "Trọng lượng", "value": "250", "unit": "kg" }
+                  ]
+                },
+                {
+                  "id": "navigation",
+                  "name": "Hệ thống định vị",
+                  "icon": "🧭",
+                  "specs": [
+                    { "name": "QR Code", "value": "Hỗ trợ" },
+                    { "name": "Texture SLAM", "value": "Hỗ trợ" },
+                    { "name": "Laser SLAM", "value": "Hỗ trợ" },
+                    { "name": "Độ chính xác", "value": "±15", "unit": "mm" }
+                  ]
+                }
+              ]
+            },
+            {
+              "id": "irayple-rta-c100-lq-2l1t-e-410",
+              "name": "RTA-C100-LQ-2L1T-E-410",
+              "image": "/irayple_robot/latent lifting amr/RTA-C100-LQ-2L1T-E-410/cover.png",
+              "description": {
+                "line1": "Load capacity: 1000kg",
+                "line2": "Navigation: QR code/texture/laser SLAM"
+              },
+              "detail": "Robot tự động di chuyển với khả năng nâng hạ tải trọng 1000kg, phiên bản 2L1T-E-410",
+              "mainCategories": [
+                {
+                  "id": "technical-specs",
+                  "name": "Thông số kỹ thuật",
+                  "icon": "⚙️",
+                  "specs": [
+                    { "name": "Tải trọng tối đa", "value": "1000", "unit": "kg" },
+                    { "name": "Tốc độ di chuyển", "value": "1.2", "unit": "m/s" },
+                    { "name": "Độ cao nâng", "value": "0-300", "unit": "mm" },
+                    { "name": "Kích thước", "value": "1400x900x350", "unit": "mm" },
+                    { "name": "Trọng lượng", "value": "250", "unit": "kg" }
+                  ]
+                },
+                {
+                  "id": "navigation",
+                  "name": "Hệ thống định vị",
+                  "icon": "🧭",
+                  "specs": [
+                    { "name": "QR Code", "value": "Hỗ trợ" },
+                    { "name": "Texture SLAM", "value": "Hỗ trợ" },
+                    { "name": "Laser SLAM", "value": "Hỗ trợ" },
+                    { "name": "Độ chính xác", "value": "±15", "unit": "mm" }
+                  ]
+                }
+              ]
+            },
+            {
+              "id": "irayple-rta-c100-lq-2l1t-e-421",
+              "name": "RTA-C100-LQ-2L1T-E-421",
+              "image": "/irayple_robot/latent lifting amr/RTA-C100-LQ-2L1T-E-421/cover.png",
+              "description": {
+                "line1": "Navigation: QR code/texture/laser SLAM"
+              },
+              "detail": "Robot tự động di chuyển với khả năng nâng hạ tải trọng 1000kg, phiên bản 2L1T-E-421",
+              "mainCategories": [
+                {
+                  "id": "technical-specs",
+                  "name": "Thông số kỹ thuật",
+                  "icon": "⚙️",
+                  "specs": [
+                    { "name": "Tải trọng tối đa", "value": "1000", "unit": "kg" },
+                    { "name": "Tốc độ di chuyển", "value": "1.2", "unit": "m/s" },
+                    { "name": "Độ cao nâng", "value": "0-300", "unit": "mm" },
+                    { "name": "Kích thước", "value": "1400x900x350", "unit": "mm" },
+                    { "name": "Trọng lượng", "value": "250", "unit": "kg" }
+                  ]
+                },
+                {
+                  "id": "navigation",
+                  "name": "Hệ thống định vị",
+                  "icon": "🧭",
+                  "specs": [
+                    { "name": "QR Code", "value": "Hỗ trợ" },
+                    { "name": "Texture SLAM", "value": "Hỗ trợ" },
+                    { "name": "Laser SLAM", "value": "Hỗ trợ" },
+                    { "name": "Độ chính xác", "value": "±15", "unit": "mm" }
+                  ]
+                }
+              ]
+            },
+            {
+              "id": "irayple-rta-c100-lq-2l2t-e-410",
+              "name": "RTA-C100-LQ-2L2T-E-410",
+              "image": "/irayple_robot/latent lifting amr/RTA-C100-LQ-2L2T-E-410/cover.png",
+              "description": {
+                "line1": "Load capacity: 1000kg",
+                "line2": "Navigation: QR code/texture/laser SLAM"
+              },
+              "detail": "Robot tự động di chuyển với khả năng nâng hạ tải trọng 1000kg, phiên bản 2L2T-E-410",
+              "mainCategories": [
+                {
+                  "id": "technical-specs",
+                  "name": "Thông số kỹ thuật",
+                  "icon": "⚙️",
+                  "specs": [
+                    { "name": "Tải trọng tối đa", "value": "1000", "unit": "kg" },
+                    { "name": "Tốc độ di chuyển", "value": "1.2", "unit": "m/s" },
+                    { "name": "Độ cao nâng", "value": "0-300", "unit": "mm" },
+                    { "name": "Kích thước", "value": "1400x900x350", "unit": "mm" },
+                    { "name": "Trọng lượng", "value": "250", "unit": "kg" }
+                  ]
+                },
+                {
+                  "id": "navigation",
+                  "name": "Hệ thống định vị",
+                  "icon": "🧭",
+                  "specs": [
+                    { "name": "QR Code", "value": "Hỗ trợ" },
+                    { "name": "Texture SLAM", "value": "Hỗ trợ" },
+                    { "name": "Laser SLAM", "value": "Hỗ trợ" },
+                    { "name": "Độ chính xác", "value": "±15", "unit": "mm" }
+                  ]
+                }
+              ]
+            },
+            {
+              "id": "irayple-rta-c100-lq-2l2t-e-421",
+              "name": "RTA-C100-LQ-2L2T-E-421",
+              "image": "/irayple_robot/latent lifting amr/RTA-C100-LQ-2L2T-E-421/cover.png",
+              "description": {
+                "line1": "Navigation: QR code/texture/laser SLAM"
+              },
+              "detail": "Robot tự động di chuyển với khả năng nâng hạ tải trọng 1000kg, phiên bản 2L2T-E-421",
+              "mainCategories": [
+                {
+                  "id": "technical-specs",
+                  "name": "Thông số kỹ thuật",
+                  "icon": "⚙️",
+                  "specs": [
+                    { "name": "Tải trọng tối đa", "value": "1000", "unit": "kg" },
+                    { "name": "Tốc độ di chuyển", "value": "1.2", "unit": "m/s" },
+                    { "name": "Độ cao nâng", "value": "0-300", "unit": "mm" },
+                    { "name": "Kích thước", "value": "1400x900x350", "unit": "mm" },
+                    { "name": "Trọng lượng", "value": "250", "unit": "kg" }
+                  ]
+                },
+                {
+                  "id": "navigation",
+                  "name": "Hệ thống định vị",
+                  "icon": "🧭",
+                  "specs": [
+                    { "name": "QR Code", "value": "Hỗ trợ" },
+                    { "name": "Texture SLAM", "value": "Hỗ trợ" },
+                    { "name": "Laser SLAM", "value": "Hỗ trợ" },
+                    { "name": "Độ chính xác", "value": "±15", "unit": "mm" }
+                  ]
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "id": "Forklift",
+          "name": "Forklift",
+          "products": [
+            {
+              "id": "irayple-RTA-F140-L-H200-620CE",
+              "name": "RTA-F140-L-H200-620CE",
+              "image": "/robot1.png",
+              "description": {
+                "line1": "Load capacity: 1500kg",
+                "line2": "Navigation: Laser SLAM"
+              },
+              "detail": "Robot vận chuyển tải trọng lớn với tốc độ cao, phù hợp cho môi trường logistics",
+              "mainCategories": [
+                {
+                  "id": "technical-specs",
+                  "name": "Thông số kỹ thuật",
+                  "icon": "⚙️",
+                  "specs": [
+                    { "name": "Tải trọng tối đa", "value": "1500", "unit": "kg" },
+                    { "name": "Tốc độ di chuyển", "value": "2.0", "unit": "m/s" },
+                    { "name": "Kích thước", "value": "1600x1000x400", "unit": "mm" },
+                    { "name": "Trọng lượng", "value": "320", "unit": "kg" }
+                  ]
+                },
+                {
+                  "id": "performance",
+                  "name": "Hiệu suất",
+                  "icon": "🚀",
+                  "specs": [
+                    { "name": "Thời gian hoạt động", "value": "12-15", "unit": "giờ" },
+                    { "name": "Tốc độ tăng tốc", "value": "0.5", "unit": "m/s²" },
+                    { "name": "Bán kính quay", "value": "2.5", "unit": "m" }
+                  ]
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

@@ -1,18 +1,7 @@
 import type React from "react"
 import { motion } from "framer-motion"
+import type { Product } from "../types/products"
 
-interface ProductDescription {
-    line1: string
-    line2?: string
-}
-
-interface Product {
-    id: string
-    name: string
-    image: string
-    description?: ProductDescription
-    detail?: string
-}
 interface ProductCardProps {
   product: Product
   onViewDetails: (product: Product) => void
