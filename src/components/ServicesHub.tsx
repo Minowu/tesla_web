@@ -1,4 +1,5 @@
-import React from 'react';
+import React, { useRef } from 'react';
+import { motion, useInView, useAnimation } from 'framer-motion';
 
 const ServicesHub: React.FC = () => {
   const services = [
@@ -76,19 +77,91 @@ const ServicesHub: React.FC = () => {
     }
   ];
 
+  // Animation refs và controls
+  const headerRef = useRef(null);
+  const gridRef = useRef(null);
+  
+  const headerInView = useInView(headerRef, { once: true });
+  const gridInView = useInView(gridRef, { once: true });
+  
+  const headerControls = useAnimation();
+  const gridControls = useAnimation();
+
+  // Animation effects
+  React.useEffect(() => {
+    if (headerInView) {
+      headerControls.start("visible");
+    }
+  }, [headerInView, headerControls]);
+
+  React.useEffect(() => {
+    if (gridInView) {
+      gridControls.start("visible");
+    }
+  }, [gridInView, gridControls]);
+
+  // Animation variants
+  const headerVariants = {
+    hidden: { opacity: 0, y: -100 },
+    visible: { opacity: 1, y: 0 }
+  };
+
+  const containerVariants = {
+    hidden: { opacity: 0 },
+    visible: {
+      opacity: 1,
+      transition: {
+        staggerChildren: 0.2,
+        delayChildren: 0.1
+      }
+    }
+  };
+
+  const cardVariants = {
+    hidden: { opacity: 0, y: 50, scale: 0.9 },
+    visible: { 
+      opacity: 1, 
+      y: 0, 
+      scale: 1,
+      transition: {
+        duration: 0.6,
+        ease: "easeOut"
+      }
+    }
+  };
+
   return (
     <section className="services">
       <div className="container">
-        <div className="section-header">
+        <motion.div 
+          ref={headerRef}
+          className="section-header"
+          variants={headerVariants}
+          initial="hidden"
+          animate={headerControls}
+          transition={{ duration: 0.8, ease: "easeOut" }}
+        >
           <h2 className="section-title">Dịch vụ Công nghệ</h2>
           <p className="section-subtitle">
             Cung cấp các dịch vụ công nghệ tiên tiến để thúc đẩy chuyển đổi số
           </p>
-        </div>
+        </motion.div>
 
-        <div className="services-grid">
+        <motion.div 
+          ref={gridRef}
+          className="services-grid"
+          variants={containerVariants}
+          initial="hidden"
+          animate={gridControls}
+        >
           {services.map((service) => (
-            <div key={service.id} className="service-card">
+            <motion.div 
+              key={service.id} 
+              className="service-card"
+              variants={cardVariants}
+              whileHover={{ scale: 1.05, y: -10 }}
+              whileTap={{ scale: 0.95 }}
+            >
               <div className="service-icon">
                 {service.icon}
               </div>
@@ -101,9 +174,9 @@ const ServicesHub: React.FC = () => {
                   <li key={index}>{feature}</li>
                 ))}
               </ul>
-            </div>
+            </motion.div>
           ))}
-        </div>
+        </motion.div>
       </div>
     </section>
   );

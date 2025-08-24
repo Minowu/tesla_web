@@ -1,4 +1,5 @@
 import React, { useState, useRef, useEffect } from 'react';
+import { motion, useInView, useAnimation } from 'framer-motion';
 import logo from '../../logo_white.png';
 // Solutions Data based on the image
 const solutions = [
@@ -79,19 +80,54 @@ const solutions = [
 const SolutionsHexagon: React.FC = () => {
   const [selectedSolution, setSelectedSolution] = useState<string | null>(null);
   const containerRef = useRef<HTMLDivElement>(null);
-const centralRef = useRef<HTMLDivElement>(null);
-const svgRef = useRef<SVGSVGElement>(null);
-const hexRefs = useRef<(HTMLDivElement | null)[]>([]);
+  const centralRef = useRef<HTMLDivElement>(null);
+  const svgRef = useRef<SVGSVGElement>(null);
+  const hexRefs = useRef<(HTMLDivElement | null)[]>([]);
+  
+  // Animation refs và controls
+  const headerRef = useRef(null);
+  
+  const headerInView = useInView(headerRef, { once: true });
+  
+  const headerControls = useAnimation();
 
-useEffect(() => {
-  function drawLines() {
-    if (!containerRef.current || !centralRef.current || !svgRef.current) return;
+  // Animation effects
+  useEffect(() => {
+    if (headerInView) {
+      headerControls.start("visible");
+    }
+  }, [headerInView]);
+
+  // Animation variants
+  const headerVariants = {
+    hidden: { opacity: 0, y: -50 },
+    visible: { opacity: 1, y: 0 }
+  };
+
+  const hexItemVariants = {
+    hidden: { opacity: 0, scale: 0.8, y: 50 },
+    visible: { opacity: 1, scale: 1, y: 0 }
+  };
+
+  const hexGridVariants = {
+    hidden: { opacity: 0 },
+    visible: { 
+      opacity: 1,
+      transition: {
+        staggerChildren: 0.15
+      }
+    }
+  };
+
+  useEffect(() => {
+    function drawLines() {
+      if (!containerRef.current || !centralRef.current || !svgRef.current) return;
 
     const containerRect = containerRef.current.getBoundingClientRect();
     const centralRect = centralRef.current.getBoundingClientRect();
     const cx = centralRect.left - containerRect.left + centralRect.width / 2;
     const cy = centralRect.top - containerRect.top + centralRect.height / 2;
-    const logoRadius = 90; // Bán kính của logo (120px / 2)
+    const logoRadius = 90; 
 
     // Clear old lines
     svgRef.current.innerHTML = '';
@@ -132,14 +168,21 @@ useEffect(() => {
   return (
     <section className="solutions-hexagon">
       <div className="container">
-        <div className="section-header">
+        <motion.div 
+          ref={headerRef}
+          className="section-header"
+          variants={headerVariants}
+          initial="hidden"
+          animate={headerControls}
+          transition={{ duration: 0.8, ease: "easeOut" }}
+        >
           <h2 className="section-title">
             Giải Pháp <span className="text-company">THADOROBOT</span>
           </h2>
           <p className="section-subtitle">
             Khám phá các hệ thống và dịch vụ thông minh giúp doanh nghiệp của bạn phát triển bền vững
           </p>
-        </div>
+        </motion.div>
 
         <div className="hexagon-container" ref={containerRef}>
           <svg className="connection-lines" ref={svgRef}></svg>
@@ -152,18 +195,28 @@ useEffect(() => {
           </div>
 
           {/* Hexagon Solutions */}
-          <div className="hexagon-grid">
+          <motion.div 
+            className="hexagon-grid"
+            variants={hexGridVariants}
+            initial="hidden"
+            whileInView="visible"
+            viewport={{ once: true }}
+            transition={{ duration: 0.8 }}
+          >
             {solutions.map((solution, index) => (
-              <div
+              <motion.div
                 id={'hex-' + index}
                 key={solution.id}
                 ref={el => (hexRefs.current[index] = el)}
                 className={`hexagon-item ${selectedSolution === solution.id ? 'active' : ''}`}
+                onClick={() => setSelectedSolution(selectedSolution === solution.id ? null : solution.id)}
+                variants={hexItemVariants}
+                whileHover={{ scale: 1.05 }}
+                whileTap={{ scale: 0.95 }}
                 style={{ 
                   '--hex-color': solution.color,
                   '--hex-index': index 
-                } as React.CSSProperties}
-                onClick={() => setSelectedSolution(selectedSolution === solution.id ? null : solution.id)}
+                } as any}
               >
                 <div className="hexagon-content">
                   <div className="hexagon-icon">{solution.icon}</div>
@@ -172,9 +225,9 @@ useEffect(() => {
                     <p>{solution.subtitle}</p>
                   </div>
                 </div>
-              </div>
+              </motion.div>
             ))}
-          </div>
+          </motion.div>
         </div>
 
 

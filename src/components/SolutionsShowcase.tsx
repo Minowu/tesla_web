@@ -1,4 +1,5 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useRef } from 'react';
+import { motion, useInView, useAnimation } from 'framer-motion';
 import { Canvas } from '@react-three/fiber';
 import { OrbitControls, Environment, Float } from '@react-three/drei';
 import { useGLTF } from '@react-three/drei';
@@ -6,22 +7,22 @@ import { Suspense } from 'react';
 
 // 3D Model Components
 const LaserCuttingModel = () => {
-  const { scene } = useGLTF('/models/simulation_laser_cutting_robot_systems.glb');
+  const { scene } = useGLTF('/simulation_laser_cutting_robot_systems.glb');
   return <primitive object={scene} scale={0.5} />;
 };
 
 const SmartApplicationModel = () => {
-  const { scene } = useGLTF('/models/assembly_solar.glb');
+  const { scene } = useGLTF('/assembly_solar.glb');
   return <primitive object={scene} scale={0.3} />;
 };
 
 const RoboticAutomationModel = () => {
-  const { scene } = useGLTF('/models/industrial_-_3d_agv__trolley_-_omrom.glb');
+  const { scene } = useGLTF('/industrial_-_3d_agv__trolley_-_omrom.glb');
   return <primitive object={scene} scale={0.4} />;
 };
 
 const IoTIntegrationModel = () => {
-  const { scene } = useGLTF('/models/logistic_robot_test__2.glb');
+  const { scene } = useGLTF('/logistic_robot_test__2.glb');
   return <primitive object={scene} scale={0.3} />;
 };
 
@@ -75,11 +76,59 @@ const solutions = [
 const SolutionsShowcase: React.FC = () => {
   const [activeSolution, setActiveSolution] = useState(0);
 
+  // Animation refs và controls
+  const headerRef = useRef(null);
+  const visualRef = useRef(null);
+  const contentRef = useRef(null);
+  
+  const headerInView = useInView(headerRef, { once: true });
+  const visualInView = useInView(visualRef, { once: true });
+  const contentInView = useInView(contentRef, { once: true });
+  
+  const headerControls = useAnimation();
+  const visualControls = useAnimation();
+  const contentControls = useAnimation();
+
+  // Animation effects
+  useEffect(() => {
+    if (headerInView) {
+      headerControls.start("visible");
+    }
+  }, [headerInView]);
+
+  useEffect(() => {
+    if (visualInView) {
+      visualControls.start("visible");
+    }
+  }, [visualInView]);
+
+  useEffect(() => {
+    if (contentInView) {
+      contentControls.start("visible");
+    }
+  }, [contentInView]);
+
+  // Animation variants
+  const headerVariants = {
+    hidden: { opacity: 0, y: -50 },
+    visible: { opacity: 1, y: 0 }
+  };
+
+  const visualVariants = {
+    hidden: { opacity: 0, scale: 0.8 },
+    visible: { opacity: 1, scale: 1 }
+  };
+
+  const contentVariants = {
+    hidden: { opacity: 0, x: 100 },
+    visible: { opacity: 1, x: 0 }
+  };
+
   // Auto cycle through solutions
   useEffect(() => {
     const interval = setInterval(() => {
       setActiveSolution((prev) => (prev + 1) % solutions.length);
-    }, 5000);
+    }, 20000);
     return () => clearInterval(interval);
   }, []);
 
@@ -94,17 +143,31 @@ const SolutionsShowcase: React.FC = () => {
   return (
     <section className="solutions">
       <div className="container">
-        <div className="section-header">
+        <motion.div 
+          ref={headerRef}
+          className="section-header"
+          variants={headerVariants}
+          initial="hidden"
+          animate={headerControls}
+          transition={{ duration: 0.8, ease: "easeOut" }}
+        >
           <h2 className="section-title">
             Giải Pháp <span className="text-gradient">Công Nghệ</span>
           </h2>
           <p className="section-subtitle">
             Khám phá các giải pháp công nghệ tiên tiến giúp doanh nghiệp của bạn phát triển bền vững
           </p>
-        </div>
+        </motion.div>
 
         <div className="solutions-showcase">
-          <div className="solutions-visual">
+          <motion.div 
+            ref={visualRef}
+            className="solutions-visual"
+            variants={visualVariants}
+            initial="hidden"
+            animate={visualControls}
+            transition={{ duration: 1, ease: "easeOut" }}
+          >
             <div className="solutions-3d-container">
               <Suspense fallback={<LoadingFallback />}>
                 <Canvas camera={{ position: [0, 0, 5], fov: 50 }}>
@@ -121,20 +184,32 @@ const SolutionsShowcase: React.FC = () => {
             
             <div className="solutions-indicators">
               {solutions.map((solution, index) => (
-                <div
+                <motion.div
                   key={solution.id}
                   className={`solution-indicator ${index === activeSolution ? 'active' : ''}`}
                   onClick={() => setActiveSolution(index)}
-                  style={{ '--indicator-color': solution.color } as React.CSSProperties}
+                  style={{ '--indicator-color': solution.color } as any}
+                  whileHover={{ scale: 1.1 }}
+                  whileTap={{ scale: 0.9 }}
+                  initial={{ opacity: 0, y: 20 }}
+                  animate={{ opacity: 1, y: 0 }}
+                  transition={{ delay: index * 0.1 }}
                 >
                   <span className="indicator-icon">{solution.icon}</span>
                   <span className="indicator-label">{solution.title}</span>
-                </div>
+                </motion.div>
               ))}
             </div>
-          </div>
+          </motion.div>
 
-          <div className="solutions-content">
+          <motion.div 
+            ref={contentRef}
+            className="solutions-content"
+            variants={contentVariants}
+            initial="hidden"
+            animate={contentControls}
+            transition={{ duration: 0.8, ease: "easeOut" }}
+          >
             <div className="solution-header">
               <div 
                 className="solution-badge"
@@ -169,7 +244,7 @@ const SolutionsShowcase: React.FC = () => {
                 <span>Liên hệ tư vấn</span>
               </button>
             </div>
-          </div>
+          </motion.div>
         </div>
       </div>
     </section>
