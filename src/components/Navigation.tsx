@@ -13,7 +13,7 @@ const Navigation: React.FC = () => {
   const navigate = useNavigate();
 
   const menuItems = [
-    { id: 'home', label: 'TRANG CHỦ', icon: '🏠', path: '/', isLink: true },
+    { id: 'home', label: 'TRANG CHỦ', icon: '🏠', path: '/home', isLink: true },
     { id: 'products', label: 'SẢN PHẨM', icon: '🤖', path: '/products', isLink: true },
     { id: 'solutions', label: 'GIẢI PHÁP', icon: '💡', path: '/solutions', isLink: true },
     { id: 'technology', label: 'CÔNG NGHỆ', icon: '⚡', path: '/technology', isLink: true },
@@ -56,7 +56,13 @@ const Navigation: React.FC = () => {
 
   const handleHomeClick = () => {
     setCurrentSection('home');
-    navigate('/');
+    navigate('/home');
+    setIsMobileMenuOpen(false);
+  };
+
+  const handleContactClick = () => {
+    setCurrentSection('contact');
+    navigate('/contactus');
     setIsMobileMenuOpen(false);
   };
 
@@ -144,7 +150,7 @@ const Navigation: React.FC = () => {
           <div className="nav-cta">
             <button
               className="cta-button"
-              onClick={() => setCurrentSection('contact')}
+              onClick={handleContactClick}
             >
               <span>LIÊN HỆ</span>
               
@@ -265,7 +271,7 @@ const Navigation: React.FC = () => {
             <div style={{ textAlign: 'center', marginTop: '2rem' }}>
               <button
                 className="cta-button"
-                onClick={() => setCurrentSection('contact')}
+                onClick={handleContactClick}
                 style={{ width: '100%' }}
               >
                 <span>📞</span>

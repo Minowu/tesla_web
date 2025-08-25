@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { Routes, Route } from 'react-router-dom';
+import { Routes, Route, Navigate } from 'react-router-dom';
 import Navigation from './components/Navigation';
 import HeroSection from './components/HeroSection';
 import SolutionsShowcase from './components/SolutionsShowcase';
@@ -22,7 +22,6 @@ import { ReactLenis,useLenis } from 'lenis/react';
 // dùng đường dẫn tĩnh cho logo để tránh lỗi TS khi import png
 
 function App() {
-  const { currentSection, setCurrentSection } = useAppStore();
   const [isLoading, setIsLoading] = useState(true);
   const lenis = useLenis((lenis) => {
     console.log(lenis);
@@ -85,6 +84,101 @@ function App() {
 
         <main>
           <Routes>
+            {/* Route cho Trang chủ */}
+            <Route path="/home" element={(
+              <div className="homepage">
+                <HeroSection />
+                <SolutionsHexagon />
+                <SolutionsShowcase />
+                <ServicesHub />
+                {/* ===== ADDITIONAL SECTIONS TO FILL EMPTY SPACE ===== */}
+                {/* Blog Carousel Section */}
+                <section className="case-studies-section">
+                  <div className="container">
+                    <div className="section-header">
+                      <h2 className="section-title">Dự Án Tiêu Biểu</h2>
+                      <p className="section-subtitle">
+                        Những dự án thành công đã được chúng tôi triển khai
+                      </p>
+                    </div>
+                    <BlogCarousel />
+                  </div>
+                </section>
+                {/* Services Section */}
+                <section className="services-section">
+                  <div className="container">
+                    <div className="section-header">
+                      <h2 className="section-title">Dịch Vụ Hỗ Trợ</h2>
+                      <p className="section-subtitle">
+                        Đội ngũ chuyên gia giàu kinh nghiệm sẵn sàng hỗ trợ 24/7
+                      </p>
+                    </div>
+                    <div className="services-grid">
+                      <div className="service-card">
+                        <div className="service-icon">💡</div>
+                        <h3>Tư Vấn Chiến Lược</h3>
+                        <p>Đánh giá và đề xuất giải pháp tối ưu cho doanh nghiệp</p>
+                      </div>
+                      <div className="service-card">
+                        <div className="service-icon">🚀</div>
+                        <h3>Triển Khai Hệ Thống</h3>
+                        <p>Lắp đặt và cấu hình hệ thống robot tự động hóa</p>
+                      </div>
+                      <div className="service-card">
+                        <div className="service-icon">🎓</div>
+                        <h3>Đào Tạo Nhân Sự</h3>
+                        <p>Huấn luyện đội ngũ vận hành và bảo trì hệ thống</p>
+                      </div>
+                      <div className="service-card">
+                        <div className="service-icon">🔧</div>
+                        <h3>Bảo Trì Định Kỳ</h3>
+                        <p>Kiểm tra và bảo trì hệ thống theo lịch trình</p>
+                      </div>
+                      <div className="service-card">
+                        <div className="service-icon">📞</div>
+                        <h3>Hỗ Trợ 24/7</h3>
+                        <p>Đội ngũ kỹ thuật sẵn sàng hỗ trợ mọi lúc mọi nơi</p>
+                      </div>
+                      <div className="service-card">
+                        <div className="service-icon">⚡</div>
+                        <h3>Tối Ưu Hóa Liên Tục</h3>
+                        <p>Cải tiến và nâng cấp hệ thống theo thời gian thực</p>
+                      </div>
+                    </div>
+                  </div>
+                </section>
+                {/* Contact CTA Section */}
+                <section className="contact-cta-section">
+                  <div className="container">
+                    <div className="cta-content">
+                      <h2>Sẵn Sàng Chuyển Đổi Số?</h2>
+                      <p>
+                        Hãy liên hệ với chúng tôi ngay hôm nay để được tư vấn miễn phí 
+                        và bắt đầu hành trình chuyển đổi số cùng THADOROBOT
+                      </p>
+                      <div className="cta-buttons">
+                        <button 
+                          className="btn btn-primary"
+                          onClick={() => window.location.href = '/contactus'}
+                        >
+                          <span>📞</span>
+                          Liên Hệ Ngay
+                        </button>
+                        <button className="btn btn-secondary">
+                          <span>📋</span>
+                          Yêu Cầu Demo
+                        </button>
+                        <button className="btn btn-outline">
+                          <span>📖</span>
+                          Tài Liệu Kỹ Thuật
+                        </button>
+                      </div>
+                    </div>
+                  </div>
+                </section>
+              </div>
+            )} />
+            
             {/* Route cho Sản phẩm */}
             <Route path="/products" element={<ProductInfo />} />
             
@@ -116,189 +210,95 @@ function App() {
             {/* Route cho chi tiết bài viết */}
             <Route path="/blog/:slug" element={<BlogDetail />} />
             
-            {/* Route mặc định - chỉ hiển thị trang chủ */}
-            <Route
-              path="*"
-              element={(
-                <>
-                  {currentSection === 'home' && (
-                    <div className="homepage">
-                      <HeroSection />
-                      <SolutionsHexagon />
-                      <SolutionsShowcase />
-                      <ServicesHub />
-                      {/* ===== ADDITIONAL SECTIONS TO FILL EMPTY SPACE ===== */}
-                      {/* Blog Carousel Section */}
-                      <section className="case-studies-section">
-                        <div className="container">
-                          <div className="section-header">
-                            <h2 className="section-title">Dự Án Tiêu Biểu</h2>
-                            <p className="section-subtitle">
-                              Những dự án thành công đã được chúng tôi triển khai
-                            </p>
-                          </div>
-                          <BlogCarousel />
+            {/* Route cho Liên hệ */}
+            <Route path="/contactus" element={(
+              <div className="contact-section">
+                <div className="container">
+                  <div className="section-header">
+                    <h1 className="section-title">Liên Hệ</h1>
+                    <p className="section-subtitle">
+                      Hãy liên hệ với chúng tôi để được tư vấn và hỗ trợ tốt nhất
+                    </p>
+                  </div>
+                  <div className="contact-content">
+                    <div className="contact-info">
+                      <div className="contact-item">
+                        <div className="contact-icon">📞</div>
+                        <div className="contact-details">
+                          <h3>Điện thoại</h3>
+                          <p>+84 28 7300 1234</p>
+                          <p>+84 90 123 4567</p>
                         </div>
-                      </section>
-                      {/* Services Section */}
-                      <section className="services-section">
-                        <div className="container">
-                          <div className="section-header">
-                            <h2 className="section-title">Dịch Vụ Hỗ Trợ</h2>
-                            <p className="section-subtitle">
-                              Đội ngũ chuyên gia giàu kinh nghiệm sẵn sàng hỗ trợ 24/7
-                            </p>
-                          </div>
-                          <div className="services-grid">
-                            <div className="service-card">
-                              <div className="service-icon">💡</div>
-                              <h3>Tư Vấn Chiến Lược</h3>
-                              <p>Đánh giá và đề xuất giải pháp tối ưu cho doanh nghiệp</p>
-                            </div>
-                            <div className="service-card">
-                              <div className="service-icon">🚀</div>
-                              <h3>Triển Khai Hệ Thống</h3>
-                              <p>Lắp đặt và cấu hình hệ thống robot tự động hóa</p>
-                            </div>
-                            <div className="service-card">
-                              <div className="service-icon">🎓</div>
-                              <h3>Đào Tạo Nhân Sự</h3>
-                              <p>Huấn luyện đội ngũ vận hành và bảo trì hệ thống</p>
-                            </div>
-                            <div className="service-card">
-                              <div className="service-icon">🔧</div>
-                              <h3>Bảo Trì Định Kỳ</h3>
-                              <p>Kiểm tra và bảo trì hệ thống theo lịch trình</p>
-                            </div>
-                            <div className="service-card">
-                              <div className="service-icon">📞</div>
-                              <h3>Hỗ Trợ 24/7</h3>
-                              <p>Đội ngũ kỹ thuật sẵn sàng hỗ trợ mọi lúc mọi nơi</p>
-                            </div>
-                            <div className="service-card">
-                              <div className="service-icon">⚡</div>
-                              <h3>Tối Ưu Hóa Liên Tục</h3>
-                              <p>Cải tiến và nâng cấp hệ thống theo thời gian thực</p>
-                            </div>
-                          </div>
+                      </div>
+                      <div className="contact-item">
+                        <div className="contact-icon">✉️</div>
+                        <div className="contact-details">
+                          <h3>Email</h3>
+                          <p>info@thadorobot.com</p>
+                          <p>support@thadorobot.com</p>
                         </div>
-                      </section>
-                      {/* Contact CTA Section */}
-                      <section className="contact-cta-section">
-                        <div className="container">
-                          <div className="cta-content">
-                            <h2>Sẵn Sàng Chuyển Đổi Số?</h2>
-                            <p>
-                              Hãy liên hệ với chúng tôi ngay hôm nay để được tư vấn miễn phí 
-                              và bắt đầu hành trình chuyển đổi số cùng THADOROBOT
-                            </p>
-                            <div className="cta-buttons">
-                              <button 
-                                className="btn btn-primary"
-                                onClick={() => setCurrentSection('contact')}
-                              >
-                                <span>📞</span>
-                                Liên Hệ Ngay
-                              </button>
-                              <button className="btn btn-secondary">
-                                <span>📋</span>
-                                Yêu Cầu Demo
-                              </button>
-                              <button className="btn btn-outline">
-                                <span>📖</span>
-                                Tài Liệu Kỹ Thuật
-                              </button>
-                            </div>
-                          </div>
+                      </div>
+                      <div className="contact-item">
+                        <div className="contact-icon">📍</div>
+                        <div className="contact-details">
+                          <h3>Địa chỉ</h3>
+                          <p>123 Đường ABC, Quận 1</p>
+                          <p>TP. Hồ Chí Minh, Việt Nam</p>
                         </div>
-                      </section>
-                    </div>
-                  )}
-                  {currentSection === 'contact' && (
-                    <div className="contact-section">
-                      <div className="container">
-                        <div className="section-header">
-                          <h1 className="section-title">Liên Hệ</h1>
-                          <p className="section-subtitle">
-                            Hãy liên hệ với chúng tôi để được tư vấn và hỗ trợ tốt nhất
-                          </p>
-                        </div>
-                        <div className="contact-content">
-                          <div className="contact-info">
-                            <div className="contact-item">
-                              <div className="contact-icon">📞</div>
-                              <div className="contact-details">
-                                <h3>Điện thoại</h3>
-                                <p>+84 28 7300 1234</p>
-                                <p>+84 90 123 4567</p>
-                              </div>
-                            </div>
-                            <div className="contact-item">
-                              <div className="contact-icon">✉️</div>
-                              <div className="contact-details">
-                                <h3>Email</h3>
-                                <p>info@thadorobot.com</p>
-                                <p>support@thadorobot.com</p>
-                              </div>
-                            </div>
-                            <div className="contact-item">
-                              <div className="contact-icon">📍</div>
-                              <div className="contact-details">
-                                <h3>Địa chỉ</h3>
-                                <p>123 Đường ABC, Quận 1</p>
-                                <p>TP. Hồ Chí Minh, Việt Nam</p>
-                              </div>
-                            </div>
-                            <div className="contact-item">
-                              <div className="contact-icon">🕒</div>
-                              <div className="contact-details">
-                                <h3>Giờ làm việc</h3>
-                                <p>Thứ 2 - Thứ 6: 8:00 - 18:00</p>
-                                <p>Thứ 7: 8:00 - 12:00</p>
-                              </div>
-                            </div>
-                          </div>
-                          <div className="contact-form">
-                            <h3>Gửi tin nhắn cho chúng tôi</h3>
-                            <form>
-                              <div className="form-group">
-                                <input type="text" placeholder="Họ và tên" required />
-                              </div>
-                              <div className="form-group">
-                                <input type="email" placeholder="Email" required />
-                              </div>
-                              <div className="form-group">
-                                <input type="tel" placeholder="Số điện thoại" />
-                              </div>
-                              <div className="form-group">
-                                <textarea placeholder="Nội dung tin nhắn" rows={4} required></textarea>
-                              </div>
-                              <button type="submit" className="btn btn-primary">
-                                <span>📤</span>
-                                <span>Gửi tin nhắn</span>
-                              </button>
-                            </form>
-                          </div>
-                        </div>
-                        <div className="stats">
-                          <div className="stat">
-                            <div className="stat-number">24/7</div>
-                            <div className="stat-label">Hỗ trợ khách hàng</div>
-                          </div>
-                          <div className="stat">
-                            <div className="stat-number">100+</div>
-                            <div className="stat-label">Dự án thành công</div>
-                          </div>
-                          <div className="stat">
-                            <div className="stat-number">50+</div>
-                            <div className="stat-label">Khách hàng tin tưởng</div>
-                          </div>
+                      </div>
+                      <div className="contact-item">
+                        <div className="contact-icon">🕒</div>
+                        <div className="contact-details">
+                          <h3>Giờ làm việc</h3>
+                          <p>Thứ 2 - Thứ 6: 8:00 - 18:00</p>
+                          <p>Thứ 7: 8:00 - 12:00</p>
                         </div>
                       </div>
                     </div>
-                  )}
-                </>
-              )}
+                    <div className="contact-form">
+                      <h3>Gửi tin nhắn cho chúng tôi</h3>
+                      <form>
+                        <div className="form-group">
+                          <input type="text" placeholder="Họ và tên" required />
+                        </div>
+                        <div className="form-group">
+                          <input type="email" placeholder="Email" required />
+                        </div>
+                        <div className="form-group">
+                          <input type="tel" placeholder="Số điện thoại" />
+                        </div>
+                        <div className="form-group">
+                          <textarea placeholder="Nội dung tin nhắn" rows={4} required></textarea>
+                        </div>
+                        <button type="submit" className="btn btn-primary">
+                          <span>📤</span>
+                          <span>Gửi tin nhắn</span>
+                        </button>
+                      </form>
+                    </div>
+                  </div>
+                  <div className="stats">
+                    <div className="stat">
+                      <div className="stat-number">24/7</div>
+                      <div className="stat-label">Hỗ trợ khách hàng</div>
+                    </div>
+                    <div className="stat">
+                      <div className="stat-number">100+</div>
+                      <div className="stat-label">Dự án thành công</div>
+                    </div>
+                    <div className="stat">
+                      <div className="stat-number">50+</div>
+                      <div className="stat-label">Khách hàng tin tưởng</div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            )} />
+            
+            {/* Route mặc định - redirect về /home */}
+            <Route
+              path="*"
+              element={<Navigate to="/home" replace />}
             />
             
           </Routes>
