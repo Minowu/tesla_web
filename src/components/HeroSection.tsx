@@ -3,6 +3,8 @@ import { useNavigate } from 'react-router-dom';
 import { useAppStore } from '../store/appStore';
 import AnimatedCounter from './AnimatedCounter';  
 import {motion, useInView, useAnimation} from 'framer-motion';
+import productsData from '../data/products.json';
+import type { Brand, Product } from '../types/products';
 
 const HeroSection: React.FC = () => {
   const { setCurrentSection } = useAppStore();
@@ -93,17 +95,17 @@ const HeroSection: React.FC = () => {
 
   const features = [
     {
-      icon: "🤖",
-      title: "Robot AGV Thông Minh",
+      icon: "🚛",
+      title: "Robot AGV tự động",
       description: "Hệ thống robot tự động di chuyển với AI và cảm biến tiên tiến"
     },
     {
-      icon: "⚡",
+      icon: "🤖",
       title: "Camera AI nhận diện",
       description: "Phát hiện và nhận diện vật thể với độ chính xác cao "
     },
     {
-      icon: "🌐",
+      icon: "🏭",
       title: "Kho thông minh",
       description: "Tự động hóa quy trình vận hành kho, đảm bảo độ an toàn và hiệu quả"
     }
@@ -120,10 +122,7 @@ const HeroSection: React.FC = () => {
     visible: { opacity: 1, y: 0 }
   };
 
-  const robotCardVariants = {
-    hidden: { opacity: 0.2, x: 600 },
-    visible: { opacity: 1, x: 0 }
-  };
+  // (đã dùng inline variants cho card)
 
   const featuresVariants = {
     hidden: { opacity: 0.2, y: 100 },
@@ -134,6 +133,28 @@ const HeroSection: React.FC = () => {
     hidden: { opacity: 0.2, y: 80 },
     visible: { opacity: 1, y: 0 }
   };
+
+  // Chọn 4 sản phẩm từ 4 danh mục khác nhau
+  const getShowcaseProducts = (): Product[] => {
+    const brands: Brand[] = (productsData as any).brands as Brand[];
+    const selected: Product[] = [];
+    const seenCategories = new Set<string>();
+
+    for (const brand of brands) {
+      for (const category of brand.categories) {
+        if (seenCategories.has(category.id)) continue;
+        const firstProduct = category.products[0];
+        if (firstProduct) {
+          selected.push(firstProduct);
+          seenCategories.add(category.id);
+          if (selected.length === 4) return selected;
+        }
+      }
+    }
+    return selected.slice(0, 4);
+  };
+
+  const showcaseProducts = getShowcaseProducts();
 
   return (
     <section className="hero">
@@ -187,7 +208,7 @@ const HeroSection: React.FC = () => {
                 
                 <button 
                   className="btn btn-secondary"
-                  onClick={() => setCurrentSection('solutions')}
+                  onClick={() => navigate('/solutions')}
                 >
                   <span>💡</span>
                   <span>Giải pháp</span>
@@ -259,16 +280,11 @@ const HeroSection: React.FC = () => {
           <div className="hero-robots-showcase">
             <h2 className="hero-robots-showcase-title"> Sản phẩm của chúng tôi</h2>
             <div ref={robotCardsRef} className="robots-grid">
-              {[
-                { img: "/robot2.png", title: "AGV Robot", desc: "Tự động di chuyển hàng hóa" },
-                { img: "/robot3.png", title: "Assembly Robot", desc: "Lắp ráp tự động chính xác" },
-                { img: "/robot4.png", title: "Logistics Robot", desc: "Quản lý kho thông minh" },
-                { img: "/robot5.png", title: "Manufacturing Robot", desc: "Sản xuất tự động hóa" }
-              ].map((robot, index) => (
+              {showcaseProducts.map((product, index) => (
                 <motion.div 
-                  key={index}
+                  key={product.id}
                   className="robot-card"
-                  onClick={() => navigate('/products')}
+                  onClick={() => navigate(`/product/${product.id}`)}
                   style={{ cursor: 'pointer' }}
                   variants={{
                     hidden: { opacity: 0.2, x: 600 - (index * 100) },
@@ -279,11 +295,11 @@ const HeroSection: React.FC = () => {
                   transition={{ duration: 1.2, delay: index * 0.1 }}
                 >
                   <div className="robot-image">
-                    <img src={robot.img} alt={robot.title} />
+                    <img src={product.image} alt={product.name} />
                   </div>
                   <div className="robot-info">
-                    <h4>{robot.title}</h4>
-                    <p>{robot.desc}</p>
+                    <h4>{product.name}</h4>
+                    <p>{product.description?.line1 || 'Sản phẩm nổi bật'}</p>
                   </div>
                 </motion.div>
               ))}

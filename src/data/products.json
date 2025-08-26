@@ -503,7 +503,7 @@
             {
               "id": "irayple-RTA-F140-L-H200-620CE",
               "name": "RTA-F140-L-H200-620CE",
-              "image": "/robot1.png",
+              "image": "irayple_robot/forklit amr/RTA-F140-L-H200-620CE/cover.png",
               "description": {
                 "line1": "Load capacity: 1500kg",
                 "line2": "Navigation: Laser SLAM"
@@ -529,6 +529,714 @@
                     { "name": "Thời gian hoạt động", "value": "12-15", "unit": "giờ" },
                     { "name": "Tốc độ tăng tốc", "value": "0.5", "unit": "m/s²" },
                     { "name": "Bán kính quay", "value": "2.5", "unit": "m" }
+                  ]
+                }
+              ]
+            },
+            {
+              "id": "irayple-RTA-D150-L-3LA-200-E",
+              "name": "RTA-D150-L-3LA-200-E",
+              "image": "irayple_robot/forklit amr/RTA-D150-L-3LA-200-E/cover.png",
+              "description": {
+                "line1": "Load capacity: 1500kg",
+                "line2": "Navigation: Laser SLAM"
+              },
+              "detail": "Robot vận chuyển tải trọng lớn với tốc độ cao, phù hợp cho môi trường logistics",
+              "mainCategories": [
+                {
+                  "id": "technical-specs",
+                  "name": "Thông số kỹ thuật",
+                  "icon": "⚙️",
+                  "specs": [
+                    { "name": "Tải trọng tối đa", "value": "1500", "unit": "kg" },
+                    { "name": "Tốc độ di chuyển", "value": "2.0", "unit": "m/s" },
+                    { "name": "Kích thước", "value": "1600x1000x400", "unit": "mm" },
+                    { "name": "Trọng lượng", "value": "320", "unit": "kg" }
+                  ]
+                },
+                {
+                  "id": "performance",
+                  "name": "Hiệu suất",
+                  "icon": "🚀",
+                  "specs": [
+                    { "name": "Thời gian hoạt động", "value": "12-15", "unit": "giờ" },
+                    { "name": "Tốc độ tăng tốc", "value": "0.5", "unit": "m/s²" },
+                    { "name": "Bán kính quay", "value": "2.5", "unit": "m" }
+                  ]
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "id": "transfer",
+          "name": "Transfer AMR",
+          "products": [
+            {
+              "id": "irayple-RTA-M060-LQ",
+              "name": "RTA-M060-LQ",
+              "image": "irayple_robot/transfer amr/RTA-M060-LQ/cover.png",
+              "description": {
+                "line1": "Load capacity: 1500kg",
+                "line2": "Navigation: Laser SLAM"
+              },
+              "detail": "Robot vận chuyển tải trọng lớn với tốc độ cao, phù hợp cho môi trường logistics",
+              "mainCategories": [
+                {
+                  "id": "technical-specs",
+                  "name": "Thông số kỹ thuật",
+                  "icon": "⚙️",
+                  "specs": [
+                    { "name": "Tải trọng tối đa", "value": "1500", "unit": "kg" },
+                    { "name": "Tốc độ di chuyển", "value": "2.0", "unit": "m/s" },
+                    { "name": "Kích thước", "value": "1600x1000x400", "unit": "mm" },
+                    { "name": "Trọng lượng", "value": "320", "unit": "kg" }
+                  ]
+                },
+                {
+                  "id": "performance",
+                  "name": "Hiệu suất",
+                  "icon": "🚀",
+                  "specs": [
+                    { "name": "Thời gian hoạt động", "value": "12-15", "unit": "giờ" },
+                    { "name": "Tốc độ tăng tốc", "value": "0.5", "unit": "m/s²" },
+                    { "name": "Bán kính quay", "value": "2.5", "unit": "m" }
+                  ]
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "id": "accessories",
+          "name": "Accessories",
+          "products": [
+            {
+              "id": "irayple-RTP-4830-1-300E",
+              "name": "RTP-4830-1-300E",
+              "image": "/irayple_robot/accessories/RTP-4830-1-300E/cover.png",
+              "description": {
+                "line1": "Accessory for AMR",
+                "line2": "Compatible with multiple models"
+              },
+              "detail": "Phụ kiện chuyên dụng cho robot tự động di chuyển",
+              "mainCategories": [
+                {
+                  "id": "technical-specs",
+                  "name": "Thông số kỹ thuật",
+                  "icon": "⚙️",
+                  "specs": [
+                    { "name": "Tương thích", "value": "AMR Series", "unit": "" },
+                    { "name": "Chất liệu", "value": "Cao cấp", "unit": "" },
+                    { "name": "Tuổi thọ", "value": "50000", "unit": "giờ" }
+                  ]
+                }
+              ]
+            },
+            {
+              "id": "irayple-RTP-4830-1-500",
+              "name": "RTP-4830-1-500",
+              "image": "/irayple_robot/accessories/RTP-4830-1-500/cover.png",
+              "description": {
+                "line1": "Accessory for AMR",
+                "line2": "Compatible with multiple models"
+              },
+              "detail": "Phụ kiện chuyên dụng cho robot tự động di chuyển",
+              "mainCategories": [
+                {
+                  "id": "technical-specs",
+                  "name": "Thông số kỹ thuật",
+                  "icon": "⚙️",
+                  "specs": [
+                    { "name": "Tương thích", "value": "AMR Series", "unit": "" },
+                    { "name": "Chất liệu", "value": "Cao cấp", "unit": "" },
+                    { "name": "Tuổi thọ", "value": "50000", "unit": "giờ" }
+                  ]
+                }
+              ]
+            },
+            {
+              "id": "irayple-RTP-4860-3-100",
+              "name": "RTP-4860-3-100",
+              "image": "/irayple_robot/accessories/RTP-4860-3-100/cover.png",
+              "description": {
+                "line1": "Accessory for AMR",
+                "line2": "Compatible with multiple models"
+              },
+              "detail": "Phụ kiện chuyên dụng cho robot tự động di chuyển",
+              "mainCategories": [
+                {
+                  "id": "technical-specs",
+                  "name": "Thông số kỹ thuật",
+                  "icon": "⚙️",
+                  "specs": [
+                    { "name": "Tương thích", "value": "AMR Series", "unit": "" },
+                    { "name": "Chất liệu", "value": "Cao cấp", "unit": "" },
+                    { "name": "Tuổi thọ", "value": "50000", "unit": "giờ" }
+                  ]
+                }
+              ]
+            },
+            {
+              "id": "irayple-RTP-24100-4-100",
+              "name": "RTP-24100-4-100",
+              "image": "/irayple_robot/accessories/RTP-24100-4-100/cover.png",
+              "description": {
+                "line1": "Accessory for AMR",
+                "line2": "Compatible with multiple models"
+              },
+              "detail": "Phụ kiện chuyên dụng cho robot tự động di chuyển",
+              "mainCategories": [
+                {
+                  "id": "technical-specs",
+                  "name": "Thông số kỹ thuật",
+                  "icon": "⚙️",
+                  "specs": [
+                    { "name": "Tương thích", "value": "AMR Series", "unit": "" },
+                    { "name": "Chất liệu", "value": "Cao cấp", "unit": "" },
+                    { "name": "Tuổi thọ", "value": "50000", "unit": "giờ" }
+                  ]
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "id": "3d-camera",
+          "name": "3D Camera",
+          "products": [
+            {
+              "id": "irayple-D7200MG200E",
+              "name": "D7200MG200E",
+              "image": "/irayple_robot/3D camera/D7200MG200E/cover.png",
+              "description": {
+                "line1": "3D Camera System",
+                "line2": "High precision scanning"
+              },
+              "detail": "Hệ thống camera 3D độ chính xác cao cho ứng dụng công nghiệp",
+              "mainCategories": [
+                {
+                  "id": "technical-specs",
+                  "name": "Thông số kỹ thuật",
+                  "icon": "⚙️",
+                  "specs": [
+                    { "name": "Độ phân giải", "value": "7200x200", "unit": "pixels" },
+                    { "name": "Tốc độ quét", "value": "200", "unit": "fps" },
+                    { "name": "Độ chính xác", "value": "±0.1", "unit": "mm" }
+                  ]
+                }
+              ]
+            },
+            {
+              "id": "irayple-DH-MV-D5201MG100E",
+              "name": "DH-MV-D5201MG100E",
+              "image": "/irayple_robot/3D camera/DH-MV-D5201MG100E/cover.png",
+              "description": {
+                "line1": "3D Camera System",
+                "line2": "High precision scanning"
+              },
+              "detail": "Hệ thống camera 3D độ chính xác cao cho ứng dụng công nghiệp",
+              "mainCategories": [
+                {
+                  "id": "technical-specs",
+                  "name": "Thông số kỹ thuật",
+                  "icon": "⚙️",
+                  "specs": [
+                    { "name": "Độ phân giải", "value": "5201x100", "unit": "pixels" },
+                    { "name": "Tốc độ quét", "value": "100", "unit": "fps" },
+                    { "name": "Độ chính xác", "value": "±0.05", "unit": "mm" }
+                  ]
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "id": "area-scan-camera",
+          "name": "Area Scan Camera",
+          "products": [
+            {
+              "id": "irayple-AH7040CG000E",
+              "name": "AH7040CG000E",
+              "image": "/irayple_robot/area scan-camera/AH7040CG000E/cover.png",
+              "description": {
+                "line1": "Area Scan Camera",
+                "line2": "GigE interface"
+              },
+              "detail": "Camera quét vùng với giao diện GigE cho ứng dụng công nghiệp",
+              "mainCategories": [
+                {
+                  "id": "technical-specs",
+                  "name": "Thông số kỹ thuật",
+                  "icon": "⚙️",
+                  "specs": [
+                    { "name": "Độ phân giải", "value": "7040x7040", "unit": "pixels" },
+                    { "name": "Giao diện", "value": "GigE", "unit": "" },
+                    { "name": "Tốc độ khung hình", "value": "30", "unit": "fps" }
+                  ]
+                }
+              ]
+            },
+            {
+              "id": "irayple-AH7040CU000E",
+              "name": "AH7040CU000E",
+              "image": "/irayple_robot/area scan-camera/AH7040CU000E/cover.png",
+              "description": {
+                "line1": "Area Scan Camera",
+                "line2": "USB3.0 interface"
+              },
+              "detail": "Camera quét vùng với giao diện USB3.0 cho ứng dụng công nghiệp",
+              "mainCategories": [
+                {
+                  "id": "technical-specs",
+                  "name": "Thông số kỹ thuật",
+                  "icon": "⚙️",
+                  "specs": [
+                    { "name": "Độ phân giải", "value": "7040x7040", "unit": "pixels" },
+                    { "name": "Giao diện", "value": "USB3.0", "unit": "" },
+                    { "name": "Tốc độ khung hình", "value": "30", "unit": "fps" }
+                  ]
+                }
+              ]
+            },
+            {
+              "id": "irayple-AH7040MG000E",
+              "name": "AH7040MG000E",
+              "image": "/irayple_robot/area scan-camera/AH7040MG000E/cover.png",
+              "description": {
+                "line1": "Area Scan Camera",
+                "line2": "MIPI interface"
+              },
+              "detail": "Camera quét vùng với giao diện MIPI cho ứng dụng công nghiệp",
+              "mainCategories": [
+                {
+                  "id": "technical-specs",
+                  "name": "Thông số kỹ thuật",
+                  "icon": "⚙️",
+                  "specs": [
+                    { "name": "Độ phân giải", "value": "7040x7040", "unit": "pixels" },
+                    { "name": "Giao diện", "value": "MIPI", "unit": "" },
+                    { "name": "Tốc độ khung hình", "value": "30", "unit": "fps" }
+                  ]
+                }
+              ]
+            },
+            {
+              "id": "irayple-AH7040MU000E",
+              "name": "AH7040MU000E",
+              "image": "/irayple_robot/area scan-camera/AH7040MU000E/cover.png",
+              "description": {
+                "line1": "Area Scan Camera",
+                "line2": "USB3.0 interface"
+              },
+              "detail": "Camera quét vùng với giao diện USB3.0 cho ứng dụng công nghiệp",
+              "mainCategories": [
+                {
+                  "id": "technical-specs",
+                  "name": "Thông số kỹ thuật",
+                  "icon": "⚙️",
+                  "specs": [
+                    { "name": "Độ phân giải", "value": "7040x7040", "unit": "pixels" },
+                    { "name": "Giao diện", "value": "USB3.0", "unit": "" },
+                    { "name": "Tốc độ khung hình", "value": "30", "unit": "fps" }
+                  ]
+                }
+              ]
+            },
+            {
+              "id": "irayple-AH7160CG000E",
+              "name": "AH7160CG000E",
+              "image": "/irayple_robot/area scan-camera/AH7160CG000E/cover.png",
+              "description": {
+                "line1": "Area Scan Camera",
+                "line2": "GigE interface"
+              },
+              "detail": "Camera quét vùng với giao diện GigE cho ứng dụng công nghiệp",
+              "mainCategories": [
+                {
+                  "id": "technical-specs",
+                  "name": "Thông số kỹ thuật",
+                  "icon": "⚙️",
+                  "specs": [
+                    { "name": "Độ phân giải", "value": "7160x7160", "unit": "pixels" },
+                    { "name": "Giao diện", "value": "GigE", "unit": "" },
+                    { "name": "Tốc độ khung hình", "value": "30", "unit": "fps" }
+                  ]
+                }
+              ]
+            },
+            {
+              "id": "irayple-AH7160MG000E",
+              "name": "AH7160MG000E",
+              "image": "/irayple_robot/area scan-camera/AH7160MG000E/cover.png",
+              "description": {
+                "line1": "Area Scan Camera",
+                "line2": "MIPI interface"
+              },
+              "detail": "Camera quét vùng với giao diện MIPI cho ứng dụng công nghiệp",
+              "mainCategories": [
+                {
+                  "id": "technical-specs",
+                  "name": "Thông số kỹ thuật",
+                  "icon": "⚙️",
+                  "specs": [
+                    { "name": "Độ phân giải", "value": "7160x7160", "unit": "pixels" },
+                    { "name": "Giao diện", "value": "MIPI", "unit": "" },
+                    { "name": "Tốc độ khung hình", "value": "30", "unit": "fps" }
+                  ]
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "id": "code-reader",
+          "name": "Code Reader",
+          "products": [
+            {
+              "id": "irayple-R3004MG-05-DEE110E",
+              "name": "R3004MG-05-DEE110E",
+              "image": "/irayple_robot/code reader/R3004MG-05-DEE110E/cover.png",
+              "description": {
+                "line1": "Code Reader",
+                "line2": "High speed reading"
+              },
+              "detail": "Máy đọc mã vạch tốc độ cao cho ứng dụng công nghiệp",
+              "mainCategories": [
+                {
+                  "id": "technical-specs",
+                  "name": "Thông số kỹ thuật",
+                  "icon": "⚙️",
+                  "specs": [
+                    { "name": "Tốc độ đọc", "value": "3000", "unit": "codes/s" },
+                    { "name": "Độ chính xác", "value": "99.9", "unit": "%" },
+                    { "name": "Giao diện", "value": "MIPI", "unit": "" }
+                  ]
+                }
+              ]
+            },
+            {
+              "id": "irayple-R3004MG-05H-DEE01E",
+              "name": "R3004MG-05H-DEE01E",
+              "image": "/irayple_robot/code reader/R3004MG-05H-DEE01E/cover.png",
+              "description": {
+                "line1": "Code Reader",
+                "line2": "High speed reading"
+              },
+              "detail": "Máy đọc mã vạch tốc độ cao cho ứng dụng công nghiệp",
+              "mainCategories": [
+                {
+                  "id": "technical-specs",
+                  "name": "Thông số kỹ thuật",
+                  "icon": "⚙️",
+                  "specs": [
+                    { "name": "Tốc độ đọc", "value": "3000", "unit": "codes/s" },
+                    { "name": "Độ chính xác", "value": "99.9", "unit": "%" },
+                    { "name": "Giao diện", "value": "MIPI", "unit": "" }
+                  ]
+                }
+              ]
+            },
+            {
+              "id": "irayple-R3004MG-05H-WEE01E",
+              "name": "R3004MG-05H-WEE01E",
+              "image": "/irayple_robot/code reader/R3004MG-05H-WEE01E/cover.png",
+              "description": {
+                "line1": "Code Reader",
+                "line2": "High speed reading"
+              },
+              "detail": "Máy đọc mã vạch tốc độ cao cho ứng dụng công nghiệp",
+              "mainCategories": [
+                {
+                  "id": "technical-specs",
+                  "name": "Thông số kỹ thuật",
+                  "icon": "⚙️",
+                  "specs": [
+                    { "name": "Tốc độ đọc", "value": "3000", "unit": "codes/s" },
+                    { "name": "Độ chính xác", "value": "99.9", "unit": "%" },
+                    { "name": "Giao diện", "value": "MIPI", "unit": "" }
+                  ]
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "id": "line-scan-camera",
+          "name": "Line Scan Camera",
+          "products": [
+            {
+              "id": "irayple-L5022MG141E",
+              "name": "L5022MG141E",
+              "image": "/irayple_robot/line scan-camera/L5022MG141E/cover.png",
+              "description": {
+                "line1": "Line Scan Camera",
+                "line2": "High speed scanning"
+              },
+              "detail": "Camera quét dòng tốc độ cao cho ứng dụng công nghiệp",
+              "mainCategories": [
+                {
+                  "id": "technical-specs",
+                  "name": "Thông số kỹ thuật",
+                  "icon": "⚙️",
+                  "specs": [
+                    { "name": "Độ phân giải", "value": "5022", "unit": "pixels" },
+                    { "name": "Tốc độ quét", "value": "141", "unit": "kHz" },
+                    { "name": "Giao diện", "value": "MIPI", "unit": "" }
+                  ]
+                }
+              ]
+            },
+            {
+              "id": "irayple-L5027CG140E",
+              "name": "L5027CG140E",
+              "image": "/irayple_robot/line scan-camera/L5027CG140E/cover.png",
+              "description": {
+                "line1": "Line Scan Camera",
+                "line2": "High speed scanning"
+              },
+              "detail": "Camera quét dòng tốc độ cao cho ứng dụng công nghiệp",
+              "mainCategories": [
+                {
+                  "id": "technical-specs",
+                  "name": "Thông số kỹ thuật",
+                  "icon": "⚙️",
+                  "specs": [
+                    { "name": "Độ phân giải", "value": "5027", "unit": "pixels" },
+                    { "name": "Tốc độ quét", "value": "140", "unit": "kHz" },
+                    { "name": "Giao diện", "value": "GigE", "unit": "" }
+                  ]
+                }
+              ]
+            },
+            {
+              "id": "irayple-L5027MG140E",
+              "name": "L5027MG140E",
+              "image": "/irayple_robot/line scan-camera/L5027MG140E/cover.png",
+              "description": {
+                "line1": "Line Scan Camera",
+                "line2": "High speed scanning"
+              },
+              "detail": "Camera quét dòng tốc độ cao cho ứng dụng công nghiệp",
+              "mainCategories": [
+                {
+                  "id": "technical-specs",
+                  "name": "Thông số kỹ thuật",
+                  "icon": "⚙️",
+                  "specs": [
+                    { "name": "Độ phân giải", "value": "5027", "unit": "pixels" },
+                    { "name": "Tốc độ quét", "value": "140", "unit": "kHz" },
+                    { "name": "Giao diện", "value": "MIPI", "unit": "" }
+                  ]
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "id": "smart-camera",
+          "name": "Smart Camera",
+          "products": [
+            {
+              "id": "irayple-SS3016PMG-07H-RGF01E",
+              "name": "SS3016PMG-07H-RGF01E",
+              "image": "/irayple_robot/smart camera/SS3016PMG-07H-RGF01E/cover.png",
+              "description": {
+                "line1": "Smart Camera",
+                "line2": "AI powered vision"
+              },
+              "detail": "Camera thông minh tích hợp AI cho ứng dụng công nghiệp",
+              "mainCategories": [
+                {
+                  "id": "technical-specs",
+                  "name": "Thông số kỹ thuật",
+                  "icon": "⚙️",
+                  "specs": [
+                    { "name": "Độ phân giải", "value": "3016x3016", "unit": "pixels" },
+                    { "name": "AI Engine", "value": "Có", "unit": "" },
+                    { "name": "Giao diện", "value": "MIPI", "unit": "" }
+                  ]
+                }
+              ]
+            },
+            {
+              "id": "irayple-SS3016PMG-07H-WGN01E",
+              "name": "SS3016PMG-07H-WGN01E",
+              "image": "/irayple_robot/smart camera/SS3016PMG-07H-WGN01E/cover.png",
+              "description": {
+                "line1": "Smart Camera",
+                "line2": "AI powered vision"
+              },
+              "detail": "Camera thông minh tích hợp AI cho ứng dụng công nghiệp",
+              "mainCategories": [
+                {
+                  "id": "technical-specs",
+                  "name": "Thông số kỹ thuật",
+                  "icon": "⚙️",
+                  "specs": [
+                    { "name": "Độ phân giải", "value": "3016x3016", "unit": "pixels" },
+                    { "name": "AI Engine", "value": "Có", "unit": "" },
+                    { "name": "Giao diện", "value": "MIPI", "unit": "" }
+                  ]
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "hairobotic",
+      "name": "Hairbotic",
+      "categories": [
+        {
+          "id": "acr",
+          "name": "ACR",
+          "products": [
+            {
+              "id": "hairobotic-acr-a3",
+              "name": "Fork-Lifting ACR A3",
+              "image": "/hairobot_robot/ACR/Fork-Lifting ACR A3/cover.jpg",
+              "description": {
+                "line1": "Fork-Lifting ACR System",
+                "line2": "Automated container handling"
+              },
+              "detail": "Hệ thống ACR tự động với khả năng nâng hạ container sử dụng fork-lifting, phù hợp cho môi trường logistics và kho bãi",
+              "mainCategories": [
+                {
+                  "id": "technical-specs",
+                  "name": "Thông số kỹ thuật",
+                  "icon": "⚙️",
+                  "specs": [
+                    { "name": "Tải trọng tối đa", "value": "1500", "unit": "kg" },
+                    { "name": "Tốc độ di chuyển", "value": "1.8", "unit": "m/s" },
+                    { "name": "Độ cao nâng", "value": "0-400", "unit": "mm" },
+                    { "name": "Kích thước", "value": "1500x1000x450", "unit": "mm" },
+                    { "name": "Trọng lượng", "value": "350", "unit": "kg" }
+                  ]
+                },
+                {
+                  "id": "navigation",
+                  "name": "Hệ thống định vị",
+                  "icon": "🧭",
+                  "specs": [
+                    { "name": "Laser SLAM", "value": "Hỗ trợ" },
+                    { "name": "QR Code", "value": "Hỗ trợ" },
+                    { "name": "Độ chính xác", "value": "±15", "unit": "mm" },
+                    { "name": "Tự động mapping", "value": "Có" }
+                  ]
+                },
+                {
+                  "id": "safety",
+                  "name": "Tính năng an toàn",
+                  "icon": "🛡️",
+                  "specs": [
+                    { "name": "Cảm biến va chạm", "value": "360°" },
+                    { "name": "Cảm biến laser", "value": "3 lớp" },
+                    { "name": "Tín hiệu âm thanh", "value": "Có" },
+                    { "name": "Đèn cảnh báo", "value": "LED RGB" }
+                  ]
+                }
+              ]
+            },
+            {
+              "id": "hairobotic-acr-a42",
+              "name": "Multi-Layer ACR A42",
+              "image": "/hairobot_robot/ACR/Multi-Layer ACR A42/cover.png",
+              "description": {
+                "line1": "Multi-Layer ACR System",
+                "line2": "High-density storage solution"
+              },
+              "detail": "Hệ thống ACR đa tầng cho giải pháp lưu trữ mật độ cao, tối ưu hóa không gian kho bãi",
+              "mainCategories": [
+                {
+                  "id": "technical-specs",
+                  "name": "Thông số kỹ thuật",
+                  "icon": "⚙️",
+                  "specs": [
+                    { "name": "Tải trọng tối đa", "value": "2000", "unit": "kg" },
+                    { "name": "Số tầng hỗ trợ", "value": "4-6", "unit": "tầng" },
+                    { "name": "Tốc độ di chuyển", "value": "2.0", "unit": "m/s" },
+                    { "name": "Kích thước", "value": "1600x1100x500", "unit": "mm" },
+                    { "name": "Trọng lượng", "value": "400", "unit": "kg" }
+                  ]
+                },
+                {
+                  "id": "storage",
+                  "name": "Khả năng lưu trữ",
+                  "icon": "📦",
+                  "specs": [
+                    { "name": "Mật độ lưu trữ", "value": "Tăng 40%", "unit": "" },
+                    { "name": "Tự động sắp xếp", "value": "Có" },
+                    { "name": "Tối ưu hóa không gian", "value": "Có" }
+                  ]
+                }
+              ]
+            },
+            {
+              "id": "hairobotic-acr-a42t",
+              "name": "Telescopic Lift ACR A42T",
+              "image": "/hairobot_robot/ACR/Telescopic Lift ACR A42T/cover.jpg",
+              "description": {
+                "line1": "Telescopic Lift ACR",
+                "line2": "Extendable lifting system"
+              },
+              "detail": "Hệ thống ACR với khả năng nâng hạ mở rộng, phù hợp cho các ứng dụng cần độ linh hoạt cao",
+              "mainCategories": [
+                {
+                  "id": "technical-specs",
+                  "name": "Thông số kỹ thuật",
+                  "icon": "⚙️",
+                  "specs": [
+                    { "name": "Tải trọng tối đa", "value": "1800", "unit": "kg" },
+                    { "name": "Độ cao nâng tối đa", "value": "600", "unit": "mm" },
+                    { "name": "Tốc độ di chuyển", "value": "1.6", "unit": "m/s" },
+                    { "name": "Kích thước", "value": "1550x1050x480", "unit": "mm" },
+                    { "name": "Trọng lượng", "value": "380", "unit": "kg" }
+                  ]
+                },
+                {
+                  "id": "lifting",
+                  "name": "Hệ thống nâng hạ",
+                  "icon": "🔧",
+                  "specs": [
+                    { "name": "Cơ chế nâng", "value": "Telescopic", "unit": "" },
+                    { "name": "Độ ổn định", "value": "Cao" },
+                    { "name": "Điều khiển mượt mà", "value": "Có" }
+                  ]
+                }
+              ]
+            },
+            {
+              "id": "hairobotic-acr-a42t-e2",
+              "name": "Telescopic Grappling-hook ACR A42T-E2",
+              "image": "/hairobot_robot/ACR/Telescopic Grappling-hook ACR A42T-E2/cover.png",
+              "description": {
+                "line1": "Telescopic Grappling-hook ACR",
+                "line2": "Advanced gripping system"
+              },
+              "detail": "Hệ thống ACR với móc gắp mở rộng và cơ chế gắp kẹp tiên tiến, phù hợp cho các container đặc biệt",
+              "mainCategories": [
+                {
+                  "id": "technical-specs",
+                  "name": "Thông số kỹ thuật",
+                  "icon": "⚙️",
+                  "specs": [
+                    { "name": "Tải trọng tối đa", "value": "2000", "unit": "kg" },
+                    { "name": "Độ cao nâng tối đa", "value": "800", "unit": "mm" },
+                    { "name": "Tốc độ di chuyển", "value": "1.8", "unit": "m/s" },
+                    { "name": "Kích thước", "value": "1600x1100x520", "unit": "mm" },
+                    { "name": "Trọng lượng", "value": "420", "unit": "kg" }
+                  ]
+                },
+                {
+                  "id": "gripping",
+                  "name": "Hệ thống gắp kẹp",
+                  "icon": "🦾",
+                  "specs": [
+                    { "name": "Cơ chế gắp", "value": "Grappling-hook", "unit": "" },
+                    { "name": "Độ chính xác gắp", "value": "±5", "unit": "mm" },
+                    { "name": "Tự động điều chỉnh", "value": "Có" }
                   ]
                 }
               ]

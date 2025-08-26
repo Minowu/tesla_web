@@ -83,8 +83,8 @@
 }
 
 html {
-  scroll-behavior: smooth;
-  font-size: 14px;
+  font-size: 13px;
+  overflow-x: hidden;
 }
 
 body {
@@ -92,9 +92,9 @@ body {
   line-height: 1.6;
   color: var(--text-primary);
   background: var(--bg-primary);
-  overflow-x: hidden;
   position: relative;
   z-index: 100;
+  overflow-x: hidden;
 }
 
 /* ===== ULTRA MODERN TECH BACKGROUND ===== */
@@ -103,7 +103,7 @@ body::before {
   position: fixed;
   top: 0;
   left: 0;
-  width: 100%;
+  width: 100vw;
   height: 100%;
   background-image: url('../../1.png');
   background: 
@@ -113,6 +113,7 @@ body::before {
     linear-gradient(135deg, #0a0a0f 0%, #1a1a2e 50%, #16213e 100%);
   z-index: -3;
   animation: backgroundShift 20s ease-in-out infinite;
+  overflow-x: hidden;
 }
 
 
@@ -138,6 +139,9 @@ body.light-theme {
   --shadow-lg: 0 8px 32px rgba(0, 0, 0, 0.2) !important;
   --shadow-xl: 0 16px 64px rgba(0, 0, 0, 0.25) !important;
   
+  --bg-glass-sticky: var(--bg-glass) !important;
+  --bg-glass-sticky-light: var(--bg-glass) !important;
+
   --gradient-bg: linear-gradient(135deg, #ffffff 0%, #f8fafc 50%, #f1f5f9 100%) !important;
 
 }

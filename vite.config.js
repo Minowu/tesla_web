@@ -9,7 +9,10 @@ export default defineConfig({
   server: {
     port: 3000,
     open: true,
-    hmr: {
+    allowedHosts: [
+      '3f06a6eedb2d.ngrok-free.app'
+    ],
+      hmr: {
       overlay: true
     }
   },

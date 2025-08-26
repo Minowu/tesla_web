@@ -159,8 +159,6 @@ const ServicesHub: React.FC = () => {
               key={service.id} 
               className="service-card"
               variants={cardVariants}
-              whileHover={{ scale: 1.05, y: -10 }}
-              whileTap={{ scale: 0.95 }}
             >
               <div className="service-icon">
                 {service.icon}

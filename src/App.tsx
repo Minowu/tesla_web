@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { Routes, Route, Navigate } from 'react-router-dom';
+import { Routes, Route, Navigate, useNavigate, useLocation } from 'react-router-dom';
 import Navigation from './components/Navigation';
 import HeroSection from './components/HeroSection';
 import SolutionsShowcase from './components/SolutionsShowcase';
@@ -23,9 +23,14 @@ import { ReactLenis,useLenis } from 'lenis/react';
 
 function App() {
   const [isLoading, setIsLoading] = useState(true);
-  const lenis = useLenis((lenis) => {
-    console.log(lenis);
-  });
+  const navigate = useNavigate();
+  
+  const location = useLocation();
+
+  // Scroll to top on route change
+  useEffect(() => {
+    window.scrollTo({ top: 0, left: 0, behavior: 'auto' });
+  }, [location.pathname]);
   useEffect(() => {
     // Simulate loading time
     const timer = setTimeout(() => {
@@ -159,12 +164,12 @@ function App() {
                       <div className="cta-buttons">
                         <button 
                           className="btn btn-primary"
-                          onClick={() => window.location.href = '/contactus'}
+                          onClick={() => navigate('/contactus')}
                         >
                           <span>📞</span>
                           Liên Hệ Ngay
                         </button>
-                        <button className="btn btn-secondary">
+                        <button className="btn btn-secondary" onClick={() => navigate('/contactus')}>
                           <span>📋</span>
                           Yêu Cầu Demo
                         </button>

@@ -7,7 +7,7 @@ export const samplePosts = [
       id: 1,
       title: "Hợp tác tự động hóa dây chuyền lắp ráp tại Honda Việt Nam",
       slug: "hop-tac-tu-dong-hoa-day-chuyen-lap-rap-honda-viet-nam",
-      thumbnail: "/kyket.png",
+      thumbnail: "/kyket1.png",
       content: "Triển khai robot công nghiệp, hệ thống băng chuyền thông minh và giám sát chất lượng realtime giúp tối ưu năng suất nhà máy Honda.",
       author: "Thadorobot Team",
       createdAt: "2024-03-12T09:00:00Z",

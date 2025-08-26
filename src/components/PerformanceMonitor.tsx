@@ -6,9 +6,6 @@ export const PerformanceMonitor: React.FC = () => {
 
   return (
     <div className="performance-monitor">
-      <div className="performance-header">
-        <h4>Hiệu suất</h4>
-      </div>
       
       <div className="performance-content">
         <div className="performance-item">

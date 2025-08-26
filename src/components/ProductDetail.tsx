@@ -1,8 +1,8 @@
-import React, { useState, useEffect } from "react"
+import { useState, useEffect } from "react"
 import { useParams, Link } from "react-router-dom"
 import { motion, AnimatePresence } from "framer-motion"
 import { mockBrands } from "./ProductInfo"
-import type { Product, ProductMainCategory } from "../types/products"
+import type { Product } from "../types/products"
 import "../styles/components.css"
 
 export default function ProductDetail() {
@@ -69,7 +69,7 @@ export default function ProductDetail() {
           <div className="product-header-layout">
             <div className="product-header-image">
               <img 
-                src={product.image} 
+                src={(product.image?.startsWith('/') ? product.image : `/${product.image}`) || '/placeholder.svg'} 
                 alt={product.name} 
                 className="product-header-img"
               />

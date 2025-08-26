@@ -201,7 +201,7 @@ const SolutionsHexagon: React.FC = () => {
             initial="hidden"
             whileInView="visible"
             viewport={{ once: true }}
-            transition={{ duration: 0.8 }}
+            transition={{ duration: 0.2 }}
           >
             {solutions.map((solution, index) => (
               <motion.div

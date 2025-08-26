@@ -100,7 +100,7 @@ const solutions: Solution[] = [
   },
   {
     id: 'amr',
-    title: 'AMR Thông minh',
+    title: 'Camera AI nhận diện',
     titleEn: 'Autonomous Mobile Robot',
     description: 'Robot di động tự chủ với AI tiên tiến cho môi trường phức tạp',
     icon: '🤖',
@@ -144,52 +144,7 @@ const solutions: Solution[] = [
       'Blockchain'
     ]
   },
-  {
-    id: 'cobot',
-    title: 'Cobot Hợp tác',
-    titleEn: 'Collaborative Robot',
-    description: 'Robot cộng tác an toàn làm việc cùng con người trong sản xuất',
-    icon: '🦾',
-    color: '#8b5cf6',
-    gradient: 'linear-gradient(135deg, #8b5cf6, #6b46c1)',
-    features: [
-      'Force sensing',
-      'Human detection',
-      'Easy programming',
-      'Quick deployment',
-      'Safety certified',
-      'Flexible mounting'
-    ],
-    applications: [
-      'Assembly line',
-      'Quality inspection',
-      'Packaging',
-      'Material handling',
-      'Welding',
-      'Painting'
-    ],
-    modelPath: '/models/cobot.glb',
-    stats: [
-      { label: 'Tải trọng', value: '10kg' },
-      { label: 'Độ chính xác', value: '±0.1mm' },
-      { label: 'Tốc độ', value: '2m/s' },
-      { label: 'Phạm vi', value: '1.3m' }
-    ],
-    benefits: [
-      'An toàn tuyệt đối',
-      'Dễ sử dụng',
-      'ROI nhanh',
-      'Linh hoạt cao'
-    ],
-    technology: [
-      'Force Control',
-      'Vision Systems',
-      'Safety Sensors',
-      'IoT Platform',
-      'Edge Computing',
-      'Digital Twin'
-    ]
-  },
+  
   {
     id: 'warehouse',
     title: 'Kho thông minh',
@@ -275,11 +230,11 @@ const Solutions3DViewer: React.FC = () => {
           </p>
           <div className="hero-stats">
             <div className="stat-item">
-              <div className="stat-number">500+</div>
+              <div className="stat-number">50+</div>
               <div className="stat-label">Dự án thành công</div>
             </div>
             <div className="stat-item">
-              <div className="stat-number">15+</div>
+              <div className="stat-number">5+</div>
               <div className="stat-label">Năm kinh nghiệm</div>
             </div>
             <div className="stat-item">
@@ -546,118 +501,24 @@ const Solutions3DViewer: React.FC = () => {
         </div>
       </div>
 
-      {/* Additional Sections */}
-      <div className="additional-sections">
-        {/* Case Studies Section */}
-        <div className="case-studies-section">
-          <div className="section-header">
-            <h2>Dự án tiêu biểu</h2>
-            <p>Khám phá các dự án thành công của chúng tôi</p>
-          </div>
-          <div className="case-studies-grid">
-            {[
-              { title: 'VinFast Factory', description: 'Tự động hóa dây chuyền sản xuất ô tô', image: '🚗' },
-              { title: 'Viettel Data Center', description: 'Hệ thống kho thông minh', image: '🏢' },
-              { title: 'FPT Software', description: 'Robot cộng tác trong R&D', image: '💻' },
-              { title: 'Vingroup Mall', description: 'AGV logistics tự động', image: '🛒' }
-            ].map((project, index) => (
-              <motion.div
-                key={index}
-                className="case-study-card"
-                initial={{ opacity: 0, y: 30 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                transition={{ delay: index * 0.1 }}
-                viewport={{ once: true }}
-              >
-                <div className="case-study-image">{project.image}</div>
-                <h3>{project.title}</h3>
-                <p>{project.description}</p>
-                <button className="btn btn-outline">Xem chi tiết</button>
-              </motion.div>
-            ))}
-          </div>
-        </div>
-
-        {/* Technology Stack Section */}
-        <div className="tech-stack-section">
-          <div className="section-header">
-            <h2>Công nghệ nền tảng</h2>
-            <p>Được xây dựng trên các công nghệ tiên tiến nhất</p>
-          </div>
-          <div className="tech-stack-grid">
-            {[
-              { name: 'AI/ML', icon: '🧠', description: 'Trí tuệ nhân tạo và học máy' },
-              { name: 'IoT', icon: '🌐', description: 'Internet of Things' },
-              { name: '5G', icon: '📡', description: 'Kết nối 5G tốc độ cao' },
-              { name: 'Cloud', icon: '☁️', description: 'Điện toán đám mây' },
-              { name: 'Edge', icon: '⚡', description: 'Xử lý biên' },
-              { name: 'Blockchain', icon: '🔗', description: 'Công nghệ chuỗi khối' }
-            ].map((tech, index) => (
-              <motion.div
-                key={index}
-                className="tech-stack-item"
-                initial={{ opacity: 0, scale: 0.8 }}
-                whileInView={{ opacity: 1, scale: 1 }}
-                transition={{ delay: index * 0.1 }}
-                viewport={{ once: true }}
-              >
-                <div className="tech-icon">{tech.icon}</div>
-                <h3>{tech.name}</h3>
-                <p>{tech.description}</p>
-              </motion.div>
-            ))}
-          </div>
-        </div>
-
-        {/* Services Section */}
-        <div className="services-section">
-          <div className="section-header">
-            <h2>Dịch vụ hỗ trợ</h2>
-            <p>Đồng hành cùng bạn trong mọi giai đoạn</p>
-          </div>
-          <div className="services-grid">
-            {[
-              { title: 'Tư vấn', icon: '💡', description: 'Phân tích và thiết kế giải pháp' },
-              { title: 'Triển khai', icon: '🚀', description: 'Cài đặt và tích hợp hệ thống' },
-              { title: 'Đào tạo', icon: '🎓', description: 'Huấn luyện nhân viên vận hành' },
-              { title: 'Bảo trì', icon: '🔧', description: 'Bảo trì và nâng cấp liên tục' },
-              { title: 'Hỗ trợ 24/7', icon: '🆘', description: 'Hỗ trợ kỹ thuật không ngừng' },
-              { title: 'Tối ưu', icon: '📈', description: 'Tối ưu hóa hiệu suất hệ thống' }
-            ].map((service, index) => (
-              <motion.div
-                key={index}
-                className="service-card"
-                initial={{ opacity: 0, y: 30 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                transition={{ delay: index * 0.1 }}
-                viewport={{ once: true }}
-              >
-                <div className="service-icon">{service.icon}</div>
-                <h3>{service.title}</h3>
-                <p>{service.description}</p>
-              </motion.div>
-            ))}
-          </div>
-        </div>
-
-        {/* Contact CTA Section */}
-        <div className="contact-cta-section">
-          <div className="cta-content">
-            <h2>Sẵn sàng bắt đầu dự án của bạn?</h2>
-            <p>Liên hệ với chúng tôi để được tư vấn miễn phí và nhận báo giá chi tiết</p>
-            <div className="cta-buttons">
-              <button className="btn btn-primary" onClick={() => setCurrentSection('contact')}>
-                <span>📞</span>
-                <span>Liên hệ ngay</span>
-              </button>
-              <button className="btn btn-secondary">
-                <span>📋</span>
-                <span>Yêu cầu demo</span>
-              </button>
-            </div>
+      {/* Contact CTA Section */}
+      <div className="contact-cta-section">
+        <div className="cta-content">
+          <h2>Sẵn sàng bắt đầu dự án của bạn?</h2>
+          <p>Liên hệ với chúng tôi để được tư vấn miễn phí và nhận báo giá chi tiết</p>
+          <div className="cta-buttons">
+            <button className="btn btn-primary" onClick={() => setCurrentSection('contact')}>
+              <span>📞</span>
+              <span>Liên hệ ngay</span>
+            </button>
+            <button className="btn btn-secondary">
+              <span>📋</span>
+              <span>Yêu cầu demo</span>
+            </button>
           </div>
         </div>
       </div>
+
 
       {/* Chat Button */}
       <div className="chat-button">

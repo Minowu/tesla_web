@@ -1,50 +1,36 @@
 import React, { useState, useEffect } from 'react';
 import { useAppStore } from '../store/appStore';
-import LogoCarousel from './LogoCarousel';  
+import LogoCarousel from './LogoCarousel';
+import TimelineAnimation from './TimelineAnimation';  
 
 const AboutSection: React.FC = () => {
   const { setCurrentSection } = useAppStore();
   const [activeTab, setActiveTab] = useState('mission');
 
+  // Hàm tạo màu sắc cho timeline dựa trên năm
+  const getTimelineColor = (year: string): string => {
+    const colors = [
+      '#4F46E5', // Indigo
+      '#7C3AED', // Purple
+      '#EC4899', // Pink
+      '#F59E0B', // Amber
+      '#10B981', // Emerald
+      '#06B6D4'  // Cyan
+    ] as const;
+    const yearNum = parseInt(year);
+    if (isNaN(yearNum)) return colors[0];
+    const yearIndex = yearNum - 2009; // Bắt đầu từ 2009
+    const colorIndex = Math.abs(yearIndex) % colors.length;
+    return colors[colorIndex] || colors[0];
+  };
+
   const stats = [
-    { number: '15+', label: 'Năm kinh nghiệm', icon: '⏱️' },
-    { number: '500+', label: 'Dự án thành công', icon: '🏆' },
+    { number: '5+', label: 'Năm kinh nghiệm', icon: '⏱️' },
+    { number: '50+', label: 'Dự án thành công', icon: '🏆' },
     { number: '50+', label: 'Khách hàng tin tưởng', icon: '🤝' },
     { number: '99%', label: 'Tỷ lệ hài lòng', icon: '⭐' }
   ];
 
-  const milestones = [
-    {
-      year: '2009',
-      title: 'Thành lập công ty',
-      description: 'Thadorobot được thành lập với sứ mệnh đưa công nghệ robot vào Việt Nam'
-    },
-    {
-      year: '2012',
-      title: 'Dự án đầu tiên',
-      description: 'Triển khai thành công hệ thống AGV đầu tiên cho nhà máy sản xuất'
-    },
-    {
-      year: '2015',
-      title: 'Mở rộng thị trường',
-      description: 'Mở rộng hoạt động ra các tỉnh thành và bắt đầu xuất khẩu'
-    },
-    {
-      year: '2018',
-      title: 'Công nghệ AI',
-      description: 'Tích hợp AI và Machine Learning vào các sản phẩm robot'
-    },
-    {
-      year: '2021',
-      title: 'Industry 4.0',
-      description: 'Trở thành đối tác chiến lược trong cuộc cách mạng công nghiệp 4.0'
-    },
-    {
-      year: '2024',
-      title: 'Tương lai',
-      description: 'Tiếp tục đổi mới và dẫn đầu trong lĩnh vực tự động hóa'
-    }
-  ];
 
   const team = [
     {
@@ -85,6 +71,39 @@ const AboutSection: React.FC = () => {
     }
   ];
 
+  const milestones = [
+    {
+      year: '2020',
+      title: 'Thành lập công ty',
+      description: 'Thadorobot được thành lập với sứ mệnh đưa công nghệ robot vào Việt Nam'
+    },
+    {
+      year: '2021',
+      title: 'Dự án đầu tiên',
+      description: 'Triển khai thành công hệ thống AGV đầu tiên cho nhà máy sản xuất'
+    },
+    {
+      year: '2022',
+      title: 'Mở rộng thị trường',
+      description: 'Mở rộng hoạt động ra các tỉnh thành và bắt đầu xuất khẩu'
+    },
+    {
+      year: '2023',
+      title: 'Công nghệ AI',
+      description: 'Tích hợp AI và Machine Learning vào các sản phẩm robot'
+    },
+    {
+      year: '2024',
+      title: 'Industry 4.0',
+      description: 'Trở thành đối tác chiến lược trong cuộc cách mạng công nghiệp 4.0'
+    },
+    {
+      year: '2025',
+      title: 'Tương lai',
+      description: 'Tiếp tục đổi mới và dẫn đầu trong lĩnh vực tự động hóa'
+    }
+  ];
+
   return (
     <section className="about-section">
       <div className="container">
@@ -120,17 +139,14 @@ const AboutSection: React.FC = () => {
         {/* Timeline */}
         <div className="about-timeline">
           <h3 className="timeline-title">Hành trình phát triển</h3>
-          <div className="timeline">
-            {milestones.map((milestone, index) => (
-              <div key={index} className={`timeline-item ${index % 2 === 0 ? 'left' : 'right'}`}>
-                <div className="timeline-content">
-                  <div className="timeline-year">{milestone.year}</div>
-                  <h4 className="timeline-title">{milestone.title}</h4>
-                  <p className="timeline-description">{milestone.description}</p>
-                </div>
-              </div>
-            ))}
-          </div>
+          <TimelineAnimation 
+            data={milestones.map(milestone => ({
+              year: milestone.year,
+              title: milestone.title,
+              description: milestone.description,
+              color: getTimelineColor(milestone.year)
+            }))}
+          />
         </div>
 
         {/* Team */}
