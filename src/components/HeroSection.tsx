@@ -308,7 +308,7 @@ const HeroSection: React.FC = () => {
         </section>
 
         {/* Solution Section */}
-        <section className='section-stack-cards'>
+        <section className='section-stack-cards solution-stackcards'>
           <div className="hero-solution">
             <h2 className="hero-solution-title"> Giải pháp của chúng tôi</h2>
             {/* Features Section */}

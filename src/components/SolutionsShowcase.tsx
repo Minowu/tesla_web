@@ -1,4 +1,5 @@
 import React, { useState, useEffect, useRef } from 'react';
+import { useNavigate } from 'react-router-dom';
 import { motion, useInView, useAnimation } from 'framer-motion';
 import { Canvas } from '@react-three/fiber';
 import { OrbitControls, Environment, Float } from '@react-three/drei';
@@ -75,6 +76,7 @@ const solutions = [
 
 const SolutionsShowcase: React.FC = () => {
   const [activeSolution, setActiveSolution] = useState(0);
+  const navigate = useNavigate();
 
   // Animation refs và controls
   const headerRef = useRef(null);
@@ -236,11 +238,11 @@ const SolutionsShowcase: React.FC = () => {
             </div>
 
             <div className="solution-actions">
-              <button className="btn btn-primary">
+              <button className="btn btn-primary" onClick={() => navigate('/solutions')}>
                 <span>Khám phá chi tiết</span>
                 <span className="btn-icon">→</span>
               </button>
-              <button className="btn btn-secondary">
+              <button className="btn btn-secondary" onClick={() => navigate('/contactus')}>
                 <span>Liên hệ tư vấn</span>
               </button>
             </div>
