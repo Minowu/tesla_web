@@ -125,9 +125,14 @@ const SolutionsHexagon: React.FC = () => {
 
     const containerRect = containerRef.current.getBoundingClientRect();
     const centralRect = centralRef.current.getBoundingClientRect();
+    
+    // Tính toán radius dựa trên kích thước thực tế của central logo
+    // Lấy kích thước thực tế sau khi được scale bởi CSS
+    const logoRadius = Math.min(centralRect.width, centralRect.height) / 2;
+    
+    // Tính vị trí trung tâm chính xác
     const cx = centralRect.left - containerRect.left + centralRect.width / 2;
-    const cy = centralRect.top - containerRect.top + centralRect.height / 2;
-    const logoRadius = 90; 
+    const cy = centralRect.top - containerRect.top + centralRect.height / 2; 
 
     // Clear old lines
     svgRef.current.innerHTML = '';

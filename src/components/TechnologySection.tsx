@@ -1,8 +1,8 @@
 import React, { useState, useEffect } from 'react';
+import { useNavigate } from 'react-router-dom';
 import { Canvas } from '@react-three/fiber';
 import { OrbitControls, Environment, Float } from '@react-three/drei';
 import { useGLTF } from '@react-three/drei';
-import { useAppStore } from '../store/appStore';
 
 // 3D Model Components
 const RobotModel = () => {
@@ -13,7 +13,7 @@ const RobotModel = () => {
   }
   
   try {
-    const { scene } = useGLTF('/models/logistic_robot_test__2.glb');
+    const { scene } = useGLTF('/logistic_robot_test__2.glb');
     return <primitive object={scene} scale={0.8} />;
   } catch (error) {
     console.warn('Error loading Robot Model:', error);
@@ -30,7 +30,7 @@ const LaserModel = () => {
   }
   
   try {
-    const { scene } = useGLTF('/models/simulation_laser_cutting_robot_systems.glb');
+    const { scene } = useGLTF('/simulation_laser_cutting_robot_systems.glb');
     return <primitive object={scene} scale={0.8} />;
   } catch (error) {
     console.warn('Error loading Laser Model:', error);
@@ -47,7 +47,7 @@ const AGVModel = () => {
   }
   
   try {
-    const { scene } = useGLTF('/models/industrial_-_3d_agv__trolley_-_omrom.glb');
+    const { scene } = useGLTF('/industrial_-_3d_agv__trolley_-_omrom.glb');
     return <primitive object={scene} scale={0.8} />;
   } catch (error) {
     console.warn('Error loading AGV Model:', error);
@@ -64,7 +64,7 @@ const ModelFallback = ({ color }: { color: string }) => (
 );
 
 const TechnologySection: React.FC = () => {
-  const { setCurrentSection } = useAppStore();
+  const navigate = useNavigate();
   const [activeTechnology, setActiveTechnology] = useState(0);
 
   const technologies = [
@@ -224,7 +224,7 @@ const TechnologySection: React.FC = () => {
                   style={{ '--indicator-color': tech.color } as any}
                 >
                   <span className="indicator-icon">{tech.icon}</span>
-                  <span className="indicator-label">{tech.name}</span>
+                  <span style={{color: 'var(--text-primary)'}} className="indicator-label">{tech.name}</span>
                 </button>
               ))}
             </div>
@@ -270,7 +270,7 @@ const TechnologySection: React.FC = () => {
             <div className="technology-actions">
               <button 
                 className="btn btn-primary"
-                onClick={() => setCurrentSection('solutions')}
+                onClick={() => navigate('/solutions')}
               >
                 <span>💡</span>
                 <span>Xem giải pháp</span>
@@ -278,7 +278,7 @@ const TechnologySection: React.FC = () => {
               
               <button 
                 className="btn btn-secondary"
-                onClick={() => setCurrentSection('products')}
+                onClick={() => navigate('/products')}
               >
                 <span>🤖</span>
                 <span>Sản phẩm</span>

@@ -653,7 +653,7 @@ a.mobile-nav-item.active {
   -webkit-text-fill-color: transparent;
   background-clip: text;
   text-align: center;
-  margin-bottom: var(--space-3xl);
+  margin: 0 var(--space-xl);
 }
 
 .robots-grid {
@@ -702,7 +702,6 @@ a.mobile-nav-item.active {
 
 .robot-image img {
   width: 100%;
-  height: 300px;
   object-fit: contain;
   filter: drop-shadow(0 0 15px var(--bg-glass));
   transition: all var(--transition-normal);
@@ -2627,7 +2626,7 @@ a.mobile-nav-item.active {
 
 .services-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
   gap: var(--space-xl);
   margin-bottom: var(--space-2xl);
 }
@@ -3960,7 +3959,7 @@ a.mobile-nav-item.active {
 
 .product-header-img {
   width: 100%;
-  max-width: 400px;
+  max-width: 600px;
   height: auto;
   border-radius: var(--radius-xl);
   box-shadow: var(--shadow-lg);
@@ -4416,9 +4415,7 @@ a.mobile-nav-item.active {
     grid-template-columns: repeat(2, 1fr); 
     gap: var(--space-lg); 
   }
-  .solution-stackcards{
-    margin-top: 400px;
-  }
+ 
 }
 
 /* <=1200px: Layout tweaks */
@@ -4516,6 +4513,13 @@ a.mobile-nav-item.active {
   .carousel-item .blog-thumbnail { 
     height: 220px; 
   }
+
+  /* Product Detail */
+  .product-header-info{
+    padding: var(--space-md);
+    justify-content: center;
+    align-items: center;
+  }
 }
 
 /* >=1024px: Timeline desktop layout */
@@ -4582,6 +4586,9 @@ a.mobile-nav-item.active {
     gap: var(--space-lg); 
     position: relative; 
   }
+  .hero-robots-showcase{
+    padding:0px 20px 20px 20px;
+  }
   .hero-title { 
     font-size: 2.5rem; 
   }
@@ -4611,9 +4618,6 @@ a.mobile-nav-item.active {
   .cta-buttons .btn { 
     width: 100%; 
     max-width: 300px; 
-  }
-  .services-grid { 
-    grid-template-columns: 1fr; 
   }
 
   /* Solutions */
@@ -4839,8 +4843,106 @@ a.mobile-nav-item.active {
   }
 }
 
+/* <=731px: Hexagon and central logo responsive */
+@media (max-width: 731px) {
+  /* Central Logo */
+  .central-logo {
+    transform: translate(-50%, -50%) scale(0.8);
+  }
+  
+  .logo-circle {
+    width: 150px;
+    height: 150px;
+  }
+  
+  /* Hexagon Grid */
+  .hexagon-container {
+    min-height: 480px;
+  }
+  
+  .hexagon-grid {
+    min-width: 0;
+    width: 100%;
+    height: 360px;
+    gap-row: var(--space-sm);
+    gap-column: var(--space-lg);
+  }
+  
+  .hexagon-item {
+    width: 120px;
+    height: 100px;
+  }
+  
+  .hexagon-content {
+    height: 80px;
+    padding: var(--space-sm);
+  }
+  
+  .hexagon-icon {
+    font-size: 1.4rem;
+    margin-bottom: var(--space-xs);
+  }
+  
+  .hexagon-text h4 {
+    font-size: 0.7rem;
+    line-height: 1.1;
+  }
+  
+  .hexagon-text p {
+    font-size: 0.85rem;
+    line-height: 1.1;
+  }
+}
+
 /* <=480px: Small devices */
 @media (max-width: 480px) {
+  /* Central Logo - extra small */
+  .central-logo {
+    transform: translate(-50%, -50%) scale(0.8);
+  }
+  
+  .logo-circle {
+    width: 90px;
+    height: 90px;
+  }
+  
+  /* Hexagon Grid - extra small */
+  .hexagon-container {
+    min-height: 400px;
+  }
+  
+  .hexagon-grid {
+    height: 300px;
+    gap-row: var(--space-xs);
+    gap-column: var(--space-md);
+  }
+  
+  .hexagon-item {
+    width: 90px;
+    height: 75px;
+  }
+  
+  .hexagon-content {
+    height: 60px;
+    padding: var(--space-xs);
+  }
+  
+  .hexagon-icon {
+    font-size: 1.1rem;
+    margin-bottom: 2px;
+  }
+  
+  .hexagon-text h4 {
+    font-size: 0.6rem;
+    line-height: 1;
+    margin: 0 0 2px 0;
+  }
+  
+  .hexagon-text p {
+    font-size: 0.7rem;
+    line-height: 1;
+  }
+
   /* Products */
   .products-grid { 
     grid-template-columns: 1fr; 
@@ -4855,7 +4957,6 @@ a.mobile-nav-item.active {
   }
 
   /* Hero */
-
   .hero-buttons { 
     flex-direction: column; 
     align-items: center; 
@@ -4864,6 +4965,20 @@ a.mobile-nav-item.active {
     width: 100%; 
     max-width: 300px; 
     justify-content: center; 
+  }
+  /* Solution */
+  .solution-stackcards{
+  margin-bottom: 200px;
+  }
+  .solution-header{
+    display: none;
+  }
+  .solution-features ul{
+    justify-content: center;
+    align-items: center;
+  }
+  .solution-actions{
+    justify-content: center;
   }
 
   /* Contact */
