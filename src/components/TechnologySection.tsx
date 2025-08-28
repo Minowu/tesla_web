@@ -1,59 +1,21 @@
 import React, { useState, useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
-import { Canvas } from '@react-three/fiber';
-import { OrbitControls, Environment, Float } from '@react-three/drei';
-import { useGLTF } from '@react-three/drei';
+// TEMPORARILY DISABLED 3D IMPORTS
+// import { Canvas } from '@react-three/fiber';
+// import { OrbitControls, Environment, Float } from '@react-three/drei';
+// import { useGLTF } from '@react-three/drei';
 
-// 3D Model Components
+// 3D Model Components - TEMPORARILY DISABLED
 const RobotModel = () => {
-  const [error, setError] = useState(false);
-  
-  if (error) {
-    return <ModelFallback color="#00d4ff" />;
-  }
-  
-  try {
-    const { scene } = useGLTF('/logistic_robot_test__2.glb');
-    return <primitive object={scene} scale={0.8} />;
-  } catch (error) {
-    console.warn('Error loading Robot Model:', error);
-    setError(true);
-    return <ModelFallback color="#00d4ff" />;
-  }
+  return <ModelFallback color="#00d4ff" />;
 };
 
 const LaserModel = () => {
-  const [error, setError] = useState(false);
-  
-  if (error) {
-    return <ModelFallback color="#ff6b35" />;
-  }
-  
-  try {
-    const { scene } = useGLTF('/simulation_laser_cutting_robot_systems.glb');
-    return <primitive object={scene} scale={0.8} />;
-  } catch (error) {
-    console.warn('Error loading Laser Model:', error);
-    setError(true);
-    return <ModelFallback color="#ff6b35" />;
-  }
+  return <ModelFallback color="#ff6b35" />;
 };
 
 const AGVModel = () => {
-  const [error, setError] = useState(false);
-  
-  if (error) {
-    return <ModelFallback color="#8b5cf6" />;
-  }
-  
-  try {
-    const { scene } = useGLTF('/industrial_-_3d_agv__trolley_-_omrom.glb');
-    return <primitive object={scene} scale={0.8} />;
-  } catch (error) {
-    console.warn('Error loading AGV Model:', error);
-    setError(true);
-    return <ModelFallback color="#8b5cf6" />;
-  }
+  return <ModelFallback color="#8b5cf6" />;
 };
 
 const ModelFallback = ({ color }: { color: string }) => (

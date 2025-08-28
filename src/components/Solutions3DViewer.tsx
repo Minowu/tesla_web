@@ -1,7 +1,8 @@
-import React, { useState, useEffect, Suspense } from 'react';
+import React, { useState, useEffect } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
-import { Canvas } from '@react-three/fiber';
-import { OrbitControls, Environment, useGLTF, Float, Html } from '@react-three/drei';
+// TEMPORARILY DISABLED 3D IMPORTS
+// import { Canvas } from '@react-three/fiber';
+// import { OrbitControls, Environment, useGLTF, Float, Html } from '@react-three/drei';
 import { useAppStore } from '../store/appStore';
 
 interface Solution {
@@ -23,32 +24,18 @@ interface Solution {
   technology: string[];
 }
 
-// 3D Model Component
-const ModelComponent: React.FC<{ modelPath: string }> = ({ modelPath }) => {
-  try {
-    const { scene } = useGLTF(modelPath);
-    
-    return (
-      <Float
-        speed={2}
-        rotationIntensity={0.5}
-        floatIntensity={0.5}
-      >
-        <primitive object={scene} scale={1.5} />
-      </Float>
-    );
-  } catch (error) {
-    console.error('Error loading 3D model:', error);
-    return (
-      <Html center>
-        <div className="model-error">
-          <div className="error-icon">⚠️</div>
-          <h3>Không thể tải model 3D</h3>
-          <p>Vui lòng thử lại sau</p>
-        </div>
-      </Html>
-    );
-  }
+// 3D Model Component - TEMPORARILY DISABLED
+const ModelComponent: React.FC<{ modelPath: string }> = ({ }) => {
+  // Temporary fallback without 3D model loading
+  return (
+    <div className="model-placeholder">
+      <div className="placeholder-content">
+        <div className="placeholder-icon">🚀</div>
+        <h3>Mô hình 3D</h3>
+        <p>Đang phát triển...</p>
+      </div>
+    </div>
+  );
 };
 
 const solutions: Solution[] = [
@@ -460,28 +447,10 @@ const Solutions3DViewer: React.FC = () => {
         </div>
         <div className="model-viewer-container">
           <div className="model-viewer">
-            <Suspense fallback={
-              <div className="model-loading">
-                <div className="loading-dots">
-                  <span></span>
-                  <span></span>
-                  <span></span>
-                </div>
-                <p>Đang tải model 3D...</p>
-              </div>
-            }>
-              <Canvas
-                camera={{ position: [0, 0, 5], fov: 75 }}
-                style={{ width: '100%', height: '500px' }}
-              >
-                <ambientLight intensity={0.5} />
-                <pointLight position={[10, 10, 10]} />
-                <spotLight position={[-10, -10, -10]} angle={0.15} penumbra={1} />
-                <ModelComponent modelPath={selectedSolution.modelPath} />
-                <OrbitControls enablePan={true} enableZoom={true} enableRotate={true} />
-                <Environment preset="city" />
-              </Canvas>
-            </Suspense>
+            {/* TEMPORARILY DISABLED 3D CANVAS */}
+            <div className="model-placeholder-container" style={{ width: '100%', height: '500px', display: 'flex', alignItems: 'center', justifyContent: 'center', background: 'linear-gradient(135deg, #1a1a2e, #16213e)', borderRadius: '12px' }}>
+              <ModelComponent modelPath={selectedSolution.modelPath} />
+            </div>
             <div className="model-controls">
               <button className="control-btn">
                 <span>🔄</span>

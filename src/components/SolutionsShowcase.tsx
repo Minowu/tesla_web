@@ -1,38 +1,55 @@
 import React, { useState, useEffect, useRef } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { motion, useInView, useAnimation } from 'framer-motion';
-import { Canvas } from '@react-three/fiber';
-import { OrbitControls, Environment, Float } from '@react-three/drei';
-import { useGLTF } from '@react-three/drei';
-import { Suspense } from 'react';
+// TEMPORARILY DISABLED 3D IMPORTS
+// import { Canvas } from '@react-three/fiber';
+// import { OrbitControls, Environment, Float } from '@react-three/drei';
+// import { useGLTF } from '@react-three/drei';
+// import { Suspense } from 'react';
 
-// 3D Model Components
+// 3D Model Components - TEMPORARILY DISABLED
 const LaserCuttingModel = () => {
-  const { scene } = useGLTF('/simulation_laser_cutting_robot_systems.glb');
-  return <primitive object={scene} scale={0.5} />;
+  return (
+    <div className="model-placeholder-3d">
+      <div className="placeholder-icon">⚡</div>
+      <p>Laser Cutting</p>
+    </div>
+  );
 };
 
 const SmartApplicationModel = () => {
-  const { scene } = useGLTF('/assembly_solar.glb');
-  return <primitive object={scene} scale={0.3} />;
+  return (
+    <div className="model-placeholder-3d">
+      <div className="placeholder-icon">🔧</div>
+      <p>Smart App</p>
+    </div>
+  );
 };
 
 const RoboticAutomationModel = () => {
-  const { scene } = useGLTF('/industrial_-_3d_agv__trolley_-_omrom.glb');
-  return <primitive object={scene} scale={0.4} />;
+  return (
+    <div className="model-placeholder-3d">
+      <div className="placeholder-icon">🤖</div>
+      <p>Robotic Auto</p>
+    </div>
+  );
 };
 
 const IoTIntegrationModel = () => {
-  const { scene } = useGLTF('/logistic_robot_test__2.glb');
-  return <primitive object={scene} scale={0.3} />;
+  return (
+    <div className="model-placeholder-3d">
+      <div className="placeholder-icon">🌐</div>
+      <p>IoT Integration</p>
+    </div>
+  );
 };
 
-// Loading Fallback
-const LoadingFallback = () => (
-  <div className="loading-3d">
-    <div className="spinner"></div>
-  </div>
-);
+// Loading Fallback - TEMPORARILY DISABLED
+// const LoadingFallback = () => (
+//   <div className="loading-3d">
+//     <div className="spinner"></div>
+//   </div>
+// );
 
 // Solutions Data
 const solutions = [
@@ -140,7 +157,7 @@ const SolutionsShowcase: React.FC = () => {
     return <div>Loading...</div>;
   }
   
-  const ModelComponent = currentSolution.model;
+  // const ModelComponent = currentSolution.model; // TEMPORARILY DISABLED
 
   return (
     <section className="solutions">
@@ -170,18 +187,13 @@ const SolutionsShowcase: React.FC = () => {
             animate={visualControls}
             transition={{ duration: 1, ease: "easeOut" }}
           >
-            <div className="solutions-3d-container">
-              <Suspense fallback={<LoadingFallback />}>
-                <Canvas camera={{ position: [0, 0, 5], fov: 50 }}>
-                  <ambientLight intensity={0.5} />
-                  <pointLight position={[10, 10, 10]} />
-                  <Float speed={2} rotationIntensity={0.5} floatIntensity={0.5}>
-                    <ModelComponent />
-                  </Float>
-                  <OrbitControls enableZoom={false} enablePan={false} />
-                  <Environment preset="city" />
-                </Canvas>
-              </Suspense>
+            <div className="solutions-3d-container" style={{ display: 'flex', alignItems: 'center', justifyContent: 'center', background: 'linear-gradient(135deg, #1a1a2e, #16213e)', borderRadius: '12px', minHeight: '400px' }}>
+              {/* TEMPORARILY DISABLED 3D CANVAS */}
+              <div className="model-placeholder-showcase">
+                <div className="placeholder-icon" style={{ fontSize: '4rem', marginBottom: '1rem' }}>🚀</div>
+                <h3>3D Models</h3>
+                <p>Đang phát triển...</p>
+              </div>
             </div>
             
             <div className="solutions-indicators">
