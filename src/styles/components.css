@@ -476,19 +476,38 @@ a.mobile-nav-item.active {
   animation: particleFloat 10s linear infinite;
 }
 
+
+
+/* Main Hero Content - Sticky Stack Cards */
+.section-stack-cards{
+  position: sticky;
+  height: 100vh;
+  top: 80px;
+  z-index: var(--z-sticky, 10);
+  background: rgba(0, 0, 0, 0.05);
+  backdrop-filter: blur(10px);
+  border-radius: var(--radius-xl);
+  margin-bottom: var(--space-lg);
+  overflow: hidden;
+  transition: all 0.3s ease-in-out;
+}
+
+/* Tăng z-index cho từng card để tạo hiệu ứng chồng lên */
+.section-stack-cards:nth-child(1) { z-index: 10; }
+.section-stack-cards:nth-child(2) { z-index: 11; }
+.section-stack-cards:nth-child(3) { z-index: 12; }
+.section-stack-cards:nth-child(4) { z-index: 13; }
+
+/* Container chứa tất cả các sticky sections */
 .hero .container {
   position: relative;
   z-index: 2;
   padding: 0 var(--space-sm);
   max-width: 1800px;
   margin: 0 auto;
-}
-
-/* Main Hero Content */
-.section-stack-cards{
-  position: sticky;
-  height :100vh;
-  top: 40px;
+  /* Tạo scroll context cho sticky */
+  height: auto;
+  min-height: 400vh; /* Đủ cao để tạo scroll space */
 }
 
 .hero-main {
@@ -4644,11 +4663,7 @@ a.mobile-nav-item.active {
   .benefits-grid { 
     grid-template-columns: 1fr; 
   }
-  .solutions-showcase { 
-    grid-template-columns: 1fr; 
-    grid-auto-rows: auto;
-    gap: var(--space-lg);
-  }
+ 
   .solutions-3d-container { 
     height: auto; 
     aspect-ratio: 16 / 9;
@@ -4891,6 +4906,21 @@ a.mobile-nav-item.active {
   .hexagon-text p {
     font-size: 0.85rem;
     line-height: 1.1;
+  }
+}
+
+/* Responsive cho sticky cards */
+@media (max-width: 768px) {
+  .section-stack-cards {
+    height: auto;
+    min-height: 100vh;
+    position: relative;
+    top: 0;
+    margin-bottom: var(--space-xl);
+  }
+  
+  .hero .container {
+    min-height: auto;
   }
 }
 
