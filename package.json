@@ -54,7 +54,8 @@
     "framer-motion": "^10.16.4",
     "@types/three": "^0.158.0",
     "zustand": "^4.4.0",
-    "react-router-dom": "^6.8.0"
+    "react-router-dom": "^6.8.0",
+    "lenis": "^1.0.42"
   },
   "devDependencies": {
     "@types/react": "^18.2.0",
