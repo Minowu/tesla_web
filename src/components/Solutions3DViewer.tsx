@@ -76,7 +76,7 @@ const solutions: Solution[] = [
       'Nhà máy thông minh',
       'Logistics'
     ],
-    modelPath: '/models/agv.glb',
+    modelPath: '/industrial_-_3d_agv__trolley_-_omrom.glb',
     stats: [
       { label: 'Tải trọng', value: '2000kg' },
       { label: 'Tốc độ', value: '2m/s' },
@@ -122,7 +122,7 @@ const solutions: Solution[] = [
       'Education',
       'Research'
     ],
-    modelPath: '/models/amr.glb',
+    modelPath: '/logistic_robot_test__2.glb',
     stats: [
       { label: 'Tải trọng', value: '1500kg' },
       { label: 'Tốc độ', value: '1.5m/s' },
@@ -169,7 +169,7 @@ const solutions: Solution[] = [
       'Automotive',
       'Electronics'
     ],
-    modelPath: '/models/warehouse.glb',
+    modelPath: '/assembly_solar.glb',
     stats: [
       { label: 'Dung tích', value: '50,000m³' },
       { label: 'Thông lượng', value: '10,000/h' },
