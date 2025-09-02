@@ -1,6 +1,6 @@
 import React, { useState, useRef, useEffect } from 'react';
 import { motion, useInView, useAnimation } from 'framer-motion';
-import logo from '../../logo_white.png';
+import logo from '../assets/logo_white.png';
 // Solutions Data based on the image
 const solutions = [
   {

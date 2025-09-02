@@ -118,7 +118,7 @@ const Navigation: React.FC = () => {
         <div className="nav-container">
           {/* Logo */}
           <div className="nav-logo" onClick={handleHomeClick}>
-            <img src="/1.png" alt="THADOROBOT" />
+            <img src="/src/assets/1.png" alt="THADOROBOT" />
             <h2 className="text-company">THADOROBOT</h2>
           </div>
 

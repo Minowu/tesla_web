@@ -8,22 +8,22 @@ import { Suspense } from 'react';
 
 // 3D Model Components
 const LaserCuttingModel = () => {
-  const { scene } = useGLTF('/simulation_laser_cutting_robot_systems.glb');
+  const { scene } = useGLTF('/src/assets/simulation_laser_cutting_robot_systems.glb');
   return <primitive object={scene} scale={0.5} />;
 };
 
 const SmartApplicationModel = () => {
-  const { scene } = useGLTF('/assembly_solar.glb');
+  const { scene } = useGLTF('/src/assets/assembly_solar.glb');
   return <primitive object={scene} scale={0.3} />;
 };
 
 const RoboticAutomationModel = () => {
-  const { scene } = useGLTF('/industrial_-_3d_agv__trolley_-_omrom.glb');
+  const { scene } = useGLTF('/src/assets/industrial_-_3d_agv__trolley_-_omrom.glb');
   return <primitive object={scene} scale={0.4} />;
 };
 
 const IoTIntegrationModel = () => {
-  const { scene } = useGLTF('/logistic_robot_test__2.glb');
+  const { scene } = useGLTF('/src/assets/logistic_robot_test__2.glb');
   return <primitive object={scene} scale={0.3} />;
 };
 

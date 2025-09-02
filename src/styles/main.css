@@ -114,7 +114,7 @@ body::before {
   left: 0;
   width: 100vw;
   height: 100%;
-  background-image: url('../../1.png');
+  background-image: url('../assets/1.png');
   background: 
     radial-gradient(circle at 20% 80%, rgba(0, 212, 255, 0.15) 0%, transparent 50%),
     radial-gradient(circle at 80% 20%, rgba(255, 107, 53, 0.1) 0%, transparent 50%),

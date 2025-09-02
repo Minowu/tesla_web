@@ -52,7 +52,7 @@ function App() {
       <ReactLenis root>
       <div className="app">
         <div className="logo-bg">
-          <img src="/1.png" alt="Logo" />
+          <img src="/src/assets/1.png" alt="Logo" />
         </div>
         {/* Ultra Modern Tech Background Effects */}
         <div className="particles-container">

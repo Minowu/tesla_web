@@ -225,13 +225,13 @@ const HeroSection: React.FC = () => {
               transition={{ duration: 1, delay: 0.2, ease: 'easeInOut'}}
             >
               <div className="hero-image-main">
-                <img src="/robot1.png" alt="Robot tự động chính" />
+                <img src="/src/assets/robot1.png" alt="Robot tự động chính" />
               </div>
             </motion.div>
           </div>
           <div className="hero-logo">
               <div className="hero-logo-main">
-                <img src="/1.png" alt="Logo ThaDo Robot" />
+                <img src="/src/assets/1.png" alt="Logo ThaDo Robot" />
               </div>
             </div>
         </section>
@@ -249,7 +249,7 @@ const HeroSection: React.FC = () => {
                 animate={aboutImageControls}
                 transition={{ duration: 1, delay: 0.3}}
               >
-                <img src="../Office_aboutus.png" alt="Logo ThaDo Robot" />
+                <img src="/src/assets/Office_aboutus.png" alt="Logo ThaDo Robot" />
               </motion.div>
               
               <div className="hero-about-content">

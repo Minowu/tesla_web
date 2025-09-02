@@ -13,7 +13,7 @@ const RobotModel = () => {
   }
   
   try {
-    const { scene } = useGLTF('/logistic_robot_test__2.glb');
+    const { scene } = useGLTF('/src/assets/logistic_robot_test__2.glb');
     return <primitive object={scene} scale={0.8} />;
   } catch (error) {
     console.warn('Error loading Robot Model:', error);
@@ -30,7 +30,7 @@ const LaserModel = () => {
   }
   
   try {
-    const { scene } = useGLTF('/simulation_laser_cutting_robot_systems.glb');
+    const { scene } = useGLTF('/src/assets/simulation_laser_cutting_robot_systems.glb');
     return <primitive object={scene} scale={0.8} />;
   } catch (error) {
     console.warn('Error loading Laser Model:', error);
@@ -47,7 +47,7 @@ const AGVModel = () => {
   }
   
   try {
-    const { scene } = useGLTF('/industrial_-_3d_agv__trolley_-_omrom.glb');
+    const { scene } = useGLTF('/src/assets/industrial_-_3d_agv__trolley_-_omrom.glb');
     return <primitive object={scene} scale={0.8} />;
   } catch (error) {
     console.warn('Error loading AGV Model:', error);
