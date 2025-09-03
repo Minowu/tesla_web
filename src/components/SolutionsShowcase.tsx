@@ -5,6 +5,7 @@ import { Canvas } from '@react-three/fiber';
 import { OrbitControls, Environment, Float } from '@react-three/drei';
 import { useGLTF } from '@react-three/drei';
 import { Suspense } from 'react';
+import solutionsData from '../data/solutions.json';
 
 
 
@@ -36,48 +37,17 @@ const LoadingFallback = () => (
   </div>
 );
 
-// Solutions Data
-const solutions = [
-  {
-    id: 'laser-cutting',
-    title: 'Cắt Laser Thông Minh',
-    description: 'Hệ thống cắt laser tự động với độ chính xác cao, tích hợp AI để tối ưu hóa quy trình sản xuất.',
-    icon: '⚡',
-    color: '#00d4ff',
-    model: LaserCuttingModel,
-    features: ['Độ chính xác ±0.01mm', 'Tốc độ cắt 100m/phút', 'Tích hợp AI', 'Bảo trì thông minh']
-  },
-  {
-    id: 'smart-application',
-    title: 'Ứng Dụng Thông Minh',
-    description: 'Phát triển ứng dụng IoT và AI cho các ngành công nghiệp, giúp tối ưu hóa hiệu suất sản xuất.',
-    icon: '🤖',
-    color: '#ff6b35',
-    model: SmartApplicationModel,
-    features: ['IoT Integration', 'Real-time Monitoring', 'Predictive Analytics', 'Cloud Platform']
-  },
-  {
-    id: 'robotic-automation',
-    title: 'Tự Động Hóa Robot',
-    description: 'Giải pháp robot công nghiệp tiên tiến với khả năng học tập và thích ứng với môi trường sản xuất.',
-    icon: '🦾',
-    color: '#ff4757',
-    model: RoboticAutomationModel,
-    features: ['Collaborative Robots', 'Machine Learning', 'Safety Systems', 'Easy Programming']
-  },
-  {
-    id: 'iot-integration',
-    title: 'Tích Hợp IoT',
-    description: 'Hệ thống IoT toàn diện kết nối thiết bị, thu thập dữ liệu và phân tích để ra quyết định thông minh.',
-    icon: '🌐',
-    color: '#3742fa',
-    model: IoTIntegrationModel,
-    features: ['Sensor Networks', 'Data Analytics', 'Cloud Integration', 'Security First']
-  }
-];
+// Map modelKey -> component
+const modelMap: Record<string, React.FC> = {
+  simulation_laser_cutting_robot_systems: LaserCuttingModel,
+  assembly_solar: SmartApplicationModel,
+  industrial_agv_trolley_omrom: RoboticAutomationModel,
+  logistic_robot_test__2: IoTIntegrationModel,
+};
 
 const SolutionsShowcase: React.FC = () => {
   const [activeSolution, setActiveSolution] = useState(0);
+  const solutions = (solutionsData as any[]).filter(s => !s.subtitle); // chỉ lấy nhóm showcase 3D
   const navigate = useNavigate();
 
   // Animation refs và controls
@@ -142,7 +112,7 @@ const SolutionsShowcase: React.FC = () => {
     return <div>Loading...</div>;
   }
   
-  const ModelComponent = currentSolution.model;
+  const ModelComponent = modelMap[(currentSolution as any).modelKey] || (() => null);
 
   return (
     <section className="solutions">
@@ -230,7 +200,7 @@ const SolutionsShowcase: React.FC = () => {
             <div className="solution-features">
               <h4>Tính năng nổi bật</h4>
               <ul>
-                {currentSolution.features.map((feature, index) => (
+                {(currentSolution.features as string[]).map((feature: string, index: number) => (
                   <li key={index}>
                     <span className="feature-icon">✓</span>
                     {feature}

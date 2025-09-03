@@ -3,6 +3,7 @@ import { useNavigate } from 'react-router-dom';
 import { Canvas } from '@react-three/fiber';
 import { OrbitControls, Environment, Float } from '@react-three/drei';
 import { useGLTF } from '@react-three/drei';
+import technologiesData from '../data/technologies.json';
 
 
 
@@ -69,83 +70,15 @@ const TechnologySection: React.FC = () => {
   const navigate = useNavigate();
   const [activeTechnology, setActiveTechnology] = useState(0);
 
-  const technologies = [
-    {
-      id: 'ai-ml',
-      name: 'AI & Machine Learning',
-      category: 'Artificial Intelligence',
-      description: 'Công nghệ trí tuệ nhân tạo và học máy tiên tiến cho tự động hóa thông minh.',
-      features: [
-        'Computer Vision',
-        'Natural Language Processing',
-        'Predictive Analytics',
-        'Deep Learning',
-        'Neural Networks',
-        'Reinforcement Learning'
-      ],
-      applications: [
-        'Nhận diện hình ảnh',
-        'Xử lý ngôn ngữ tự nhiên',
-        'Dự đoán bảo trì',
-        'Tối ưu hóa quy trình',
-        'Kiểm soát chất lượng',
-        'Phân tích dữ liệu'
-      ],
-      model: RobotModel,
-      color: '#00d4ff',
-      icon: '🧠'
-    },
-    {
-      id: 'iot',
-      name: 'Internet of Things',
-      category: 'IoT & Connectivity',
-      description: 'Hệ thống kết nối thiết bị thông minh và thu thập dữ liệu real-time.',
-      features: [
-        'Sensor Networks',
-        'Real-time Monitoring',
-        'Cloud Integration',
-        'Edge Computing',
-        'Wireless Communication',
-        'Data Analytics'
-      ],
-      applications: [
-        'Giám sát nhà máy',
-        'Quản lý năng lượng',
-        'Theo dõi tài sản',
-        'Bảo trì dự đoán',
-        'An toàn lao động',
-        'Tối ưu hóa sản xuất'
-      ],
-      model: LaserModel,
-      color: '#ff6b35',
-      icon: '🌐'
-    },
-    {
-      id: 'robotics',
-      name: 'Industrial Robotics',
-      category: 'Advanced Robotics',
-      description: 'Robot công nghiệp thông minh với độ chính xác cao và khả năng thích ứng.',
-      features: [
-        'Collaborative Robots',
-        'Precision Control',
-        'Safety Systems',
-        'Easy Programming',
-        'Flexible Integration',
-        'Remote Monitoring'
-      ],
-      applications: [
-        'Lắp ráp tự động',
-        'Hàn và cắt',
-        'Xử lý vật liệu',
-        'Kiểm tra chất lượng',
-        'Đóng gói',
-        'Vận chuyển'
-      ],
-      model: AGVModel,
-      color: '#8b5cf6',
-      icon: '🤖'
-    }
-  ];
+  const modelMap: Record<string, React.FC> = {
+    logistic_robot_test__2: RobotModel,
+    simulation_laser_cutting_robot_systems: LaserModel,
+    industrial_agv_trolley_omrom: AGVModel,
+  };
+  const technologies = (technologiesData as any[]).map((t) => ({
+    ...t,
+    model: modelMap[(t as any).modelKey] || (() => null),
+  }));
 
   useEffect(() => {
     const interval = setInterval(() => {
@@ -247,7 +180,7 @@ const TechnologySection: React.FC = () => {
               <div className="technology-features">
                 <h4>Tính năng chính</h4>
                 <ul>
-                  {currentTech.features.map((feature, index) => (
+                  {(currentTech.features as string[]).map((feature: string, index: number) => (
                     <li key={index}>
                       <span className="feature-icon">⚡</span>
                       <span>{feature}</span>
@@ -259,7 +192,7 @@ const TechnologySection: React.FC = () => {
               <div className="technology-applications">
                 <h4>Ứng dụng</h4>
                 <div className="applications-grid">
-                  {currentTech.applications.map((app, index) => (
+                  {(currentTech.applications as string[]).map((app: string, index: number) => (
                     <div key={index} className="application-item">
                       <span className="app-icon">🎯</span>
                       <span>{app}</span>
