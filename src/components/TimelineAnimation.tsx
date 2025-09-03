@@ -1,5 +1,6 @@
 import React, { useRef, useEffect, useState } from 'react';
 import { motion, useScroll, useTransform, useSpring, MotionValue } from 'framer-motion';
+import { useTranslation } from 'react-i18next';
 
 // Type definitions
 interface TimelineItem {
@@ -15,12 +16,12 @@ interface TimelineAnimationProps {
 }
 
 const TimelineAnimation: React.FC<TimelineAnimationProps> = ({ 
-  data, 
-  className = '' 
+  data
 }) => {
   const containerRef = useRef<HTMLDivElement>(null);
   const [currentSection, setCurrentSection] = useState<number>(0);
   const [lineProgress, setLineProgress] = useState<number>(0);
+  const { t } = useTranslation();
   
   const { scrollYProgress }: { scrollYProgress: MotionValue<number> } = useScroll({
     target: containerRef,
@@ -38,38 +39,38 @@ const TimelineAnimation: React.FC<TimelineAnimationProps> = ({
   const defaultTimelineData: TimelineItem[] = [
     {
       year: "2018",
-      title: "The Beginning",
-      description: "Founded with a vision to transform digital experiences and create meaningful connections.",
+      title: t('timeline.default.2018.title'),
+      description: t('timeline.default.2018.description'),
       color: "#4F46E5"
     },
     {
       year: "2019", 
-      title: "Growth & Innovation",
-      description: "Expanded our team and launched groundbreaking products that redefined industry standards.",
+      title: t('timeline.default.2019.title'),
+      description: t('timeline.default.2019.description'),
       color: "#7C3AED"
     },
     {
       year: "2020",
-      title: "Global Expansion",
-      description: "Despite challenges, we grew internationally and adapted to serve clients worldwide.",
+      title: t('timeline.default.2020.title'),
+      description: t('timeline.default.2020.description'),
       color: "#EC4899"
     },
     {
       year: "2021",
-      title: "Digital Transformation",
-      description: "Led the digital revolution with cutting-edge solutions and innovative approaches.",
+      title: t('timeline.default.2021.title'),
+      description: t('timeline.default.2021.description'),
       color: "#F59E0B"
     },
     {
       year: "2022",
-      title: "Industry Leadership",
-      description: "Became recognized industry leaders, setting new benchmarks for excellence.",
+      title: t('timeline.default.2022.title'),
+      description: t('timeline.default.2022.description'),
       color: "#10B981"
     },
     {
       year: "2023",
-      title: "Future Vision",
-      description: "Continuing to innovate and shape the future of technology and human connection.",
+      title: t('timeline.default.2023.title'),
+      description: t('timeline.default.2023.description'),
       color: "#06B6D4"
     }
   ];
@@ -77,26 +78,7 @@ const TimelineAnimation: React.FC<TimelineAnimationProps> = ({
   // Sử dụng data từ props hoặc default data
   const timelineData: TimelineItem[] = data || defaultTimelineData;
 
-  // Tạo background pattern SVG
-  const createBackgroundPattern = (): string => {
-    return `data:image/svg+xml;base64,${btoa(`
-      <svg width="500" height="500" viewBox="0 0 500 500" xmlns="http://www.w3.org/2000/svg">
-        <defs>
-          <pattern id="trianglePattern" x="0" y="0" width="100" height="100" patternUnits="userSpaceOnUse">
-            <path d="M20 80 L50 20 L80 80 Z" fill="none" stroke="rgba(255,255,255,0.05)" stroke-width="1"/>
-            <circle cx="50" cy="50" r="15" fill="none" stroke="rgba(255,255,255,0.03)" stroke-width="1"/>
-            <path d="M10 10 L90 10 L90 90 L10 90 Z" fill="none" stroke="rgba(255,255,255,0.02)" stroke-width="1"/>
-          </pattern>
-        </defs>
-        <rect width="500" height="500" fill="#0a0a0a"/>
-        <rect width="500" height="500" fill="url(#trianglePattern)"/>
-        <circle cx="150" cy="150" r="100" fill="none" stroke="rgba(255,255,255,0.08)" stroke-width="2"/>
-        <circle cx="350" cy="350" r="80" fill="none" stroke="rgba(255,255,255,0.06)" stroke-width="1"/>
-        <path d="M100 100 L150 50 L200 100 L175 150 L125 150 Z" fill="none" stroke="rgba(255,255,255,0.05)" stroke-width="1"/>
-        <path d="M300 200 L350 150 L400 200 L375 250 L325 250 Z" fill="none" stroke="rgba(255,255,255,0.04)" stroke-width="1"/>
-      </svg>
-    `)}`;
-  };
+
 
   // Calculate marker position và active section
   useEffect(() => {
@@ -274,21 +256,6 @@ const TimelineAnimation: React.FC<TimelineAnimationProps> = ({
           </section>
         ))}
       </div>
-
-
-
-      {/* Scroll Hint */}
-      <motion.div
-        className="timeline-scroll-hint"
-        initial={{ opacity: 1 }}
-        animate={{ opacity: scrollYProgress.get() < 0.1 ? 1 : 0 }}
-        transition={{ duration: 0.5 }}
-      >
-        <div className="timeline-scroll-hint-text">Scroll to explore our journey</div>
-        <div className="timeline-scroll-mouse">
-          <div className="timeline-scroll-mouse-dot" />
-        </div>
-      </motion.div>
     </div>
   );
 };

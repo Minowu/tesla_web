@@ -12,15 +12,15 @@ const Navigation: React.FC = () => {
   const [isDarkTheme, setIsDarkTheme] = useState(true); // Thêm state cho theme
   const location = useLocation();
   const navigate = useNavigate();
-  const { i18n } = useTranslation();
+  const { t, i18n } = useTranslation();
 
   const menuItems = [
-    { id: 'home', label:i18n.t('home'), icon: '🏠', path: '/home', isLink: true },
-    { id: 'products', label:i18n.t('products'), icon: '🤖', path: '/products', isLink: true },
-    { id: 'solutions', label:i18n.t('solutions'), icon: '💡', path: '/solutions', isLink: true },
-    { id: 'technology', label:i18n.t('technology'), icon: '⚡', path: '/technology', isLink: true },
-    { id: 'about', label:i18n.t('about'), icon: 'ℹ️', path: '/about-us', isLink: true },
-    { id: 'blog', label:i18n.t('blog'), icon: '💬', path: '/blog', isLink: true }
+    { id: 'home', label: t('nav.home'), icon: '🏠', path: '/home', isLink: true },
+    { id: 'products', label: t('nav.products'), icon: '🤖', path: '/products', isLink: true },
+    { id: 'solutions', label: t('nav.solutions'), icon: '💡', path: '/solutions', isLink: true },
+    { id: 'technology', label: t('nav.technology'), icon: '⚡', path: '/technology', isLink: true },
+    { id: 'about', label: t('nav.about'), icon: 'ℹ️', path: '/about-us', isLink: true },
+    { id: 'blog', label: t('nav.blog'), icon: '💬', path: '/blog', isLink: true }
   ];
 
   useEffect(() => {
@@ -167,7 +167,7 @@ const Navigation: React.FC = () => {
               className="cta-button"
               onClick={handleContactClick}
             >
-              <span>{i18n.t('contact')}</span>
+              <span>{t('nav.contact')}</span>
               
             </button>
           </div>
@@ -175,13 +175,13 @@ const Navigation: React.FC = () => {
           {/* Navigation Controls */}
           <div className="nav-controls">
             {/* Language Toggle */}     
-            <button className="control-button language-toggle" title="Chuyển đổi ngôn ngữ" onClick={toggleLanguage}>
+            <button className="control-button language-toggle" title={t('nav.toggle_language')} onClick={toggleLanguage}>
               <span>{language === 'vi' ? '🇻🇳' : '🇺🇸'}</span>
             </button>
             {/* Theme Toggle */}
             <button 
               className="control-button theme-toggle" 
-              title={isDarkTheme ? "Chuyển sang chế độ sáng" : "Chuyển sang chế độ tối"}
+              title={isDarkTheme ? t('nav.toggle_theme_light') : t('nav.toggle_theme_dark')}
               onClick={toggleTheme}
             >
               <span>{isDarkTheme ? '🌙' : '☀️'}</span>
@@ -190,7 +190,7 @@ const Navigation: React.FC = () => {
             <div className="search-container">
               <input
                 type="text"
-                placeholder={i18n.t('find_solution') + ' ...'}
+                placeholder={t('nav.find_solution') + ' ...'}
                 value={searchQuery}
                 onChange={(e) => setSearchQuery(e.target.value)}
                 onKeyPress={handleSearchKeyPress}
@@ -200,7 +200,7 @@ const Navigation: React.FC = () => {
               />
               <button 
                 className="control-button search-toggle" 
-                title="Tìm kiếm"
+                title={t('nav.search')}
                 onClick={handleSearch}
               >
                 <span>🔍</span>
@@ -232,7 +232,7 @@ const Navigation: React.FC = () => {
               <div className="search-container mobile">
                 <input
                   type="text"
-                  placeholder={i18n.t('find_solution') + ' ...'}
+                  placeholder={t('nav.find_solution') + ' ...'}
                   value={searchQuery}
                   onChange={(e) => setSearchQuery(e.target.value)}
                   onKeyPress={handleSearchKeyPress}
@@ -240,18 +240,18 @@ const Navigation: React.FC = () => {
                 />
                 <button 
                   className="control-button search-toggle" 
-                  title="Tìm kiếm"
+                  title={t('nav.search')}
                   onClick={handleSearch}
                 >
                   <span>🔍</span>
                 </button>
               </div>
-              <button className="control-button language-toggle" title="Chuyển đổi ngôn ngữ" onClick={toggleLanguage}>
+              <button className="control-button language-toggle" title={t('nav.toggle_language')} onClick={toggleLanguage}>
                 <span>{language === 'vi' ? '🇻🇳' : '🇺🇸'}</span>
               </button>
               <button 
                 className="control-button theme-toggle" 
-                title={isDarkTheme ? "Chuyển sang chế độ sáng" : "Chuyển sang chế độ tối"}
+                title={isDarkTheme ? t('nav.toggle_theme_light') : t('nav.toggle_theme_dark')}
                 onClick={toggleTheme}
               >
                 <span>{isDarkTheme ? '🌙' : '☀️'}</span>
@@ -290,7 +290,7 @@ const Navigation: React.FC = () => {
                 style={{ width: '100%' }}
               >
                 <span>📞</span>
-                <span>{i18n.t('contact')}</span>
+                <span>{t('nav.contact')}</span>
               </button>
             </div>
           </div>

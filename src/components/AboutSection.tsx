@@ -1,11 +1,12 @@
-import React, { useState, useEffect } from 'react';
+import React from 'react';
+import { useTranslation } from 'react-i18next';
 import { useAppStore } from '../store/appStore';
 import LogoCarousel from './LogoCarousel';
 import TimelineAnimation from './TimelineAnimation';  
 
 const AboutSection: React.FC = () => {
   const { setCurrentSection } = useAppStore();
-  const [activeTab, setActiveTab] = useState('mission');
+  const { t } = useTranslation();
 
   // Hàm tạo màu sắc cho timeline dựa trên năm
   const getTimelineColor = (year: string): string => {
@@ -25,82 +26,82 @@ const AboutSection: React.FC = () => {
   };
 
   const stats = [
-    { number: '5+', label: 'Năm kinh nghiệm', icon: '⏱️' },
-    { number: '50+', label: 'Dự án thành công', icon: '🏆' },
-    { number: '50+', label: 'Khách hàng tin tưởng', icon: '🤝' },
-    { number: '99%', label: 'Tỷ lệ hài lòng', icon: '⭐' }
+    { number: '5+', label: t('about.stats.experience'), icon: '⏱️' },
+    { number: '50+', label: t('about.stats.projects'), icon: '🏆' },
+    { number: '50+', label: t('about.stats.clients'), icon: '🤝' },
+    { number: '99%', label: t('about.stats.satisfaction'), icon: '⭐' }
   ];
 
 
   const team = [
     {
       name: 'Nguyễn Văn S',
-      position: 'CEO & Founder',
+      position: t('about.team.ceo.position'),
       avatar: '👨‍💼',
-      description: 'Chuyên gia robot với 20+ năm kinh nghiệm trong lĩnh vực tự động hóa'
+      description: t('about.team.ceo.description')
     },
     {
       name: 'Trần Thị B',
-      position: 'CTO',
+      position: t('about.team.cto.position'),
       avatar: '👩‍💻',
-      description: 'Tiến sĩ AI/ML, chuyên gia về trí tuệ nhân tạo và machine learning'
+      description: t('about.team.cto.description')
     },
     {
       name: 'Lê Văn C',
-      position: 'Head of R&D',
+      position: t('about.team.rd.position'),
       avatar: '👨‍🔬',
-      description: 'Chuyên gia nghiên cứu và phát triển sản phẩm robot công nghiệp'
+      description: t('about.team.rd.description')
     },
   ];
 
   const values = [
     {
       icon: '🎯',
-      title: 'Sứ mệnh',
-      description: 'Sáng tạo và phát triển công nghệ để mang lại tương lai tốt đẹp, ấm no và hạnh phúc hơn cho xã hội.'
+      title: t('about.values.mission.title'),
+      description: t('about.values.mission.description')
     },
     {
       icon: '👁️',
-      title: 'Tầm nhìn',
-      description: 'Trở thành công ty hàng đầu Đông Nam Á về lĩnh vực Robot và Nhà máy thông minh.'
+      title: t('about.values.vision.title'),
+      description: t('about.values.vision.description')
     },
     {
       icon: '💎',
-      title: 'Giá trị cốt lõi',
-      description: 'Đổi mới sáng tạo, phát triển bền vững để phục vụ con người và xã hội.'
+      title: t('about.values.core.title'),
+      description: t('about.values.core.description')
     }
   ];
 
   const milestones = [
     {
       year: '2020',
-      title: 'Thành lập công ty',
-      description: 'Thadorobot được thành lập với sứ mệnh đưa công nghệ robot vào Việt Nam'
+      title: t('about.timeline.2020.title'),
+      description: t('about.timeline.2020.description')
     },
     {
       year: '2021',
-      title: 'Dự án đầu tiên',
-      description: 'Triển khai thành công hệ thống AGV đầu tiên cho nhà máy sản xuất'
+      title: t('about.timeline.2021.title'),
+      description: t('about.timeline.2021.description')
     },
     {
       year: '2022',
-      title: 'Mở rộng thị trường',
-      description: 'Mở rộng hoạt động ra các tỉnh thành và bắt đầu xuất khẩu'
+      title: t('about.timeline.2022.title'),
+      description: t('about.timeline.2022.description')
     },
     {
       year: '2023',
-      title: 'Công nghệ AI',
-      description: 'Tích hợp AI và Machine Learning vào các sản phẩm robot'
+      title: t('about.timeline.2023.title'),
+      description: t('about.timeline.2023.description')
     },
     {
       year: '2024',
-      title: 'Industry 4.0',
-      description: 'Trở thành đối tác chiến lược trong cuộc cách mạng công nghiệp 4.0'
+      title: t('about.timeline.2024.title'),
+      description: t('about.timeline.2024.description')
     },
     {
       year: '2025',
-      title: 'Tương lai',
-      description: 'Tiếp tục đổi mới và dẫn đầu trong lĩnh vực tự động hóa'
+      title: t('about.timeline.2025.title'),
+      description: t('about.timeline.2025.description')
     }
   ];
 
@@ -108,9 +109,9 @@ const AboutSection: React.FC = () => {
     <section className="about-section">
       <div className="container">
         <div className="section-header">
-          <h2 className="section-title">Về <span style={{color: 'var(--primary)'}} className="text-company">Thadorobot</span></h2>
+          <h2 className="section-title">{t('about.section_title')} <span style={{color: 'var(--primary)'}} className="text-company">Thadorobot</span></h2>
           <p className="section-subtitle">
-          là một doanh nghiệp hàng đầu tại Việt Nam, chuyên cung cấp các giải pháp công nghệ tiên tiến trong lĩnh vực Robot và Nhà máy thông minh. Chúng tôi hoạt động mạnh mẽ trong các lĩnh vực chủ chốt như Hệ thống đóng gói tự động (APS), Giải pháp tự động hóa nhà máy (FAS), và Giải pháp quản lý kho thông minh (SWS)
+          {t('about.section_subtitle')}
           </p>
         </div>
 
@@ -138,7 +139,7 @@ const AboutSection: React.FC = () => {
           
         {/* Timeline */}
         <div className="about-timeline">
-          <h3 className="timeline-title">Hành trình phát triển</h3>
+          <h3 className="timeline-title">{t('about.timeline_title')}</h3>
           <TimelineAnimation 
             data={milestones.map(milestone => ({
               year: milestone.year,
@@ -151,7 +152,7 @@ const AboutSection: React.FC = () => {
 
         {/* Team */}
         <div className="about-team">
-          <h3 className="team-title">Đội ngũ lãnh đạo</h3>
+          <h3 className="team-title">{t('about.team_title')}</h3>
           <div className="team-grid">
             {team.map((member, index) => (
               <div key={index} className="team-card">
@@ -167,15 +168,15 @@ const AboutSection: React.FC = () => {
         {/* CTA */}
         <div className="about-cta">
           <div className="cta-content">
-            <h3>Sẵn sàng hợp tác?</h3>
-            <p>Hãy liên hệ với chúng tôi để được tư vấn và hỗ trợ tốt nhất</p>
+            <h3>{t('about.cta.title')}</h3>
+            <p>{t('about.cta.description')}</p>
             <div className="cta-buttons">
               <button 
                 className="btn btn-primary"
                 onClick={() => setCurrentSection('contact')}
               >
                 <span>📞</span>
-                <span>Liên hệ ngay</span>
+                <span>{t('about.cta.contact_btn')}</span>
               </button>
               
               <button 
@@ -183,7 +184,7 @@ const AboutSection: React.FC = () => {
                 onClick={() => setCurrentSection('solutions')}
               >
                 <span>💡</span>
-                <span>Xem giải pháp</span>
+                <span>{t('about.cta.solutions_btn')}</span>
               </button>
             </div>
           </div>

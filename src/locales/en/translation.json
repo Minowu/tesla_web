@@ -1,12 +1,19 @@
 {
-  "home": "Home",
-  "products": "Products",
-  "solutions": "Solutions",
-  "technology": "Technology",
-  "about": "About",
-  "blog": "Blog",
-  "contact": "Contact",
-  "find_solution": "Find Solution",
+  
+  "nav": {
+    "home": "Home",
+    "products": "Products", 
+    "solutions": "Solutions",
+    "technology": "Technology",
+    "about": "About us",
+    "blog": "Blog",
+    "contact": "Contact",
+    "find_solution": "Find Solution",
+    "toggle_language": "Switch language",
+    "toggle_theme_light": "Switch to light mode",
+    "toggle_theme_dark": "Switch to dark mode",
+    "search": "Search"
+  },
   "breadcrumb": {
     "home": "Home",
     "blog": "Blog"
@@ -115,6 +122,106 @@
     "list_subtitle": "We offer a wide range of products to meet your needs",
     "no_products_title": "No products available",
     "no_products_message": "This category has no products yet. Please select another category."
+  },
+  "about": {
+    "section_title": "About",
+    "section_subtitle": "is a leading enterprise in Vietnam, specializing in providing advanced technology solutions in the field of Robotics and Smart Factories. We operate strongly in key areas such as Automatic Packaging Systems (APS), Factory Automation Solutions (FAS), and Smart Warehouse Solutions (SWS)",
+    "stats": {
+      "experience": "Years of experience",
+      "projects": "Successful projects",
+      "clients": "Trusted clients",
+      "satisfaction": "Satisfaction rate"
+    },
+    "values": {
+      "mission": {
+        "title": "Mission",
+        "description": "Create and develop technology to bring a better, prosperous and happier future for society."
+      },
+      "vision": {
+        "title": "Vision",
+        "description": "Become the leading company in Southeast Asia in the field of Robotics and Smart Factories."
+      },
+      "core": {
+        "title": "Core Values",
+        "description": "Innovation, sustainable development to serve people and society."
+      }
+    },
+    "timeline_title": "Development Journey",
+    "timeline": {
+      "2020": {
+        "title": "Company Founded",
+        "description": "Thadorobot was founded with the mission to bring robot technology to Vietnam"
+      },
+      "2021": {
+        "title": "First Project",
+        "description": "Successfully deployed the first AGV system for manufacturing plant"
+      },
+      "2022": {
+        "title": "Market Expansion",
+        "description": "Expanded operations to provinces and began exporting"
+      },
+      "2023": {
+        "title": "AI Technology",
+        "description": "Integrated AI and Machine Learning into robot products"
+      },
+      "2024": {
+        "title": "Industry 4.0",
+        "description": "Became a strategic partner in the Industrial Revolution 4.0"
+      },
+      "2025": {
+        "title": "Future",
+        "description": "Continue to innovate and lead in the field of automation"
+      }
+    },
+    "team_title": "Leadership Team",
+    "team": {
+      "ceo": {
+        "position": "CEO & Founder",
+        "description": "Robot expert with 20+ years of experience in automation field"
+      },
+      "cto": {
+        "position": "CTO",
+        "description": "PhD in AI/ML, expert in artificial intelligence and machine learning"
+      },
+      "rd": {
+        "position": "Head of R&D",
+        "description": "Expert in research and development of industrial robot products"
+      }
+    },
+    "cta": {
+      "title": "Ready to collaborate?",
+      "description": "Contact us for the best consultation and support",
+      "contact_btn": "Contact now",
+      "solutions_btn": "View solutions"
+    }
+  },
+  "timeline": {
+    "default": {
+      "2018": {
+        "title": "The Beginning",
+        "description": "Founded with a vision to transform digital experiences and create meaningful connections."
+      },
+      "2019": {
+        "title": "Growth & Innovation",
+        "description": "Expanded our team and launched groundbreaking products that redefined industry standards."
+      },
+      "2020": {
+        "title": "Global Expansion",
+        "description": "Despite challenges, we grew internationally and adapted to serve clients worldwide."
+      },
+      "2021": {
+        "title": "Digital Transformation",
+        "description": "Led the digital revolution with cutting-edge solutions and innovative approaches."
+      },
+      "2022": {
+        "title": "Industry Leadership",
+        "description": "Became recognized industry leaders, setting new benchmarks for excellence."
+      },
+      "2023": {
+        "title": "Future Vision",
+        "description": "Continuing to innovate and shape the future of technology and human connection."
+      }
+    }
   }
 }
 

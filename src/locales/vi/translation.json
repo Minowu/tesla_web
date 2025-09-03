@@ -1,13 +1,20 @@
 
 {
-  "home": "Trang chủ",
-  "products": "Sản phẩm",
-  "solutions": "Giải pháp",
-  "technology": "Công nghệ",
+  
+  "nav": {
+    "home": "Trang chủ",
+    "products": "Sản phẩm",
+    "solutions": "Giải pháp", 
+    "technology": "Công nghệ",
   "about": "Về chúng tôi",
   "blog": "Bài viết",
   "contact": "Liên hệ",
-  "find_solution": "Tìm kiếm giải pháp",
+    "find_solution": "Tìm kiếm giải pháp",
+    "toggle_language": "Chuyển đổi ngôn ngữ",
+    "toggle_theme_light": "Chuyển sang chế độ sáng",
+    "toggle_theme_dark": "Chuyển sang chế độ tối",
+    "search": "Tìm kiếm"
+  },
   "breadcrumb": {
     "home": "Trang chủ",
     "blog": "Bài viết"
@@ -116,6 +123,106 @@
     "list_subtitle": "Chúng tôi cung cấp đa dạng sản phẩm để đáp ứng nhu cầu của bạn",
     "no_products_title": "Không có sản phẩm nào",
     "no_products_message": "Danh mục này chưa có sản phẩm nào. Vui lòng chọn danh mục khác."
+  },
+  "about": {
+    "section_title": "Về",
+    "section_subtitle": "là một doanh nghiệp hàng đầu tại Việt Nam, chuyên cung cấp các giải pháp công nghệ tiên tiến trong lĩnh vực Robot và Nhà máy thông minh. Chúng tôi hoạt động mạnh mẽ trong các lĩnh vực chủ chốt như Hệ thống đóng gói tự động (APS), Giải pháp tự động hóa nhà máy (FAS), và Giải pháp quản lý kho thông minh (SWS)",
+    "stats": {
+      "experience": "Năm kinh nghiệm",
+      "projects": "Dự án thành công",
+      "clients": "Khách hàng tin tưởng",
+      "satisfaction": "Tỷ lệ hài lòng"
+    },
+    "values": {
+      "mission": {
+        "title": "Sứ mệnh",
+        "description": "Sáng tạo và phát triển công nghệ để mang lại tương lai tốt đẹp, ấm no và hạnh phúc hơn cho xã hội."
+      },
+      "vision": {
+        "title": "Tầm nhìn",
+        "description": "Trở thành công ty hàng đầu Đông Nam Á về lĩnh vực Robot và Nhà máy thông minh."
+      },
+      "core": {
+        "title": "Giá trị cốt lõi",
+        "description": "Đổi mới sáng tạo, phát triển bền vững để phục vụ con người và xã hội."
+      }
+    },
+    "timeline_title": "Hành trình phát triển",
+    "timeline": {
+      "2020": {
+        "title": "Thành lập công ty",
+        "description": "Thadorobot được thành lập với sứ mệnh đưa công nghệ robot vào Việt Nam"
+      },
+      "2021": {
+        "title": "Dự án đầu tiên",
+        "description": "Triển khai thành công hệ thống AGV đầu tiên cho nhà máy sản xuất"
+      },
+      "2022": {
+        "title": "Mở rộng thị trường",
+        "description": "Mở rộng hoạt động ra các tỉnh thành và bắt đầu xuất khẩu"
+      },
+      "2023": {
+        "title": "Công nghệ AI",
+        "description": "Tích hợp AI và Machine Learning vào các sản phẩm robot"
+      },
+      "2024": {
+        "title": "Industry 4.0",
+        "description": "Trở thành đối tác chiến lược trong cuộc cách mạng công nghiệp 4.0"
+      },
+      "2025": {
+        "title": "Tương lai",
+        "description": "Tiếp tục đổi mới và dẫn đầu trong lĩnh vực tự động hóa"
+      }
+    },
+    "team_title": "Đội ngũ lãnh đạo",
+    "team": {
+      "ceo": {
+        "position": "CEO & Founder",
+        "description": "Chuyên gia robot với 20+ năm kinh nghiệm trong lĩnh vực tự động hóa"
+      },
+      "cto": {
+        "position": "CTO",
+        "description": "Tiến sĩ AI/ML, chuyên gia về trí tuệ nhân tạo và machine learning"
+      },
+      "rd": {
+        "position": "Head of R&D",
+        "description": "Chuyên gia nghiên cứu và phát triển sản phẩm robot công nghiệp"
+      }
+    },
+    "cta": {
+      "title": "Sẵn sàng hợp tác?",
+      "description": "Hãy liên hệ với chúng tôi để được tư vấn và hỗ trợ tốt nhất",
+      "contact_btn": "Liên hệ ngay",
+      "solutions_btn": "Xem giải pháp"
+    }
+  },
+  "timeline": {
+    "default": {
+      "2018": {
+        "title": "Khởi đầu",
+        "description": "Thành lập với tầm nhìn chuyển đổi trải nghiệm số và tạo ra những kết nối có ý nghĩa."
+      },
+      "2019": {
+        "title": "Tăng trưởng & Đổi mới",
+        "description": "Mở rộng đội ngũ và ra mắt những sản phẩm đột phá định nghĩa lại tiêu chuẩn ngành."
+      },
+      "2020": {
+        "title": "Mở rộng toàn cầu",
+        "description": "Bất chấp thách thức, chúng tôi phát triển quốc tế và thích ứng để phục vụ khách hàng toàn cầu."
+      },
+      "2021": {
+        "title": "Chuyển đổi số",
+        "description": "Dẫn đầu cuộc cách mạng số với các giải pháp tiên tiến và phương pháp đổi mới."
+      },
+      "2022": {
+        "title": "Dẫn đầu ngành",
+        "description": "Trở thành những nhà lãnh đạo ngành được công nhận, thiết lập tiêu chuẩn mới cho sự xuất sắc."
+      },
+      "2023": {
+        "title": "Tầm nhìn tương lai",
+        "description": "Tiếp tục đổi mới và định hình tương lai của công nghệ và kết nối con người."
+      }
+    }
   }
 }
 
