@@ -1,10 +1,17 @@
 import { useMemo, useState } from "react"
 import { Link } from "react-router-dom"
-import { samplePosts } from "./BlogSection"
+import blogsData from "../data/blogs.json"
 import "../styles/components.css"
 
+interface BlogItem {
+  id: number
+  title: string
+  slug: string
+  thumbnail: string
+}
+
 export default function BlogCarousel() {
-  const posts = useMemo(() => samplePosts, [])
+  const posts = useMemo(() => (blogsData as BlogItem[]), [])
   const [index, setIndex] = useState(0)
 
   const total = posts.length
