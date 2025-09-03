@@ -6,7 +6,7 @@ export default defineConfig({
   
   root: '.',
   
-  assetsInclude: ['**/*.glb', '**/*.gltf'],
+  assetsInclude: ['**/*.glb', '**/*.gltf', '**/*.png', '**/*.jpg', '**/*.jpeg', '**/*.mp4', '**/*.webm', '**/*.svg'],
   
   server: {
     port: 3000,
