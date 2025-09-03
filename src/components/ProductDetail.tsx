@@ -1,6 +1,7 @@
 import { useState, useEffect } from "react"
 import { useParams, Link } from "react-router-dom"
 import { motion, AnimatePresence } from "framer-motion"
+import { useTranslation } from "react-i18next"
 import { mockBrands } from "./ProductInfo"
 import type { Product } from "../types/products"
 import "../styles/components.css"
@@ -8,6 +9,7 @@ import "../styles/components.css"
 export default function ProductDetail() {
   const { productId } = useParams<{ productId: string }>()
   const [activeTab, setActiveTab] = useState<string>("")
+  const { t } = useTranslation()
   
   // Tìm sản phẩm từ mockBrands
   let product: Product | null = null
@@ -38,9 +40,9 @@ export default function ProductDetail() {
     return (
       <div className="product-detail-container">
         <div className="error-state">
-          <h2>Sản phẩm không tồn tại</h2>
+          <h2>{t('product.not_found')}</h2>
           <Link to="/products" className="back-button">
-            ← Quay lại danh sách sản phẩm
+            ← {t('product.back_to_list')}
           </Link>
         </div>
       </div>
@@ -156,7 +158,7 @@ export default function ProductDetail() {
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.5, delay: 0.8 }}
           >
-            <h3 className="summary-title">Mô tả sản phẩm</h3>
+            <h3 className="summary-title">{t('product.description')}</h3>
             <p className="summary-content">{product.detail}</p>
           </motion.div>
         )}

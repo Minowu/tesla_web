@@ -1,5 +1,6 @@
 import type React from "react"
 import { motion } from "framer-motion"
+import { useTranslation } from "react-i18next"
 import type { Product } from "../types/products"
 
 interface ProductCardProps {
@@ -8,6 +9,8 @@ interface ProductCardProps {
 }
 
 export const ProductCard: React.FC<ProductCardProps> = ({ product, onViewDetails }) => {
+  const { t } = useTranslation()
+  
   return (
     <motion.div
       initial={{ opacity: 0, y: 20 }}
@@ -28,7 +31,7 @@ export const ProductCard: React.FC<ProductCardProps> = ({ product, onViewDetails
           <p className="product-description">{product.description.line2}</p>
         )}
         <button onClick={() => onViewDetails(product)} className="product-button">
-          Xem chi tiết
+          {t('product.view_details')}
         </button>
       </div>
     </motion.div>

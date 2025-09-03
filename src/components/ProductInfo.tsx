@@ -1,6 +1,7 @@
 import { useState } from "react"
 import { motion, AnimatePresence } from "framer-motion"
 import { useNavigate } from "react-router-dom"
+import { useTranslation } from "react-i18next"
 import { ProductCard } from "./ProductCard"
 import productsData from "../data/products.json"
 import type { Brand, Category, Product } from "../types/products"
@@ -15,10 +16,11 @@ export default function ProductInfo() {
   const [selectedBrand, setSelectedBrand] = useState<Brand | null>(null)
   const [selectedCategory, setSelectedCategory] = useState<Category | null>(null)
   const navigate = useNavigate()
+  const { t } = useTranslation()
 
   // Tạo all brands và all categories
-  const allBrands = { id: "all", name: "Tất cả hãng", categories: [] }
-  const allCategories = { id: "all", name: "Tất cả danh mục", products: [] }
+  const allBrands = { id: "all", name: t('product.all_brands'), categories: [] }
+  const allCategories = { id: "all", name: t('product.all_categories'), products: [] }
 
   // Lấy tất cả sản phẩm từ tất cả hãng
   const getAllProducts = () => {
@@ -139,7 +141,7 @@ export default function ProductInfo() {
              className="category-sidebar"
            >
             <div className="category-sidebar-content">
-              <h3 className="category-title">Danh mục</h3>
+              <h3 className="category-title">{t('product.categories')}</h3>
               <div className="category-buttons">
                 {/* All Categories Tab */}
                 <button
@@ -148,7 +150,7 @@ export default function ProductInfo() {
                 >
                   {allCategories.name}
                   <span className="category-product-count">
-                    {getCurrentProducts().length} sản phẩm
+                    {getCurrentProducts().length} {t('product.products')}
                   </span>
                 </button>
                 
@@ -167,7 +169,7 @@ export default function ProductInfo() {
                              const cat = brand.categories.find(c => c.name === category.name)
                              return total + (cat ? cat.products.length : 0)
                            }, 0)
-                       } sản phẩm
+                       } {t('product.products')}
                      </span>
                   </button>
                 ))}
@@ -191,7 +193,7 @@ export default function ProductInfo() {
                 <h2 className="content-title">
                   {selectedBrand ? selectedBrand.name : allBrands.name} - {selectedCategory ? selectedCategory.name : allCategories.name}
                 </h2>
-                <p className="content-subtitle">{getCurrentProducts().length} sản phẩm</p>
+                <p className="content-subtitle">{getCurrentProducts().length} {t('product.products')}</p>
               </div>
 
               <div className="products-grid">
@@ -213,11 +215,11 @@ export default function ProductInfo() {
           {getCurrentProducts().length === 0 && (
             <motion.div initial={{ opacity: 0 }} animate={{ opacity: 1 }} className="empty-state">
               <div className="empty-state-icon">📦</div>
-              <h3 className="empty-state-title">Không có sản phẩm</h3>
+              <h3 className="empty-state-title">{t('product.no_products')}</h3>
               <p className="empty-state-description">
                 {selectedBrand && selectedCategory 
-                  ? `Không có sản phẩm nào trong ${selectedBrand.name} - ${selectedCategory.name}`
-                  : "Không có sản phẩm nào được tìm thấy với bộ lọc hiện tại."
+                  ? t('product.no_products_in_category', { brand: selectedBrand.name, category: selectedCategory.name })
+                  : t('product.no_products_found')
                 }
               </p>
             </motion.div>

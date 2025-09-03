@@ -98,6 +98,23 @@
     "stat_uptime": "Uptime",
     "stat_cost": "Cost saving",
     "stat_productivity": "Productivity increase"
+  },
+  "product": {
+    "view_details": "View details",
+    "all_brands": "All brands",
+    "all_categories": "All categories",
+    "categories": "Categories",
+    "products": "products",
+    "no_products": "No products",
+    "no_products_in_category": "No products in {{brand}} - {{category}}",
+    "no_products_found": "No products found with current filter.",
+    "not_found": "Product not found",
+    "back_to_list": "Back to product list",
+    "description": "Product description",
+    "list_title": "Our Products",
+    "list_subtitle": "We offer a wide range of products to meet your needs",
+    "no_products_title": "No products available",
+    "no_products_message": "This category has no products yet. Please select another category."
   }
 }
 
