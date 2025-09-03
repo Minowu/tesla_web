@@ -6,6 +6,8 @@ export default defineConfig({
   
   root: '.',
   
+  assetsInclude: ['**/*.glb', '**/*.gltf'],
+  
   server: {
     port: 3000,
     open: true,

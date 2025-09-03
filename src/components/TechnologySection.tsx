@@ -4,6 +4,11 @@ import { Canvas } from '@react-three/fiber';
 import { OrbitControls, Environment, Float } from '@react-three/drei';
 import { useGLTF } from '@react-three/drei';
 
+// Import 3D models
+import logisticRobotModel from '../assets/models/logistic_robot_test__2.glb';
+import laserCuttingModel from '../assets/models/simulation_laser_cutting_robot_systems.glb';
+import agvModel from '../assets/models/industrial_-_3d_agv__trolley_-_omrom.glb';
+
 // 3D Model Components
 const RobotModel = () => {
   const [error, setError] = useState(false);
@@ -13,7 +18,7 @@ const RobotModel = () => {
   }
   
   try {
-    const { scene } = useGLTF('/src/assets/logistic_robot_test__2.glb');
+    const { scene } = useGLTF(logisticRobotModel);
     return <primitive object={scene} scale={0.8} />;
   } catch (error) {
     console.warn('Error loading Robot Model:', error);
@@ -30,7 +35,7 @@ const LaserModel = () => {
   }
   
   try {
-    const { scene } = useGLTF('/src/assets/simulation_laser_cutting_robot_systems.glb');
+    const { scene } = useGLTF(laserCuttingModel);
     return <primitive object={scene} scale={0.8} />;
   } catch (error) {
     console.warn('Error loading Laser Model:', error);
@@ -47,7 +52,7 @@ const AGVModel = () => {
   }
   
   try {
-    const { scene } = useGLTF('/src/assets/industrial_-_3d_agv__trolley_-_omrom.glb');
+    const { scene } = useGLTF(agvModel);
     return <primitive object={scene} scale={0.8} />;
   } catch (error) {
     console.warn('Error loading AGV Model:', error);
