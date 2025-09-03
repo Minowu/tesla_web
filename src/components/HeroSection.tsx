@@ -1,16 +1,18 @@
 import React, { useState, useEffect, useRef } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { useAppStore } from '../store/appStore';
-import AnimatedCounter from './AnimatedCounter';  
-import {motion, useInView, useAnimation} from 'framer-motion';
+import {motion, useInView, useAnimation, animate} from 'framer-motion';
 import productsData from '../data/products.json';
 import type { Brand, Product } from '../types/products';
 
 const HeroSection: React.FC = () => {
-  const { setCurrentSection } = useAppStore();
   const navigate = useNavigate();
-  const [currentStat, setCurrentStat] = useState(0);
   const [activeFeature, setActiveFeature] = useState(0);
+  
+  // States cho animated counters
+  const [projectsCount, setProjectsCount] = useState(0);
+  const [yearsCount, setYearsCount] = useState(0);
+  const [satisfactionCount, setSatisfactionCount] = useState(0);
 
   // Tạo separate refs và controls cho từng animation
   const heroVisualRef = useRef(null);
@@ -38,10 +40,36 @@ const HeroSection: React.FC = () => {
     } 
   }, [heroVisualInView]);
 
-  // Animation cho about image
+  // Animation cho about image và counters
   useEffect(() => {
     if (aboutImageInView) {
       aboutImageControls.start("visible");
+      
+      // Animate counters cùng lúc với about image
+      const animateCounters = () => {
+        // Animate projects count
+        animate(0, 500, {
+          duration: 1.5,
+          ease: "easeOut",
+          onUpdate: (value) => setProjectsCount(Math.round(value))
+        });
+        
+        // Animate years count
+        animate(0, 5, {
+          duration: 1.5,
+          ease: "easeOut",
+          onUpdate: (value) => setYearsCount(Math.round(value))
+        });
+        
+        // Animate satisfaction count
+        animate(0, 99, {
+          duration: 1.5,
+          ease: "easeOut",
+          onUpdate: (value) => setSatisfactionCount(Math.round(value))
+        });
+      };
+      
+      animateCounters();
     } 
   }, [aboutImageInView]);
 
@@ -67,28 +95,12 @@ const HeroSection: React.FC = () => {
   }, [techHighlightsInView]);
   
   useEffect(() => {
-    // Animate stats
-    const targetStat = 500;
-    const duration = 2000;
-    const increment = targetStat / (duration / 16);
-    
-    const timer = setInterval(() => {
-      setCurrentStat(prev => {
-        if (prev >= targetStat) {
-          clearInterval(timer);
-          return targetStat;
-        }
-        return Math.min(prev + increment, targetStat);
-      });
-    }, 16);
-
     // Auto rotate features
     const featureTimer = setInterval(() => {
       setActiveFeature(prev => (prev + 1) % 3);
     }, 4000);
 
     return () => {
-      clearInterval(timer);
       clearInterval(featureTimer);
     };
   }, []);
@@ -258,15 +270,15 @@ const HeroSection: React.FC = () => {
                 </p>
                 <div className="hero-stats">
                     <div className="hero-stat">
-                        <div className="hero-stat-number"><AnimatedCounter from={0} to={Math.round(currentStat)}/>+</div>
+                        <div className="hero-stat-number">{projectsCount}+</div>
                       <div className="hero-stat-label">Dự án thành công</div>
                     </div>
                     <div className="hero-stat">
-                      <div className="hero-stat-number"><AnimatedCounter from={0} to={5}/>+</div>
+                      <div className="hero-stat-number">{yearsCount}+</div>
                       <div className="hero-stat-label">Năm kinh nghiệm</div>
                     </div>
                     <div className="hero-stat">
-                      <div className="hero-stat-number"><AnimatedCounter from={0} to={99}/>%</div>
+                      <div className="hero-stat-number">{satisfactionCount}%</div>
                       <div className="hero-stat-label">Khách hàng hài lòng</div>
                     </div>
                   </div>
