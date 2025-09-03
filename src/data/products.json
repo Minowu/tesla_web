@@ -11,7 +11,7 @@
             {
               "id": "irayple-rta-c060-lq",
               "name": "RTA-C060-LQ",
-              "image": "/src/assets/irayple_robot/latent lifting amr/RTA-C060-LQ/cover.png",
+              "image": "/assets/irayple_robot/latent lifting amr/RTA-C060-LQ/cover.png",
               "description": {
                 "line1": "Load capacity: 600kg",
                 "line2": "Navigation: QR code/texture/laser SLAM"
@@ -68,7 +68,7 @@
             {
               "id": "irayple-rta-c060-lq-2l-e-410",
               "name": "RTA-C060-LQ-2L-E-410",
-              "image": "/src/assets/irayple_robot/latent lifting amr/RTA-C060-LQ-2L-E-410/cover.png",
+              "image": "/assets/irayple_robot/latent lifting amr/RTA-C060-LQ-2L-E-410/cover.png",
               "description": {
                 "line1": "Load capacity: 600kg",
                 "line2": "Navigation: QR code/texture/laser SLAM"
@@ -103,7 +103,7 @@
             {
               "id": "irayple-rta-c060-lq-2l-e-421",
               "name": "RTA-C060-LQ-2L-E-421",
-              "image": "/src/assets/irayple_robot/latent lifting amr/RTA-C060-LQ-2L-E-421/cover.png",
+              "image": "/assets/irayple_robot/latent lifting amr/RTA-C060-LQ-2L-E-421/cover.png",
               "description": {
                 "line1": "Load capacity: 600kg",
                 "line2": "Navigation: QR code/texture/laser SLAM"
@@ -138,7 +138,7 @@
             {
               "id": "irayple-rta-c060-lq-2l1t-e-410",
               "name": "RTA-C060-LQ-2L1T-E-410",
-              "image": "/src/assets/irayple_robot/latent lifting amr/RTA-C060-LQ-2L1T-E-410/cover.png",
+              "image": "/assets/irayple_robot/latent lifting amr/RTA-C060-LQ-2L1T-E-410/cover.png",
               "description": {
                 "line1": "Load capacity: 600kg",
                 "line2": "Navigation: QR code/texture/laser SLAM"
@@ -173,7 +173,7 @@
             {
               "id": "irayple-rta-c060-lq-2l1t-e-421",
               "name": "RTA-C060-LQ-2L1T-E-421",
-              "image": "/src/assets/irayple_robot/latent lifting amr/RTA-C060-LQ-2L1T-E-421/cover.png",
+              "image": "/assets/irayple_robot/latent lifting amr/RTA-C060-LQ-2L1T-E-421/cover.png",
               "description": {
                 "line1": "Load capacity: 600kg",
                 "line2": "Navigation: QR code/texture/laser SLAM"
@@ -208,7 +208,7 @@
             {
               "id": "irayple-rta-c060-lq-2l2t-e-410",
               "name": "RTA-C060-LQ-2L2T-E-410",
-              "image": "/src/assets/irayple_robot/latent lifting amr/RTA-C060-LQ-2L2T-E-410/cover.png",
+              "image": "/assets/irayple_robot/latent lifting amr/RTA-C060-LQ-2L2T-E-410/cover.png",
               "description": {
                 "line1": "Load capacity: 600kg",
                 "line2": "Navigation: QR code/texture/laser SLAM"
@@ -243,7 +243,7 @@
             {
               "id": "irayple-rta-c060-lq-2l2t-e-421",
               "name": "RTA-C060-LQ-2L2T-E-421",
-              "image": "/src/assets/irayple_robot/latent lifting amr/RTA-C060-LQ-2L2T-E-421/cover.png",
+              "image": "/assets/irayple_robot/latent lifting amr/RTA-C060-LQ-2L2T-E-421/cover.png",
               "description": {
                 "line1": "Load capacity: 600kg",
                 "line2": "Navigation: QR code/texture/laser SLAM"
@@ -278,7 +278,7 @@
             {
               "id": "irayple-rta-c100-lq",
               "name": "RTA-C100-LQ",
-              "image": "/src/assets/irayple_robot/latent lifting amr/RTA-C100-LQ/cover.png",
+              "image": "/assets/irayple_robot/latent lifting amr/RTA-C100-LQ/cover.png",
               "description": {
                 "line1": "Load capacity: 1000kg",
                 "line2": "Navigation: QR code/texture/laser SLAM"
@@ -324,7 +324,7 @@
             {
               "id": "irayple-rta-c100-lq-2l-e-410",
               "name": "RTA-C100-LQ-2L-E-410",
-              "image": "/src/assets/irayple_robot/latent lifting amr/RTA-C100-LQ-2L-E-410/cover.png",
+              "image": "/assets/irayple_robot/latent lifting amr/RTA-C100-LQ-2L-E-410/cover.png",
               "description": {
                 "line1": "Load capacity: 1000kg",
                 "line2": "Navigation: QR code/texture/laser SLAM"
@@ -359,7 +359,7 @@
             {
               "id": "irayple-rta-c100-lq-2l1t-e-410",
               "name": "RTA-C100-LQ-2L1T-E-410",
-              "image": "/src/assets/irayple_robot/latent lifting amr/RTA-C100-LQ-2L1T-E-410/cover.png",
+              "image": "/assets/irayple_robot/latent lifting amr/RTA-C100-LQ-2L1T-E-410/cover.png",
               "description": {
                 "line1": "Load capacity: 1000kg",
                 "line2": "Navigation: QR code/texture/laser SLAM"
@@ -394,7 +394,7 @@
             {
               "id": "irayple-rta-c100-lq-2l1t-e-421",
               "name": "RTA-C100-LQ-2L1T-E-421",
-              "image": "/src/assets/irayple_robot/latent lifting amr/RTA-C100-LQ-2L1T-E-421/cover.png",
+              "image": "/assets/irayple_robot/latent lifting amr/RTA-C100-LQ-2L1T-E-421/cover.png",
               "description": {
                 "line1": "Navigation: QR code/texture/laser SLAM"
               },
@@ -428,7 +428,7 @@
             {
               "id": "irayple-rta-c100-lq-2l2t-e-410",
               "name": "RTA-C100-LQ-2L2T-E-410",
-              "image": "/src/assets/irayple_robot/latent lifting amr/RTA-C100-LQ-2L2T-E-410/cover.png",
+              "image": "/assets/irayple_robot/latent lifting amr/RTA-C100-LQ-2L2T-E-410/cover.png",
               "description": {
                 "line1": "Load capacity: 1000kg",
                 "line2": "Navigation: QR code/texture/laser SLAM"
@@ -463,7 +463,7 @@
             {
               "id": "irayple-rta-c100-lq-2l2t-e-421",
               "name": "RTA-C100-LQ-2L2T-E-421",
-              "image": "/src/assets/irayple_robot/latent lifting amr/RTA-C100-LQ-2L2T-E-421/cover.png",
+              "image": "/assets/irayple_robot/latent lifting amr/RTA-C100-LQ-2L2T-E-421/cover.png",
               "description": {
                 "line1": "Navigation: QR code/texture/laser SLAM"
               },
@@ -503,7 +503,7 @@
             {
               "id": "irayple-RTA-F140-L-H200-620CE",
               "name": "RTA-F140-L-H200-620CE",
-              "image": "/src/assets/irayple_robot/forklit amr/RTA-F140-L-H200-620CE/cover.png",
+              "image": "/assets/irayple_robot/forklit amr/RTA-F140-L-H200-620CE/cover.png",
               "description": {
                 "line1": "Load capacity: 1500kg",
                 "line2": "Navigation: Laser SLAM"
@@ -536,7 +536,7 @@
             {
               "id": "irayple-RTA-D150-L-3LA-200-E",
               "name": "RTA-D150-L-3LA-200-E",
-              "image": "/src/assets/irayple_robot/forklit amr/RTA-D150-L-3LA-200-E/cover.png",
+              "image": "/assets/irayple_robot/forklit amr/RTA-D150-L-3LA-200-E/cover.png",
               "description": {
                 "line1": "Load capacity: 1500kg",
                 "line2": "Navigation: Laser SLAM"
@@ -575,7 +575,7 @@
             {
               "id": "irayple-RTA-M060-LQ",
               "name": "RTA-M060-LQ",
-              "image": "/src/assets/irayple_robot/transfer amr/RTA-M060-LQ/cover.png",
+              "image": "/assets/irayple_robot/transfer amr/RTA-M060-LQ/cover.png",
               "description": {
                 "line1": "Load capacity: 1500kg",
                 "line2": "Navigation: Laser SLAM"
@@ -614,7 +614,7 @@
             {
               "id": "irayple-RTP-4830-1-300E",
               "name": "RTP-4830-1-300E",
-              "image": "/src/assets/irayple_robot/accessories/RTP-4830-1-300E/cover.png",
+              "image": "/assets/irayple_robot/accessories/RTP-4830-1-300E/cover.png",
               "description": {
                 "line1": "Accessory for AMR",
                 "line2": "Compatible with multiple models"
@@ -636,7 +636,7 @@
             {
               "id": "irayple-RTP-4830-1-500",
               "name": "RTP-4830-1-500",
-              "image": "/src/assets/irayple_robot/accessories/RTP-4830-1-500/cover.png",
+              "image": "/assets/irayple_robot/accessories/RTP-4830-1-500/cover.png",
               "description": {
                 "line1": "Accessory for AMR",
                 "line2": "Compatible with multiple models"
@@ -658,7 +658,7 @@
             {
               "id": "irayple-RTP-4860-3-100",
               "name": "RTP-4860-3-100",
-              "image": "/src/assets/irayple_robot/accessories/RTP-4860-3-100/cover.png",
+              "image": "/assets/irayple_robot/accessories/RTP-4860-3-100/cover.png",
               "description": {
                 "line1": "Accessory for AMR",
                 "line2": "Compatible with multiple models"
@@ -680,7 +680,7 @@
             {
               "id": "irayple-RTP-24100-4-100",
               "name": "RTP-24100-4-100",
-              "image": "/src/assets/irayple_robot/accessories/RTP-24100-4-100/cover.png",
+              "image": "/assets/irayple_robot/accessories/RTP-24100-4-100/cover.png",
               "description": {
                 "line1": "Accessory for AMR",
                 "line2": "Compatible with multiple models"
@@ -708,7 +708,7 @@
             {
               "id": "irayple-D7200MG200E",
               "name": "D7200MG200E",
-              "image": "/src/assets/irayple_robot/3D camera/D7200MG200E/cover.png",
+              "image": "/assets/irayple_robot/3D camera/D7200MG200E/cover.png",
               "description": {
                 "line1": "3D Camera System",
                 "line2": "High precision scanning"
@@ -730,7 +730,7 @@
             {
               "id": "irayple-DH-MV-D5201MG100E",
               "name": "DH-MV-D5201MG100E",
-              "image": "/src/assets/irayple_robot/3D camera/DH-MV-D5201MG100E/cover.png",
+              "image": "/assets/irayple_robot/3D camera/DH-MV-D5201MG100E/cover.png",
               "description": {
                 "line1": "3D Camera System",
                 "line2": "High precision scanning"
@@ -758,7 +758,7 @@
             {
               "id": "irayple-AH7040CG000E",
               "name": "AH7040CG000E",
-              "image": "/src/assets/irayple_robot/area scan-camera/AH7040CG000E/cover.png",
+              "image": "/assets/irayple_robot/area scan-camera/AH7040CG000E/cover.png",
               "description": {
                 "line1": "Area Scan Camera",
                 "line2": "GigE interface"
@@ -780,7 +780,7 @@
             {
               "id": "irayple-AH7040CU000E",
               "name": "AH7040CU000E",
-              "image": "/src/assets/irayple_robot/area scan-camera/AH7040CU000E/cover.png",
+              "image": "/assets/irayple_robot/area scan-camera/AH7040CU000E/cover.png",
               "description": {
                 "line1": "Area Scan Camera",
                 "line2": "USB3.0 interface"
@@ -802,7 +802,7 @@
             {
               "id": "irayple-AH7040MG000E",
               "name": "AH7040MG000E",
-              "image": "/src/assets/irayple_robot/area scan-camera/AH7040MG000E/cover.png",
+              "image": "/assets/irayple_robot/area scan-camera/AH7040MG000E/cover.png",
               "description": {
                 "line1": "Area Scan Camera",
                 "line2": "MIPI interface"
@@ -824,7 +824,7 @@
             {
               "id": "irayple-AH7040MU000E",
               "name": "AH7040MU000E",
-              "image": "/src/assets/irayple_robot/area scan-camera/AH7040MU000E/cover.png",
+              "image": "/assets/irayple_robot/area scan-camera/AH7040MU000E/cover.png",
               "description": {
                 "line1": "Area Scan Camera",
                 "line2": "USB3.0 interface"
@@ -846,7 +846,7 @@
             {
               "id": "irayple-AH7160CG000E",
               "name": "AH7160CG000E",
-              "image": "/src/assets/irayple_robot/area scan-camera/AH7160CG000E/cover.png",
+              "image": "/assets/irayple_robot/area scan-camera/AH7160CG000E/cover.png",
               "description": {
                 "line1": "Area Scan Camera",
                 "line2": "GigE interface"
@@ -868,7 +868,7 @@
             {
               "id": "irayple-AH7160MG000E",
               "name": "AH7160MG000E",
-              "image": "/src/assets/irayple_robot/area scan-camera/AH7160MG000E/cover.png",
+              "image": "/assets/irayple_robot/area scan-camera/AH7160MG000E/cover.png",
               "description": {
                 "line1": "Area Scan Camera",
                 "line2": "MIPI interface"
@@ -896,7 +896,7 @@
             {
               "id": "irayple-R3004MG-05-DEE110E",
               "name": "R3004MG-05-DEE110E",
-              "image": "/src/assets/irayple_robot/code reader/R3004MG-05-DEE110E/cover.png",
+              "image": "/assets/irayple_robot/code reader/R3004MG-05-DEE110E/cover.png",
               "description": {
                 "line1": "Code Reader",
                 "line2": "High speed reading"
@@ -918,7 +918,7 @@
             {
               "id": "irayple-R3004MG-05H-DEE01E",
               "name": "R3004MG-05H-DEE01E",
-              "image": "/src/assets/irayple_robot/code reader/R3004MG-05H-DEE01E/cover.png",
+              "image": "/assets/irayple_robot/code reader/R3004MG-05H-DEE01E/cover.png",
               "description": {
                 "line1": "Code Reader",
                 "line2": "High speed reading"
@@ -940,7 +940,7 @@
             {
               "id": "irayple-R3004MG-05H-WEE01E",
               "name": "R3004MG-05H-WEE01E",
-              "image": "/src/assets/irayple_robot/code reader/R3004MG-05H-WEE01E/cover.png",
+              "image": "/assets/irayple_robot/code reader/R3004MG-05H-WEE01E/cover.png",
               "description": {
                 "line1": "Code Reader",
                 "line2": "High speed reading"
@@ -968,7 +968,7 @@
             {
               "id": "irayple-L5022MG141E",
               "name": "L5022MG141E",
-              "image": "/src/assets/irayple_robot/line scan-camera/L5022MG141E/cover.png",
+              "image": "/assets/irayple_robot/line scan-camera/L5022MG141E/cover.png",
               "description": {
                 "line1": "Line Scan Camera",
                 "line2": "High speed scanning"
@@ -990,7 +990,7 @@
             {
               "id": "irayple-L5027CG140E",
               "name": "L5027CG140E",
-              "image": "/src/assets/irayple_robot/line scan-camera/L5027CG140E/cover.png",
+              "image": "/assets/irayple_robot/line scan-camera/L5027CG140E/cover.png",
               "description": {
                 "line1": "Line Scan Camera",
                 "line2": "High speed scanning"
@@ -1012,7 +1012,7 @@
             {
               "id": "irayple-L5027MG140E",
               "name": "L5027MG140E",
-              "image": "/src/assets/irayple_robot/line scan-camera/L5027MG140E/cover.png",
+              "image": "/assets/irayple_robot/line scan-camera/L5027MG140E/cover.png",
               "description": {
                 "line1": "Line Scan Camera",
                 "line2": "High speed scanning"
@@ -1040,7 +1040,7 @@
             {
               "id": "irayple-SS3016PMG-07H-RGF01E",
               "name": "SS3016PMG-07H-RGF01E",
-              "image": "/src/assets/irayple_robot/smart camera/SS3016PMG-07H-RGF01E/cover.png",
+              "image": "/assets/irayple_robot/smart camera/SS3016PMG-07H-RGF01E/cover.png",
               "description": {
                 "line1": "Smart Camera",
                 "line2": "AI powered vision"
@@ -1062,7 +1062,7 @@
             {
               "id": "irayple-SS3016PMG-07H-WGN01E",
               "name": "SS3016PMG-07H-WGN01E",
-              "image": "/src/assets/irayple_robot/smart camera/SS3016PMG-07H-WGN01E/cover.png",
+              "image": "/assets/irayple_robot/smart camera/SS3016PMG-07H-WGN01E/cover.png",
               "description": {
                 "line1": "Smart Camera",
                 "line2": "AI powered vision"
@@ -1096,7 +1096,7 @@
             {
               "id": "hairobotic-acr-a3",
               "name": "Fork-Lifting ACR A3",
-              "image": "/src/assets/hairobot_robot/ACR/Fork-Lifting ACR A3/cover.jpg",
+              "image": "/assets/hairobot_robot/ACR/Fork-Lifting ACR A3/cover.jpg",
               "description": {
                 "line1": "Fork-Lifting ACR System",
                 "line2": "Automated container handling"
@@ -1142,7 +1142,7 @@
             {
               "id": "hairobotic-acr-a42",
               "name": "Multi-Layer ACR A42",
-              "image": "/src/assets/hairobot_robot/ACR/Multi-Layer ACR A42/cover.png",
+              "image": "/assets/hairobot_robot/ACR/Multi-Layer ACR A42/cover.png",
               "description": {
                 "line1": "Multi-Layer ACR System",
                 "line2": "High-density storage solution"
@@ -1176,7 +1176,7 @@
             {
               "id": "hairobotic-acr-a42t",
               "name": "Telescopic Lift ACR A42T",
-              "image": "/src/assets/hairobot_robot/ACR/Telescopic Lift ACR A42T/cover.jpg",
+              "image": "/assets/hairobot_robot/ACR/Telescopic Lift ACR A42T/cover.jpg",
               "description": {
                 "line1": "Telescopic Lift ACR",
                 "line2": "Extendable lifting system"
@@ -1210,7 +1210,7 @@
             {
               "id": "hairobotic-acr-a42t-e2",
               "name": "Telescopic Grappling-hook ACR A42T-E2",
-              "image": "/src/assets/hairobot_robot/ACR/Telescopic Grappling-hook ACR A42T-E2/cover.png",
+              "image": "/assets/hairobot_robot/ACR/Telescopic Grappling-hook ACR A42T-E2/cover.png",
               "description": {
                 "line1": "Telescopic Grappling-hook ACR",
                 "line2": "Advanced gripping system"

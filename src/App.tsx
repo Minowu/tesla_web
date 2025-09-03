@@ -1,6 +1,5 @@
 import React, { useState, useEffect } from 'react';
 import { Routes, Route, Navigate, useNavigate, useLocation } from 'react-router-dom';
-import logoImage from './assets/1.png';
 import Navigation from './components/Navigation';
 import HeroSection from './components/HeroSection';
 import SolutionsShowcase from './components/SolutionsShowcase';
@@ -53,7 +52,7 @@ function App() {
       <ReactLenis root>
       <div className="app">
         <div className="logo-bg">
-          <img src={logoImage} alt="Logo" />
+          <img src="/assets/1.png" alt="Logo" />
         </div>
         {/* Ultra Modern Tech Background Effects */}
         <div className="particles-container">

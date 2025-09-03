@@ -1,17 +1,5 @@
 
-import logo1 from "../logo_partner/logo1.png";
-import logo2 from "../logo_partner/logo2.png";
-import logo3 from "../logo_partner/logo3.png";
-import logo4 from "../logo_partner/logo4.png";
-import logo5 from "../logo_partner/logo5.png";
-import logo6 from "../logo_partner/logo6.png";
-import logo7 from "../logo_partner/logo7.png";
 
-import certificate1 from "../logo_partner/certificate1.png";
-import certificate2 from "../logo_partner/certificate2.png";
-import certificate3 from "../logo_partner/certificate3.png";
-import certificate4 from "../logo_partner/certificate4.png";
-import certificate5 from "../logo_partner/certificate5.png";
 
 type Item = {
   name: string;
@@ -45,22 +33,22 @@ function Carousel({ items, title }: CarouselProps) {
 
 // Data cho logo
 const logos: Item[] = [
-  { name: "ABB", image: logo1 },
-  { name: "WARSONCO", image: logo2 },
-  { name: "RECHU", image: logo3 },
-  { name: "TMA", image: logo4 },
-  { name: "OPT", image: logo5 },
-  { name: "KUKA", image: logo6 },
-  { name: "IRAYPLE", image: logo7 },
+  { name: "ABB", image: "/logo_partner/logo1.png" },
+  { name: "WARSONCO", image: "/logo_partner/logo2.png" },
+  { name: "RECHU", image: "/logo_partner/logo3.png" },
+  { name: "TMA", image: "/logo_partner/logo4.png" },
+  { name: "OPT", image: "/logo_partner/logo5.png" },
+  { name: "KUKA", image: "/logo_partner/logo6.png" },
+  { name: "IRAYPLE", image: "/logo_partner/logo7.png" },
 ];
 
 // Data cho chứng nhận
 const certificates: Item[] = [
-  { name: "WARSONCO", image: certificate1 },
-  { name: "IRAYPLE", image: certificate2 },
-  { name: "BOT", image: certificate3 },
-  { name: "ISO 14064", image: certificate4 },
-  { name: "ISO 14065", image: certificate5 },
+  { name: "WARSONCO", image: "/logo_partner/certificate1.png" },
+  { name: "IRAYPLE", image: "/logo_partner/certificate2.png" },
+  { name: "BOT", image: "/logo_partner/certificate3.png" },
+  { name: "ISO 14064", image: "/logo_partner/certificate4.png" },
+  { name: "ISO 14065", image: "/logo_partner/certificate5.png" },
 ];
 
 // Export component chính

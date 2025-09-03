@@ -5,9 +5,6 @@ import AnimatedCounter from './AnimatedCounter';
 import {motion, useInView, useAnimation} from 'framer-motion';
 import productsData from '../data/products.json';
 import type { Brand, Product } from '../types/products';
-import robot1Image from '../assets/robot1.png';
-import logoImage from '../assets/1.png';
-import officeImage from '../assets/Office_aboutus.png';
 
 const HeroSection: React.FC = () => {
   const { setCurrentSection } = useAppStore();
@@ -228,13 +225,13 @@ const HeroSection: React.FC = () => {
               transition={{ duration: 1, delay: 0.2, ease: 'easeInOut'}}
             >
               <div className="hero-image-main">
-                <img src={robot1Image} alt="Robot tự động chính" />
+                <img src="/assets/robot1.png" alt="Robot tự động chính" />
               </div>
             </motion.div>
           </div>
           <div className="hero-logo">
               <div className="hero-logo-main">
-                <img src={logoImage} alt="Logo ThaDo Robot" />
+                <img src="/assets/1.png" alt="Logo ThaDo Robot" />
               </div>
             </div>
         </section>
@@ -252,7 +249,7 @@ const HeroSection: React.FC = () => {
                 animate={aboutImageControls}
                 transition={{ duration: 1, delay: 0.3}}
               >
-                <img src={officeImage} alt="Logo ThaDo Robot" />
+                <img src="/assets/Office_aboutus.png" alt="Logo ThaDo Robot" />
               </motion.div>
               
               <div className="hero-about-content">

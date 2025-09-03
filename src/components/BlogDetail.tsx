@@ -18,7 +18,7 @@ const sampleBlogs: Blog[] = [
     id: 1,
     title: "Hợp tác tự động hóa dây chuyền lắp ráp tại Honda Việt Nam",
     slug: "hop-tac-tu-dong-hoa-day-chuyen-lap-rap-honda-viet-nam",
-    thumbnail: "/src/assets/robot1.png",
+    thumbnail: "/assets/robot1.png",
     content: `
       <h2>Tổng quan dự án</h2>
       <p>Chúng tôi triển khai robot công nghiệp, hệ thống băng chuyền thông minh và giám sát chất lượng realtime giúp tối ưu năng suất nhà máy Honda.</p>
@@ -39,7 +39,7 @@ const sampleBlogs: Blog[] = [
     id: 2,
     title: "Viettel: Giám sát – bảo trì thông minh bằng IoT & AI",
     slug: "viettel-giam-sat-bao-tri-thong-minh-iot-ai",
-    thumbnail: "/src/assets/robot2.png",
+    thumbnail: "/assets/robot2.png",
     content: `
       <h2>Tổng quan dự án</h2>
       <p>Xây dựng nền tảng IoT giám sát thiết bị và AI dự báo hỏng hóc, giảm thời gian dừng máy, nâng cao độ sẵn sàng hệ thống cho Viettel.</p>
@@ -60,7 +60,7 @@ const sampleBlogs: Blog[] = [
     id: 3,
     title: "VinFast: Tự động hóa kho thông minh và truy xuất dữ liệu",
     slug: "vinfast-tu-dong-hoa-kho-thong-minh-truy-xuat-du-lieu",
-    thumbnail: "/src/assets/robot3.png",
+    thumbnail: "/assets/robot3.png",
     content: `
       <h2>Tổng quan dự án</h2>
       <p>Triển khai AGV/AMR, WMS tích hợp và dashboard realtime giúp tối ưu luồng hàng, rút ngắn lead time tại kho VinFast.</p>
@@ -81,7 +81,7 @@ const sampleBlogs: Blog[] = [
     id: 4,
     title: "THACO: Nâng cấp đóng gói với AGV/AMR và thị giác máy",
     slug: "thaco-nang-cap-dong-goi-agv-amr-thi-giac-may",
-    thumbnail: "/src/assets/robot4.png",
+    thumbnail: "/assets/robot4.png",
     content: `
       <h2>Tổng quan dự án</h2>
       <p>Ứng dụng robot di động và camera AI kiểm tra lỗi, tự động hóa khâu đóng gói – dán nhãn, tăng độ chính xác và an toàn.</p>
@@ -102,7 +102,7 @@ const sampleBlogs: Blog[] = [
     id: 5,
     title: "Samsung: Robot kiểm tra chất lượng linh kiện điện tử",
     slug: "samsung-robot-kiem-tra-chat-luong-linh-kien-dien-tu",
-    thumbnail: "/src/assets/robot5.png",
+    thumbnail: "/assets/robot5.png",
     content: `
       <h2>Tổng quan dự án</h2>
       <p>Kết hợp cánh tay robot, camera công nghiệp và AI phát hiện lỗi bề mặt, giảm tỉ lệ lỗi và chi phí kiểm tra thủ công.</p>

@@ -6,30 +6,26 @@ import { OrbitControls, Environment, Float } from '@react-three/drei';
 import { useGLTF } from '@react-three/drei';
 import { Suspense } from 'react';
 
-// Import 3D models
-import laserCuttingModel from '../assets/models/simulation_laser_cutting_robot_systems.glb';
-import assemblySolarModel from '../assets/models/assembly_solar.glb';
-import agvModel from '../assets/models/industrial_-_3d_agv__trolley_-_omrom.glb';
-import logisticRobotModel from '../assets/models/logistic_robot_test__2.glb';
+
 
 // 3D Model Components
 const LaserCuttingModel = () => {
-  const { scene } = useGLTF(laserCuttingModel);
+  const { scene } = useGLTF('/assets/models/simulation_laser_cutting_robot_systems.glb');
   return <primitive object={scene} scale={0.5} />;
 };
 
 const SmartApplicationModel = () => {
-  const { scene } = useGLTF(assemblySolarModel);
+  const { scene } = useGLTF('/assets/models/assembly_solar.glb');
   return <primitive object={scene} scale={0.3} />;
 };
 
 const RoboticAutomationModel = () => {
-  const { scene } = useGLTF(agvModel);
+  const { scene } = useGLTF('/assets/models/industrial_-_3d_agv__trolley_-_omrom.glb');
   return <primitive object={scene} scale={0.4} />;
 };
 
 const IoTIntegrationModel = () => {
-  const { scene } = useGLTF(logisticRobotModel);
+  const { scene } = useGLTF('/assets/models/logistic_robot_test__2.glb');
   return <primitive object={scene} scale={0.3} />;
 };
 

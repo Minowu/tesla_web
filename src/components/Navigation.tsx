@@ -1,7 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { Link, useLocation, useNavigate } from 'react-router-dom';
 import { useAppStore } from '../store/appStore';
-import logoImage from '../assets/1.png';
 
 const Navigation: React.FC = () => {
   const { currentSection, setCurrentSection } = useAppStore();
@@ -119,7 +118,7 @@ const Navigation: React.FC = () => {
         <div className="nav-container">
           {/* Logo */}
           <div className="nav-logo" onClick={handleHomeClick}>
-            <img src={logoImage} alt="THADOROBOT" />
+            <img src="/assets/1.png" alt="THADOROBOT" />
             <h2 className="text-company">THADOROBOT</h2>
           </div>
 
