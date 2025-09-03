@@ -86,7 +86,7 @@ main{
 }
 html {
   font-size: 13px;
-  overflow-x: hidden;
+  overflow-x: visible;
 }
 
 @media (max-width: 1400px) {

@@ -21,6 +21,7 @@
 }
 
 .nav-container {
+  margin-right: 90px;
   padding: 0 var(--space-md);
   display: flex;
   align-items: center;
