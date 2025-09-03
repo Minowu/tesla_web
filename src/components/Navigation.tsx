@@ -1,9 +1,10 @@
 import React, { useState, useEffect } from 'react';
 import { Link, useLocation, useNavigate } from 'react-router-dom';
 import { useAppStore } from '../store/appStore';
+import { useTranslation } from 'react-i18next';
 
 const Navigation: React.FC = () => {
-  const { currentSection, setCurrentSection } = useAppStore();
+  const { currentSection, setCurrentSection, language, setLanguage } = useAppStore();
   const [isScrolled, setIsScrolled] = useState(false);
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
   const [searchQuery, setSearchQuery] = useState('');
@@ -11,14 +12,15 @@ const Navigation: React.FC = () => {
   const [isDarkTheme, setIsDarkTheme] = useState(true); // Thêm state cho theme
   const location = useLocation();
   const navigate = useNavigate();
+  const { i18n } = useTranslation();
 
   const menuItems = [
-    { id: 'home', label: 'TRANG CHỦ', icon: '🏠', path: '/home', isLink: true },
-    { id: 'products', label: 'SẢN PHẨM', icon: '🤖', path: '/products', isLink: true },
-    { id: 'solutions', label: 'GIẢI PHÁP', icon: '💡', path: '/solutions', isLink: true },
-    { id: 'technology', label: 'CÔNG NGHỆ', icon: '⚡', path: '/technology', isLink: true },
-    { id: 'about', label: 'VỀ CHÚNG TÔI', icon: 'ℹ️', path: '/about-us', isLink: true },
-    { id: 'blog', label: 'BÀI VIẾT', icon: '💬', path: '/blog', isLink: true }
+    { id: 'home', label:i18n.t('home'), icon: '🏠', path: '/home', isLink: true },
+    { id: 'products', label:i18n.t('products'), icon: '🤖', path: '/products', isLink: true },
+    { id: 'solutions', label:i18n.t('solutions'), icon: '💡', path: '/solutions', isLink: true },
+    { id: 'technology', label:i18n.t('technology'), icon: '⚡', path: '/technology', isLink: true },
+    { id: 'about', label:i18n.t('about'), icon: 'ℹ️', path: '/about-us', isLink: true },
+    { id: 'blog', label:i18n.t('blog'), icon: '💬', path: '/blog', isLink: true }
   ];
 
   useEffect(() => {
@@ -49,6 +51,13 @@ const Navigation: React.FC = () => {
     }
   }, [isDarkTheme]);
 
+  // Đồng bộ i18n theo store.language
+  useEffect(() => {
+    if (language !== i18n.language) {
+      void i18n.changeLanguage(language);
+    }
+  }, [language, i18n]);
+
   const handleNavClick = (sectionId: string) => {
     setCurrentSection(sectionId as any);
     setIsMobileMenuOpen(false);
@@ -75,6 +84,12 @@ const Navigation: React.FC = () => {
     const newTheme = !isDarkTheme;
     setIsDarkTheme(newTheme);
     localStorage.setItem('thadorobot-theme', newTheme ? 'dark' : 'light');
+  };
+
+  // Toggle ngôn ngữ EN/VI
+  const toggleLanguage = () => {
+    const nextLang = language === 'vi' ? 'en' : 'vi';
+    setLanguage(nextLang);
   };
 
   // Search functionality
@@ -152,7 +167,7 @@ const Navigation: React.FC = () => {
               className="cta-button"
               onClick={handleContactClick}
             >
-              <span>LIÊN HỆ</span>
+              <span>{i18n.t('contact')}</span>
               
             </button>
           </div>
@@ -160,8 +175,8 @@ const Navigation: React.FC = () => {
           {/* Navigation Controls */}
           <div className="nav-controls">
             {/* Language Toggle */}     
-            <button className="control-button language-toggle" title="Chuyển đổi ngôn ngữ">
-              <span>🇻🇳</span>
+            <button className="control-button language-toggle" title="Chuyển đổi ngôn ngữ" onClick={toggleLanguage}>
+              <span>{language === 'vi' ? '🇻🇳' : '🇺🇸'}</span>
             </button>
             {/* Theme Toggle */}
             <button 
@@ -175,7 +190,7 @@ const Navigation: React.FC = () => {
             <div className="search-container">
               <input
                 type="text"
-                placeholder="Tìm kiếm giải pháp..."
+                placeholder={i18n.t('find_solution') + ' ...'}
                 value={searchQuery}
                 onChange={(e) => setSearchQuery(e.target.value)}
                 onKeyPress={handleSearchKeyPress}
@@ -217,7 +232,7 @@ const Navigation: React.FC = () => {
               <div className="search-container mobile">
                 <input
                   type="text"
-                  placeholder="Tìm kiếm..."
+                  placeholder={i18n.t('find_solution') + ' ...'}
                   value={searchQuery}
                   onChange={(e) => setSearchQuery(e.target.value)}
                   onKeyPress={handleSearchKeyPress}
@@ -231,8 +246,8 @@ const Navigation: React.FC = () => {
                   <span>🔍</span>
                 </button>
               </div>
-              <button className="control-button language-toggle" title="Chuyển đổi ngôn ngữ">
-                <span>🇻🇳</span>
+              <button className="control-button language-toggle" title="Chuyển đổi ngôn ngữ" onClick={toggleLanguage}>
+                <span>{language === 'vi' ? '🇻🇳' : '🇺🇸'}</span>
               </button>
               <button 
                 className="control-button theme-toggle" 
@@ -275,7 +290,7 @@ const Navigation: React.FC = () => {
                 style={{ width: '100%' }}
               >
                 <span>📞</span>
-                <span>Liên hệ</span>
+                <span>{i18n.t('contact')}</span>
               </button>
             </div>
           </div>
