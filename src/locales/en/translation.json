@@ -6,6 +6,98 @@
   "about": "About",
   "blog": "Blog",
   "contact": "Contact",
-  "find_solution": "Find Solution"
+  "find_solution": "Find Solution",
+  "breadcrumb": {
+    "home": "Home",
+    "blog": "Blog"
+  },
+  "blog_page": {
+    "not_found": "Post not found",
+    "author": "Author",
+    "back_to_list": "Back to list"
+  },
+  "hero": {
+    "badge": "Smart Robot Solutions",
+    "title_line1": "The future of",
+    "title_highlight": "Automation",
+    "title_line2": "starts here",
+    "subtitle": "We provide advanced robotic automation solutions to optimize production and improve efficiency.",
+    "btn_products": "Explore products",
+    "btn_solutions": "Solutions",
+    "about_title": "About Thadorobot",
+    "about_desc": "We are a leading enterprise in Vietnam, specializing in providing advanced technology solutions in the field of Robotics and Smart Factories. We operate strongly in key areas such as Automatic Packaging Systems (APS), Factory Automation Solutions (FAS), and Smart Warehouse Solutions (SWS).",
+    "stats_projects": "Successful projects",
+    "stats_years": "Years of experience",
+    "stats_satisfaction": "Customer satisfaction",
+    "robots_title": "Our Products",
+    "solutions_title": "Our Solutions",
+    "feature_1_title": "Autonomous AGV Robot",
+    "feature_1_desc": "Autonomous mobile robots with AI and advanced sensors",
+    "feature_2_title": "AI Vision Camera",
+    "feature_2_desc": "High-accuracy object detection and recognition",
+    "feature_3_title": "Smart Warehouse",
+    "feature_3_desc": "Automated warehouse operations with safety and efficiency",
+    "tech_battery_title": "Li-ion Battery",
+    "tech_battery_desc": "Up to 8 hours of operation",
+    "tech_5g_title": "5G Connectivity",
+    "tech_5g_desc": "Ultra-fast and stable connection",
+    "tech_ai_title": "AI Navigation",
+    "tech_ai_desc": "Accurate positioning with AI",
+    "tech_safety_title": "Safety System",
+    "tech_safety_desc": "Multi-layer safety system"
+  },
+  "solutions_showcase": {
+    "section_title": "Technology Solutions",
+    "section_subtitle": "Discover advanced solutions to help your business grow sustainably",
+    "btn_explore": "Explore details",
+    "btn_contact": "Contact us",
+    "features_title": "Highlights"
+  },
+  "solutions_hex": {
+    "title_prefix": "THADOROBOT Solutions",
+    "subtitle": "Explore intelligent systems and services that help your business grow sustainably",
+    "features_title": "Key features",
+    "btn_explore": "Explore details",
+    "btn_contact": "Contact us"
+  },
+  "services": {
+    "section_title": "Technology Services",
+    "section_subtitle": "Providing advanced technology services to drive digital transformation"
+  },
+  "home_sections": {
+    "case_studies_title": "Featured Projects",
+    "case_studies_subtitle": "Successful projects we have delivered",
+    "services_support_title": "Support Services",
+    "services_support_subtitle": "Experienced experts ready to support 24/7",
+    "cta_title": "Ready for Digital Transformation?",
+    "cta_desc": "Contact us today for a free consultation and start your transformation journey with THADOROBOT",
+    "cta_btn_contact": "Contact Now",
+    "cta_btn_demo": "Request Demo",
+    "cta_btn_docs": "Technical Docs",
+    "services_cards": {
+      "strategy_title": "Strategic Consulting",
+      "strategy_desc": "Assessment and optimal solution proposals for your business",
+      "deployment_title": "System Deployment",
+      "deployment_desc": "Install and configure robotic automation systems",
+      "training_title": "Staff Training",
+      "training_desc": "Train operation and maintenance teams",
+      "maintenance_title": "Scheduled Maintenance",
+      "maintenance_desc": "Inspect and maintain systems on schedule",
+      "support_title": "24/7 Support",
+      "support_desc": "Technical team ready to support anytime, anywhere",
+      "optimization_title": "Continuous Optimization",
+      "optimization_desc": "Improve and upgrade systems in real-time"
+    }
+  },
+  "technology_page": {
+    "section_title": "Advanced Technology",
+    "section_subtitle": "Explore modern technologies in automation and robotics",
+    "btn_solutions": "View solutions",
+    "btn_products": "Products",
+    "stat_accuracy": "Accuracy",
+    "stat_uptime": "Uptime",
+    "stat_cost": "Cost saving",
+    "stat_productivity": "Productivity increase"
+  }
 }
 

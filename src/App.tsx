@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import { useState, useEffect } from 'react';
 import { Routes, Route, Navigate, useNavigate, useLocation } from 'react-router-dom';
 import Navigation from './components/Navigation';
 import HeroSection from './components/HeroSection';
@@ -17,14 +17,16 @@ import { LoadingScreen } from './components/LoadingScreen';
 import { PerformanceMonitor } from './components/PerformanceMonitor';
 import { ErrorBoundary } from './components/ErrorBoundary';
 import Solutions3DViewer from './components/Solutions3DViewer';
-import { useAppStore } from './store/appStore';
+// import { useAppStore } from './store/appStore';
 import './styles/main.css';
-import { ReactLenis,useLenis } from 'lenis/react';
+import { ReactLenis } from 'lenis/react';
+import { useTranslation } from 'react-i18next';
 // dùng đường dẫn tĩnh cho logo để tránh lỗi TS khi import png
 
 function App() {
   const [isLoading, setIsLoading] = useState(true);
   const navigate = useNavigate();
+  const { t } = useTranslation();
   
   const location = useLocation();
 
@@ -102,9 +104,9 @@ function App() {
                 <section className="case-studies-section">
                   <div className="container">
                     <div className="section-header">
-                      <h2 className="section-title">Dự Án Tiêu Biểu</h2>
+                      <h2 className="section-title">{t('home_sections.case_studies_title')}</h2>
                       <p className="section-subtitle">
-                        Những dự án thành công đã được chúng tôi triển khai
+                        {t('home_sections.case_studies_subtitle')}
                       </p>
                     </div>
                     <BlogCarousel />
@@ -114,41 +116,41 @@ function App() {
                 <section className="services-section">
                   <div className="container">
                     <div className="section-header">
-                      <h2 className="section-title">Dịch Vụ Hỗ Trợ</h2>
+                      <h2 className="section-title">{t('home_sections.services_support_title')}</h2>
                       <p className="section-subtitle">
-                        Đội ngũ chuyên gia giàu kinh nghiệm sẵn sàng hỗ trợ 24/7
+                        {t('home_sections.services_support_subtitle')}
                       </p>
                     </div>
                     <div className="services-grid">
                       <div className="service-card">
                         <div className="service-icon">💡</div>
-                        <h3>Tư Vấn Chiến Lược</h3>
-                        <p>Đánh giá và đề xuất giải pháp tối ưu cho doanh nghiệp</p>
+                        <h3>{t('home_sections.services_cards.strategy_title')}</h3>
+                        <p>{t('home_sections.services_cards.strategy_desc')}</p>
                       </div>
                       <div className="service-card">
                         <div className="service-icon">🚀</div>
-                        <h3>Triển Khai Hệ Thống</h3>
-                        <p>Lắp đặt và cấu hình hệ thống robot tự động hóa</p>
+                        <h3>{t('home_sections.services_cards.deployment_title')}</h3>
+                        <p>{t('home_sections.services_cards.deployment_desc')}</p>
                       </div>
                       <div className="service-card">
                         <div className="service-icon">🎓</div>
-                        <h3>Đào Tạo Nhân Sự</h3>
-                        <p>Huấn luyện đội ngũ vận hành và bảo trì hệ thống</p>
+                        <h3>{t('home_sections.services_cards.training_title')}</h3>
+                        <p>{t('home_sections.services_cards.training_desc')}</p>
                       </div>
                       <div className="service-card">
                         <div className="service-icon">🔧</div>
-                        <h3>Bảo Trì Định Kỳ</h3>
-                        <p>Kiểm tra và bảo trì hệ thống theo lịch trình</p>
+                        <h3>{t('home_sections.services_cards.maintenance_title')}</h3>
+                        <p>{t('home_sections.services_cards.maintenance_desc')}</p>
                       </div>
                       <div className="service-card">
                         <div className="service-icon">📞</div>
-                        <h3>Hỗ Trợ 24/7</h3>
-                        <p>Đội ngũ kỹ thuật sẵn sàng hỗ trợ mọi lúc mọi nơi</p>
+                        <h3>{t('home_sections.services_cards.support_title')}</h3>
+                        <p>{t('home_sections.services_cards.support_desc')}</p>
                       </div>
                       <div className="service-card">
                         <div className="service-icon">⚡</div>
-                        <h3>Tối Ưu Hóa Liên Tục</h3>
-                        <p>Cải tiến và nâng cấp hệ thống theo thời gian thực</p>
+                        <h3>{t('home_sections.services_cards.optimization_title')}</h3>
+                        <p>{t('home_sections.services_cards.optimization_desc')}</p>
                       </div>
                     </div>
                   </div>
@@ -157,10 +159,9 @@ function App() {
                 <section className="contact-cta-section">
                   <div className="container">
                     <div className="cta-content">
-                      <h2>Sẵn Sàng Chuyển Đổi Số?</h2>
+                      <h2>{t('home_sections.cta_title')}</h2>
                       <p>
-                        Hãy liên hệ với chúng tôi ngay hôm nay để được tư vấn miễn phí 
-                        và bắt đầu hành trình chuyển đổi số cùng THADOROBOT
+                        {t('home_sections.cta_desc')}
                       </p>
                       <div className="cta-buttons">
                         <button 
@@ -168,15 +169,15 @@ function App() {
                           onClick={() => navigate('/contactus')}
                         >
                           <span>📞</span>
-                          Liên Hệ Ngay
+                          {t('home_sections.cta_btn_contact')}
                         </button>
                         <button className="btn btn-secondary" onClick={() => navigate('/contactus')}>
                           <span>📋</span>
-                          Yêu Cầu Demo
+                          {t('home_sections.cta_btn_demo')}
                         </button>
                         <button className="btn btn-outline">
                           <span>📖</span>
-                          Tài Liệu Kỹ Thuật
+                          {t('home_sections.cta_btn_docs')}
                         </button>
                       </div>
                     </div>

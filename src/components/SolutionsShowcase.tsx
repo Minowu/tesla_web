@@ -5,6 +5,7 @@ import { Canvas } from '@react-three/fiber';
 import { OrbitControls, Environment, Float } from '@react-three/drei';
 import { useGLTF } from '@react-three/drei';
 import { Suspense } from 'react';
+import { useTranslation } from 'react-i18next';
 import solutionsData from '../data/solutions.json';
 
 
@@ -47,6 +48,7 @@ const modelMap: Record<string, React.FC> = {
 
 const SolutionsShowcase: React.FC = () => {
   const [activeSolution, setActiveSolution] = useState(0);
+  const { t } = useTranslation();
   const solutions = (solutionsData as any[]).filter(s => !s.subtitle); // chỉ lấy nhóm showcase 3D
   const navigate = useNavigate();
 
@@ -126,10 +128,10 @@ const SolutionsShowcase: React.FC = () => {
           transition={{ duration: 0.8, ease: "easeOut" }}
         >
           <h2 className="section-title">
-            Giải Pháp <span className="text-gradient">Công Nghệ</span>
+            {t('solutions_showcase.section_title')}
           </h2>
           <p className="section-subtitle">
-            Khám phá các giải pháp công nghệ tiên tiến giúp doanh nghiệp của bạn phát triển bền vững
+            {t('solutions_showcase.section_subtitle')}
           </p>
         </motion.div>
 
@@ -198,7 +200,7 @@ const SolutionsShowcase: React.FC = () => {
             </div>
 
             <div className="solution-features">
-              <h4>Tính năng nổi bật</h4>
+              <h4>{t('solutions_showcase.features_title', 'Tính năng nổi bật')}</h4>
               <ul>
                 {(currentSolution.features as string[]).map((feature: string, index: number) => (
                   <li key={index}>
@@ -211,11 +213,11 @@ const SolutionsShowcase: React.FC = () => {
 
             <div className="solution-actions">
               <button className="btn btn-primary" onClick={() => navigate('/solutions')}>
-                <span>Khám phá chi tiết</span>
+                <span>{t('solutions_showcase.btn_explore')}</span>
                 <span className="btn-icon">→</span>
               </button>
               <button className="btn btn-secondary" onClick={() => navigate('/contactus')}>
-                <span>Liên hệ tư vấn</span>
+                <span>{t('solutions_showcase.btn_contact')}</span>
               </button>
             </div>
           </motion.div>

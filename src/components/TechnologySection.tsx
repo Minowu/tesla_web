@@ -4,6 +4,7 @@ import { Canvas } from '@react-three/fiber';
 import { OrbitControls, Environment, Float } from '@react-three/drei';
 import { useGLTF } from '@react-three/drei';
 import technologiesData from '../data/technologies.json';
+import { useTranslation } from 'react-i18next';
 
 
 
@@ -68,6 +69,7 @@ const ModelFallback = ({ color }: { color: string }) => (
 
 const TechnologySection: React.FC = () => {
   const navigate = useNavigate();
+  const { t } = useTranslation();
   const [activeTechnology, setActiveTechnology] = useState(0);
 
   const modelMap: Record<string, React.FC> = {
@@ -96,14 +98,14 @@ const TechnologySection: React.FC = () => {
       <section className="technology-section">
         <div className="container">
           <div className="section-header">
-            <h2 className="section-title">Công nghệ Tiên tiến</h2>
+            <h2 className="section-title">{t('technology_page.section_title')}</h2>
             <p className="section-subtitle">
-              Khám phá các công nghệ hiện đại trong tự động hóa và robot
+              {t('technology_page.section_subtitle')}
             </p>
           </div>
           <div className="loading-3d">
             <div className="spinner"></div>
-            <p>Đang tải công nghệ...</p>
+            <p>...</p>
           </div>
         </div>
       </section>
@@ -114,9 +116,9 @@ const TechnologySection: React.FC = () => {
     <section className="technology-section">
       <div className="container">
         <div className="section-header">
-          <h2 className="section-title">Công nghệ Tiên tiến</h2>
+          <h2 className="section-title">{t('technology_page.section_title')}</h2>
           <p className="section-subtitle">
-            Khám phá các công nghệ hiện đại trong tự động hóa và robot
+            {t('technology_page.section_subtitle')}
           </p>
         </div>
 
@@ -208,7 +210,7 @@ const TechnologySection: React.FC = () => {
                 onClick={() => navigate('/solutions')}
               >
                 <span>💡</span>
-                <span>Xem giải pháp</span>
+                <span>{t('technology_page.btn_solutions')}</span>
               </button>
               
               <button 
@@ -216,7 +218,7 @@ const TechnologySection: React.FC = () => {
                 onClick={() => navigate('/products')}
               >
                 <span>🤖</span>
-                <span>Sản phẩm</span>
+                <span>{t('technology_page.btn_products')}</span>
               </button>
             </div>
           </div>
@@ -226,19 +228,19 @@ const TechnologySection: React.FC = () => {
         <div className="technology-stats">
           <div className="stat-item">
             <div className="stat-number">99.9%</div>
-            <div className="stat-label">Độ chính xác</div>
+            <div className="stat-label">{t('technology_page.stat_accuracy')}</div>
           </div>
           <div className="stat-item">
             <div className="stat-number">24/7</div>
-            <div className="stat-label">Hoạt động</div>
+            <div className="stat-label">{t('technology_page.stat_uptime')}</div>
           </div>
           <div className="stat-item">
             <div className="stat-number">50%</div>
-            <div className="stat-label">Tiết kiệm chi phí</div>
+            <div className="stat-label">{t('technology_page.stat_cost')}</div>
           </div>
           <div className="stat-item">
             <div className="stat-number">300%</div>
-            <div className="stat-label">Tăng hiệu suất</div>
+            <div className="stat-label">{t('technology_page.stat_productivity')}</div>
           </div>
         </div>
       </div>

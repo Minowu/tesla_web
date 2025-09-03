@@ -7,6 +7,98 @@
   "about": "Về chúng tôi",
   "blog": "Bài viết",
   "contact": "Liên hệ",
-  "find_solution": "Tìm kiếm giải pháp"
+  "find_solution": "Tìm kiếm giải pháp",
+  "breadcrumb": {
+    "home": "Trang chủ",
+    "blog": "Bài viết"
+  },
+  "blog_page": {
+    "not_found": "Bài viết không tồn tại",
+    "author": "Tác giả",
+    "back_to_list": "Quay lại danh sách bài viết"
+  },
+  "hero": {
+    "badge": "Giải pháp Robot thông minh",
+    "title_line1": "Tương lai của",
+    "title_highlight": "Tự động hóa",
+    "title_line2": "bắt đầu từ đây",
+    "subtitle": "Chúng tôi cung cấp các giải pháp robot tự động hóa tiên tiến, giúp doanh nghiệp tối ưu hóa quy trình sản xuất và nâng cao hiệu quả hoạt động.",
+    "btn_products": "Khám phá sản phẩm",
+    "btn_solutions": "Giải pháp",
+    "about_title": "Về Thadorobot",
+    "about_desc": "là một doanh nghiệp hàng đầu tại Việt Nam, chuyên cung cấp các giải pháp công nghệ tiên tiến trong lĩnh vực Robot và Nhà máy thông minh. Chúng tôi hoạt động mạnh mẽ trong các lĩnh vực chủ chốt như Hệ thống đóng gói tự động (APS), Giải pháp tự động hóa nhà máy (FAS), và Giải pháp quản lý kho thông minh (SWS)",
+    "stats_projects": "Dự án thành công",
+    "stats_years": "Năm kinh nghiệm",
+    "stats_satisfaction": "Khách hàng hài lòng",
+    "robots_title": "Sản phẩm của chúng tôi",
+    "solutions_title": "Giải pháp của chúng tôi",
+    "feature_1_title": "Robot AGV tự động",
+    "feature_1_desc": "Hệ thống robot tự động di chuyển với AI và cảm biến tiên tiến",
+    "feature_2_title": "Camera AI nhận diện",
+    "feature_2_desc": "Phát hiện và nhận diện vật thể với độ chính xác cao",
+    "feature_3_title": "Kho thông minh",
+    "feature_3_desc": "Tự động hóa quy trình vận hành kho, đảm bảo độ an toàn và hiệu quả",
+    "tech_battery_title": "Pin Li-ion",
+    "tech_battery_desc": "Thời gian hoạt động lên đến 8 giờ",
+    "tech_5g_title": "Kết nối 5G",
+    "tech_5g_desc": "Kết nối siêu nhanh và ổn định",
+    "tech_ai_title": "AI Navigation",
+    "tech_ai_desc": "Định vị chính xác với AI",
+    "tech_safety_title": "Hệ thống an toàn",
+    "tech_safety_desc": "Hệ thống an toàn đa lớp"
+  },
+  "solutions_showcase": {
+    "section_title": "Giải Pháp Công Nghệ",
+    "section_subtitle": "Khám phá các giải pháp công nghệ tiên tiến giúp doanh nghiệp của bạn phát triển bền vững",
+    "btn_explore": "Khám phá chi tiết",
+    "btn_contact": "Liên hệ tư vấn",
+    "features_title": "Tính năng nổi bật"
+  },
+  "solutions_hex": {
+    "title_prefix": "Giải Pháp",
+    "subtitle": "Khám phá các hệ thống và dịch vụ thông minh giúp doanh nghiệp của bạn phát triển bền vững",
+    "features_title": "Tính năng chính",
+    "btn_explore": "Khám phá chi tiết",
+    "btn_contact": "Liên hệ tư vấn"
+  },
+  "services": {
+    "section_title": "Dịch vụ Công nghệ",
+    "section_subtitle": "Cung cấp các dịch vụ công nghệ tiên tiến để thúc đẩy chuyển đổi số"
+  },
+  "home_sections": {
+    "case_studies_title": "Dự Án Tiêu Biểu",
+    "case_studies_subtitle": "Những dự án thành công đã được chúng tôi triển khai",
+    "services_support_title": "Dịch Vụ Hỗ Trợ",
+    "services_support_subtitle": "Đội ngũ chuyên gia giàu kinh nghiệm sẵn sàng hỗ trợ 24/7",
+    "cta_title": "Sẵn Sàng Chuyển Đổi Số?",
+    "cta_desc": "Hãy liên hệ với chúng tôi ngay hôm nay để được tư vấn miễn phí và bắt đầu hành trình chuyển đổi số cùng THADOROBOT",
+    "cta_btn_contact": "Liên Hệ Ngay",
+    "cta_btn_demo": "Yêu Cầu Demo",
+    "cta_btn_docs": "Tài Liệu Kỹ Thuật",
+    "services_cards": {
+      "strategy_title": "Tư Vấn Chiến Lược",
+      "strategy_desc": "Đánh giá và đề xuất giải pháp tối ưu cho doanh nghiệp",
+      "deployment_title": "Triển Khai Hệ Thống",
+      "deployment_desc": "Lắp đặt và cấu hình hệ thống robot tự động hóa",
+      "training_title": "Đào Tạo Nhân Sự",
+      "training_desc": "Huấn luyện đội ngũ vận hành và bảo trì hệ thống",
+      "maintenance_title": "Bảo Trì Định Kỳ",
+      "maintenance_desc": "Kiểm tra và bảo trì hệ thống theo lịch trình",
+      "support_title": "Hỗ Trợ 24/7",
+      "support_desc": "Đội ngũ kỹ thuật sẵn sàng hỗ trợ mọi lúc mọi nơi",
+      "optimization_title": "Tối Ưu Hóa Liên Tục",
+      "optimization_desc": "Cải tiến và nâng cấp hệ thống theo thời gian thực"
+    }
+  },
+  "technology_page": {
+    "section_title": "Công nghệ Tiên tiến",
+    "section_subtitle": "Khám phá các công nghệ hiện đại trong tự động hóa và robot",
+    "btn_solutions": "Xem giải pháp",
+    "btn_products": "Sản phẩm",
+    "stat_accuracy": "Độ chính xác",
+    "stat_uptime": "Hoạt động",
+    "stat_cost": "Tiết kiệm chi phí",
+    "stat_productivity": "Tăng hiệu suất"
+  }
 }
 

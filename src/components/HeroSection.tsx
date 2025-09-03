@@ -1,12 +1,13 @@
 import React, { useState, useEffect, useRef } from 'react';
 import { useNavigate } from 'react-router-dom';
-import { useAppStore } from '../store/appStore';
 import {motion, useInView, useAnimation, animate} from 'framer-motion';
 import productsData from '../data/products.json';
 import type { Brand, Product } from '../types/products';
+import { useTranslation } from 'react-i18next';
 
 const HeroSection: React.FC = () => {
   const navigate = useNavigate();
+  const { t } = useTranslation();
   const [activeFeature, setActiveFeature] = useState(0);
   
   // States cho animated counters
@@ -108,18 +109,18 @@ const HeroSection: React.FC = () => {
   const features = [
     {
       icon: "🚛",
-      title: "Robot AGV tự động",
-      description: "Hệ thống robot tự động di chuyển với AI và cảm biến tiên tiến"
+      title: t('hero.feature_1_title'),
+      description: t('hero.feature_1_desc')
     },
     {
       icon: "🤖",
-      title: "Camera AI nhận diện",
-      description: "Phát hiện và nhận diện vật thể với độ chính xác cao "
+      title: t('hero.feature_2_title'),
+      description: t('hero.feature_2_desc')
     },
     {
       icon: "🏭",
-      title: "Kho thông minh",
-      description: "Tự động hóa quy trình vận hành kho, đảm bảo độ an toàn và hiệu quả"
+      title: t('hero.feature_3_title'),
+      description: t('hero.feature_3_desc')
     }
   ];
 
@@ -194,19 +195,18 @@ const HeroSection: React.FC = () => {
             <div className="hero-content">
               <div className="hero-badge">
                 <span>🚀</span>
-                <span>Giải pháp Robot thông minh</span>
+                <span>{t('hero.badge')}</span>
               </div>
               
               <h1 className="hero-title">
-                Tương lai của
-                <span className="hero-title-highlight"> Tự động hóa</span>
+                {t('hero.title_line1')}
+                <span className="hero-title-highlight"> {t('hero.title_highlight')}</span>
                 <br />
-                bắt đầu từ đây
+                {t('hero.title_line2')}
               </h1>
               
               <p className="hero-subtitle">
-                Chúng tôi cung cấp các giải pháp robot tự động hóa tiên tiến, 
-                giúp doanh nghiệp tối ưu hóa quy trình sản xuất và nâng cao hiệu quả hoạt động.
+                {t('hero.subtitle')}
               </p>
               
               <div className="hero-buttons">
@@ -215,7 +215,7 @@ const HeroSection: React.FC = () => {
                   onClick={() => navigate('/products')}
                 >
                   <span>🤖</span>
-                  <span>Khám phá sản phẩm</span>
+                  <span>{t('hero.btn_products')}</span>
                 </button>
                 
                 <button 
@@ -223,7 +223,7 @@ const HeroSection: React.FC = () => {
                   onClick={() => navigate('/solutions')}
                 >
                   <span>💡</span>
-                  <span>Giải pháp</span>
+                  <span>{t('hero.btn_solutions')}</span>
                 </button>
               </div>
             </div>
@@ -250,7 +250,7 @@ const HeroSection: React.FC = () => {
         
         <section className='section-stack-cards'>
           <div className="section-header" style={{position: 'sticky',top: '80px',margin: 'var(--space-3xl) 0',borderRadius: 'var(--radius-xl)',padding: 'var(--space-2xl)',background: 'var(--bg-glass-sticky)',backdropFilter: 'blur(20px)'}}>
-            <h2 className="section-title">Về <span style={{color: 'var(--primary)'}} className="text-company">Thadorobot</span></h2>
+            <h2 className="section-title">{t('hero.about_title').split(' ')[0]} <span style={{color: 'var(--primary)'}} className="text-company">{t('hero.about_title').split(' ').slice(1).join(' ')}</span></h2>
             
             <div className="hero-about-layout">
               <motion.div 
@@ -266,20 +266,20 @@ const HeroSection: React.FC = () => {
               
               <div className="hero-about-content">
                 <p className="section-subtitle">
-                là một doanh nghiệp hàng đầu tại Việt Nam, chuyên cung cấp các giải pháp công nghệ tiên tiến trong lĩnh vực Robot và Nhà máy thông minh. Chúng tôi hoạt động mạnh mẽ trong các lĩnh vực chủ chốt như Hệ thống đóng gói tự động (APS), Giải pháp tự động hóa nhà máy (FAS), và Giải pháp quản lý kho thông minh (SWS)
+                {t('hero.about_desc')}
                 </p>
                 <div className="hero-stats">
                     <div className="hero-stat">
                         <div className="hero-stat-number">{projectsCount}+</div>
-                      <div className="hero-stat-label">Dự án thành công</div>
+                      <div className="hero-stat-label">{t('hero.stats_projects')}</div>
                     </div>
                     <div className="hero-stat">
                       <div className="hero-stat-number">{yearsCount}+</div>
-                      <div className="hero-stat-label">Năm kinh nghiệm</div>
+                      <div className="hero-stat-label">{t('hero.stats_years')}</div>
                     </div>
                     <div className="hero-stat">
                       <div className="hero-stat-number">{satisfactionCount}%</div>
-                      <div className="hero-stat-label">Khách hàng hài lòng</div>
+                      <div className="hero-stat-label">{t('hero.stats_satisfaction')}</div>
                     </div>
                   </div>
               </div>
@@ -290,7 +290,7 @@ const HeroSection: React.FC = () => {
         {/* Robot Showcase */}
         <section className='section-stack-cards'>
           <div className="hero-robots-showcase">
-            <h2 className="hero-robots-showcase-title"> Sản phẩm của chúng tôi</h2>
+            <h2 className="hero-robots-showcase-title"> {t('hero.robots_title')}</h2>
             <div ref={robotCardsRef} className="robots-grid">
               {showcaseProducts.map((product, index) => (
                 <motion.div 
@@ -322,7 +322,7 @@ const HeroSection: React.FC = () => {
         {/* Solution Section */}
         <section className='section-stack-cards solution-stackcards'>
           <div className="hero-solution">
-            <h2 className="hero-solution-title"> Giải pháp của chúng tôi</h2>
+            <h2 className="hero-solution-title"> {t('hero.solutions_title')}</h2>
             {/* Features Section */}
             <div className="hero-features">
               <motion.div 
@@ -363,32 +363,32 @@ const HeroSection: React.FC = () => {
                 <div className="tech-highlight">
                   <div className="tech-icon">🔋</div>
                   <div className="tech-content">
-                    <h4>Pin Li-ion</h4>
-                    <p>Thời gian hoạt động lên đến 8 giờ</p>
+                    <h4>{t('hero.tech_battery_title')}</h4>
+                    <p>{t('hero.tech_battery_desc')}</p>
                   </div>
                 </div>
                 
                 <div className="tech-highlight">
                   <div className="tech-icon">📡</div>
                   <div className="tech-content">
-                    <h4>5G Connectivity</h4>
-                    <p>Kết nối siêu nhanh và ổn định</p>
+                    <h4>{t('hero.tech_5g_title')}</h4>
+                    <p>{t('hero.tech_5g_desc')}</p>
                   </div>
                 </div>
                 
                 <div className="tech-highlight">
                   <div className="tech-icon">🎯</div>
                   <div className="tech-content">
-                    <h4>AI Navigation</h4>
-                    <p>Định vị chính xác với AI</p>
+                    <h4>{t('hero.tech_ai_title')}</h4>
+                    <p>{t('hero.tech_ai_desc')}</p>
                   </div>
                 </div>
                 
                 <div className="tech-highlight">
                   <div className="tech-icon">🛡️</div>
                   <div className="tech-content">
-                    <h4>Safety System</h4>
-                    <p>Hệ thống an toàn đa lớp</p>
+                    <h4>{t('hero.tech_safety_title')}</h4>
+                    <p>{t('hero.tech_safety_desc')}</p>
                   </div>
                 </div>
               </motion.div>

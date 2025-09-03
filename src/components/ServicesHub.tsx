@@ -1,5 +1,6 @@
 import React, { useRef } from 'react';
 import { motion, useInView, useAnimation } from 'framer-motion';
+import { useTranslation } from 'react-i18next';
 
 const ServicesHub: React.FC = () => {
   const services = [
@@ -76,7 +77,7 @@ const ServicesHub: React.FC = () => {
       ]
     }
   ];
-
+  const { t } = useTranslation();
   // Animation refs và controls
   const headerRef = useRef(null);
   const gridRef = useRef(null);
@@ -141,9 +142,9 @@ const ServicesHub: React.FC = () => {
           animate={headerControls}
           transition={{ duration: 0.8, ease: "easeOut" }}
         >
-          <h2 className="section-title">Dịch vụ Công nghệ</h2>
+          <h2 className="section-title">{t('services.section_title')}</h2>
           <p className="section-subtitle">
-            Cung cấp các dịch vụ công nghệ tiên tiến để thúc đẩy chuyển đổi số
+            {t('services.section_subtitle')}
           </p>
         </motion.div>
 
