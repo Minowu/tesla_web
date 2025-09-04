@@ -988,8 +988,7 @@ a.mobile-nav-item.active {
   height: 500px;
   margin: 0 auto;
   position: relative;
-  gap-row: var(--space-lg);
-  gap-column: var(--space-3xl);
+  gap: var(--space-sm);
   place-items: center;
 }
 #hex-0{
@@ -1043,7 +1042,7 @@ a.mobile-nav-item.active {
   left: 0;
   right: 0;
   bottom: 0;
-  background: linear-gradient(135deg, var(--bg-primary), var(--bg-secondary));
+  background: radial-gradient(circle, var(--bg-glass), var(--bg-glass-dark));
   clip-path: polygon(50% 0%, 100% 25%, 100% 75%, 50% 100%, 0% 75%, 0% 25%);
   transition: all var(--transition-normal);
   z-index: 1;
@@ -1057,7 +1056,7 @@ a.mobile-nav-item.active {
   left: 2px;
   right: 2px;
   bottom: 2px;
-  background: rgba(0, 0, 0, 0.6);
+  background:var(--bg-glass);
   backdrop-filter: blur(20px);
   clip-path: polygon(50% 0%, 100% 25%, 100% 75%, 50% 100%, 0% 75%, 0% 25%);
   transition: all var(--transition-normal);
@@ -1553,7 +1552,7 @@ a.mobile-nav-item.active {
 }
 
 .stat-card {
-  background: rgba(0, 0, 0, 0.3);
+  background: var(--bg-glass);
   border: 1px solid var(--border);
   border-radius: var(--radius-lg);
   padding: var(--space-lg);
@@ -2668,7 +2667,7 @@ a.mobile-nav-item.active {
   content: '✓';
   position: absolute;
   left: 0;
-  color: var(--secondary);
+  color: var(--primary);
   font-weight: bold;
 }
 
@@ -4126,7 +4125,7 @@ a.mobile-nav-item.active {
   height: calc(100% + 15rem);
   width: 0.125rem;
   transform: translateX(-50%);
-  background-color: rgba(255, 255, 255, 0.2);
+  background-color: var(--primary);
 }
 
 .timeline-line-segment {

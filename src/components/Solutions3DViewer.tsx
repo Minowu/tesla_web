@@ -298,7 +298,7 @@ const Solutions3DViewer: React.FC = () => {
                   animate={{ opacity: 1, y: 0 }}
                   transition={{ delay: index * 0.1 }}
                 >
-                  <div className="stat-value" style={{ color: selectedSolution.color }}>
+                  <div className="stat-value" style={{ color: 'var(--primary)' }}>
                     {stat.value}
                   </div>
                   <div className="stat-label">{stat.label}</div>
@@ -377,7 +377,7 @@ const Solutions3DViewer: React.FC = () => {
                             animate={{ opacity: 1, x: 0 }}
                             transition={{ delay: index * 0.1 }}
                           >
-                            <div className="feature-icon">✓</div>
+                            <div className="feature-icon" style={{ color: 'var(--primary)' }}>✓</div>
                             <div className="feature-text">{feature}</div>
                           </motion.div>
                         ))}
@@ -392,7 +392,7 @@ const Solutions3DViewer: React.FC = () => {
                           <motion.div
                             key={index}
                             className="technology-item"
-                            style={{ background: selectedSolution.gradient }}
+                            style={{ background: 'var(--gradient-primary)' }}
                             initial={{ opacity: 0, scale: 0.8 }}
                             animate={{ opacity: 1, scale: 1 }}
                             transition={{ delay: index * 0.1 }}
@@ -429,7 +429,7 @@ const Solutions3DViewer: React.FC = () => {
             <div className="solution-cta">
               <button
                 className="btn btn-primary"
-                style={{ background: selectedSolution.gradient }}
+                style={{ background: 'var(--gradient-primary)' }}
                 onClick={() => setCurrentSection('contact')}
               >
                 <span>Tư vấn triển khai</span>
