@@ -159,8 +159,6 @@ const Navigation: React.FC = () => {
                 )}
               </li>
             ))}
-          </ul>
-
           {/* CTA Button */}
           <div className="nav-cta">
             <button
@@ -172,6 +170,8 @@ const Navigation: React.FC = () => {
             </button>
           </div>
           
+          </ul>
+            
           {/* Navigation Controls */}
           <div className="nav-controls">
             {/* Language Toggle */}     
@@ -207,7 +207,6 @@ const Navigation: React.FC = () => {
               </button>
             </div>
           </div>
-          
 
           {/* Mobile Menu Button */}
           <button

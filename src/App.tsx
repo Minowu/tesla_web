@@ -38,7 +38,7 @@ function App() {
     // Simulate loading time
     const timer = setTimeout(() => {
       setIsLoading(false);
-    }, 2000);
+    }, 800);
 
     return () => clearTimeout(timer);
   }, []);
@@ -50,8 +50,6 @@ function App() {
   }
 
   return (
-    <ErrorBoundary>
-      <ReactLenis root>
       <div className="app">
         <div className="logo-bg">
           <img src="/assets/1.png" alt="Logo" />
@@ -229,8 +227,6 @@ function App() {
           </Routes>
         </main>
       </div>
-      </ReactLenis>
-    </ErrorBoundary>
   );
 }
 

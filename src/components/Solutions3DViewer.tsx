@@ -202,7 +202,7 @@ const Solutions3DViewer: React.FC = () => {
   const { setCurrentSection } = useAppStore();
 
   useEffect(() => {
-    const timer = setTimeout(() => setIsLoading(false), 1000);
+    const timer = setTimeout(() => setIsLoading(false), 500);
     return () => clearTimeout(timer);
   }, []);
 

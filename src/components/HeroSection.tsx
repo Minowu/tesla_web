@@ -19,20 +19,14 @@ const HeroSection: React.FC = () => {
   const heroVisualRef = useRef(null);
   const aboutImageRef = useRef(null);
   const robotCardsRef = useRef(null);
-  const featuresRef = useRef(null);
-  const techHighlightsRef = useRef(null);
   
   const heroVisualInView = useInView(heroVisualRef, { once: true });
   const aboutImageInView = useInView(aboutImageRef, { once: true });
-  const robotCardsInView = useInView(robotCardsRef, { once: true });
-  const featuresInView = useInView(featuresRef, { once: true });
-  const techHighlightsInView = useInView(techHighlightsRef, { once: true });
+  const robotCardsInView = useInView(robotCardsRef, { once: true,amount:1 });
   
   const heroVisualControls = useAnimation();
   const aboutImageControls = useAnimation();
   const robotCardsControls = useAnimation();
-  const featuresControls = useAnimation();
-  const techHighlightsControls = useAnimation();
   
   // Animation cho hero visual
   useEffect(() => {
@@ -80,32 +74,7 @@ const HeroSection: React.FC = () => {
       robotCardsControls.start("visible");
     } 
   }, [robotCardsInView]);
-
-  // Animation cho features
-  useEffect(() => {
-    if (featuresInView) {
-      featuresControls.start("visible");
-    } 
-  }, [featuresInView]);
-
-  // Animation cho tech highlights
-  useEffect(() => {
-    if (techHighlightsInView) {
-      techHighlightsControls.start("visible");
-    } 
-  }, [techHighlightsInView]);
   
-  useEffect(() => {
-    // Auto rotate features
-    const featureTimer = setInterval(() => {
-      setActiveFeature(prev => (prev + 1) % 3);
-    }, 4000);
-
-    return () => {
-      clearInterval(featureTimer);
-    };
-  }, []);
-
   const features = [
     {
       icon: "🚛",
@@ -325,13 +294,8 @@ const HeroSection: React.FC = () => {
             <h2 className="hero-solution-title"> {t('hero.solutions_title')}</h2>
             {/* Features Section */}
             <div className="hero-features">
-              <motion.div 
-                ref={featuresRef}
+              <div 
                 className="features-container"
-                variants={featuresVariants}
-                initial="hidden"
-                animate={featuresControls}
-                transition={{ duration: 0.8, delay: 0.2 }}
               >
                 {features.map((feature, index) => (
                   <div 
@@ -347,18 +311,13 @@ const HeroSection: React.FC = () => {
                     <div className="feature-arrow">→</div>
                   </div>
                 ))}
-              </motion.div>
+              </div>
             </div>
 
             {/* Technology Highlights */}
             <div className="hero-tech-highlights">
-              <motion.div 
-                ref={techHighlightsRef}
+              <div 
                 className="tech-highlights-grid"
-                variants={techHighlightsVariants}
-                initial="hidden"
-                animate={techHighlightsControls}
-                transition={{ duration: 0.8, delay: 0.4 }}
               >
                 <div className="tech-highlight">
                   <div className="tech-icon">🔋</div>
@@ -391,7 +350,7 @@ const HeroSection: React.FC = () => {
                     <p>{t('hero.tech_safety_desc')}</p>
                   </div>
                 </div>
-              </motion.div>
+              </div>
             </div>
           </div>
         </section>

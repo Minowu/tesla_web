@@ -21,8 +21,7 @@
 }
 
 .nav-container {
-  margin-right: 90px;
-  padding: 0 var(--space-md);
+  padding-left:  var(--space-md);
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -63,6 +62,7 @@
 /* Navigation Menu */
 .nav-menu {
   display: flex;
+  justify-content: center;
   align-items: center;
   list-style: none;
   padding: 0;
@@ -97,62 +97,28 @@
   overflow: hidden;
 }
 
-/* Đảm bảo Link cũng có style giống button */
-a.nav-link {
-  display: flex;
-  align-items: center;
-  gap: var(--space-xs);
-  padding: var(--space-sm) var(--space-sm);
-  color: var(--text-secondary);
-  text-decoration: none;
-  border: none;
-  background: none;
-  cursor: pointer;
-  border-radius: var(--radius-md);
-  transition: all var(--transition-normal);
-  font-size: 1rem;
-  font-weight: 500;
-  position: relative;
-  overflow: hidden;
-}
 
-.nav-link::before,
-a.nav-link::before {
-  content: '';
-  position: absolute;
-  top: 0;
-  left: -100%;
-  width: 100%;
-  height: 100%;
-  background: linear-gradient(90deg, transparent, var(--bg-glass), transparent);
-  transition: left var(--transition-slow);
-}
 
-.nav-link:hover::before,
-a.nav-link:hover::before {
+.nav-link:hover::before {
   left: 100%;
 }
 
-.nav-link:hover,
-a.nav-link:hover {
+.nav-link:hover {
   color: var(--text-primary);
   background: var(--bg-glass);
   transform: translateY(-2px);
 }
 
-.nav-link.active,
-a.nav-link.active {
+.nav-link.active {
   color: var(--primary);
   background: var(--bg-glass);
   border: 1px solid var(--border-glow);
 }
 
-.nav-link.active::before,
-a.nav-link.active::before {
+.nav-link.active::before {
   display: none;
 }
-.nav-link span,
-a.nav-link span{
+.nav-link span{
   font-weight: 600;
 }
 
@@ -258,7 +224,8 @@ a.nav-link span{
 }
 
 .search-input {
-  width: 200px;
+  width: 150px;
+  height: 35px;
   padding: var(--space-xs) var(--space-sm);
   background: var(--bg-glass);
   border: 1px solid var(--border);
@@ -416,6 +383,7 @@ a.mobile-nav-item.active {
   overflow: visible;
   background: transparent;
   padding: var(--space-3xl) 0;
+  padding-top: 10px;
 }
 
 /* Hero About Section Layout */
@@ -604,7 +572,7 @@ a.mobile-nav-item.active {
   justify-content: center;
   align-items: center;
   position: absolute;
-  top: -1%;
+  top: 1%;
   left: 47%;
 }
 
