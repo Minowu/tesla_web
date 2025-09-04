@@ -63,7 +63,7 @@
     "features_title": "Highlights"
   },
   "solutions_hex": {
-    "title_prefix": "THADOROBOT Solutions",
+    "title_prefix": "Solutions",
     "subtitle": "Explore intelligent systems and services that help your business grow sustainably",
     "features_title": "Key features",
     "btn_explore": "Explore details",
@@ -181,9 +181,9 @@
         "position": "CEO & Founder",
         "description": "Robot expert with 20+ years of experience in automation field"
       },
-      "cto": {
-        "position": "CTO",
-        "description": "PhD in AI/ML, expert in artificial intelligence and machine learning"
+      "cco": {
+        "position": "CCO",
+        "description": "Expert in business"
       },
       "rd": {
         "position": "Head of R&D",

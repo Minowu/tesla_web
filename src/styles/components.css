@@ -2630,6 +2630,12 @@ a.mobile-nav-item.active {
   opacity: 1;
 }
 
+.service-card img {
+  width: 60px;
+  height: 60px;
+  object-fit: contain;
+  margin-bottom: var(--space-sm);
+}
 
 .service-title {
   font-size: 1.5rem;

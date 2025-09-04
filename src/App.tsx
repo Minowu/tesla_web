@@ -17,6 +17,7 @@ import { LoadingScreen } from './components/LoadingScreen';
 import { PerformanceMonitor } from './components/PerformanceMonitor';
 import { ErrorBoundary } from './components/ErrorBoundary';
 import Solutions3DViewer from './components/Solutions3DViewer';
+import ServiceSupport from './components/ServiceSupport';
 // import { useAppStore } from './store/appStore';
 import './styles/main.css';
 import { useTranslation } from 'react-i18next';
@@ -109,43 +110,7 @@ function App() {
                     <BlogCarousel />
                   </div>
                 </section>
-                {/* Services Section */}
-                <section className="services-section">
-                  <div className="container">
-                    <div className="section-header">
-                      <h2 className="section-title">{t('home_sections.services_support_title')}</h2>
-                      <p className="section-subtitle">
-                        {t('home_sections.services_support_subtitle')}
-                      </p>
-                    </div>
-                    <div className="services-grid">
-                      <div className="service-card">
-                        <h3>{t('home_sections.services_cards.strategy_title')}</h3>
-                        <p>{t('home_sections.services_cards.strategy_desc')}</p>
-                      </div>
-                      <div className="service-card">
-                        <h3>{t('home_sections.services_cards.deployment_title')}</h3>
-                        <p>{t('home_sections.services_cards.deployment_desc')}</p>
-                      </div>
-                      <div className="service-card">
-                        <h3>{t('home_sections.services_cards.training_title')}</h3>
-                        <p>{t('home_sections.services_cards.training_desc')}</p>
-                      </div>
-                      <div className="service-card">
-                        <h3>{t('home_sections.services_cards.maintenance_title')}</h3>
-                        <p>{t('home_sections.services_cards.maintenance_desc')}</p>
-                      </div>
-                      <div className="service-card">
-                        <h3>{t('home_sections.services_cards.support_title')}</h3>
-                        <p>{t('home_sections.services_cards.support_desc')}</p>
-                      </div>
-                      <div className="service-card">
-                        <h3>{t('home_sections.services_cards.optimization_title')}</h3>
-                        <p>{t('home_sections.services_cards.optimization_desc')}</p>
-                      </div>
-                    </div>
-                  </div>
-                </section>
+                <ServiceSupport />
                 {/* Contact CTA Section */}
                 <section className="contact-cta-section">
                   <div className="container">

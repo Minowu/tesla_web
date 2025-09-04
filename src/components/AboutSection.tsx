@@ -35,17 +35,17 @@ const AboutSection: React.FC = () => {
 
   const team = [
     {
-      name: 'Nguyễn Văn S',
+      name: 'Jenny Phạm',
+      position: t('about.team.cco.position'),
+      description: t('about.team.cco.description')
+    },
+    {
+      name: 'Steven Phạm',
       position: t('about.team.ceo.position'),
       description: t('about.team.ceo.description')
     },
     {
-      name: 'Trần Thị B',
-      position: t('about.team.cto.position'),
-      description: t('about.team.cto.description')
-    },
-    {
-      name: 'Lê Văn C',
+      name: 'Hòa Phạm',
       position: t('about.team.rd.position'),
       description: t('about.team.rd.description')
     },

@@ -267,7 +267,7 @@ const HeroSection: React.FC = () => {
                   onClick={() => navigate(`/product/${product.id}`)}
                   style={{ cursor: 'pointer' }}
                   variants={{
-                    hidden: { opacity: 0.2, x: 400 - (index * 100) },
+                    hidden: { opacity: 0.2, x: 600 - (index * 100) },
                     visible: { opacity: 1, x: 0 }
                   }}
                   initial="hidden"
