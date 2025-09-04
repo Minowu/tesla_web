@@ -1,13 +1,16 @@
 import React from 'react';
+import { useTranslation } from 'react-i18next';
 
 const ContactUs: React.FC = () => {
+  const { t } = useTranslation();
+  
   return (
     <div className="contact-section">
       <div className="container">
         <div className="section-header">
-          <h1 className="section-title">Liên Hệ</h1>
+          <h1 className="section-title">{t('contact.section_title')}</h1>
           <p className="section-subtitle">
-            Hãy liên hệ với chúng tôi để được tư vấn và hỗ trợ tốt nhất
+            {t('contact.section_subtitle')}
           </p>
         </div>
         <div className="contact-content">
@@ -15,52 +18,52 @@ const ContactUs: React.FC = () => {
             <div className="contact-item">
               <div className="contact-icon">📞</div>
               <div className="contact-details">
-                <h3>Điện thoại</h3>
-                <p>+84 986 249 212</p>
+                <h3>{t('contact.phone.title')}</h3>
+                <p>{t('contact.phone.number')}</p>
               </div>
             </div>
             <div className="contact-item">
               <div className="contact-icon">✉️</div>
               <div className="contact-details">
-                <h3>Email</h3>
-                <p>info@thadosoft.vn</p>
+                <h3>{t('contact.email.title')}</h3>
+                <p>{t('contact.email.address')}</p>
               </div>
             </div>
             <div className="contact-item">
               <div className="contact-icon">📍</div>
               <div className="contact-details">
-                <h3>Địa chỉ</h3>
-                <p>C25-C26, 28/5 Dương Khuê, P. Từ Liêm</p>
-                <p>TP. Hà Nội, Việt Nam</p>
+                <h3>{t('contact.address.title')}</h3>
+                <p>{t('contact.address.line1')}</p>
+                <p>{t('contact.address.line2')}</p>
               </div>
             </div>
             <div className="contact-item">
               <div className="contact-icon">🕒</div>
               <div className="contact-details">
-                <h3>Giờ làm việc</h3>
-                <p>Thứ 2 - Thứ 6: 8:00 - 17:00</p>
-                <p>Thứ 7: 8:00 - 12:00</p>
+                <h3>{t('contact.hours.title')}</h3>
+                <p>{t('contact.hours.weekdays')}</p>
+                <p>{t('contact.hours.saturday')}</p>
               </div>
             </div>
           </div>
           <div className="contact-form">
-            <h3>Gửi tin nhắn cho chúng tôi</h3>
+            <h3>{t('contact.form.title')}</h3>
             <form>
               <div className="form-group">
-                <input type="text" placeholder="Họ và tên" required />
+                <input type="text" placeholder={t('contact.form.name_placeholder')} required />
               </div>
               <div className="form-group">
-                <input type="email" placeholder="Email" required />
+                <input type="email" placeholder={t('contact.form.email_placeholder')} required />
               </div>
               <div className="form-group">
-                <input type="tel" placeholder="Số điện thoại" />
+                <input type="tel" placeholder={t('contact.form.phone_placeholder')} />
               </div>
               <div className="form-group">
-                <textarea placeholder="Nội dung tin nhắn" rows={4} required></textarea>
+                <textarea placeholder={t('contact.form.message_placeholder')} rows={4} required></textarea>
               </div>
               <button type="submit" className="btn btn-primary">
                 <span>📤</span>
-                <span>Gửi tin nhắn</span>
+                <span>{t('contact.form.submit_btn')}</span>
               </button>
             </form>
           </div>
@@ -68,15 +71,15 @@ const ContactUs: React.FC = () => {
         <div className="stats">
           <div className="stat">
             <div className="stat-number">24/7</div>
-            <div className="stat-label">Hỗ trợ khách hàng</div>
+            <div className="stat-label">{t('contact.stats.support')}</div>
           </div>
           <div className="stat">
             <div className="stat-number">50+</div>
-            <div className="stat-label">Dự án thành công</div>
+            <div className="stat-label">{t('contact.stats.projects')}</div>
           </div>
           <div className="stat">
             <div className="stat-number">50+</div>
-            <div className="stat-label">Khách hàng tin tưởng</div>
+            <div className="stat-label">{t('contact.stats.clients')}</div>
           </div>
         </div>
       </div>

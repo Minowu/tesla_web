@@ -205,9 +205,9 @@ function App() {
             <Route path="/blog" element={(
               <div className="container">
                 <div className="section-header">
-                  <h1 className="section-title">Tất cả bài viết</h1>
+                  <h1 className="section-title">{t('blog_page.list_title')}</h1>
                   <p className="section-subtitle">
-                    Khám phá các bài viết về lập trình và công nghệ
+                    {t('blog_page.list_subtitle')}
                   </p>
                 </div>
                 <BlogSection />

@@ -22,7 +22,9 @@
   "blog_page": {
     "not_found": "Bài viết không tồn tại",
     "author": "Tác giả",
-    "back_to_list": "Quay lại danh sách bài viết"
+    "back_to_list": "Quay lại danh sách bài viết",
+    "list_title": "Tất cả bài viết",
+    "list_subtitle": "Khám phá các bài viết về lập trình và công nghệ"
   },
   "hero": {
     "badge": "Giải pháp Robot thông minh",
@@ -222,6 +224,41 @@
         "title": "Tầm nhìn tương lai",
         "description": "Tiếp tục đổi mới và định hình tương lai của công nghệ và kết nối con người."
       }
+    }
+  },
+  "contact": {
+    "section_title": "Liên Hệ",
+    "section_subtitle": "Hãy liên hệ với chúng tôi để được tư vấn và hỗ trợ tốt nhất",
+    "phone": {
+      "title": "Điện thoại",
+      "number": "+84 986 249 212"
+    },
+    "email": {
+      "title": "Email",
+      "address": "info@thadosoft.vn"
+    },
+    "address": {
+      "title": "Địa chỉ",
+      "line1": "C25-C26, 28/5 Dương Khuê, P. Từ Liêm",
+      "line2": "TP. Hà Nội, Việt Nam"
+    },
+    "hours": {
+      "title": "Giờ làm việc",
+      "weekdays": "Thứ 2 - Thứ 6: 8:00 - 17:00",
+      "saturday": "Thứ 7: 8:00 - 12:00"
+    },
+    "form": {
+      "title": "Gửi tin nhắn cho chúng tôi",
+      "name_placeholder": "Họ và tên",
+      "email_placeholder": "Email",
+      "phone_placeholder": "Số điện thoại",
+      "message_placeholder": "Nội dung tin nhắn",
+      "submit_btn": "Gửi tin nhắn"
+    },
+    "stats": {
+      "support": "Hỗ trợ khách hàng",
+      "projects": "Dự án thành công",
+      "clients": "Khách hàng tin tưởng"
     }
   }
 }

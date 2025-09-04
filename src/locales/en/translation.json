@@ -1,13 +1,13 @@
 {
   
   "nav": {
-    "home": "Home",
-    "products": "Products", 
-    "solutions": "Solutions",
-    "technology": "Technology",
+  "home": "Home",
+  "products": "Products",
+  "solutions": "Solutions",
+  "technology": "Technology",
     "about": "About us",
-    "blog": "Blog",
-    "contact": "Contact",
+  "blog": "Blog",
+  "contact": "Contact",
     "find_solution": "Find Solution",
     "toggle_language": "Switch language",
     "toggle_theme_light": "Switch to light mode",
@@ -21,7 +21,9 @@
   "blog_page": {
     "not_found": "Post not found",
     "author": "Author",
-    "back_to_list": "Back to list"
+    "back_to_list": "Back to list",
+    "list_title": "All Posts",
+    "list_subtitle": "Discover articles about programming and technology"
   },
   "hero": {
     "badge": "Smart Robot Solutions",
@@ -221,6 +223,41 @@
         "title": "Future Vision",
         "description": "Continuing to innovate and shape the future of technology and human connection."
       }
+    }
+  },
+  "contact": {
+    "section_title": "Contact",
+    "section_subtitle": "Contact us for the best consultation and support",
+    "phone": {
+      "title": "Phone",
+      "number": "+84 986 249 212"
+    },
+    "email": {
+      "title": "Email",
+      "address": "info@thadosoft.vn"
+    },
+    "address": {
+      "title": "Address",
+      "line1": "C25-C26, 28/5 Dương Khuê, P. Từ Liêm",
+      "line2": "TP. Hà Nội, Việt Nam"
+    },
+    "hours": {
+      "title": "Working Hours",
+      "weekdays": "Monday - Friday: 8:00 - 17:00",
+      "saturday": "Saturday: 8:00 - 12:00"
+    },
+    "form": {
+      "title": "Send us a message",
+      "name_placeholder": "Full name",
+      "email_placeholder": "Email",
+      "phone_placeholder": "Phone number",
+      "message_placeholder": "Message content",
+      "submit_btn": "Send message"
+    },
+    "stats": {
+      "support": "Customer support",
+      "projects": "Successful projects",
+      "clients": "Trusted clients"
     }
   }
 }
