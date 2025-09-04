@@ -106,7 +106,7 @@
     "stat_accuracy": "Accuracy",
     "stat_uptime": "Uptime",
     "stat_cost": "Cost saving",
-    "stat_productivity": "Productivity increase"
+    "stat_productivity": "Productivity increase up to"
   },
   "product": {
     "view_details": "View details",

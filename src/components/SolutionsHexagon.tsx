@@ -15,7 +15,7 @@ const SolutionsHexagon: React.FC = () => {
   // Animation refs và controls
   const headerRef = useRef(null);
   
-  const headerInView = useInView(headerRef, { once: true });
+  const headerInView = useInView(headerRef, { once: true, amount:0.9 });
   
   const headerControls = useAnimation();
 

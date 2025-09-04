@@ -184,7 +184,14 @@ const TimelineAnimation: React.FC<TimelineAnimationProps> = ({
       {/* Content Sections */}
       <div className="timeline-content">
         {timelineData.map((item, index) => (
-          <section key={index} className="timeline-section">
+          <motion.section 
+            key={index} 
+            className="timeline-section"
+            initial={{ opacity: 0, y: -80 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.6, ease: "easeOut", delay: index * 0.05 }}
+            viewport={{ once: true, amount: 0.5 }}
+          >
             <div className="timeline-section-content">
               {/* Text Content */}
               <motion.div
@@ -193,7 +200,7 @@ const TimelineAnimation: React.FC<TimelineAnimationProps> = ({
                 initial={{ opacity: 0, x: -60 }}
                 whileInView={{ opacity: 1, x: 0 }}
                 transition={{ 
-                  duration: 0.8,
+                  duration: 0.5,
                   delay: index * 0.2,
                   ease: "easeOut"
                 }}
@@ -253,7 +260,7 @@ const TimelineAnimation: React.FC<TimelineAnimationProps> = ({
 
               {/* Visual Card removed as requested; background moved to text content */}
             </div>
-          </section>
+          </motion.section>
         ))}
       </div>
     </div>

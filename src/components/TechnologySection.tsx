@@ -160,7 +160,6 @@ const TechnologySection: React.FC = () => {
                   onClick={() => setActiveTechnology(index)}
                   style={{ '--indicator-color': tech.color } as any}
                 >
-                  <span className="indicator-icon">{tech.icon}</span>
                   <span style={{color: 'var(--text-primary)'}} className="indicator-label">{tech.name}</span>
                 </button>
               ))}
@@ -196,7 +195,6 @@ const TechnologySection: React.FC = () => {
                 <div className="applications-grid">
                   {(currentTech.applications as string[]).map((app: string, index: number) => (
                     <div key={index} className="application-item">
-                      <span className="app-icon">🎯</span>
                       <span>{app}</span>
                     </div>
                   ))}
@@ -217,7 +215,6 @@ const TechnologySection: React.FC = () => {
                 className="btn btn-secondary"
                 onClick={() => navigate('/products')}
               >
-                <span>🤖</span>
                 <span>{t('technology_page.btn_products')}</span>
               </button>
             </div>

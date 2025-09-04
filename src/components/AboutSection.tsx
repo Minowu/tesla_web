@@ -26,10 +26,10 @@ const AboutSection: React.FC = () => {
   };
 
   const stats = [
-    { number: '5+', label: t('about.stats.experience'), icon: '⏱️' },
-    { number: '50+', label: t('about.stats.projects'), icon: '🏆' },
-    { number: '50+', label: t('about.stats.clients'), icon: '🤝' },
-    { number: '99%', label: t('about.stats.satisfaction'), icon: '⭐' }
+    { number: '5+', label: t('about.stats.experience') },
+    { number: '50+', label: t('about.stats.projects') },
+    { number: '50+', label: t('about.stats.clients') },
+    { number: '99%', label: t('about.stats.satisfaction') }
   ];
 
 
@@ -37,36 +37,30 @@ const AboutSection: React.FC = () => {
     {
       name: 'Nguyễn Văn S',
       position: t('about.team.ceo.position'),
-      avatar: '👨‍💼',
       description: t('about.team.ceo.description')
     },
     {
       name: 'Trần Thị B',
       position: t('about.team.cto.position'),
-      avatar: '👩‍💻',
       description: t('about.team.cto.description')
     },
     {
       name: 'Lê Văn C',
       position: t('about.team.rd.position'),
-      avatar: '👨‍🔬',
       description: t('about.team.rd.description')
     },
   ];
 
   const values = [
     {
-      icon: '🎯',
       title: t('about.values.mission.title'),
       description: t('about.values.mission.description')
     },
     {
-      icon: '👁️',
       title: t('about.values.vision.title'),
       description: t('about.values.vision.description')
     },
     {
-      icon: '💎',
       title: t('about.values.core.title'),
       description: t('about.values.core.description')
     }
@@ -119,7 +113,6 @@ const AboutSection: React.FC = () => {
         <div className="about-stats">
           {stats.map((stat, index) => (
             <div key={index} className="about-stat">
-              <div className="stat-icon">{stat.icon}</div>
               <div className="stat-number">{stat.number}</div>
               <div className="stat-label">{stat.label}</div>
             </div>
@@ -130,7 +123,6 @@ const AboutSection: React.FC = () => {
         <div className="about-values">
           {values.map((value, index) => (
             <div key={index} className="value-card">
-              <div className="value-icon">{value.icon}</div>
               <h3 className="value-title">{value.title}</h3>
               <p className="value-description">{value.description}</p>
             </div>
@@ -156,7 +148,6 @@ const AboutSection: React.FC = () => {
           <div className="team-grid">
             {team.map((member, index) => (
               <div key={index} className="team-card">
-                <div className="member-avatar">{member.avatar}</div>
                 <h4 className="member-name">{member.name}</h4>
                 <p className="member-position">{member.position}</p>
                 <p className="member-description">{member.description}</p>
@@ -175,7 +166,6 @@ const AboutSection: React.FC = () => {
                 className="btn btn-primary"
                 onClick={() => setCurrentSection('contact')}
               >
-                <span>📞</span>
                 <span>{t('about.cta.contact_btn')}</span>
               </button>
               

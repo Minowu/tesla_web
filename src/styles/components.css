@@ -2701,10 +2701,7 @@ a.mobile-nav-item.active {
   box-shadow: var(--shadow-lg);
 }
 
-.stat-icon {
-  font-size: 2.5rem;
-  margin-bottom: var(--space-sm);
-}
+ 
 
 .stat-number {
   font-size: 2.5rem;
@@ -2743,10 +2740,7 @@ a.mobile-nav-item.active {
   box-shadow: var(--shadow-lg);
 }
 
-.value-icon {
-  font-size: 3rem;
-  margin-bottom: var(--space-lg);
-}
+ 
 
 .value-title {
   font-size: 1.5rem;
@@ -2794,10 +2788,7 @@ a.mobile-nav-item.active {
   box-shadow: var(--shadow-lg);
 }
 
-.member-avatar {
-  font-size: 3rem;
-  margin-bottom: var(--space-lg);
-}
+ 
 
 .member-name {
   font-size: 1.2rem;

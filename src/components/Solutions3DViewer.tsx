@@ -266,9 +266,6 @@ const Solutions3DViewer: React.FC = () => {
                   whileTap={{ scale: 0.98 }}
                 >
                   <div className="menu-item-content">
-                    <div className="menu-item-icon" style={{ color: solution.color }}>
-                      {solution.icon}
-                    </div>
                     <div className="menu-item-info">
                       <h4 className="menu-item-title">{solution.title}</h4>
                       <p className="menu-item-subtitle">{solution.titleEn}</p>
@@ -284,9 +281,6 @@ const Solutions3DViewer: React.FC = () => {
           {/* Details Panel */}
           <div className="solution-details-panel">
             <div className="solution-header">
-              <div className="solution-icon" style={{ color: selectedSolution.color }}>
-                {selectedSolution.icon}
-              </div>
               <div className="solution-info">
                 <h2 className="solution-title">{selectedSolution.title}</h2>
                 <p className="solution-subtitle">{selectedSolution.titleEn}</p>
@@ -421,7 +415,6 @@ const Solutions3DViewer: React.FC = () => {
                             animate={{ opacity: 1, y: 0 }}
                             transition={{ delay: index * 0.1 }}
                           >
-                            <div className="benefit-icon">🎯</div>
                             <div className="benefit-text">{benefit}</div>
                           </motion.div>
                         ))}
@@ -439,15 +432,12 @@ const Solutions3DViewer: React.FC = () => {
                 style={{ background: selectedSolution.gradient }}
                 onClick={() => setCurrentSection('contact')}
               >
-                <span>📞</span>
                 <span>Tư vấn triển khai</span>
               </button>
               <button className="btn btn-secondary">
-                <span>📋</span>
                 <span>Tải brochure</span>
               </button>
               <button className="btn btn-outline">
-                <span>🎥</span>
                 <span>Xem demo</span>
               </button>
             </div>
@@ -487,15 +477,12 @@ const Solutions3DViewer: React.FC = () => {
             </Suspense>
             <div className="model-controls">
               <button className="control-btn">
-                <span>🔄</span>
                 <span>Xoay</span>
               </button>
               <button className="control-btn">
-                <span>🔍</span>
                 <span>Zoom</span>
               </button>
               <button className="control-btn">
-                <span>📱</span>
                 <span>VR</span>
               </button>
             </div>
@@ -510,11 +497,9 @@ const Solutions3DViewer: React.FC = () => {
           <p>Liên hệ với chúng tôi để được tư vấn miễn phí và nhận báo giá chi tiết</p>
           <div className="cta-buttons">
             <button className="btn btn-primary" onClick={() => setCurrentSection('contact')}>
-              <span>📞</span>
               <span>Liên hệ ngay</span>
             </button>
             <button className="btn btn-secondary">
-              <span>📋</span>
               <span>Yêu cầu demo</span>
             </button>
           </div>
@@ -524,9 +509,11 @@ const Solutions3DViewer: React.FC = () => {
 
       {/* Chat Button */}
       <div className="chat-button">
+        <a href="http://zaloapp.com/qr/p/9c0gt66v8htn"style={{textDecoration: 'none',color: 'var(--text-primary)'}}>
         <span className="chat-icon">💬</span>
         <span className="chat-text">Chat với chúng tôi</span>
         <span className="chat-emoji">👋</span>
+        </a>
       </div>
     </div>
   );

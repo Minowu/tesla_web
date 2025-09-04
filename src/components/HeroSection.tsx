@@ -77,14 +77,17 @@ const HeroSection: React.FC = () => {
   
   const features = [
     {
+      icon: "🚛",
       title: t('hero.feature_1_title'),
       description: t('hero.feature_1_desc')
     },
     {
+      icon: "🤖",
       title: t('hero.feature_2_title'),
       description: t('hero.feature_2_desc')
     },
     {
+      icon: "🏭",
       title: t('hero.feature_3_title'),
       description: t('hero.feature_3_desc')
     }
@@ -102,6 +105,16 @@ const HeroSection: React.FC = () => {
   };
 
   // (đã dùng inline variants cho card)
+
+  const featuresVariants = {
+    hidden: { opacity: 0.2, y: 100 },
+    visible: { opacity: 1, y: 0 }
+  };
+
+  const techHighlightsVariants = {
+    hidden: { opacity: 0.2, y: 80 },
+    visible: { opacity: 1, y: 0 }
+  };
 
   // Chọn 4 sản phẩm từ 4 danh mục khác nhau
   const getShowcaseProducts = (): Product[] => {
@@ -170,7 +183,6 @@ const HeroSection: React.FC = () => {
                   className="btn btn-primary"
                   onClick={() => navigate('/products')}
                 >
-                  <span>🤖</span>
                   <span>{t('hero.btn_products')}</span>
                 </button>
                 
@@ -255,7 +267,7 @@ const HeroSection: React.FC = () => {
                   onClick={() => navigate(`/product/${product.id}`)}
                   style={{ cursor: 'pointer' }}
                   variants={{
-                    hidden: { opacity: 0.2, x: 600 - (index * 100) },
+                    hidden: { opacity: 0.2, x: 400 - (index * 100) },
                     visible: { opacity: 1, x: 0 }
                   }}
                   initial="hidden"
@@ -290,6 +302,7 @@ const HeroSection: React.FC = () => {
                     className={`feature-card ${index === activeFeature ? 'active' : ''}`}
                     onClick={() => setActiveFeature(index)}
                   >
+                    <div className="feature-icon">💡</div>
                     <div className="feature-content">
                       <h3>{feature.title}</h3>
                       <p>{feature.description}</p>
