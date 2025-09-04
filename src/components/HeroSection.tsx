@@ -22,7 +22,7 @@ const HeroSection: React.FC = () => {
   
   const heroVisualInView = useInView(heroVisualRef, { once: true });
   const aboutImageInView = useInView(aboutImageRef, { once: true });
-  const robotCardsInView = useInView(robotCardsRef, { once: true,amount:1 });
+  const robotCardsInView = useInView(robotCardsRef, { once: true,amount:0.8 });
   
   const heroVisualControls = useAnimation();
   const aboutImageControls = useAnimation();
@@ -77,17 +77,14 @@ const HeroSection: React.FC = () => {
   
   const features = [
     {
-      icon: "🚛",
       title: t('hero.feature_1_title'),
       description: t('hero.feature_1_desc')
     },
     {
-      icon: "🤖",
       title: t('hero.feature_2_title'),
       description: t('hero.feature_2_desc')
     },
     {
-      icon: "🏭",
       title: t('hero.feature_3_title'),
       description: t('hero.feature_3_desc')
     }
@@ -105,16 +102,6 @@ const HeroSection: React.FC = () => {
   };
 
   // (đã dùng inline variants cho card)
-
-  const featuresVariants = {
-    hidden: { opacity: 0.2, y: 100 },
-    visible: { opacity: 1, y: 0 }
-  };
-
-  const techHighlightsVariants = {
-    hidden: { opacity: 0.2, y: 80 },
-    visible: { opacity: 1, y: 0 }
-  };
 
   // Chọn 4 sản phẩm từ 4 danh mục khác nhau
   const getShowcaseProducts = (): Product[] => {
@@ -303,7 +290,6 @@ const HeroSection: React.FC = () => {
                     className={`feature-card ${index === activeFeature ? 'active' : ''}`}
                     onClick={() => setActiveFeature(index)}
                   >
-                    <div className="feature-icon">{feature.icon}</div>
                     <div className="feature-content">
                       <h3>{feature.title}</h3>
                       <p>{feature.description}</p>
@@ -320,7 +306,6 @@ const HeroSection: React.FC = () => {
                 className="tech-highlights-grid"
               >
                 <div className="tech-highlight">
-                  <div className="tech-icon">🔋</div>
                   <div className="tech-content">
                     <h4>{t('hero.tech_battery_title')}</h4>
                     <p>{t('hero.tech_battery_desc')}</p>
@@ -328,7 +313,6 @@ const HeroSection: React.FC = () => {
                 </div>
                 
                 <div className="tech-highlight">
-                  <div className="tech-icon">📡</div>
                   <div className="tech-content">
                     <h4>{t('hero.tech_5g_title')}</h4>
                     <p>{t('hero.tech_5g_desc')}</p>
@@ -336,7 +320,6 @@ const HeroSection: React.FC = () => {
                 </div>
                 
                 <div className="tech-highlight">
-                  <div className="tech-icon">🎯</div>
                   <div className="tech-content">
                     <h4>{t('hero.tech_ai_title')}</h4>
                     <p>{t('hero.tech_ai_desc')}</p>
@@ -344,7 +327,6 @@ const HeroSection: React.FC = () => {
                 </div>
                 
                 <div className="tech-highlight">
-                  <div className="tech-icon">🛡️</div>
                   <div className="tech-content">
                     <h4>{t('hero.tech_safety_title')}</h4>
                     <p>{t('hero.tech_safety_desc')}</p>

@@ -57,9 +57,9 @@ const SolutionsShowcase: React.FC = () => {
   const visualRef = useRef(null);
   const contentRef = useRef(null);
   
-  const headerInView = useInView(headerRef, { once: true });
-  const visualInView = useInView(visualRef, { once: true });
-  const contentInView = useInView(contentRef, { once: true });
+  const headerInView = useInView(headerRef, { once: true,amount:0.4 });
+  const visualInView = useInView(visualRef, { once: true,amount:0.8 });
+  const contentInView = useInView(contentRef, { once: true,amount:0.8 });
   
   const headerControls = useAnimation();
   const visualControls = useAnimation();
@@ -171,7 +171,6 @@ const SolutionsShowcase: React.FC = () => {
                   animate={{ opacity: 1, y: 0 }}
                   transition={{ delay: index * 0.1 }}
                 >
-                  <span className="indicator-icon">{solution.icon}</span>
                   <span className="indicator-label">{solution.title}</span>
                 </motion.div>
               ))}
@@ -191,7 +190,6 @@ const SolutionsShowcase: React.FC = () => {
                 className="solution-badge"
                 style={{ '--badge-color': currentSolution.color } as React.CSSProperties}
               >
-                <span className="badge-icon">{currentSolution.icon}</span>
                 <span>Giải pháp {activeSolution + 1}/{solutions.length}</span>
               </div>
               

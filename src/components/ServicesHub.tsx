@@ -8,7 +8,6 @@ const ServicesHub: React.FC = () => {
       id: 'ai-ml',
       title: 'AI & Machine Learning',
       description: 'Phát triển các giải pháp AI và ML cho tự động hóa thông minh.',
-      icon: '🧠',
       features: [
         'Computer Vision',
         'Natural Language Processing',
@@ -20,7 +19,6 @@ const ServicesHub: React.FC = () => {
       id: 'iot',
       title: 'Internet of Things',
       description: 'Kết nối và giám sát thiết bị thông minh trong hệ sinh thái IoT.',
-      icon: '🌐',
       features: [
         'Sensor Networks',
         'Real-time Monitoring',
@@ -32,7 +30,6 @@ const ServicesHub: React.FC = () => {
       id: 'robotics',
       title: 'Industrial Robotics',
       description: 'Giải pháp robot công nghiệp cho sản xuất tự động hóa.',
-      icon: '🤖',
       features: [
         'Collaborative Robots',
         'Automated Assembly',
@@ -44,7 +41,6 @@ const ServicesHub: React.FC = () => {
       id: 'automation',
       title: 'Process Automation',
       description: 'Tự động hóa quy trình sản xuất và kinh doanh.',
-      icon: '⚙️',
       features: [
         'Workflow Automation',
         'Process Optimization',
@@ -56,7 +52,6 @@ const ServicesHub: React.FC = () => {
       id: 'analytics',
       title: 'Data Analytics',
       description: 'Phân tích dữ liệu để tối ưu hóa hiệu suất và ra quyết định.',
-      icon: '📊',
       features: [
         'Big Data Processing',
         'Business Intelligence',
@@ -68,7 +63,6 @@ const ServicesHub: React.FC = () => {
       id: 'maintenance',
       title: 'Predictive Maintenance',
       description: 'Bảo trì dự đoán để giảm thiểu thời gian ngừng máy.',
-      icon: '🔧',
       features: [
         'Condition Monitoring',
         'Failure Prediction',
@@ -161,10 +155,6 @@ const ServicesHub: React.FC = () => {
               className="service-card"
               variants={cardVariants}
             >
-              <div className="service-icon">
-                {service.icon}
-              </div>
-              
               <h3 className="service-title">{service.title}</h3>
               <p className="service-description">{service.description}</p>
               

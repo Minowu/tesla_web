@@ -121,32 +121,26 @@ function App() {
                     </div>
                     <div className="services-grid">
                       <div className="service-card">
-                        <div className="service-icon">💡</div>
                         <h3>{t('home_sections.services_cards.strategy_title')}</h3>
                         <p>{t('home_sections.services_cards.strategy_desc')}</p>
                       </div>
                       <div className="service-card">
-                        <div className="service-icon">🚀</div>
                         <h3>{t('home_sections.services_cards.deployment_title')}</h3>
                         <p>{t('home_sections.services_cards.deployment_desc')}</p>
                       </div>
                       <div className="service-card">
-                        <div className="service-icon">🎓</div>
                         <h3>{t('home_sections.services_cards.training_title')}</h3>
                         <p>{t('home_sections.services_cards.training_desc')}</p>
                       </div>
                       <div className="service-card">
-                        <div className="service-icon">🔧</div>
                         <h3>{t('home_sections.services_cards.maintenance_title')}</h3>
                         <p>{t('home_sections.services_cards.maintenance_desc')}</p>
                       </div>
                       <div className="service-card">
-                        <div className="service-icon">📞</div>
                         <h3>{t('home_sections.services_cards.support_title')}</h3>
                         <p>{t('home_sections.services_cards.support_desc')}</p>
                       </div>
                       <div className="service-card">
-                        <div className="service-icon">⚡</div>
                         <h3>{t('home_sections.services_cards.optimization_title')}</h3>
                         <p>{t('home_sections.services_cards.optimization_desc')}</p>
                       </div>
