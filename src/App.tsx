@@ -19,7 +19,6 @@ import { ErrorBoundary } from './components/ErrorBoundary';
 import Solutions3DViewer from './components/Solutions3DViewer';
 // import { useAppStore } from './store/appStore';
 import './styles/main.css';
-import { ReactLenis } from 'lenis/react';
 import { useTranslation } from 'react-i18next';
 // dùng đường dẫn tĩnh cho logo để tránh lỗi TS khi import png
 
