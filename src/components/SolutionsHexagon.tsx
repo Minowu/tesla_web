@@ -1,6 +1,6 @@
 import React, { useState, useRef, useEffect } from 'react';
 import { motion, useInView, useAnimation } from 'framer-motion';
-import solutionsData from '../data/solutions.json';
+import solutionsData from '../data/hexagon_solutions.json';
 import { useTranslation } from 'react-i18next';
 const solutions = (solutionsData as any[]).filter(s => !!s.subtitle);
 
@@ -152,7 +152,6 @@ const SolutionsHexagon: React.FC = () => {
                 } as any}
               >
                 <div className="hexagon-content">
-                  <div className="hexagon-icon">{solution.icon}</div>
                   <div className="hexagon-text">
                     <h4>{solution.title}</h4>
                     <p>{solution.subtitle}</p>
@@ -182,9 +181,6 @@ const SolutionsHexagon: React.FC = () => {
                 return (
                   <>
                     <div className="modal-header">
-                      <div className="modal-icon" style={{ color: solution.color }}>
-                        {solution.icon}
-                      </div>
                       <div className="modal-title">
                         <h3>{solution.title}</h3>
                         <p>{solution.subtitle}</p>

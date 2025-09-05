@@ -10,25 +10,10 @@ import solutionsData from '../data/solutions.json';
 
 
 
-// 3D Model Components
-const LaserCuttingModel = () => {
-  const { scene } = useGLTF('/assets/models/simulation_laser_cutting_robot_systems.glb');
-  return <primitive object={scene} scale={0.5} />;
-};
-
-const SmartApplicationModel = () => {
-  const { scene } = useGLTF('/assets/models/assembly_solar.glb');
-  return <primitive object={scene} scale={0.3} />;
-};
-
-const RoboticAutomationModel = () => {
-  const { scene } = useGLTF('/assets/models/industrial_-_3d_agv__trolley_-_omrom.glb');
+// Dynamic 3D Model Component
+const DynamicModel: React.FC<{ modelPath: string }> = ({ modelPath }) => {
+  const { scene } = useGLTF(modelPath);
   return <primitive object={scene} scale={0.4} />;
-};
-
-const IoTIntegrationModel = () => {
-  const { scene } = useGLTF('/assets/models/logistic_robot_test__2.glb');
-  return <primitive object={scene} scale={0.3} />;
 };
 
 // Loading Fallback
@@ -38,19 +23,20 @@ const LoadingFallback = () => (
   </div>
 );
 
-// Map modelKey -> component
-const modelMap: Record<string, React.FC> = {
-  simulation_laser_cutting_robot_systems: LaserCuttingModel,
-  assembly_solar: SmartApplicationModel,
-  industrial_agv_trolley_omrom: RoboticAutomationModel,
-  logistic_robot_test__2: IoTIntegrationModel,
-};
-
 const SolutionsShowcase: React.FC = () => {
   const [activeSolution, setActiveSolution] = useState(0);
   const { t } = useTranslation();
-  const solutions = (solutionsData as any[]).filter(s => !s.subtitle); // chỉ lấy nhóm showcase 3D
+  const { t: tSolutions } = useTranslation('solutions');
   const navigate = useNavigate();
+
+  // Combine data from solutions.json with translations
+  const solutions = (solutionsData as any[]).map((solution) => {
+    const translatedData = tSolutions(solution.id, { returnObjects: true }) as any;
+    return {
+      ...solution,
+      ...translatedData,
+    };
+  });
 
   // Animation refs và controls
   const headerRef = useRef(null);
@@ -113,8 +99,6 @@ const SolutionsShowcase: React.FC = () => {
   if (!currentSolution) {
     return <div>Loading...</div>;
   }
-  
-  const ModelComponent = modelMap[(currentSolution as any).modelKey] || (() => null);
 
   return (
     <section className="solutions">
@@ -150,7 +134,7 @@ const SolutionsShowcase: React.FC = () => {
                   <ambientLight intensity={0.5} />
                   <pointLight position={[10, 10, 10]} />
                   <Float speed={2} rotationIntensity={0.5} floatIntensity={0.5}>
-                    <ModelComponent />
+                    <DynamicModel modelPath={currentSolution.modelPath} />
                   </Float>
                   <OrbitControls enableZoom={false} enablePan={false} />
                   <Environment preset="city" />
@@ -190,7 +174,7 @@ const SolutionsShowcase: React.FC = () => {
                 className="solution-badge"
                 style={{ '--badge-color': currentSolution.color } as React.CSSProperties}
               >
-                <span>Giải pháp {activeSolution + 1}/{solutions.length}</span>
+                <span>{t('solutions_showcase.solution_badge', 'Giải pháp')} {activeSolution + 1}/{solutions.length}</span>
               </div>
               
               <h3 className="solution-title">{currentSolution.title}</h3>

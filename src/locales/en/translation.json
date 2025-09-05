@@ -60,7 +60,8 @@
     "section_subtitle": "Discover advanced solutions to help your business grow sustainably",
     "btn_explore": "Explore details",
     "btn_contact": "Contact us",
-    "features_title": "Highlights"
+    "features_title": "Highlights",
+    "solution_badge": "Solution"
   },
   "solutions_hex": {
     "title_prefix": "Solutions",
@@ -68,6 +69,39 @@
     "features_title": "Key features",
     "btn_explore": "Explore details",
     "btn_contact": "Contact us"
+  },
+  "solutions_3d": {
+    "hero_badge": "Leading Technology Solutions",
+    "hero_title": "The future of",
+    "hero_highlight": "Automation",
+    "hero_title_end": "starts here",
+    "hero_subtitle": "Discover advanced robotic automation solutions designed specifically for Industry 4.0",
+    "hero_stat_projects": "Successful projects",
+    "hero_stat_experience": "Years of experience",
+    "hero_stat_satisfaction": "Customer satisfaction",
+    "menu_title": "Our Solutions",
+    "menu_subtitle": "Select a solution to view details",
+    "tab_overview": "Overview",
+    "tab_features": "Features",
+    "tab_technology": "Technology",
+    "tab_benefits": "Benefits",
+    "overview_applications": "Main Applications",
+    "model_title": "3D Model",
+    "model_subtitle": "Interact with the 3D model to explore technical details",
+    "model_loading": "Loading 3D model...",
+    "model_controls": {
+      "rotate": "Rotate",
+      "zoom": "Zoom",
+      "vr": "VR"
+    },
+    "cta_title": "Ready to start your project?",
+    "cta_subtitle": "Contact us for free consultation and detailed quote",
+    "cta_contact": "Contact now",
+    "cta_demo": "Request demo",
+    "cta_consultation": "Implementation consultation",
+    "cta_brochure": "Download brochure",
+    "cta_view_demo": "View demo",
+    "chat_text": "Chat with us"
   },
   "services": {
     "section_title": "Technology Services",

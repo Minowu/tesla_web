@@ -21,7 +21,6 @@
                 {
                   "id": "technical-specs",
                   "name": "Thông số kỹ thuật",
-                  "icon": "⚙️",
                   "specs": [
                     { "name": "Tải trọng tối đa", "value": "600", "unit": "kg" },
                     { "name": "Tốc độ di chuyển", "value": "1.5", "unit": "m/s" },
@@ -33,7 +32,6 @@
                 {
                   "id": "navigation",
                   "name": "Hệ thống định vị",
-                  "icon": "🧭",
                   "specs": [
                     { "name": "QR Code", "value": "Hỗ trợ" },
                     { "name": "Texture SLAM", "value": "Hỗ trợ" },
@@ -44,7 +42,6 @@
                 {
                   "id": "battery",
                   "name": "Pin và thời gian hoạt động",
-                  "icon": "🔋",
                   "specs": [
                     { "name": "Dung lượng pin", "value": "100", "unit": "Ah" },
                     { "name": "Thời gian hoạt động", "value": "8-10", "unit": "giờ" },
@@ -55,7 +52,6 @@
                 {
                   "id": "safety",
                   "name": "Tính năng an toàn",
-                  "icon": "🛡️",
                   "specs": [
                     { "name": "Cảm biến va chạm", "value": "360°" },
                     { "name": "Cảm biến laser", "value": "2 lớp" },
@@ -78,7 +74,6 @@
                 {
                   "id": "technical-specs",
                   "name": "Thông số kỹ thuật",
-                  "icon": "⚙️",
                   "specs": [
                     { "name": "Tải trọng tối đa", "value": "600", "unit": "kg" },
                     { "name": "Tốc độ di chuyển", "value": "1.5", "unit": "m/s" },
@@ -90,7 +85,6 @@
                 {
                   "id": "navigation",
                   "name": "Hệ thống định vị",
-                  "icon": "🧭",
                   "specs": [
                     { "name": "QR Code", "value": "Hỗ trợ" },
                     { "name": "Texture SLAM", "value": "Hỗ trợ" },
@@ -113,7 +107,6 @@
                 {
                   "id": "technical-specs",
                   "name": "Thông số kỹ thuật",
-                  "icon": "⚙️",
                   "specs": [
                     { "name": "Tải trọng tối đa", "value": "600", "unit": "kg" },
                     { "name": "Tốc độ di chuyển", "value": "1.5", "unit": "m/s" },
@@ -125,7 +118,6 @@
                 {
                   "id": "navigation",
                   "name": "Hệ thống định vị",
-                  "icon": "🧭",
                   "specs": [
                     { "name": "QR Code", "value": "Hỗ trợ" },
                     { "name": "Texture SLAM", "value": "Hỗ trợ" },
@@ -148,7 +140,6 @@
                 {
                   "id": "technical-specs",
                   "name": "Thông số kỹ thuật",
-                  "icon": "⚙️",
                   "specs": [
                     { "name": "Tải trọng tối đa", "value": "600", "unit": "kg" },
                     { "name": "Tốc độ di chuyển", "value": "1.5", "unit": "m/s" },
@@ -160,7 +151,6 @@
                 {
                   "id": "navigation",
                   "name": "Hệ thống định vị",
-                  "icon": "🧭",
                   "specs": [
                     { "name": "QR Code", "value": "Hỗ trợ" },
                     { "name": "Texture SLAM", "value": "Hỗ trợ" },
@@ -183,7 +173,6 @@
                 {
                   "id": "technical-specs",
                   "name": "Thông số kỹ thuật",
-                  "icon": "⚙️",
                   "specs": [
                     { "name": "Tải trọng tối đa", "value": "600", "unit": "kg" },
                     { "name": "Tốc độ di chuyển", "value": "1.5", "unit": "m/s" },
@@ -195,7 +184,6 @@
                 {
                   "id": "navigation",
                   "name": "Hệ thống định vị",
-                  "icon": "🧭",
                   "specs": [
                     { "name": "QR Code", "value": "Hỗ trợ" },
                     { "name": "Texture SLAM", "value": "Hỗ trợ" },
@@ -218,7 +206,6 @@
                 {
                   "id": "technical-specs",
                   "name": "Thông số kỹ thuật",
-                  "icon": "⚙️",
                   "specs": [
                     { "name": "Tải trọng tối đa", "value": "600", "unit": "kg" },
                     { "name": "Tốc độ di chuyển", "value": "1.5", "unit": "m/s" },
@@ -230,7 +217,6 @@
                 {
                   "id": "navigation",
                   "name": "Hệ thống định vị",
-                  "icon": "🧭",
                   "specs": [
                     { "name": "QR Code", "value": "Hỗ trợ" },
                     { "name": "Texture SLAM", "value": "Hỗ trợ" },
@@ -253,7 +239,6 @@
                 {
                   "id": "technical-specs",
                   "name": "Thông số kỹ thuật",
-                  "icon": "⚙️",
                   "specs": [
                     { "name": "Tải trọng tối đa", "value": "600", "unit": "kg" },
                     { "name": "Tốc độ di chuyển", "value": "1.5", "unit": "m/s" },
@@ -265,7 +250,6 @@
                 {
                   "id": "navigation",
                   "name": "Hệ thống định vị",
-                  "icon": "🧭",
                   "specs": [
                     { "name": "QR Code", "value": "Hỗ trợ" },
                     { "name": "Texture SLAM", "value": "Hỗ trợ" },
@@ -288,7 +272,6 @@
                 {
                   "id": "technical-specs",
                   "name": "Thông số kỹ thuật",
-                  "icon": "⚙️",
                   "specs": [
                     { "name": "Tải trọng tối đa", "value": "1000", "unit": "kg" },
                     { "name": "Tốc độ di chuyển", "value": "1.2", "unit": "m/s" },
@@ -300,7 +283,6 @@
                 {
                   "id": "navigation",
                   "name": "Hệ thống định vị",
-                  "icon": "🧭",
                   "specs": [
                     { "name": "QR Code", "value": "Hỗ trợ" },
                     { "name": "Texture SLAM", "value": "Hỗ trợ" },
@@ -311,7 +293,6 @@
                 {
                   "id": "safety",
                   "name": "Tính năng an toàn",
-                  "icon": "🛡️",
                   "specs": [
                     { "name": "Cảm biến va chạm", "value": "360°" },
                     { "name": "Cảm biến laser", "value": "2 lớp" },
@@ -334,7 +315,6 @@
                 {
                   "id": "technical-specs",
                   "name": "Thông số kỹ thuật",
-                  "icon": "⚙️",
                   "specs": [
                     { "name": "Tải trọng tối đa", "value": "1000", "unit": "kg" },
                     { "name": "Tốc độ di chuyển", "value": "1.2", "unit": "m/s" },
@@ -346,7 +326,6 @@
                 {
                   "id": "navigation",
                   "name": "Hệ thống định vị",
-                  "icon": "🧭",
                   "specs": [
                     { "name": "QR Code", "value": "Hỗ trợ" },
                     { "name": "Texture SLAM", "value": "Hỗ trợ" },
@@ -369,7 +348,6 @@
                 {
                   "id": "technical-specs",
                   "name": "Thông số kỹ thuật",
-                  "icon": "⚙️",
                   "specs": [
                     { "name": "Tải trọng tối đa", "value": "1000", "unit": "kg" },
                     { "name": "Tốc độ di chuyển", "value": "1.2", "unit": "m/s" },
@@ -381,7 +359,6 @@
                 {
                   "id": "navigation",
                   "name": "Hệ thống định vị",
-                  "icon": "🧭",
                   "specs": [
                     { "name": "QR Code", "value": "Hỗ trợ" },
                     { "name": "Texture SLAM", "value": "Hỗ trợ" },
@@ -403,7 +380,6 @@
                 {
                   "id": "technical-specs",
                   "name": "Thông số kỹ thuật",
-                  "icon": "⚙️",
                   "specs": [
                     { "name": "Tải trọng tối đa", "value": "1000", "unit": "kg" },
                     { "name": "Tốc độ di chuyển", "value": "1.2", "unit": "m/s" },
@@ -415,7 +391,6 @@
                 {
                   "id": "navigation",
                   "name": "Hệ thống định vị",
-                  "icon": "🧭",
                   "specs": [
                     { "name": "QR Code", "value": "Hỗ trợ" },
                     { "name": "Texture SLAM", "value": "Hỗ trợ" },
@@ -438,7 +413,6 @@
                 {
                   "id": "technical-specs",
                   "name": "Thông số kỹ thuật",
-                  "icon": "⚙️",
                   "specs": [
                     { "name": "Tải trọng tối đa", "value": "1000", "unit": "kg" },
                     { "name": "Tốc độ di chuyển", "value": "1.2", "unit": "m/s" },
@@ -450,7 +424,6 @@
                 {
                   "id": "navigation",
                   "name": "Hệ thống định vị",
-                  "icon": "🧭",
                   "specs": [
                     { "name": "QR Code", "value": "Hỗ trợ" },
                     { "name": "Texture SLAM", "value": "Hỗ trợ" },
@@ -472,7 +445,6 @@
                 {
                   "id": "technical-specs",
                   "name": "Thông số kỹ thuật",
-                  "icon": "⚙️",
                   "specs": [
                     { "name": "Tải trọng tối đa", "value": "1000", "unit": "kg" },
                     { "name": "Tốc độ di chuyển", "value": "1.2", "unit": "m/s" },
@@ -484,7 +456,6 @@
                 {
                   "id": "navigation",
                   "name": "Hệ thống định vị",
-                  "icon": "🧭",
                   "specs": [
                     { "name": "QR Code", "value": "Hỗ trợ" },
                     { "name": "Texture SLAM", "value": "Hỗ trợ" },
@@ -513,7 +484,6 @@
                 {
                   "id": "technical-specs",
                   "name": "Thông số kỹ thuật",
-                  "icon": "⚙️",
                   "specs": [
                     { "name": "Tải trọng tối đa", "value": "1500", "unit": "kg" },
                     { "name": "Tốc độ di chuyển", "value": "2.0", "unit": "m/s" },
@@ -524,7 +494,6 @@
                 {
                   "id": "performance",
                   "name": "Hiệu suất",
-                  "icon": "🚀",
                   "specs": [
                     { "name": "Thời gian hoạt động", "value": "12-15", "unit": "giờ" },
                     { "name": "Tốc độ tăng tốc", "value": "0.5", "unit": "m/s²" },
@@ -546,7 +515,6 @@
                 {
                   "id": "technical-specs",
                   "name": "Thông số kỹ thuật",
-                  "icon": "⚙️",
                   "specs": [
                     { "name": "Tải trọng tối đa", "value": "1500", "unit": "kg" },
                     { "name": "Tốc độ di chuyển", "value": "2.0", "unit": "m/s" },
@@ -557,7 +525,6 @@
                 {
                   "id": "performance",
                   "name": "Hiệu suất",
-                  "icon": "🚀",
                   "specs": [
                     { "name": "Thời gian hoạt động", "value": "12-15", "unit": "giờ" },
                     { "name": "Tốc độ tăng tốc", "value": "0.5", "unit": "m/s²" },
@@ -585,7 +552,6 @@
                 {
                   "id": "technical-specs",
                   "name": "Thông số kỹ thuật",
-                  "icon": "⚙️",
                   "specs": [
                     { "name": "Tải trọng tối đa", "value": "1500", "unit": "kg" },
                     { "name": "Tốc độ di chuyển", "value": "2.0", "unit": "m/s" },
@@ -596,7 +562,6 @@
                 {
                   "id": "performance",
                   "name": "Hiệu suất",
-                  "icon": "🚀",
                   "specs": [
                     { "name": "Thời gian hoạt động", "value": "12-15", "unit": "giờ" },
                     { "name": "Tốc độ tăng tốc", "value": "0.5", "unit": "m/s²" },
@@ -624,7 +589,6 @@
                 {
                   "id": "technical-specs",
                   "name": "Thông số kỹ thuật",
-                  "icon": "⚙️",
                   "specs": [
                     { "name": "Tương thích", "value": "AMR Series", "unit": "" },
                     { "name": "Chất liệu", "value": "Cao cấp", "unit": "" },
@@ -646,7 +610,6 @@
                 {
                   "id": "technical-specs",
                   "name": "Thông số kỹ thuật",
-                  "icon": "⚙️",
                   "specs": [
                     { "name": "Tương thích", "value": "AMR Series", "unit": "" },
                     { "name": "Chất liệu", "value": "Cao cấp", "unit": "" },
@@ -668,7 +631,6 @@
                 {
                   "id": "technical-specs",
                   "name": "Thông số kỹ thuật",
-                  "icon": "⚙️",
                   "specs": [
                     { "name": "Tương thích", "value": "AMR Series", "unit": "" },
                     { "name": "Chất liệu", "value": "Cao cấp", "unit": "" },
@@ -690,7 +652,6 @@
                 {
                   "id": "technical-specs",
                   "name": "Thông số kỹ thuật",
-                  "icon": "⚙️",
                   "specs": [
                     { "name": "Tương thích", "value": "AMR Series", "unit": "" },
                     { "name": "Chất liệu", "value": "Cao cấp", "unit": "" },
@@ -718,7 +679,6 @@
                 {
                   "id": "technical-specs",
                   "name": "Thông số kỹ thuật",
-                  "icon": "⚙️",
                   "specs": [
                     { "name": "Độ phân giải", "value": "7200x200", "unit": "pixels" },
                     { "name": "Tốc độ quét", "value": "200", "unit": "fps" },
@@ -740,7 +700,6 @@
                 {
                   "id": "technical-specs",
                   "name": "Thông số kỹ thuật",
-                  "icon": "⚙️",
                   "specs": [
                     { "name": "Độ phân giải", "value": "5201x100", "unit": "pixels" },
                     { "name": "Tốc độ quét", "value": "100", "unit": "fps" },
@@ -768,7 +727,6 @@
                 {
                   "id": "technical-specs",
                   "name": "Thông số kỹ thuật",
-                  "icon": "⚙️",
                   "specs": [
                     { "name": "Độ phân giải", "value": "7040x7040", "unit": "pixels" },
                     { "name": "Giao diện", "value": "GigE", "unit": "" },
@@ -790,7 +748,6 @@
                 {
                   "id": "technical-specs",
                   "name": "Thông số kỹ thuật",
-                  "icon": "⚙️",
                   "specs": [
                     { "name": "Độ phân giải", "value": "7040x7040", "unit": "pixels" },
                     { "name": "Giao diện", "value": "USB3.0", "unit": "" },
@@ -812,7 +769,6 @@
                 {
                   "id": "technical-specs",
                   "name": "Thông số kỹ thuật",
-                  "icon": "⚙️",
                   "specs": [
                     { "name": "Độ phân giải", "value": "7040x7040", "unit": "pixels" },
                     { "name": "Giao diện", "value": "MIPI", "unit": "" },
@@ -834,7 +790,6 @@
                 {
                   "id": "technical-specs",
                   "name": "Thông số kỹ thuật",
-                  "icon": "⚙️",
                   "specs": [
                     { "name": "Độ phân giải", "value": "7040x7040", "unit": "pixels" },
                     { "name": "Giao diện", "value": "USB3.0", "unit": "" },
@@ -856,7 +811,6 @@
                 {
                   "id": "technical-specs",
                   "name": "Thông số kỹ thuật",
-                  "icon": "⚙️",
                   "specs": [
                     { "name": "Độ phân giải", "value": "7160x7160", "unit": "pixels" },
                     { "name": "Giao diện", "value": "GigE", "unit": "" },
@@ -878,7 +832,6 @@
                 {
                   "id": "technical-specs",
                   "name": "Thông số kỹ thuật",
-                  "icon": "⚙️",
                   "specs": [
                     { "name": "Độ phân giải", "value": "7160x7160", "unit": "pixels" },
                     { "name": "Giao diện", "value": "MIPI", "unit": "" },
@@ -906,7 +859,6 @@
                 {
                   "id": "technical-specs",
                   "name": "Thông số kỹ thuật",
-                  "icon": "⚙️",
                   "specs": [
                     { "name": "Tốc độ đọc", "value": "3000", "unit": "codes/s" },
                     { "name": "Độ chính xác", "value": "99.9", "unit": "%" },
@@ -928,7 +880,6 @@
                 {
                   "id": "technical-specs",
                   "name": "Thông số kỹ thuật",
-                  "icon": "⚙️",
                   "specs": [
                     { "name": "Tốc độ đọc", "value": "3000", "unit": "codes/s" },
                     { "name": "Độ chính xác", "value": "99.9", "unit": "%" },
@@ -950,7 +901,6 @@
                 {
                   "id": "technical-specs",
                   "name": "Thông số kỹ thuật",
-                  "icon": "⚙️",
                   "specs": [
                     { "name": "Tốc độ đọc", "value": "3000", "unit": "codes/s" },
                     { "name": "Độ chính xác", "value": "99.9", "unit": "%" },
@@ -978,7 +928,6 @@
                 {
                   "id": "technical-specs",
                   "name": "Thông số kỹ thuật",
-                  "icon": "⚙️",
                   "specs": [
                     { "name": "Độ phân giải", "value": "5022", "unit": "pixels" },
                     { "name": "Tốc độ quét", "value": "141", "unit": "kHz" },
@@ -1000,7 +949,6 @@
                 {
                   "id": "technical-specs",
                   "name": "Thông số kỹ thuật",
-                  "icon": "⚙️",
                   "specs": [
                     { "name": "Độ phân giải", "value": "5027", "unit": "pixels" },
                     { "name": "Tốc độ quét", "value": "140", "unit": "kHz" },
@@ -1022,7 +970,6 @@
                 {
                   "id": "technical-specs",
                   "name": "Thông số kỹ thuật",
-                  "icon": "⚙️",
                   "specs": [
                     { "name": "Độ phân giải", "value": "5027", "unit": "pixels" },
                     { "name": "Tốc độ quét", "value": "140", "unit": "kHz" },
@@ -1050,7 +997,6 @@
                 {
                   "id": "technical-specs",
                   "name": "Thông số kỹ thuật",
-                  "icon": "⚙️",
                   "specs": [
                     { "name": "Độ phân giải", "value": "3016x3016", "unit": "pixels" },
                     { "name": "AI Engine", "value": "Có", "unit": "" },
@@ -1072,7 +1018,6 @@
                 {
                   "id": "technical-specs",
                   "name": "Thông số kỹ thuật",
-                  "icon": "⚙️",
                   "specs": [
                     { "name": "Độ phân giải", "value": "3016x3016", "unit": "pixels" },
                     { "name": "AI Engine", "value": "Có", "unit": "" },
@@ -1106,7 +1051,6 @@
                 {
                   "id": "technical-specs",
                   "name": "Thông số kỹ thuật",
-                  "icon": "⚙️",
                   "specs": [
                     { "name": "Tải trọng tối đa", "value": "1500", "unit": "kg" },
                     { "name": "Tốc độ di chuyển", "value": "1.8", "unit": "m/s" },
@@ -1118,7 +1062,6 @@
                 {
                   "id": "navigation",
                   "name": "Hệ thống định vị",
-                  "icon": "🧭",
                   "specs": [
                     { "name": "Laser SLAM", "value": "Hỗ trợ" },
                     { "name": "QR Code", "value": "Hỗ trợ" },
@@ -1129,7 +1072,6 @@
                 {
                   "id": "safety",
                   "name": "Tính năng an toàn",
-                  "icon": "🛡️",
                   "specs": [
                     { "name": "Cảm biến va chạm", "value": "360°" },
                     { "name": "Cảm biến laser", "value": "3 lớp" },
@@ -1152,7 +1094,6 @@
                 {
                   "id": "technical-specs",
                   "name": "Thông số kỹ thuật",
-                  "icon": "⚙️",
                   "specs": [
                     { "name": "Tải trọng tối đa", "value": "2000", "unit": "kg" },
                     { "name": "Số tầng hỗ trợ", "value": "4-6", "unit": "tầng" },
@@ -1164,7 +1105,6 @@
                 {
                   "id": "storage",
                   "name": "Khả năng lưu trữ",
-                  "icon": "📦",
                   "specs": [
                     { "name": "Mật độ lưu trữ", "value": "Tăng 40%", "unit": "" },
                     { "name": "Tự động sắp xếp", "value": "Có" },
@@ -1186,7 +1126,6 @@
                 {
                   "id": "technical-specs",
                   "name": "Thông số kỹ thuật",
-                  "icon": "⚙️",
                   "specs": [
                     { "name": "Tải trọng tối đa", "value": "1800", "unit": "kg" },
                     { "name": "Độ cao nâng tối đa", "value": "600", "unit": "mm" },
@@ -1198,7 +1137,6 @@
                 {
                   "id": "lifting",
                   "name": "Hệ thống nâng hạ",
-                  "icon": "🔧",
                   "specs": [
                     { "name": "Cơ chế nâng", "value": "Telescopic", "unit": "" },
                     { "name": "Độ ổn định", "value": "Cao" },
@@ -1220,7 +1158,6 @@
                 {
                   "id": "technical-specs",
                   "name": "Thông số kỹ thuật",
-                  "icon": "⚙️",
                   "specs": [
                     { "name": "Tải trọng tối đa", "value": "2000", "unit": "kg" },
                     { "name": "Độ cao nâng tối đa", "value": "800", "unit": "mm" },
@@ -1232,7 +1169,6 @@
                 {
                   "id": "gripping",
                   "name": "Hệ thống gắp kẹp",
-                  "icon": "🦾",
                   "specs": [
                     { "name": "Cơ chế gắp", "value": "Grappling-hook", "unit": "" },
                     { "name": "Độ chính xác gắp", "value": "±5", "unit": "mm" },

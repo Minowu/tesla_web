@@ -20,7 +20,7 @@ const HeroSection: React.FC = () => {
   const aboutImageRef = useRef(null);
   const robotCardsRef = useRef(null);
   
-  const heroVisualInView = useInView(heroVisualRef, { once: true });
+  const heroVisualInView = useInView(heroVisualRef, { once: false });
   const aboutImageInView = useInView(aboutImageRef, { once: true });
   const robotCardsInView = useInView(robotCardsRef, { once: true,amount:0.8 });
   
@@ -77,17 +77,14 @@ const HeroSection: React.FC = () => {
   
   const features = [
     {
-      icon: "🚛",
       title: t('hero.feature_1_title'),
       description: t('hero.feature_1_desc')
     },
     {
-      icon: "🤖",
       title: t('hero.feature_2_title'),
       description: t('hero.feature_2_desc')
     },
     {
-      icon: "🏭",
       title: t('hero.feature_3_title'),
       description: t('hero.feature_3_desc')
     }
@@ -163,7 +160,6 @@ const HeroSection: React.FC = () => {
           <div className="hero-main">
             <div className="hero-content">
               <div className="hero-badge">
-                <span>🚀</span>
                 <span>{t('hero.badge')}</span>
               </div>
               
@@ -190,7 +186,6 @@ const HeroSection: React.FC = () => {
                   className="btn btn-secondary"
                   onClick={() => navigate('/solutions')}
                 >
-                  <span>💡</span>
                   <span>{t('hero.btn_solutions')}</span>
                 </button>
               </div>
@@ -302,7 +297,6 @@ const HeroSection: React.FC = () => {
                     className={`feature-card ${index === activeFeature ? 'active' : ''}`}
                     onClick={() => setActiveFeature(index)}
                   >
-                    <div className="feature-icon">💡</div>
                     <div className="feature-content">
                       <h3>{feature.title}</h3>
                       <p>{feature.description}</p>

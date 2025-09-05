@@ -3,6 +3,8 @@ import { motion, AnimatePresence } from 'framer-motion';
 import { Canvas } from '@react-three/fiber';
 import { OrbitControls, Environment, useGLTF, Float, Html } from '@react-three/drei';
 import { useAppStore } from '../store/appStore';
+import { useTranslation } from 'react-i18next';
+import solutionsData from '../data/solutions.json';
 
 
 
@@ -53,153 +55,29 @@ const ModelComponent: React.FC<{ modelPath: string }> = ({ modelPath }) => {
   }
 };
 
-const solutions: Solution[] = [
-  {
-    id: 'agv',
-    title: 'AGV Tự động',
-    titleEn: 'Automated Guided Vehicle',
-    description: 'Hệ thống xe tự động dẫn đường thông minh cho logistics và sản xuất',
-    icon: '🚛',
-    color: '#00d4ff',
-    gradient: 'linear-gradient(135deg, #00d4ff, #0099cc)',
-    features: [
-      'Dẫn đường laser SLAM',
-      'Tải trọng 500-2000kg',
-      'Tích hợp WMS/ERP',
-      'Bảo mật đa lớp',
-      'Báo cáo real-time',
-      'Bảo trì dự đoán'
-    ],
-    applications: [
-      'Kho hàng tự động',
-      'Sản xuất linh hoạt',
-      'Bệnh viện',
-      'Trung tâm phân phối',
-      'Nhà máy thông minh',
-      'Logistics'
-    ],
-    modelPath: '/assets/models/industrial_-_3d_agv__trolley_-_omrom.glb',
-    stats: [
-      { label: 'Tải trọng', value: '2000kg' },
-      { label: 'Tốc độ', value: '2m/s' },
-      { label: 'Pin', value: '8h' },
-      { label: 'Độ chính xác', value: '±5mm' }
-    ],
-    benefits: [
-      'Giảm 60% chi phí vận hành',
-      'Tăng 80% hiệu suất',
-      'An toàn 100%',
-      'Linh hoạt 24/7'
-    ],
-    technology: [
-      'SLAM Navigation',
-      'LiDAR Sensing',
-      'AI Path Planning',
-      '5G Connectivity',
-      'Edge Computing',
-      'IoT Integration'
-    ]
-  },
-  {
-    id: 'amr',
-    title: 'Camera AI nhận diện',
-    titleEn: 'Autonomous Mobile Robot',
-    description: 'Robot di động tự chủ với AI tiên tiến cho môi trường phức tạp',
-    icon: '🤖',
-    color: '#ff6b35',
-    gradient: 'linear-gradient(135deg, #ff6b35, #cc5500)',
-    features: [
-      'AI Navigation',
-      'Multi-sensor fusion',
-      'Dynamic path planning',
-      'Human detection',
-      'Voice control',
-      'Cloud integration'
-    ],
-    applications: [
-      'E-commerce',
-      'Manufacturing',
-      'Healthcare',
-      'Retail',
-      'Education',
-      'Research'
-    ],
-    modelPath: '/assets/models/logistic_robot_test__2.glb',
-    stats: [
-      { label: 'Tải trọng', value: '1500kg' },
-      { label: 'Tốc độ', value: '1.5m/s' },
-      { label: 'Pin', value: '10h' },
-      { label: 'Độ chính xác', value: '±3mm' }
-    ],
-    benefits: [
-      'Tự học và thích nghi',
-      'Tương tác tự nhiên',
-      'Bảo mật cao',
-      'Mở rộng dễ dàng'
-    ],
-    technology: [
-      'Deep Learning',
-      'Computer Vision',
-      'Natural Language Processing',
-      'Cloud AI',
-      '5G Network',
-      'Blockchain'
-    ]
-  },
-  
-  {
-    id: 'warehouse',
-    title: 'Kho thông minh',
-    titleEn: 'Smart Warehouse',
-    description: 'Hệ thống kho tự động hóa hoàn toàn với robot và AI',
-    icon: '🏭',
-    color: '#10b981',
-    gradient: 'linear-gradient(135deg, #10b981, #059669)',
-    features: [
-      'AS/RS System',
-      'Multi-level storage',
-      'Automated picking',
-      'Real-time tracking',
-      'Predictive analytics',
-      'Energy optimization'
-    ],
-    applications: [
-      'E-commerce',
-      'Manufacturing',
-      'Pharmaceuticals',
-      'Food & Beverage',
-      'Automotive',
-      'Electronics'
-    ],
-    modelPath: '/assets/models/assembly_solar.glb',
-    stats: [
-      { label: 'Dung tích', value: '50,000m³' },
-      { label: 'Thông lượng', value: '10,000/h' },
-      { label: 'Độ chính xác', value: '99.9%' },
-      { label: 'Tiết kiệm', value: '70%' }
-    ],
-    benefits: [
-      'Tối ưu không gian',
-      'Giảm lỗi',
-      'Tăng tốc độ',
-      'Tiết kiệm chi phí'
-    ],
-    technology: [
-      'AS/RS Technology',
-      'WMS Integration',
-      'IoT Sensors',
-      'AI Analytics',
-      'Cloud Platform',
-      'Digital Twin'
-    ]
-  }
-];
+// Solutions data will be loaded from translation files
 
 const Solutions3DViewer: React.FC = () => {
-  const [selectedSolution, setSelectedSolution] = useState<Solution>(solutions[0]!);
+  const { t } = useTranslation();
+  const { t: tSolutions } = useTranslation('solutions');
   const [isLoading, setIsLoading] = useState(true);
   const [activeTab, setActiveTab] = useState<'overview' | 'features' | 'technology' | 'benefits'>('overview');
   const { setCurrentSection } = useAppStore();
+  
+  // Combine data from solutions.json with translations
+  const solutions: Solution[] = (solutionsData as any[]).map((solution) => {
+    const translatedData = tSolutions(solution.id, { returnObjects: true }) as any;
+    return {
+      ...solution,
+      ...translatedData,
+      stats: translatedData.stats?.map((stat: any) => ({
+        ...stat,
+        label: tSolutions(`stats.${stat.labelKey}`)
+      })) || []
+    };
+  });
+
+  const [selectedSolutionIndex, setSelectedSolutionIndex] = useState<number>(0);
 
   useEffect(() => {
     const timer = setTimeout(() => setIsLoading(false), 500);
@@ -215,33 +93,43 @@ const Solutions3DViewer: React.FC = () => {
     );
   }
 
+  const selectedSolution = solutions[selectedSolutionIndex];
+
+  if (!selectedSolution) {
+    return (
+      <div className="solutions-loading">
+        <div className="loading-spinner"></div>
+        <h2>Đang tải giải pháp...</h2>
+      </div>
+    );
+  }
+
   return (
     <div className="solutions-3d-viewer">
       {/* Hero Section */}
       <div className="solutions-hero">
         <div className="hero-content">
           <div className="hero-badge">
-            <span>🚀</span>
-            <span>Giải pháp Công nghệ Hàng đầu</span>
+            <span>{t('solutions_3d.hero_badge')}</span>
           </div>
           <h1 className="hero-title">
-            Tương lai của <span className="title-highlight">Tự động hóa</span> bắt đầu từ đây
+            {t('solutions_3d.hero_title')} <span className="title-highlight">{t('solutions_3d.hero_highlight')}</span> {t('solutions_3d.hero_title_end')}
           </h1>
           <p className="hero-subtitle">
-            Khám phá các giải pháp robot tự động hóa tiên tiến được thiết kế đặc biệt cho Industry 4.0
+            {t('solutions_3d.hero_subtitle')}
           </p>
           <div className="hero-stats">
             <div className="stat-item">
               <div className="stat-number">50+</div>
-              <div className="stat-label">Dự án thành công</div>
+              <div className="stat-label">{t('solutions_3d.hero_stat_projects')}</div>
             </div>
             <div className="stat-item">
               <div className="stat-number">5+</div>
-              <div className="stat-label">Năm kinh nghiệm</div>
+              <div className="stat-label">{t('solutions_3d.hero_stat_experience')}</div>
             </div>
             <div className="stat-item">
               <div className="stat-number">99%</div>
-              <div className="stat-label">Khách hàng hài lòng</div>
+              <div className="stat-label">{t('solutions_3d.hero_stat_satisfaction')}</div>
             </div>
           </div>
         </div>
@@ -253,15 +141,15 @@ const Solutions3DViewer: React.FC = () => {
           {/* Menu Panel */}
           <div className="solutions-menu-panel">
             <div className="menu-header">
-              <h3>Giải pháp của chúng tôi</h3>
-              <p>Chọn giải pháp để xem chi tiết</p>
+              <h3>{t('solutions_3d.menu_title')}</h3>
+              <p>{t('solutions_3d.menu_subtitle')}</p>
             </div>
             <div className="solutions-menu">
-              {solutions.map((solution) => (
+              {solutions.map((solution, index) => (
                 <motion.div
                   key={solution.id}
-                  className={`solution-menu-item ${selectedSolution.id === solution.id ? 'active' : ''}`}
-                  onClick={() => setSelectedSolution(solution)}
+                  className={`solution-menu-item ${selectedSolutionIndex === index ? 'active' : ''}`}
+                  onClick={() => setSelectedSolutionIndex(index)}
                   whileHover={{ scale: 1.02 }}
                   whileTap={{ scale: 0.98 }}
                 >
@@ -312,25 +200,25 @@ const Solutions3DViewer: React.FC = () => {
                 className={`tab-btn ${activeTab === 'overview' ? 'active' : ''}`}
                 onClick={() => setActiveTab('overview')}
               >
-                Tổng quan
+                {t('solutions_3d.tab_overview')}
               </button>
               <button
                 className={`tab-btn ${activeTab === 'features' ? 'active' : ''}`}
                 onClick={() => setActiveTab('features')}
               >
-                Tính năng
+                {t('solutions_3d.tab_features')}
               </button>
               <button
                 className={`tab-btn ${activeTab === 'technology' ? 'active' : ''}`}
                 onClick={() => setActiveTab('technology')}
               >
-                Công nghệ
+                {t('solutions_3d.tab_technology')}
               </button>
               <button
                 className={`tab-btn ${activeTab === 'benefits' ? 'active' : ''}`}
                 onClick={() => setActiveTab('benefits')}
               >
-                Lợi ích
+                {t('solutions_3d.tab_benefits')}
               </button>
             </div>
 
@@ -348,7 +236,7 @@ const Solutions3DViewer: React.FC = () => {
                   {activeTab === 'overview' && (
                     <div className="overview-content">
                       <div className="overview-section">
-                        <h3>Ứng dụng chính</h3>
+                        <h3>{t('solutions_3d.overview_applications')}</h3>
                         <div className="applications-grid">
                           {selectedSolution.applications.map((app, index) => (
                             <motion.div
@@ -432,13 +320,13 @@ const Solutions3DViewer: React.FC = () => {
                 style={{ background: 'var(--gradient-primary)' }}
                 onClick={() => setCurrentSection('contact')}
               >
-                <span>Tư vấn triển khai</span>
+                <span>{t('solutions_3d.cta_consultation')}</span>
               </button>
               <button className="btn btn-secondary">
-                <span>Tải brochure</span>
+                <span>{t('solutions_3d.cta_brochure')}</span>
               </button>
               <button className="btn btn-outline">
-                <span>Xem demo</span>
+                <span>{t('solutions_3d.cta_view_demo')}</span>
               </button>
             </div>
           </div>
@@ -448,8 +336,8 @@ const Solutions3DViewer: React.FC = () => {
       {/* Model Section */}
       <div className="model-section">
         <div className="model-header">
-          <h2>Mô hình 3D {selectedSolution.title}</h2>
-          <p>Tương tác với mô hình 3D để khám phá chi tiết kỹ thuật</p>
+          <h2>{t('solutions_3d.model_title')} {selectedSolution.title}</h2>
+          <p>{t('solutions_3d.model_subtitle')}</p>
         </div>
         <div className="model-viewer-container">
           <div className="model-viewer">
@@ -460,7 +348,7 @@ const Solutions3DViewer: React.FC = () => {
                   <span></span>
                   <span></span>
                 </div>
-                <p>Đang tải model 3D...</p>
+                <p>{t('solutions_3d.model_loading')}</p>
               </div>
             }>
               <Canvas
@@ -477,13 +365,13 @@ const Solutions3DViewer: React.FC = () => {
             </Suspense>
             <div className="model-controls">
               <button className="control-btn">
-                <span>Xoay</span>
+                <span>{t('solutions_3d.model_controls.rotate')}</span>
               </button>
               <button className="control-btn">
-                <span>Zoom</span>
+                <span>{t('solutions_3d.model_controls.zoom')}</span>
               </button>
               <button className="control-btn">
-                <span>VR</span>
+                <span>{t('solutions_3d.model_controls.vr')}</span>
               </button>
             </div>
           </div>
@@ -493,14 +381,14 @@ const Solutions3DViewer: React.FC = () => {
       {/* Contact CTA Section */}
       <div className="contact-cta-section">
         <div className="cta-content">
-          <h2>Sẵn sàng bắt đầu dự án của bạn?</h2>
-          <p>Liên hệ với chúng tôi để được tư vấn miễn phí và nhận báo giá chi tiết</p>
+          <h2>{t('solutions_3d.cta_title')}</h2>
+          <p>{t('solutions_3d.cta_subtitle')}</p>
           <div className="cta-buttons">
             <button className="btn btn-primary" onClick={() => setCurrentSection('contact')}>
-              <span>Liên hệ ngay</span>
+              <span>{t('solutions_3d.cta_contact')}</span>
             </button>
             <button className="btn btn-secondary">
-              <span>Yêu cầu demo</span>
+              <span>{t('solutions_3d.cta_demo')}</span>
             </button>
           </div>
         </div>

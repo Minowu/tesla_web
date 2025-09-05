@@ -5,15 +5,19 @@ import en from './locales/en/translation.json';
 import vi from './locales/vi/translation.json';
 import enTechnologies from './locales/en/technologies.json';
 import viTechnologies from './locales/vi/technologies.json';
+import enSolutions from './locales/en/solutions.json';
+import viSolutions from './locales/vi/solutions.json';
 
 export const resources = {
   en: { 
     translation: en,
-    technologies: enTechnologies
+    technologies: enTechnologies,
+    solutions: enSolutions
   },
   vi: { 
     translation: vi,
-    technologies: viTechnologies
+    technologies: viTechnologies,
+    solutions: viSolutions
   },
 } as const;
 

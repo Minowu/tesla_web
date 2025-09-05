@@ -173,7 +173,6 @@ const AboutSection: React.FC = () => {
                 className="btn btn-secondary"
                 onClick={() => setCurrentSection('solutions')}
               >
-                <span>💡</span>
                 <span>{t('about.cta.solutions_btn')}</span>
               </button>
             </div>

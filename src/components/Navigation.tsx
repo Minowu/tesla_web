@@ -15,12 +15,12 @@ const Navigation: React.FC = () => {
   const { t, i18n } = useTranslation();
 
   const menuItems = [
-    { id: 'home', label: t('nav.home'), icon: '🏠', path: '/home', isLink: true },
-    { id: 'products', label: t('nav.products'), icon: '🤖', path: '/products', isLink: true },
-    { id: 'solutions', label: t('nav.solutions'), icon: '💡', path: '/solutions', isLink: true },
-    { id: 'technology', label: t('nav.technology'), icon: '⚡', path: '/technology', isLink: true },
-    { id: 'about', label: t('nav.about'), icon: 'ℹ️', path: '/about-us', isLink: true },
-    { id: 'blog', label: t('nav.blog'), icon: '💬', path: '/blog', isLink: true }
+    { id: 'home', label: t('nav.home'), path: '/home', isLink: true },
+    { id: 'products', label: t('nav.products'), path: '/products', isLink: true },
+    { id: 'solutions', label: t('nav.solutions'), path: '/solutions', isLink: true },
+    { id: 'technology', label: t('nav.technology'), path: '/technology', isLink: true },
+    { id: 'about', label: t('nav.about'), path: '/about-us', isLink: true },
+    { id: 'blog', label: t('nav.blog'), path: '/blog', isLink: true }
   ];
 
   useEffect(() => {
@@ -266,7 +266,6 @@ const Navigation: React.FC = () => {
                       className={`mobile-nav-item ${isItemActive(item) ? 'active' : ''}`}
                       onClick={() => setIsMobileMenuOpen(false)}
                     >
-                      <span>{item.icon}</span>
                       <span>{item.label}</span>
                     </Link>
                   ) : (
@@ -274,7 +273,6 @@ const Navigation: React.FC = () => {
                       className={`mobile-nav-item ${isItemActive(item) ? 'active' : ''}`}
                       onClick={() => handleNavClick(item.id)}
                     >
-                      <span>{item.icon}</span>
                       <span>{item.label}</span>
                     </button>
                   )}

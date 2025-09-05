@@ -103,7 +103,6 @@ export default function ProductDetail() {
                 className={`product-tab ${activeTab === category.id ? 'active' : ''}`}
                 onClick={() => setActiveTab(category.id)}
               >
-                <span className="tab-icon">{category.icon}</span>
                 <span className="tab-name">{category.name}</span>
               </button>
             ))}

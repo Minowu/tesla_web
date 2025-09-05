@@ -12,7 +12,6 @@ export interface ProductSpec {
 export interface ProductMainCategory {
     id: string
     name: string
-    icon: string
     specs: ProductSpec[]
 }
 

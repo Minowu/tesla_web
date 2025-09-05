@@ -61,7 +61,8 @@
     "section_subtitle": "Khám phá các giải pháp công nghệ tiên tiến giúp doanh nghiệp của bạn phát triển bền vững",
     "btn_explore": "Khám phá chi tiết",
     "btn_contact": "Liên hệ tư vấn",
-    "features_title": "Tính năng nổi bật"
+    "features_title": "Tính năng nổi bật",
+    "solution_badge": "Giải pháp"
   },
   "solutions_hex": {
     "title_prefix": "Giải Pháp",
@@ -69,6 +70,39 @@
     "features_title": "Tính năng chính",
     "btn_explore": "Khám phá chi tiết",
     "btn_contact": "Liên hệ tư vấn"
+  },
+  "solutions_3d": {
+    "hero_badge": "Giải pháp Công nghệ Hàng đầu",
+    "hero_title": "Tương lai của",
+    "hero_highlight": "Tự động hóa",
+    "hero_title_end": "bắt đầu từ đây",
+    "hero_subtitle": "Khám phá các giải pháp robot tự động hóa tiên tiến được thiết kế đặc biệt cho Industry 4.0",
+    "hero_stat_projects": "Dự án thành công",
+    "hero_stat_experience": "Năm kinh nghiệm",
+    "hero_stat_satisfaction": "Khách hàng hài lòng",
+    "menu_title": "Giải pháp của chúng tôi",
+    "menu_subtitle": "Chọn giải pháp để xem chi tiết",
+    "tab_overview": "Tổng quan",
+    "tab_features": "Tính năng",
+    "tab_technology": "Công nghệ",
+    "tab_benefits": "Lợi ích",
+    "overview_applications": "Ứng dụng chính",
+    "model_title": "Mô hình 3D",
+    "model_subtitle": "Tương tác với mô hình 3D để khám phá chi tiết kỹ thuật",
+    "model_loading": "Đang tải model 3D...",
+    "model_controls": {
+      "rotate": "Xoay",
+      "zoom": "Zoom",
+      "vr": "VR"
+    },
+    "cta_title": "Sẵn sàng bắt đầu dự án của bạn?",
+    "cta_subtitle": "Liên hệ với chúng tôi để được tư vấn miễn phí và nhận báo giá chi tiết",
+    "cta_contact": "Liên hệ ngay",
+    "cta_demo": "Yêu cầu demo",
+    "cta_consultation": "Tư vấn triển khai",
+    "cta_brochure": "Tải brochure",
+    "cta_view_demo": "Xem demo",
+    "chat_text": "Chat với chúng tôi"
   },
   "services": {
     "section_title": "Dịch vụ Công nghệ",

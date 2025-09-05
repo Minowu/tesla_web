@@ -1,112 +1,20 @@
 [
   {
-    "id": "laser-cutting",
-    "title": "Cắt Laser Thông Minh",
-    "description": "Hệ thống cắt laser tự động với độ chính xác cao, tích hợp AI để tối ưu hóa quy trình sản xuất.",
-    "icon": "⚡",
+    "id": "agv",
     "color": "#00d4ff",
-    "modelKey": "simulation_laser_cutting_robot_systems",
-    "features": ["Độ chính xác ±0.01mm", "Tốc độ cắt 100m/phút", "Tích hợp AI", "Bảo trì thông minh"]
+    "gradient": "linear-gradient(135deg, #00d4ff, #0099cc)",
+    "modelPath": "/assets/models/industrial_-_3d_agv__trolley_-_omrom.glb"
   },
   {
-    "id": "smart-application",
-    "title": "Ứng Dụng Thông Minh",
-    "description": "Phát triển ứng dụng IoT và AI cho các ngành công nghiệp, giúp tối ưu hóa hiệu suất sản xuất.",
-    "icon": "🤖",
+    "id": "camera",
     "color": "#ff6b35",
-    "modelKey": "assembly_solar",
-    "features": ["IoT Integration", "Real-time Monitoring", "Predictive Analytics", "Cloud Platform"]
+    "gradient": "linear-gradient(135deg, #ff6b35, #cc5500)",
+    "modelPath": "/assets/models/logistic_robot_test__2.glb"
   },
   {
-    "id": "robotic-automation",
-    "title": "Tự Động Hóa Robot",
-    "description": "Giải pháp robot công nghiệp tiên tiến với khả năng học tập và thích ứng với môi trường sản xuất.",
-    "icon": "🦾",
-    "color": "#ff4757",
-    "modelKey": "industrial_agv_trolley_omrom",
-    "features": ["Collaborative Robots", "Machine Learning", "Safety Systems", "Easy Programming"]
-  },
-  {
-    "id": "iot-integration",
-    "title": "Tích Hợp IoT",
-    "description": "Hệ thống IoT toàn diện kết nối thiết bị, thu thập dữ liệu và phân tích để ra quyết định thông minh.",
-    "icon": "🌐",
-    "color": "#3742fa",
-    "modelKey": "logistic_robot_test__2",
-    "features": ["Sensor Networks", "Data Analytics", "Cloud Integration", "Security First"]
-  },
-  {
-    "id": "robot-system",
-    "title": "HỆ THỐNG ROBOT",
-    "subtitle": "Robot System",
-    "icon": "🤖",
-    "color": "var(--primary)",
-    "description": "Hệ thống robot công nghiệp tự động hóa với độ chính xác cao",
-    "features": ["Cánh tay robot công nghiệp", "Xử lý vật thể tự động", "Độ chính xác cao", "Tích hợp AI"]
-  },
-  {
-    "id": "packing-system",
-    "title": "HỆ THỐNG ĐÓNG GÓI",
-    "subtitle": "Packing System",
-    "icon": "📦",
-    "color": "var(--secondary)",
-    "description": "Dây chuyền đóng gói tự động cho nhà máy sản xuất",
-    "features": ["Đóng gói tự động", "Dây chuyền sản xuất", "Kiểm soát chất lượng", "Tối ưu hiệu suất"]
-  },
-  {
-    "id": "smart-warehouse",
-    "title": "KHO HÀNG THÔNG MINH",
-    "subtitle": "Smart Warehouse",
-    "icon": "🏭",
-    "color": "var(--accent)",
-    "description": "Hệ thống kho hàng tự động với AS/RS và robot vận chuyển",
-    "features": ["AS/RS tự động", "Robot vận chuyển", "Quản lý kho thông minh", "Truy xuất nhanh"]
-  },
-  {
-    "id": "services",
-    "title": "DỊCH VỤ LẮP ĐẶT & BẢO TRÌ",
-    "subtitle": "Services",
-    "icon": "🔧",
-    "color": "var(--primary)",
-    "description": "Dịch vụ lắp đặt, bảo trì và hỗ trợ kỹ thuật chuyên nghiệp",
-    "features": ["Lắp đặt chuyên nghiệp", "Bảo trì định kỳ", "Hỗ trợ 24/7", "Đào tạo nhân viên"]
-  },
-  {
-    "id": "ai-vision-robot",
-    "title": "HỆ THỐNG ROBOT, CAMERA AI",
-    "subtitle": "AI Vision, Robot System",
-    "icon": "👁️",
-    "color": "var(--secondary)",
-    "description": "Hệ thống thị giác máy tính tích hợp AI cho robot",
-    "features": ["AI Vision Processing", "Computer Vision", "Machine Learning", "Real-time Analysis"]
-  },
-  {
-    "id": "smart-locker",
-    "title": "TỦ ĐỒ THÔNG MINH",
-    "subtitle": "Smart Locker",
-    "icon": "🗄️",
-    "color": "var(--accent)",
-    "description": "Hệ thống tủ khóa thông minh cho nhận/gửi bưu kiện tự động",
-    "features": ["Nhận/gửi tự động", "Bảo mật cao", "Quản lý thông minh", "Tích hợp IoT"]
-  },
-  {
-    "id": "smart-factory",
-    "title": "NHÀ MÁY THÔNG MINH",
-    "subtitle": "Smart Factory",
-    "icon": "🏭",
-    "color": "var(--primary)",
-    "description": "Nhà máy tự động hóa cao với robot và máy móc thông minh",
-    "features": ["Tự động hóa toàn diện", "Robot công nghiệp", "Trung tâm điều khiển", "IoT Integration"]
-  },
-  {
-    "id": "smart-building",
-    "title": "TÒA NHÀ THÔNG MINH",
-    "subtitle": "Smart Building",
-    "icon": "🏢",
-    "color": "var(--secondary)",
-    "description": "Hệ thống tòa nhà thông minh với camera an ninh và quản lý năng lượng",
-    "features": ["Camera an ninh", "Điều khiển ánh sáng", "Quản lý năng lượng", "Hệ thống thông minh"]
+    "id": "warehouse",
+    "color": "#10b981",
+    "gradient": "linear-gradient(135deg, #10b981, #059669)",
+    "modelPath": "/assets/models/assembly_solar.glb"
   }
 ]
-
-

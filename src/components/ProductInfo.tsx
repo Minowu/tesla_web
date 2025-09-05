@@ -214,7 +214,6 @@ export default function ProductInfo() {
           {/* Empty State */}
           {getCurrentProducts().length === 0 && (
             <motion.div initial={{ opacity: 0 }} animate={{ opacity: 1 }} className="empty-state">
-              <div className="empty-state-icon">📦</div>
               <h3 className="empty-state-title">{t('product.no_products')}</h3>
               <p className="empty-state-description">
                 {selectedBrand && selectedCategory 

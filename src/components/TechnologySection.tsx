@@ -214,7 +214,6 @@ const TechnologySection: React.FC = () => {
                 className="btn btn-primary"
                 onClick={() => navigate('/solutions')}
               >
-                <span>💡</span>
                 <span>{t('technology_page.btn_solutions')}</span>
               </button>
               
