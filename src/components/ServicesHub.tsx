@@ -84,13 +84,12 @@ const ServicesHub: React.FC = () => {
   };
 
   const cardVariants = {
-    hidden: { opacity: 0, y: 50, scale: 0.9 },
+    hidden: { opacity: 0, scale: 0.1 },
     visible: { 
       opacity: 1, 
-      y: 0, 
       scale: 1,
       transition: {
-        duration: 0.6,
+        duration: 0.4,
         ease: "easeOut"
       }
     }
@@ -125,6 +124,9 @@ const ServicesHub: React.FC = () => {
               key={service.id} 
               className="service-card"
               variants={cardVariants}
+              initial="hidden"
+              whileInView="visible"
+              viewport={{amount: 0.2 }}
             >
               <h3 className="service-title">{service.title}</h3>
               <p className="service-description">{service.description}</p>
