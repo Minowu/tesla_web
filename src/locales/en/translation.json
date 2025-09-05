@@ -71,7 +71,67 @@
   },
   "services": {
     "section_title": "Technology Services",
-    "section_subtitle": "Providing advanced technology services to drive digital transformation"
+    "section_subtitle": "Providing advanced technology services to drive digital transformation",
+    "ai_ml": {
+      "title": "AI & Machine Learning",
+      "description": "Developing AI and ML solutions for intelligent automation.",
+      "features": [
+        "Computer Vision",
+        "Natural Language Processing",
+        "Predictive Analytics", 
+        "Deep Learning Models"
+      ]
+    },
+    "iot": {
+      "title": "Internet of Things",
+      "description": "Connect and monitor smart devices in IoT ecosystem.",
+      "features": [
+        "Sensor Networks",
+        "Real-time Monitoring",
+        "Data Analytics",
+        "Cloud Integration"
+      ]
+    },
+    "robotics": {
+      "title": "Industrial Robotics",
+      "description": "Industrial robot solutions for manufacturing automation.",
+      "features": [
+        "Collaborative Robots",
+        "Automated Assembly",
+        "Quality Inspection",
+        "Material Handling"
+      ]
+    },
+    "automation": {
+      "title": "Process Automation",
+      "description": "Automate production and business processes.",
+      "features": [
+        "Workflow Automation",
+        "Process Optimization",
+        "Performance Monitoring",
+        "Error Prevention"
+      ]
+    },
+    "analytics": {
+      "title": "Data Analytics",
+      "description": "Data analysis to optimize performance and decision making.",
+      "features": [
+        "Big Data Processing",
+        "Business Intelligence",
+        "Performance Metrics",
+        "Predictive Modeling"
+      ]
+    },
+    "maintenance": {
+      "title": "Predictive Maintenance",
+      "description": "Predictive maintenance to minimize downtime.",
+      "features": [
+        "Condition Monitoring",
+        "Failure Prediction",
+        "Maintenance Scheduling",
+        "Cost Optimization"
+      ]
+    }
   },
   "home_sections": {
     "case_studies_title": "Featured Projects",

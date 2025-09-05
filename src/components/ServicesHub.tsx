@@ -3,75 +3,46 @@ import { motion, useInView, useAnimation } from 'framer-motion';
 import { useTranslation } from 'react-i18next';
 
 const ServicesHub: React.FC = () => {
+  const { t } = useTranslation();
+  
   const services = [
     {
       id: 'ai-ml',
-      title: 'AI & Machine Learning',
-      description: 'Phát triển các giải pháp AI và ML cho tự động hóa thông minh.',
-      features: [
-        'Computer Vision',
-        'Natural Language Processing',
-        'Predictive Analytics',
-        'Deep Learning Models'
-      ]
+      title: t('services.ai_ml.title'),
+      description: t('services.ai_ml.description'),
+      features: t('services.ai_ml.features', { returnObjects: true }) as string[]
     },
     {
       id: 'iot',
-      title: 'Internet of Things',
-      description: 'Kết nối và giám sát thiết bị thông minh trong hệ sinh thái IoT.',
-      features: [
-        'Sensor Networks',
-        'Real-time Monitoring',
-        'Data Analytics',
-        'Cloud Integration'
-      ]
+      title: t('services.iot.title'),
+      description: t('services.iot.description'),
+      features: t('services.iot.features', { returnObjects: true }) as string[]
     },
     {
       id: 'robotics',
-      title: 'Industrial Robotics',
-      description: 'Giải pháp robot công nghiệp cho sản xuất tự động hóa.',
-      features: [
-        'Collaborative Robots',
-        'Automated Assembly',
-        'Quality Inspection',
-        'Material Handling'
-      ]
+      title: t('services.robotics.title'),
+      description: t('services.robotics.description'),
+      features: t('services.robotics.features', { returnObjects: true }) as string[]
     },
     {
       id: 'automation',
-      title: 'Process Automation',
-      description: 'Tự động hóa quy trình sản xuất và kinh doanh.',
-      features: [
-        'Workflow Automation',
-        'Process Optimization',
-        'Performance Monitoring',
-        'Error Prevention'
-      ]
+      title: t('services.automation.title'),
+      description: t('services.automation.description'),
+      features: t('services.automation.features', { returnObjects: true }) as string[]
     },
     {
       id: 'analytics',
-      title: 'Data Analytics',
-      description: 'Phân tích dữ liệu để tối ưu hóa hiệu suất và ra quyết định.',
-      features: [
-        'Big Data Processing',
-        'Business Intelligence',
-        'Performance Metrics',
-        'Predictive Modeling'
-      ]
+      title: t('services.analytics.title'),
+      description: t('services.analytics.description'),
+      features: t('services.analytics.features', { returnObjects: true }) as string[]
     },
     {
       id: 'maintenance',
-      title: 'Predictive Maintenance',
-      description: 'Bảo trì dự đoán để giảm thiểu thời gian ngừng máy.',
-      features: [
-        'Condition Monitoring',
-        'Failure Prediction',
-        'Maintenance Scheduling',
-        'Cost Optimization'
-      ]
+      title: t('services.maintenance.title'),
+      description: t('services.maintenance.description'),
+      features: t('services.maintenance.features', { returnObjects: true }) as string[]
     }
   ];
-  const { t } = useTranslation();
   // Animation refs và controls
   const headerRef = useRef(null);
   const gridRef = useRef(null);

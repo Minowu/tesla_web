@@ -1032,7 +1032,7 @@ a.mobile-nav-item.active {
   transition: all var(--transition-normal);
   animation: fadeInUp 0.6s ease-out calc(var(--hex-index) * 0.1s) both;
   width: 180px;
-  height: 140px;
+  height: 140px;  
 }
 
 .hexagon-item::before {
@@ -1056,7 +1056,7 @@ a.mobile-nav-item.active {
   left: 2px;
   right: 2px;
   bottom: 2px;
-  background:var(--bg-glass);
+  background:var(--bg-glass-sticky);
   backdrop-filter: blur(20px);
   clip-path: polygon(50% 0%, 100% 25%, 100% 75%, 50% 100%, 0% 75%, 0% 25%);
   transition: all var(--transition-normal);
@@ -1089,7 +1089,6 @@ a.mobile-nav-item.active {
   align-items: center;
   justify-content: center;
   border-radius: 8px;
-  background: none;
 }
 
 .hexagon-icon {

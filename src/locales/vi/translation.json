@@ -72,7 +72,67 @@
   },
   "services": {
     "section_title": "Dịch vụ Công nghệ",
-    "section_subtitle": "Cung cấp các dịch vụ công nghệ tiên tiến để thúc đẩy chuyển đổi số"
+    "section_subtitle": "Cung cấp các dịch vụ công nghệ tiên tiến để thúc đẩy chuyển đổi số",
+    "ai_ml": {
+      "title": "AI & Machine Learning",
+      "description": "Phát triển các giải pháp AI và ML cho tự động hóa thông minh.",
+      "features": [
+        "Thị giác máy tính",
+        "Xử lý ngôn ngữ tự nhiên", 
+        "Dự đoán phân tích",
+        "Mô hình học sâu"
+      ]
+    },
+    "iot": {
+      "title": "Internet of Things",
+      "description": "Kết nối và giám sát thiết bị thông minh trong hệ sinh thái IoT.",
+      "features": [
+        "Mạng Sensor",
+        "Giám sát thời gian thực",
+        "Data Analytics", 
+        "Tích hợp Cloud"
+      ]
+    },
+    "robotics": {
+      "title": "Industrial Robotics",
+      "description": "Giải pháp robot công nghiệp cho sản xuất tự động hóa.",
+      "features": [
+        "Robot cộng tác",
+        "Tự động hóa lắp ráp",
+        "Kiểm tra chất lượng",
+        "Vận chuyển vật liệu"
+      ]
+    },
+    "automation": {
+      "title": "Process Automation",
+      "description": "Tự động hóa quy trình sản xuất và kinh doanh.",
+      "features": [
+        "Tự động hóa quy trình",
+        "Tối ưu hóa quy trình",
+        "Giám sát hiệu suất",
+        "Ngăn ngừa lỗi"
+      ]
+    },
+    "analytics": {
+      "title": "Data Analytics",
+      "description": "Phân tích dữ liệu để tối ưu hóa hiệu suất và ra quyết định.",
+      "features": [
+        "Xử lý dữ liệu lớn",
+        "Kinh doanh thông minh",
+        "Chỉ số hiệu suất",
+        "Dự đoán mô hình"
+      ]
+    },
+    "maintenance": {
+      "title": "Predictive Maintenance",
+      "description": "Bảo trì dự đoán để giảm thiểu thời gian ngừng máy.",
+      "features": [
+        "Giám sát điều kiện",
+        "Dự đoán lỗi",
+        "Lịch bảo trì",
+        "Tối ưu hóa chi phí"
+      ]
+    }
   },
   "home_sections": {
     "case_studies_title": "Dự Án Tiêu Biểu",

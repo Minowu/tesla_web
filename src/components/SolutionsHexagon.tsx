@@ -86,7 +86,7 @@ const SolutionsHexagon: React.FC = () => {
         line.setAttribute('y1', startY.toString());
         line.setAttribute('x2', x.toString());
         line.setAttribute('y2', y.toString());
-        line.setAttribute('stroke', hex.style.getPropertyValue('--hex-color') || '#000');
+        line.setAttribute('stroke', 'var(--primary)');
         line.setAttribute('stroke-width', '2');
         svgRef.current?.appendChild(line);
       }
