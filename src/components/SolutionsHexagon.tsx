@@ -152,6 +152,7 @@ const SolutionsHexagon: React.FC = () => {
                 } as any}
               >
                 <div className="hexagon-content">
+                  <div className="hexagon-icon"><img style={{marginTop : '15px', width: '36px', height: '36px' }} src={solution.image} alt={solution.subtitle} /></div>
                   <div className="hexagon-text">
                     <h4>{solution.title}</h4>
                     <p>{solution.subtitle}</p>
