@@ -3514,12 +3514,21 @@ a.mobile-nav-item.active {
   text-align: center;
 } 
   
-@keyframes slide {
+@keyframes slideleft {
   from {
     transform: translateX(0);
   }
   to {
     transform: translateX(-100%);
+  }
+}
+
+@keyframes slideright {
+  from {
+    transform: translateX(0);
+  }
+  to {
+    transform: translateX(100%);
   }
 }
 
@@ -3562,14 +3571,13 @@ a.mobile-nav-item.active {
 .logos-slide {
   display: inline-block;
   background: transparent;
-
-  animation: 19s slide infinite linear;
+  animation: 19s slideleft infinite linear;
 }
 
 .logos-slide img {
   height: 100%;
-  margin: 0 10px;
-  border-radius: 10%;
+  margin: 0 5px;
+  border-radius: 5%;
 }
 /* ===== ANIMATIONS ===== */
 @keyframes gridMove {

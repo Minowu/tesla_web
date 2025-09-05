@@ -16,9 +16,14 @@ function Carousel({ items, title }: CarouselProps) {
     <div className="carousel">
       {title && <h2>{title}</h2>}
       <div className="logos">
-        <div className="logos-slide">
+        <div className="logos-slide partners">
           {items.map((item) => (
             <img key={`a-${item.name}`} src={item.image} alt={item.name} />
+          ))}
+        </div>
+        <div className="logos-slide customers">
+          {items.map((item) => (
+            <img key={`c-${item.name}`} src={item.image} alt={item.name} />
           ))}
         </div>
         <div className="logos-slide certificates">
@@ -42,6 +47,23 @@ const logos: Item[] = [
   { name: "IRAYPLE", image: "/logo_partner/logo7.png" },
 ];
 
+const Customers: Item[] = [
+  { name: "Customer 1", image: "/logo_customer/customer1.png" },
+  { name: "Customer 2", image: "/logo_customer/customer2.png" },
+  { name: "Customer 3", image: "/logo_customer/customer3.png" },
+  { name: "Customer 4", image: "/logo_customer/customer4.png" },
+  { name: "Customer 5", image: "/logo_customer/customer5.png" },
+  { name: "Customer 6", image: "/logo_customer/customer6.png" },
+  { name: "Customer 7", image: "/logo_customer/customer7.png" },
+  { name: "Customer 8", image: "/logo_customer/customer8.png" },
+  { name: "Customer 9", image: "/logo_customer/customer9.png" },
+  { name: "Customer 10", image: "/logo_customer/customer10.png" },
+  { name: "Customer 11", image: "/logo_customer/customer11.png" },
+  { name: "Customer 12", image: "/logo_customer/customer12.png" },
+  { name: "Customer 13", image: "/logo_customer/customer13.png" },
+  { name: "Customer 14", image: "/logo_customer/customer14.png" }
+];
+
 // Data cho chứng nhận
 const certificates: Item[] = [
   { name: "WARSONCO", image: "/logo_partner/certificate1.png" },
@@ -51,6 +73,7 @@ const certificates: Item[] = [
   { name: "ISO 14065", image: "/logo_partner/certificate5.png" },
 ];
 
+
 // Export component chính
 import { useTranslation } from 'react-i18next';
 
@@ -59,6 +82,7 @@ export default function CarouselsDemo() {
   return (
     <div>
       <Carousel items={logos} title={t('logo_carousel.partners')} />
+      <Carousel items={Customers} title={t('logo_carousel.customers')} />
       <Carousel items={certificates} title={t('logo_carousel.certificates')} />
     </div>
   );
