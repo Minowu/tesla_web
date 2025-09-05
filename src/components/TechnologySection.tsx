@@ -3,8 +3,8 @@ import { useNavigate } from 'react-router-dom';
 import { Canvas } from '@react-three/fiber';
 import { OrbitControls, Environment, Float } from '@react-three/drei';
 import { useGLTF } from '@react-three/drei';
-import technologiesData from '../data/technologies.json';
 import { useTranslation } from 'react-i18next';
+import technologiesData from '../data/technologies.json';
 
 
 
@@ -70,6 +70,7 @@ const ModelFallback = ({ color }: { color: string }) => (
 const TechnologySection: React.FC = () => {
   const navigate = useNavigate();
   const { t } = useTranslation();
+  const { t: tTech } = useTranslation('technologies');
   const [activeTechnology, setActiveTechnology] = useState(0);
 
   const modelMap: Record<string, React.FC> = {
@@ -77,10 +78,16 @@ const TechnologySection: React.FC = () => {
     simulation_laser_cutting_robot_systems: LaserModel,
     industrial_agv_trolley_omrom: AGVModel,
   };
-  const technologies = (technologiesData as any[]).map((t) => ({
-    ...t,
-    model: modelMap[(t as any).modelKey] || (() => null),
-  }));
+  
+  // Combine data from technologies.json with translations
+  const technologies = (technologiesData as any[]).map((tech) => {
+    const translatedData = tTech(tech.id, { returnObjects: true }) as any;
+    return {
+      ...tech,
+      ...translatedData,
+      model: modelMap[tech.modelKey] || (() => null),
+    };
+  });
 
   useEffect(() => {
     const interval = setInterval(() => {
@@ -179,7 +186,7 @@ const TechnologySection: React.FC = () => {
 
             <div className="technology-content">
               <div className="technology-features">
-                <h4>Tính năng chính</h4>
+                <h4>{t('technology_page.features_title')}</h4>
                 <ul>
                   {(currentTech.features as string[]).map((feature: string, index: number) => (
                     <li key={index}>
@@ -191,7 +198,7 @@ const TechnologySection: React.FC = () => {
               </div>
 
               <div className="technology-applications">
-                <h4>Ứng dụng</h4>
+                <h4>{t('technology_page.applications_title')}</h4>
                 <div className="applications-grid">
                   {(currentTech.applications as string[]).map((app: string, index: number) => (
                     <div key={index} className="application-item">

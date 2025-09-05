@@ -166,7 +166,9 @@
     "stat_accuracy": "Accuracy",
     "stat_uptime": "Uptime",
     "stat_cost": "Cost saving",
-    "stat_productivity": "Productivity increase up to"
+    "stat_productivity": "Productivity increase up to",
+    "features_title": "Key Features",
+    "applications_title": "Applications"
   },
   "product": {
     "view_details": "View details",

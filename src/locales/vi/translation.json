@@ -167,7 +167,9 @@
     "stat_accuracy": "Độ chính xác",
     "stat_uptime": "Hoạt động",
     "stat_cost": "Tiết kiệm chi phí",
-    "stat_productivity": "Tăng hiệu suất lên đến"
+    "stat_productivity": "Tăng hiệu suất lên đến",
+    "features_title": "Tính năng chính",
+    "applications_title": "Ứng dụng"
   },
   "product": {
     "view_details": "Xem chi tiết",

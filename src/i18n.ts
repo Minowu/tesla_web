@@ -3,10 +3,18 @@ import { initReactI18next } from 'react-i18next';
 
 import en from './locales/en/translation.json';
 import vi from './locales/vi/translation.json';
+import enTechnologies from './locales/en/technologies.json';
+import viTechnologies from './locales/vi/technologies.json';
 
 export const resources = {
-  en: { translation: en },
-  vi: { translation: vi },
+  en: { 
+    translation: en,
+    technologies: enTechnologies
+  },
+  vi: { 
+    translation: vi,
+    technologies: viTechnologies
+  },
 } as const;
 
 const initialLang = (typeof window !== 'undefined' && localStorage.getItem('thadorobot-lang') === 'en') ? 'en' : 'vi';
