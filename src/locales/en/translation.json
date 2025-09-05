@@ -356,5 +356,10 @@
       "clients": "Trusted clients"
     }
   }
+  ,
+  "logo_carousel": {
+    "partners": "Partners",
+    "certificates": "Certificates"
+  }
 }
 

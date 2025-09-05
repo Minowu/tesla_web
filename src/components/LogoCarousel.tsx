@@ -21,7 +21,7 @@ function Carousel({ items, title }: CarouselProps) {
             <img key={`a-${item.name}`} src={item.image} alt={item.name} />
           ))}
         </div>
-        <div className="logos-slide">
+        <div className="logos-slide certificates">
           {items.map((item) => (
             <img key={`b-${item.name}`} src={item.image} alt={item.name} />
           ))}
@@ -52,11 +52,14 @@ const certificates: Item[] = [
 ];
 
 // Export component chính
+import { useTranslation } from 'react-i18next';
+
 export default function CarouselsDemo() {
+  const { t } = useTranslation();
   return (
     <div>
-      <Carousel items={logos} title="Đối tác" />
-      <Carousel items={certificates} title="Chứng nhận" />
+      <Carousel items={logos} title={t('logo_carousel.partners')} />
+      <Carousel items={certificates} title={t('logo_carousel.certificates')} />
     </div>
   );
 }

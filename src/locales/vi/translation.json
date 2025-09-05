@@ -357,5 +357,10 @@
       "clients": "Khách hàng tin tưởng"
     }
   }
+  ,
+  "logo_carousel": {
+    "partners": "Đối tác",
+    "certificates": "Chứng nhận"
+  }
 }
 
