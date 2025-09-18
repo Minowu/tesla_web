@@ -1,8 +1,43 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { useTranslation } from 'react-i18next';
 
 const ContactUs: React.FC = () => {
   const { t } = useTranslation();
+  const [isSubmitting, setIsSubmitting] = useState(false);
+  const [submitStatus, setSubmitStatus] = useState<'idle' | 'success' | 'error'>('idle');
+  const [message, setMessage] = useState('');
+
+  const handleSubmit = async (e: React.FormEvent) => {
+    e.preventDefault();
+    setIsSubmitting(true);
+    setSubmitStatus('idle');
+
+    const formData = new FormData(e.target as HTMLFormElement);
+    
+    try {
+      const response = await fetch('https://formspree.io/f/xnnbkrjp', {
+        method: 'POST',
+        body: formData,
+        headers: {
+          'Accept': 'application/json'
+        }
+      });
+
+      if (response.ok) {
+        setSubmitStatus('success');
+        setMessage('Cảm ơn bạn! Email đã được gửi thành công. Chúng tôi sẽ liên hệ lại sớm nhất có thể.');
+        (e.target as HTMLFormElement).reset();
+      } else {
+        setSubmitStatus('error');
+        setMessage('Có lỗi xảy ra khi gửi email. Vui lòng thử lại sau.');
+      }
+    } catch (error) {
+      setSubmitStatus('error');
+      setMessage('Có lỗi xảy ra khi gửi email. Vui lòng thử lại sau.');
+    } finally {
+      setIsSubmitting(false);
+    }
+  };
   
   return (
     <div className="contact-section">
@@ -48,22 +83,32 @@ const ContactUs: React.FC = () => {
           </div>
           <div className="contact-form">
             <h3>{t('contact.form.title')}</h3>
-            <form>
+            <form onSubmit={handleSubmit}>
+              <input type="hidden" name="_subject" value="Có người xem trang web muốn liên hệ với công ty" />
               <div className="form-group">
-                <input type="text" placeholder={t('contact.form.name_placeholder')} required />
+                <input type="text" name="name" placeholder={t('contact.form.name_placeholder')} required />
               </div>
               <div className="form-group">
-                <input type="email" placeholder={t('contact.form.email_placeholder')} required />
+                <input type="email" name="email" placeholder={t('contact.form.email_placeholder')} required />
               </div>
               <div className="form-group">
-                <input type="tel" placeholder={t('contact.form.phone_placeholder')} />
+                <input type="tel" name="phone" placeholder={t('contact.form.phone_placeholder')} />
               </div>
               <div className="form-group">
-                <textarea placeholder={t('contact.form.message_placeholder')} rows={4} required></textarea>
+                <textarea name="message" placeholder={t('contact.form.message_placeholder')} rows={4} required></textarea>
               </div>
-              <button type="submit" className="btn btn-primary">
-                <span>📤</span>
-                <span>{t('contact.form.submit_btn')}</span>
+              
+              {/* Status Message */}
+              {submitStatus !== 'idle' && (
+                <div className={`form-message ${submitStatus === 'success' ? 'success' : 'error'}`}>
+                  <span>{submitStatus === 'success' ? '✅' : '❌'}</span>
+                  <span>{message}</span>
+                </div>
+              )}
+              
+              <button type="submit" className="btn btn-primary" disabled={isSubmitting}>
+                <span>{isSubmitting ? '⏳' : '📤'}</span>
+                <span>{isSubmitting ? 'Đang gửi...' : t('contact.form.submit_btn')}</span>
               </button>
             </form>
           </div>

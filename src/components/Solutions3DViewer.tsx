@@ -106,35 +106,6 @@ const Solutions3DViewer: React.FC = () => {
 
   return (
     <div className="solutions-3d-viewer">
-      {/* Hero Section */}
-      <div className="solutions-hero">
-        <div className="hero-content">
-          <div className="hero-badge">
-            <span>{t('solutions_3d.hero_badge')}</span>
-          </div>
-          <h1 className="hero-title">
-            {t('solutions_3d.hero_title')} <span className="title-highlight">{t('solutions_3d.hero_highlight')}</span> {t('solutions_3d.hero_title_end')}
-          </h1>
-          <p className="hero-subtitle">
-            {t('solutions_3d.hero_subtitle')}
-          </p>
-          <div className="hero-stats">
-            <div className="stat-item">
-              <div className="stat-number">50+</div>
-              <div className="stat-label">{t('solutions_3d.hero_stat_projects')}</div>
-            </div>
-            <div className="stat-item">
-              <div className="stat-number">5+</div>
-              <div className="stat-label">{t('solutions_3d.hero_stat_experience')}</div>
-            </div>
-            <div className="stat-item">
-              <div className="stat-number">99%</div>
-              <div className="stat-label">{t('solutions_3d.hero_stat_satisfaction')}</div>
-            </div>
-          </div>
-        </div>
-      </div>
-
       {/* Main Content */}
       <div className="solutions-main">
         <div className="solutions-grid">
@@ -397,10 +368,9 @@ const Solutions3DViewer: React.FC = () => {
 
       {/* Chat Button */}
       <div className="chat-button">
-        <a href="http://zaloapp.com/qr/p/9c0gt66v8htn"style={{textDecoration: 'none',color: 'var(--text-primary)'}}>
+        <a href="https://zalo.me/84986249212"style={{textDecoration: 'none',color: 'var(--text-primary)'}}>
         <span className="chat-icon">💬</span>
         <span className="chat-text">Chat với chúng tôi</span>
-        <span className="chat-emoji">👋</span>
         </a>
       </div>
     </div>

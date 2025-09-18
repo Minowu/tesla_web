@@ -1,6 +1,6 @@
-import { useState } from "react"
+import { useEffect, useMemo, useState } from "react"
 import { motion, AnimatePresence } from "framer-motion"
-import { useNavigate } from "react-router-dom"
+import { useNavigate, useLocation } from "react-router-dom"
 import { useTranslation } from "react-i18next"
 import { ProductCard } from "./ProductCard"
 import productsData from "../data/products.json"
@@ -16,6 +16,7 @@ export default function ProductInfo() {
   const [selectedBrand, setSelectedBrand] = useState<Brand | null>(null)
   const [selectedCategory, setSelectedCategory] = useState<Category | null>(null)
   const navigate = useNavigate()
+  const location = useLocation()
   const { t } = useTranslation()
 
   // Tạo all brands và all categories
@@ -56,6 +57,22 @@ export default function ProductInfo() {
     
     return Array.from(categoryMap.values())
   }
+
+  const allCategoriesList = useMemo(() => getAllCategories(), [])
+
+  // Đồng bộ selectedCategory theo query ?category=
+  useEffect(() => {
+    const params = new URLSearchParams(location.search)
+    const categoryQuery = params.get('category')
+    if (!categoryQuery) {
+      return
+    }
+    const found = allCategoriesList.find(c => c.name.toLowerCase() === categoryQuery.toLowerCase())
+    if (found) {
+      setSelectedBrand(null)
+      setSelectedCategory(found)
+    }
+  }, [location.search, allCategoriesList])
 
   // Lấy sản phẩm dựa trên brand và category được chọn (đã sắp xếp theo tên)
   const getCurrentProducts = () => {

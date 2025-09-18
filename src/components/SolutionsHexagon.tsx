@@ -47,8 +47,27 @@ const SolutionsHexagon: React.FC = () => {
     }
   };
 
+  // Khóa cuộn nền khi mở modal
   useEffect(() => {
-    function drawLines() {
+    const originalOverflow = document.body.style.overflow;
+    const originalPaddingRight = document.body.style.paddingRight;
+    if (selectedSolution) {
+      const scrollBarWidth = window.innerWidth - document.documentElement.clientWidth;
+      document.body.style.overflow = 'hidden';
+      if (scrollBarWidth > 0) {
+        document.body.style.paddingRight = `${scrollBarWidth}px`;
+      }
+    }
+    return () => {
+      if (selectedSolution) {
+        document.body.style.overflow = originalOverflow;
+        document.body.style.paddingRight = originalPaddingRight;
+      }
+    };
+  }, [selectedSolution]);
+
+  useEffect(() => {
+    const drawLines = (): void => {
       if (!containerRef.current || !centralRef.current || !svgRef.current) return;
 
     const containerRect = containerRef.current.getBoundingClientRect();
@@ -89,14 +108,14 @@ const SolutionsHexagon: React.FC = () => {
         line.setAttribute('stroke', 'var(--primary)');
         line.setAttribute('stroke-width', '2');
         svgRef.current?.appendChild(line);
-      }
+    }
     });
   }
 
   drawLines();
   window.addEventListener('resize', drawLines);
   return () => window.removeEventListener('resize', drawLines);
-}, [solutions]);
+  }, [solutions]);
 
   return (
     <section className="solutions-hexagon">

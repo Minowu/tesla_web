@@ -8,7 +8,6 @@ import { useTranslation } from 'react-i18next';
 const HeroSection: React.FC = () => {
   const navigate = useNavigate();
   const { t } = useTranslation();
-  const [activeFeature, setActiveFeature] = useState(0);
   
   // States cho animated counters
   const [projectsCount, setProjectsCount] = useState(0);
@@ -16,25 +15,19 @@ const HeroSection: React.FC = () => {
   const [satisfactionCount, setSatisfactionCount] = useState(0);
 
   // Tạo separate refs và controls cho từng animation
-  const heroVisualRef = useRef(null);
   const aboutImageRef = useRef(null);
   const robotCardsRef = useRef(null);
+  const sectionHeaderRef = useRef(null);
   
-  const heroVisualInView = useInView(heroVisualRef, { once: false });
   const aboutImageInView = useInView(aboutImageRef, { once: true });
   const robotCardsInView = useInView(robotCardsRef, { once: true,amount:0.8 });
+  const sectionHeaderInView = useInView(sectionHeaderRef, { once: true, amount: 0.6 });
   
-  const heroVisualControls = useAnimation();
   const aboutImageControls = useAnimation();
   const robotCardsControls = useAnimation();
+  const sectionTitleControls = useAnimation();
   
-  // Animation cho hero visual
-  useEffect(() => {
-    if (heroVisualInView) {
-      heroVisualControls.start("visible");
-    } 
-  }, [heroVisualInView]);
-
+  
   // Animation cho about image và counters
   useEffect(() => {
     if (aboutImageInView) {
@@ -74,6 +67,15 @@ const HeroSection: React.FC = () => {
       robotCardsControls.start("visible");
     } 
   }, [robotCardsInView]);
+
+  // Animation cho section title
+  useEffect(() => {
+    if (sectionHeaderInView) {
+      sectionTitleControls.start("visible");
+    } 
+  }, [sectionHeaderInView]);
+
+  
   
   const features = [
     {
@@ -91,27 +93,21 @@ const HeroSection: React.FC = () => {
   ];
 
   // Variants cho các animations
-  const heroVisualVariants = {
-    hidden: { opacity: 0.1, x: 300 },
-    visible: { opacity: 1, x: 0 }
-  };
-
   const aboutImageVariants = {
     hidden: { opacity: 0.2, y: 200 },
     visible: { opacity: 1, y: 0 }
   };
 
+  const sectionTitleVariants = {
+    hidden: { opacity: 0, scale: 0.8 },
+    visible: { 
+      opacity: 1, 
+      scale: 1,
+      transition: { duration: 0.8, ease: "easeOut" }
+    }
+  };
+
   // (đã dùng inline variants cho card)
-
-  const featuresVariants = {
-    hidden: { opacity: 0.2, y: 100 },
-    visible: { opacity: 1, y: 0 }
-  };
-
-  const techHighlightsVariants = {
-    hidden: { opacity: 0.2, y: 80 },
-    visible: { opacity: 1, y: 0 }
-  };
 
   // Chọn 4 sản phẩm từ 4 danh mục khác nhau
   const getShowcaseProducts = (): Product[] => {
@@ -156,24 +152,43 @@ const HeroSection: React.FC = () => {
 
       <div className="container">
         {/* Main Hero Content */}
-        <section className='section-stack-cards'>
-          <div className="hero-main">
-            <div className="hero-content">
+        <div className="hero-section-content">
+          <div className="hero-section-video">
+          {/* Video nền (light) */}
+          <video 
+            className="hero-video hero-video--light" 
+            src={'/assets/0001-0500-light.mkv'} 
+            autoPlay 
+            muted 
+            loop 
+            playsInline 
+            onLoadedData={(e) => {
+              e.currentTarget.playbackRate = 0.3;
+            }}
+          />
+          {/* Video overlay (dark) */}
+          <video 
+            className="hero-video hero-video--dark" 
+            src={'/assets/0001-0500-dark.mkv'} 
+            autoPlay 
+            muted 
+            loop 
+            playsInline 
+            onLoadedData={(e) => {
+              e.currentTarget.playbackRate = 0.3;
+            }}
+          />
+          </div>
+          <div className="hero-content">
               <div className="hero-badge">
                 <span>{t('hero.badge')}</span>
               </div>
-              
               <h1 className="hero-title">
                 {t('hero.title_line1')}
                 <span className="hero-title-highlight"> {t('hero.title_highlight')}</span>
                 <br />
                 {t('hero.title_line2')}
               </h1>
-              
-              <p className="hero-subtitle">
-                {t('hero.subtitle')}
-              </p>
-              
               <div className="hero-buttons">
                 <button 
                   className="btn btn-primary"
@@ -181,40 +196,19 @@ const HeroSection: React.FC = () => {
                 >
                   <span>{t('hero.btn_products')}</span>
                 </button>
-                
-                <button 
-                  className="btn btn-secondary"
-                  onClick={() => navigate('/solutions')}
-                >
-                  <span>{t('hero.btn_solutions')}</span>
-                </button>
               </div>
-            </div>
-            
-            <motion.div 
-              ref={heroVisualRef}
-              className="hero-visual"
-              variants={heroVisualVariants}
-              initial="hidden"
-              animate={heroVisualControls}
-              transition={{ duration: 1, delay: 0.2, ease: 'easeInOut'}}
-            >
-              <div className="hero-image-main">
-                <img src="/assets/robot1.png" alt="Robot tự động chính" />
-              </div>
-            </motion.div>
           </div>
-          <div className="hero-logo">
-              <div className="hero-logo-main">
-                <img src="/assets/1.png" alt="Logo ThaDo Robot" />
-              </div>
-            </div>
-        </section>
-        
+        </div>
         <section className='section-stack-cards'>
-          <div className="section-header" style={{position: 'sticky',top: '80px',margin: 'var(--space-3xl) 0',borderRadius: 'var(--radius-xl)',padding: 'var(--space-2xl)',background: 'var(--bg-glass-sticky)',backdropFilter: 'blur(20px)'}}>
-            <h2 className="section-title">{t('hero.about_title').split(' ')[0]} <span style={{color: 'var(--primary)'}} className="text-company">{t('hero.about_title').split(' ').slice(1).join(' ')}</span></h2>
-            
+          <div ref={sectionHeaderRef} className="section-header" style={{position: 'sticky',top: '20px',margin: '0 0',borderRadius: 'var(--radius-xl)',padding: 'var(--space-2xl)',background: 'var(--bg-glass-sticky)',backdropFilter: 'blur(20px)'}}>
+            <motion.h2 
+              className="section-title"
+              variants={sectionTitleVariants}
+              initial="hidden"
+              animate={sectionTitleControls}
+            >
+              {t('hero.about_title').split(' ')[0]} <span style={{color: 'var(--primary)'}} className="text-company">{t('hero.about_title').split(' ').slice(1).join(' ')}</span>
+            </motion.h2>
             <div className="hero-about-layout">
               <motion.div 
                 ref={aboutImageRef}
@@ -294,10 +288,9 @@ const HeroSection: React.FC = () => {
                 {features.map((feature, index) => (
                   <div 
                     key={index}
-                    className={`feature-card ${index === activeFeature ? 'active' : ''}`}
-                    onClick={() => setActiveFeature(index)}
+                    className={`feature-card`}
                   >
-                    <div className="feature-content">
+                    <div className="feature-content"onClick={() => navigate('/solutions')}>
                       <h3>{feature.title}</h3>
                       <p>{feature.description}</p>
                     </div>
@@ -306,7 +299,6 @@ const HeroSection: React.FC = () => {
                 ))}
               </div>
             </div>
-
             {/* Technology Highlights */}
             <div className="hero-tech-highlights">
               <div 
@@ -343,26 +335,7 @@ const HeroSection: React.FC = () => {
             </div>
           </div>
         </section>
-        {/* Call to Action */}
-        {/* <div className="hero-cta">
-          <div className="cta-content">
-            <h3>Sẵn sàng chuyển đổi số?</h3>
-            <p>Liên hệ ngay để được tư vấn miễn phí và demo trực tiếp</p>
-            <div className="cta-buttons">
-              <button 
-                className="btn btn-primary"
-                onClick={() => setCurrentSection('contact')}
-              >
-                <span>📞</span>
-                <span>Liên hệ ngay</span>
-              </button>
-              <button className="btn btn-outline">
-                <span>📋</span>
-                <span>Yêu cầu demo</span>
-              </button>
-            </div>
-          </div>
-        </div> */}
+
       </div>
     </section>
   );

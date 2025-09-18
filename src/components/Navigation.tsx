@@ -1,7 +1,8 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useMemo } from 'react';
 import { Link, useLocation, useNavigate } from 'react-router-dom';
 import { useAppStore } from '../store/appStore';
 import { useTranslation } from 'react-i18next';
+import productsData from '../data/products.json';
 
 const Navigation: React.FC = () => {
   const { currentSection, setCurrentSection, language, setLanguage } = useAppStore();
@@ -9,10 +10,22 @@ const Navigation: React.FC = () => {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
   const [searchQuery, setSearchQuery] = useState('');
   const [isSearchExpanded, setIsSearchExpanded] = useState(false);
+  const [showSuggestions, setShowSuggestions] = useState(false);
+  const [suggestions, setSuggestions] = useState<string[]>([]);
   const [isDarkTheme, setIsDarkTheme] = useState(true); // Thêm state cho theme
   const location = useLocation();
   const navigate = useNavigate();
   const { t, i18n } = useTranslation();
+
+  const allCategoryNames = useMemo(() => {
+    const names = new Set<string>();
+    for (const brand of (productsData as any).brands || []) {
+      for (const category of brand.categories || []) {
+        if (typeof category.name === 'string') names.add(category.name);
+      }
+    }
+    return Array.from(names).sort((a, b) => a.localeCompare(b, 'vi', { sensitivity: 'base' }));
+  }, []);
 
   const menuItems = [
     { id: 'home', label: t('nav.home'), path: '/home', isLink: true },
@@ -92,19 +105,19 @@ const Navigation: React.FC = () => {
     setLanguage(nextLang);
   };
 
-  // Search functionality
-  const handleSearch = () => {
-    if (searchQuery.trim()) {
-      // Chuyển đến solutions section để hiển thị kết quả tìm kiếm
-      setCurrentSection('solutions');
-      setSearchQuery('');
-      setIsSearchExpanded(false);
-    }
+  const handleSelectSuggestion = (categoryName: string) => {
+    setCurrentSection('products');
+    navigate(`/products?category=${encodeURIComponent(categoryName)}`);
+    setIsMobileMenuOpen(false);
+    setShowSuggestions(false);
+    setIsSearchExpanded(false);
+    setSearchQuery('');
   };
 
   const handleSearchKeyPress = (e: React.KeyboardEvent) => {
     if (e.key === 'Enter') {
-      handleSearch();
+      const first = suggestions[0] || searchQuery.trim();
+      if (first) handleSelectSuggestion(first);
     }
   };
 
@@ -116,8 +129,23 @@ const Navigation: React.FC = () => {
     // Delay để người dùng có thể click vào nút search
     setTimeout(() => {
       setIsSearchExpanded(false);
+      setShowSuggestions(false);
     }, 200);
   };
+
+  useEffect(() => {
+    const keyword = searchQuery.trim().toLowerCase();
+    if (!keyword) {
+      setSuggestions([]);
+      setShowSuggestions(false);
+      return;
+    }
+    const filtered = allCategoryNames
+      .filter((name) => name.toLowerCase().includes(keyword))
+      .slice(0, 8);
+    setSuggestions(filtered);
+    setShowSuggestions(true);
+  }, [searchQuery, allCategoryNames]);
 
   // Kiểm tra xem item có active không
   const isItemActive = (item: any) => {
@@ -184,13 +212,19 @@ const Navigation: React.FC = () => {
               title={isDarkTheme ? t('nav.toggle_theme_light') : t('nav.toggle_theme_dark')}
               onClick={toggleTheme}
             >
-              <span>{isDarkTheme ? '🌙' : '☀️'}</span>
+              <span>
+                {isDarkTheme ? (
+                  <svg xmlns="http://www.w3.org/2000/svg" height="18px" viewBox="0 -960 960 960" width="24px" fill="#e3e3e3"><path d="M484-80q-84 0-157.5-32t-128-86.5Q144-253 112-326.5T80-484q0-146 93-257.5T410-880q-18 99 11 193.5T521-521q71 71 165.5 100T880-410q-26 144-138 237T484-80Zm0-80q88 0 163-44t118-121q-86-8-163-43.5T464-465q-61-61-97-138t-43-163q-77 43-120.5 118.5T160-484q0 135 94.5 229.5T484-160Zm-20-305Z"/></svg>
+                ) : (
+                  <svg xmlns="http://www.w3.org/2000/svg" height="18px" viewBox="0 -960 960 960" width="20px" fill="#000000"><path d="M444-768v-144h72v144h-72Zm265 112-54-52 104-102 52 50-102 104Zm59 212v-72h144v72H768ZM444-48v-144h72v144h-72ZM251-658 147-760l54-50 101 101-51 51Zm509 511L659-252l50-50 104 100-53 55ZM48-444v-72h144v72H48Zm152 297-51-53 102-100 25 24 24 25-100 104Zm280-93q-100 0-170-70t-70-170q0-100 70-170t170-70q100 0 170 70t70 170q0 100-70 170t-170 70Zm0-72q70 0 119-49t49-119q0-70-49-119t-119-49q-70 0-119 49t-49 119q0 70 49 119t119 49Zm0-168Z"/></svg>  
+                )}
+              </span>
             </button>
-            {/* Search Icon with Expandable Input */}
+            {/* Search with suggestions */}
             <div className="search-container">
               <input
                 type="text"
-                placeholder={t('nav.find_solution') + ' ...'}
+                placeholder={t('nav.find_product') + ' ...'}
                 value={searchQuery}
                 onChange={(e) => setSearchQuery(e.target.value)}
                 onKeyPress={handleSearchKeyPress}
@@ -198,13 +232,19 @@ const Navigation: React.FC = () => {
                 onBlur={handleSearchBlur}
                 className={`search-input ${isSearchExpanded ? 'expanded' : ''}`}
               />
-              <button 
-                className="control-button search-toggle" 
-                title={t('nav.search')}
-                onClick={handleSearch}
-              >
-                <span>🔍</span>
-              </button>
+              {showSuggestions && suggestions.length >=1  && (
+                <ul className="search-suggestions">
+                  {suggestions.map((name) => (
+                    <li
+                      key={name}
+                      className="search-suggestion-item"
+                      onMouseDown={() => handleSelectSuggestion(name)}
+                    >
+                      {name}
+                    </li>
+                  ))}
+                </ul>
+              )}
             </div>
           </div>
 
@@ -231,19 +271,25 @@ const Navigation: React.FC = () => {
               <div className="search-container mobile">
                 <input
                   type="text"
-                  placeholder={t('nav.find_solution') + ' ...'}
+                    placeholder={t('nav.find_product') + ' ...'}
                   value={searchQuery}
                   onChange={(e) => setSearchQuery(e.target.value)}
                   onKeyPress={handleSearchKeyPress}
                   className="search-input mobile"
                 />
-                <button 
-                  className="control-button search-toggle" 
-                  title={t('nav.search')}
-                  onClick={handleSearch}
-                >
-                  <span>🔍</span>
-                </button>
+                {showSuggestions && suggestions.length > 0 && (
+                  <ul className="search-suggestions mobile">
+                    {suggestions.map((name) => (
+                      <li
+                        key={name}
+                        className="search-suggestion-item"
+                        onMouseDown={() => handleSelectSuggestion(name)}
+                      >
+                        {name}
+                      </li>
+                    ))}
+                  </ul>
+                )}
               </div>
               <button className="control-button language-toggle" title={t('nav.toggle_language')} onClick={toggleLanguage}>
                 <span>{language === 'vi' ? '🇻🇳' : '🇺🇸'}</span>
@@ -253,7 +299,13 @@ const Navigation: React.FC = () => {
                 title={isDarkTheme ? t('nav.toggle_theme_light') : t('nav.toggle_theme_dark')}
                 onClick={toggleTheme}
               >
-                <span>{isDarkTheme ? '🌙' : '☀️'}</span>
+                <span>
+                {isDarkTheme ? (
+                  <svg xmlns="http://www.w3.org/2000/svg" height="18px" viewBox="0 -960 960 960" width="24px" fill="#e3e3e3"><path d="M484-80q-84 0-157.5-32t-128-86.5Q144-253 112-326.5T80-484q0-146 93-257.5T410-880q-18 99 11 193.5T521-521q71 71 165.5 100T880-410q-26 144-138 237T484-80Zm0-80q88 0 163-44t118-121q-86-8-163-43.5T464-465q-61-61-97-138t-43-163q-77 43-120.5 118.5T160-484q0 135 94.5 229.5T484-160Zm-20-305Z"/></svg>
+                ) : (
+                  <svg xmlns="http://www.w3.org/2000/svg" height="18px" viewBox="0 -960 960 960" width="20px" fill="#000000"><path d="M444-768v-144h72v144h-72Zm265 112-54-52 104-102 52 50-102 104Zm59 212v-72h144v72H768ZM444-48v-144h72v144h-72ZM251-658 147-760l54-50 101 101-51 51Zm509 511L659-252l50-50 104 100-53 55ZM48-444v-72h144v72H48Zm152 297-51-53 102-100 25 24 24 25-100 104Zm280-93q-100 0-170-70t-70-170q0-100 70-170t170-70q100 0 170 70t70 170q0 100-70 170t-170 70Zm0-72q70 0 119-49t49-119q0-70-49-119t-119-49q-70 0-119 49t-49 119q0 70 49 119t119 49Zm0-168Z"/></svg>  
+                )}
+              </span>
               </button>
             </div>
             

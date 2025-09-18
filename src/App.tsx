@@ -14,7 +14,6 @@ import BlogCarousel from './components/BlogCarousel';
 import TechnologySection from './components/TechnologySection';
 import ContactUs from './components/ContactUs';
 import { LoadingScreen } from './components/LoadingScreen';
-import { PerformanceMonitor } from './components/PerformanceMonitor';
 import { ErrorBoundary } from './components/ErrorBoundary';
 import Solutions3DViewer from './components/Solutions3DViewer';
 import ServiceSupport from './components/ServiceSupport';
@@ -85,8 +84,6 @@ function App() {
         </div>
 
         <Navigation />
-        
-        <PerformanceMonitor />
 
         <main>
           <Routes>
@@ -124,15 +121,12 @@ function App() {
                           className="btn btn-primary"
                           onClick={() => navigate('/contactus')}
                         >
-                          <span>📞</span>
                           {t('home_sections.cta_btn_contact')}
                         </button>
                         <button className="btn btn-secondary" onClick={() => navigate('/contactus')}>
-                          <span>📋</span>
                           {t('home_sections.cta_btn_demo')}
                         </button>
                         <button className="btn btn-outline">
-                          <span>📖</span>
                           {t('home_sections.cta_btn_docs')}
                         </button>
                       </div>
